@@ -25,6 +25,10 @@ const userSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 	},
+	user_name:{
+		type:String,
+		required:true,
+	}
 });
 
 userSchema.methods.generateAuthToken = function () {
@@ -40,11 +44,11 @@ const validate = (data) => {
 	const schema = Joi.object({
 		college_gmail_id: Joi.string().required().label("Collage_id"),
 
-		registration_no: Joi.string().required().label("Raagistration number"),
-
+		password: passwordComplexity().required().label("Password"),
+		registration_no: Joi.string().required().label("Ragistration number"),
+        user_name:Joi.string().required().label("user name"),
 		hostelname: Joi.string().required().label("Hostelname"),
 
-		password: passwordComplexity().required().label("Password"),
 	});
 	return schema.validate(data);
 };
