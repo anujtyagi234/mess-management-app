@@ -136,31 +136,7 @@ function Login() {
 									/>
 								</div>
 
-								<div
-									style={{
-										position: "relative",
-										width: "max-content",
-										marginBottom: "20px",
-									}}
-								>
-									<FaIdCard
-										style={{
-											position: "absolute",
-											top: "50%",
-											left: "10px",
-											transform: "translateY(-50%)",
-											color: iconColor,
-										}}
-									/>
-									<input
-										type="text"
-										name="registration_no"
-										placeholder="Registration number"
-										onChange={handleChange}
-										value={data.registration_no}
-										className="bg-stone-700 rounded-md p-3 w-80 font-bold text-lg text-white pl-8"
-									/>
-								</div>
+								
 
 								<div
 									style={{
