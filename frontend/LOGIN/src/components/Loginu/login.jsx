@@ -2,7 +2,6 @@ import { useState } from "react";
 import img from "./img.png";
 import axios from "axios";
 import { FaUniversity, FaIdCard, FaLock } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
 
 import "./App.css";
 import { FaHome } from "react-icons/fa";
@@ -28,8 +27,8 @@ function Login() {
 		try {
 			const url = "http://localhost:3001/api/users";
 			const { data: res } = await axios.post(url, data);
-			// Navigate("/login")
-			console.log(res.message);
+localStorage.setItem("token",res.data);
+window.location = "/";
 		} catch (error) {
 			if (error.response.status >= 400 && error.response.status <= 500) {
 				setError(error.response.data.message);
@@ -189,7 +188,7 @@ function Login() {
 										<span class="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gray-50"></span>
 										<span class="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-gray-900 group-hover:-rotate-180 ease"></span>
 										<span class="relative" onSubmit={handleLogin}>
-											Sign up
+											Sign-up
 										</span>
 									</span>
 									<span
@@ -200,17 +199,7 @@ function Login() {
 							</div>
 						</div>
 					</div>
-					<a
-						href="/forgot-password"
-						style={{
-							color: "white",
-							textDecoration: "underline",
-							fontSize: "17px",
-							fontWeight: "bold",
-						}}
-					>
-						Forgot Password?
-					</a>
+				
 				</div>
 			</div>
 		</>

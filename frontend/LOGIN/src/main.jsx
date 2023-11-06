@@ -13,6 +13,7 @@ const router = createBrowserRouter(
 	createRoutesFromElements(<Route path="/" element={<Login />}></Route>)
 );
 
+
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<React.StrictMode>
 		<RouterProvider router={router} />
