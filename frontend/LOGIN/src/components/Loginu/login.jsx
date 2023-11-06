@@ -48,7 +48,7 @@ function Login() {
 						</h1>
 
 						<img
-							src={img}
+							src="https://img.freepik.com/premium-photo/cooking-fair-logo-design-illustration-pop-white-background-illustration_921410-27744.jpg"
 							alt="Image"
 							className="rounded-full"
 							style={{
