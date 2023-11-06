@@ -3,8 +3,6 @@ import img from "./img.png";
 import axios from "axios";
 import { FaUniversity, FaIdCard, FaLock } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-
-import "./App.css";
 import { FaHome } from "react-icons/fa";
 
 function Login() {
