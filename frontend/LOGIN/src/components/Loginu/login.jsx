@@ -1,6 +1,7 @@
 import { useState } from "react";
 import img from "./img.png";
 import axios from "axios";
+import { FaUserCircle } from "react-icons/fa";
 import { FaUniversity, FaIdCard, FaLock } from "react-icons/fa";
 
 import "./App.css";
@@ -12,6 +13,7 @@ function Login() {
 		registration_no: "",
 		hostelname: "",
 		password: "",
+		user_name: "",
 	});
 
 	const [error, setError] = useState("");
@@ -27,8 +29,8 @@ function Login() {
 		try {
 			const url = "http://localhost:3001/api/users";
 			const { data: res } = await axios.post(url, data);
-localStorage.setItem("token",res.data);
-window.location = "/";
+			localStorage.setItem("token", res.data);
+			window.location = "/";
 		} catch (error) {
 			if (error.response.status >= 400 && error.response.status <= 500) {
 				setError(error.response.data.message);
@@ -69,9 +71,9 @@ window.location = "/";
 					<div
 						className=" bg-stone-100   rounded-3xl   text-black"
 						style={{
-							height: "500px",
+							height: "650px",
 							width: "480px",
-							margin: "30px auto 0 auto",
+							margin: "20px auto 0 auto",
 						}}
 					>
 						<div className="grid grid-rows-2 gap-4  justify-center items-center mt-12">
@@ -115,6 +117,32 @@ window.location = "/";
 										marginBottom: "20px",
 									}}
 								>
+									<FaLock
+										style={{
+											position: "absolute",
+											top: "50%",
+											left: "10px",
+											transform: "translateY(-50%)",
+											color: iconColor,
+										}}
+									/>
+									<input
+										type="password"
+										name="password"
+										placeholder="Password"
+										onChange={handleChange}
+										value={data.password}
+										className="bg-stone-700 rounded-md p-3 w-80 font-bold text-lg text-white pl-8"
+									/>
+								</div>
+
+								<div
+									style={{
+										position: "relative",
+										width: "max-content",
+										marginBottom: "20px",
+									}}
+								>
 									<FaIdCard
 										style={{
 											position: "absolute",
@@ -141,7 +169,7 @@ window.location = "/";
 										marginBottom: "20px",
 									}}
 								>
-									<FaLock
+									<FaIdCard
 										style={{
 											position: "absolute",
 											top: "50%",
@@ -151,11 +179,37 @@ window.location = "/";
 										}}
 									/>
 									<input
-										type="password"
-										name="password"
-										placeholder="Password"
+										type="text"
+										name="registration_no"
+										placeholder="Registration number"
 										onChange={handleChange}
-										value={data.password}
+										value={data.registration_no}
+										className="bg-stone-700 rounded-md p-3 w-80 font-bold text-lg text-white pl-8"
+									/>
+								</div>
+
+								<div
+									style={{
+										position: "relative",
+										width: "max-content",
+										marginBottom: "20px",
+									}}
+								>
+									<FaUserCircle
+										style={{
+											position: "absolute",
+											top: "50%",
+											left: "10px",
+											transform: "translateY(-50%)",
+											color: iconColor,
+										}}
+									/>
+									<input
+										type="text"
+										name="user_name"
+										placeholder="User-Name"
+										onChange={handleChange}
+										value={data.user_name}
 										className="bg-stone-700 rounded-md p-3 w-80 font-bold text-lg text-white pl-8"
 									/>
 								</div>
@@ -182,7 +236,7 @@ window.location = "/";
 							</div>
 							{error && <div className={style.error_msg}>{error}</div>}
 
-							<div className="mt-0  mb-60">
+							<div className="mt-0  mb-80">
 								<a href="#_" class="relative inline-block text-lg group w-44">
 									<span class="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white">
 										<span class="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gray-50"></span>
@@ -199,7 +253,6 @@ window.location = "/";
 							</div>
 						</div>
 					</div>
-				
 				</div>
 			</div>
 		</>
