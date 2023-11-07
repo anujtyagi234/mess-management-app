@@ -3,8 +3,8 @@ const express = require("express");
 const path = require("path");
 const hbs = require("hbs");
 const app = express();
-const userRoutes = require('./routes/users');
-const  autoRoutes = require("./routes/auth");
+const userRoutes = require('../routes/users');
+const  autoRoutes = require("../routes/auth");
 const port = 3001|| process.env.PORT ;
 require("./db/Add");
 

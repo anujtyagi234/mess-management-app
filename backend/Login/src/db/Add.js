@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 // Connect to MongoDB
 mongoose
-	.connect("mongodb://127.0.0.1:27017/ragistration", {
+	.connect("mongodb://127.0.0.1:27017/registration", {
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
 	})

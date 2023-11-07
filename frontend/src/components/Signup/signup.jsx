@@ -1,21 +1,19 @@
 import { useState } from "react";
 import axios from "axios";
-import { FaUserCircle } from "react-icons/fa";
-import { FaUniversity, FaIdCard, FaLock } from "react-icons/fa";
-import { FaHome } from "react-icons/fa";
+import { FaUserCircle, FaUniversity, FaIdCard, FaLock, FaHome } from "react-icons/fa";
 
-function Login() {
+function Signup() {
 	const [data, setData] = useState({
 		college_gmail_id: "",
 		registration_no: "",
 		hostelname: "",
 		password: "",
-		user_name: "",
+		user_name: ""
 	});
 
 	const [error, setError] = useState("");
-	// const navigate = useNavigate()
 	const iconColor = "#FFFF00";
+
 	const handleChange = ({ currentTarget: input }) => {
 		setData({ ...data, [input.name]: input.value });
 	};
@@ -24,18 +22,18 @@ function Login() {
 		e.preventDefault();
 
 		try {
-			const url = "http://localhost:3001/api/users";
+			const url = "http://localhost:3000/Signup";
 			const { data: res } = await axios.post(url, data);
 			localStorage.setItem("token", res.data);
 			window.location = "/";
 		} catch (error) {
-			if (error.response.status >= 400 && error.response.status <= 500) {
-				setError(error.response.data.message);
-			}
+			setError("hey prabhu");
 		}
 	};
+
 	return (
 		<>
+			{console.log("User", data)}
 			<div className="bg-white flex h-screen  rounded-3xl">
 				<div className="h-screen bg-red-300 w-1/2 flex justify-center items-center rounded-l-lg ">
 					{/* <img src={img} alt="Image" className="h-64 w- object-cover rounded-2xl" /> */}
@@ -74,6 +72,7 @@ function Login() {
 						}}
 					>
 						<div className="grid grid-rows-2 gap-4  justify-center items-center mt-12">
+						{error && <div className="error_msg">{error}</div>}
 							<div
 								style={{
 									display: "flex",
@@ -107,6 +106,8 @@ function Login() {
 									/>
 								</div>
 
+							
+
 								<div
 									style={{
 										position: "relative",
@@ -133,7 +134,11 @@ function Login() {
 									/>
 								</div>
 
-								
+
+
+							
+
+
 
 								<div
 									style={{
@@ -161,6 +166,9 @@ function Login() {
 									/>
 								</div>
 
+
+
+
 								<div
 									style={{
 										position: "relative",
@@ -168,15 +176,16 @@ function Login() {
 										marginBottom: "20px",
 									}}
 								>
-									<FaUserCircle
-										style={{
-											position: "absolute",
-											top: "50%",
-											left: "10px",
-											transform: "translateY(-50%)",
-											color: iconColor,
-										}}
-									/>
+									
+      <FaUserCircle
+        style={{
+          position: "absolute",
+          top: "50%",
+          left: "10px",
+          transform: "translateY(-50%)",
+          color: iconColor,
+        }}
+      />
 									<input
 										type="text"
 										name="user_name"
@@ -186,6 +195,10 @@ function Login() {
 										className="bg-stone-700 rounded-md p-3 w-80 font-bold text-lg text-white pl-8"
 									/>
 								</div>
+
+
+
+
 
 								<div style={{ position: "relative", width: "max-content" }}>
 									<input
@@ -210,26 +223,28 @@ function Login() {
 							{error && <div className={style.error_msg}>{error}</div>}
 
 							<div className="mt-0  mb-80">
-								<a href="#_" className="relative inline-block text-lg group w-44">
-									<span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white">
-										<span className="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gray-50"></span>
-										<span className="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-gray-900 group-hover:-rotate-180 ease"></span>
-										<span className="relative" onSubmit={handleLogin}>
-											Sign-up
-										</span>
-									</span>
-									<span
-										className="absolute bottom-0 right-0 w-full h-12 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 rounded-lg group-hover:mb-0 group-hover:mr-0"
-										data-rounded="rounded-lg"
-									></span>
-								</a>
+							<button type="submit" onClick = {handleLogin} className="relative inline-block text-lg group w-44">
+  <span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white">
+    <span className="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gray-50"></span>
+    <span className="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-gray-900 group-hover:-rotate-180 ease"></span>
+    <span className="relative">Sign-up</span>
+  </span>
+  <span
+    className="absolute bottom-0 right-0 w-full h-12 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 rounded-lg group-hover:mb-0 group-hover:mr-0"
+    data-rounded="rounded-lg"
+  ></span>
+</button>
+
 							</div>
 						</div>
 					</div>
+				
 				</div>
 			</div>
+			
 		</>
 	);
 }
 
-export default Login;
+export default Signup;
+

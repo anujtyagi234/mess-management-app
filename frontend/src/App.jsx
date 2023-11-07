@@ -1,5 +1,5 @@
 import React from 'react'
-import Signup from "./components/Signup/login.jsx";
+import Signup from "./components/Signup/signup.jsx";
 import Home from './components/Home/Home.jsx';
 import {
 	BrowserRouter as Router,
@@ -9,12 +9,12 @@ import {
 import NavBar from './components/Home/NavBar.jsx';
 import Footer from './components/Home/Footer.jsx';
 import About from './components/Home/About.jsx';
-import Login from './components/Login/index.jsx';
+import Login from './components/Login/login.jsx';
 
 
 export default function App() {
   return (
-    <div>
+    <div> 
         <Router>
         <NavBar/>
         <Routes>
