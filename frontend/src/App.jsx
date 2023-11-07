@@ -27,6 +27,8 @@ export default function App() {
         </Routes>
         <Footer/>
         </Router> */}
+
+
          <div className="App">
       <div className="Back">
       <Sidebar/>
@@ -34,6 +36,10 @@ export default function App() {
       <div></div>
       </div>
     </div>
+
+
+
+    
     </div>
   )
 }
