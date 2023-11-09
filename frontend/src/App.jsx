@@ -17,7 +17,7 @@ import './App.css'
 export default function App() {
   return (
     <div> 
-        <Router>
+        {/* <Router>
         <NavBar/>
         <Routes>
           <Route path="/" element={<Home/>}/>
@@ -27,14 +27,14 @@ export default function App() {
           <Route/>
         </Routes>
         <Footer/>
-        </Router>
-         {/* <div className="App">
+        </Router> */}
+         <div className="App">
       <div className="Back">
       <Sidebar/>
       <div></div>
       <div></div>
       </div>
-    </div> */}
+    </div>
     </div>
   )
 }
