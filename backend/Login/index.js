@@ -1,21 +1,24 @@
 const mongoose = require("mongoose");
 const express = require("express");
 const cors = require("cors");
+const bcrypt = require("bcryptjs");
+const jwt = require('jsonwebtoken')
 const app = express();
+require("dotenv").config();
+
+
 app.use(express.json({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
-
-
-// to login  validity accroding to the date,time,years etc 
-const jwt = require("jsonwebtoken");
-
-const passwordComplexity = require("joi-password-complexity");
-
-
-const Joi = require("joi");
 app.use(cors());
 
+
+
 // Connect to MongoDB
+mongoose.connect("mongodb://127.0.0.1:27017/Myregistration")
+	.then(() => {
+		console.log("Connected to MongoDB successfully");
+	})
+	.catch((error) => console.error("Error connecting to MongoDB:", error))
 
 
 const userSchema = new mongoose.Schema({
@@ -41,87 +44,79 @@ const userSchema = new mongoose.Schema({
 	}
 });
 
-userSchema.methods.generateAuthToken = function () {
-	const token = jwt.sign({ _id: this._id }, process.env.JWTPRIVATEKEY, {
-		expiresIn: "7d",
-	});
-	return token;
-};
-
 const User = mongoose.model("User", userSchema);
 
-const validate = (data) => {
-	const schema = Joi.object({
-		college_gmail_id: Joi.string().required().label("Collage_id"),
-
-		password: passwordComplexity().required().label("Password"),
-		registration_no: Joi.string().required().label("Ragistration number"),
-        user_name:Joi.string().required().label("user name"),
-		hostelname: Joi.string().required().label("Hostelname"),
-
-	});
-	return schema.validate(data);
-};
-
-module.exports = { User, validate };
-
-
-
-
-
-mongoose.connect("mongodb://127.0.0.1:27017/Myragistration")
-	.then(() => {
-		console.log("Connected to MongoDB successfully");
-		// Your code for checking or performing operations in the database can go here
-	})
-	.catch((error) => console.error("Error connecting to MongoDB:", error))
-app.get("/",(req,res)=>{
-	res.send("dsghsdhf");
-})
-app.post("/Signup", (req, res) => {
-	const { error } = validate(req.body);
-	if (error) {
-	  return res.status(400).send({ message: error.details[0].message });
-	}
-	// Add code to save the user data to the database
-	console.log(req.body); // log the request body to the terminal
-	res.send("Received the signup data"); // send a response to the frontend
-	
-
-User.findOne({email:email},(err,user)=>{
-	if(user){
-		res.send({message:"User already registered"})
-	}
-	else{
-		const{registration_no,password, user_name,hostelname,college_gmail_id} = req.body
-		const user = new User({
-			registration_no,
-			password,
-			 user_name,
-			 hostelname,
-			 college_gmail_id
-			 //shorhand notation
-		})
-	
-		user.save(err=>{
-			if(err){
-				res.send(err)
-			}
-			else{
-				res.send({massage:"Successfully Sing up"})
-			}
-		})
-	}
-})
-
-	
-  });
+app.post("/signup", async (req, res) => {
+	console.log(req.body);
   
+	const { college_gmail_id, registration_no, hostelname, password, user_name } = req.body;
+  
+	try {
+	  // Check if a user with the same college_gmail_id already exists
+	  const existingUser = await User.findOne({ college_gmail_id });
+  
+	  if (existingUser) {
+		res.json({ message: "User already registered" }); 
+	  } else {
+		const hashedPassword = await bcrypt.hash(password,process.env.SALT);
+		const user = new User({
+		  college_gmail_id,
+		  registration_no,
+		  hostelname,
+		  password:hashedPassword,
+		  user_name,
+		});
+  
+		await user.save();
+		res.json({ message: "Signup successful" });
+	  }
+	} catch (err) {
+	  res.status(400).json({ error: err.message });
+	}
+  });
 
-app.post("/Login",(req,res)=>{
-	res.send("My sighnup Api")
+  app.post("/login", async (req, res) => {
+	console.log(req.body);
+  
+	const { college_gmail_id, password } = req.body;
+  
+	try {
+	  // Check if a user with the same college_gmail_id already exists
+	  const existingUser = await User.findOne({ college_gmail_id });
+  
+	  if (!existingUser) {
+		res.json({ message: "Email not found" });
+	  } else {
+		// Compare the provided password with the hashed password in the database
+		const isPasswordValid = await bcrypt.compare(password, existingUser.password);
+  
+		if (isPasswordValid) {
+		  // Generate a JWT token with user data
+		  const token = jwt.sign(
+			{
+			  _id: existingUser._id,
+			  college_gmail_id: existingUser.college_gmail_id,
+			  user_name: existingUser.user_name,
+			  hostelname: existingUser.hostelname,
+			  registration_no: existingUser.registration_no
+			},
+			process.env.JWTPRIVATEKEY,
+			{ expiresIn: "7d" }
+		  );
+  
+		  res.json({
+			message: "Login successful",
+			token: token,
+		  });
+		} else {
+		  res.json({ message: "Incorrect password" });
+		}
+	  }
+	} catch (err) {
+	  res.status(400).json({ error: err.message });
+	}
+  });
+
+app.listen(3000,()=>{
+console.log("Server started at port 3000")
 })
-
-	app.listen(3000,()=>{
-		console.log("Server started at port 3000")
-	})
