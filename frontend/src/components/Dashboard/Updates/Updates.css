@@ -1,0 +1,28 @@
+.img{
+    border-radius: 50%;
+    width: 20%;
+    margin-left: 20px;
+border-color: black;
+
+}
+
+.img_name{
+    /* flex-direction: column; */
+    display: flex;
+    align-items: center;
+
+}
+.Update{
+    width: 90%;
+    background: white;
+    border-radius: 0.7rem;
+    padding: 1rem;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    height: 110%;
+    box-shadow: 10px 5px 5px rgb(177, 166, 170); 
+  
+
+}

@@ -1,6 +1,8 @@
 import React from 'react'
 import Signup from "./components/Signup/signup.jsx";
 import Home from './components/Home/Home.jsx';
+
+import Rightside from './components/Dashboard/Rightside/Rightside.jsx'
 import {
 	BrowserRouter as Router,
 	Routes,
@@ -12,6 +14,7 @@ import About from './components/Home/About.jsx';
 import Login from './components/Login/login.jsx';
 import Sidebar from './components/Dashboard/Sidebar.jsx';
 import './App.css'
+import MainDash from './components/Dashboard/MainDash.jsx';
 
 
 export default function App() {
@@ -32,7 +35,8 @@ export default function App() {
          <div className="App">
       <div className="Back">
       <Sidebar/>
-      <div></div>
+     <MainDash/>
+     <Rightside/>
       <div></div>
       </div>
     </div>

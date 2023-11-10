@@ -1,0 +1,33 @@
+.Rightside{
+    display: flex;
+    flex-direction: column;
+    width:95% ;
+    justify-content: space-evenly;
+    border-radius: 20px;
+
+box-shadow: 10px 5px 5px rgb(235, 141, 170);
+
+   
+}
+
+.sr{
+    font-weight: bold;
+    font-size:x-large;
+  font-family: cursive;
+}
+.update{
+    font-family: cursive;
+    /* font-weight: bold; */
+}
+.Updates{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+.Studentreview{
+    width: 94%;
+    height: 25%;
+    margin-left:1rem ;
+}
+

@@ -1,0 +1,31 @@
+
+.parentcontainer{
+   width: 100%; 
+   
+  
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto ;
+    grid-template-rows: auto auto;
+    gap: 50px;
+    padding: 5%;
+    width: 100%;
+    /* height: 10px; */
+    height: 100%;
+    /* box-shadow: 8px 8px 8px 10px #888888;
+
+     */
+     /* background: rgb(12, 224, 136); */
+
+  }
+  
+  .grid-item {
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+  }
+
+ 
+

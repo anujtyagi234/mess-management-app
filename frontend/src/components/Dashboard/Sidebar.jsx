@@ -1,113 +1,67 @@
-import React from 'react'
-import './Sidebar.css'
+import React, { useState } from 'react';
+import './Sidebar.css';
 
-import home from '../../imgs/home.gif'
-import menu from '../../imgs/burger.gif'
-import complain from '../../imgs/Compln.gif'
-import contact from '../../imgs/phone-call.gif'
-import Information from '../../imgs/computer.gif'
-import rule from '../../imgs/books.gif'
+import home from '../../imgs/home.gif';
+import menu from '../../imgs/burger.gif';
+import complain from '../../imgs/Compln.gif';
+import contact from '../../imgs/phone-call.gif';
+import Information from '../../imgs/computer.gif';
+import rule from '../../imgs/books.gif';
+import team from '../../imgs/copywriting.gif';
+import collage from '../../imgs/lecture-room.gif';
+
 function Sidebar() {
+  const menuItems = [
+    { title: 'Dashboard', image: home },
+    { title: 'Mess-Menu', image: menu },
+    { title: 'Complain', image: complain },
+    { title: 'Contact', image: contact },
+    { title: 'Information', image: Information },
+    { title: 'Rules', image: rule },
+    { title: 'Mnnit Alld', image: collage },
+    { title: 'WebCrator', image: team },
+  ];
+
+  const initialSelectedIndex = menuItems.findIndex((item) => item.title === 'Dashboard');
+
+  const [selected, setSelected] = useState(initialSelectedIndex);
+
+  const handleItemClick = (index) => {
+    setSelected(index);
+    
+  };
+
   return (
     <div className="Sidebar">
-        {/*logo*/}
+      {/*logo*/}
       <div className="logo">
         <img src={menu} alt="" />
         <span>
-           Mess <span>relay</span> Web
+          Mess <span>relay</span> Web
         </span>
-        </div>  
-
-
-        {/*menu*/}
-        <div className="menu">
-            <div className="Items">
-            <div>
-        {/* <img src={home} alt="Your GIF"  /> */}
-        <img
-          src={home}
-          alt="Your GIF"
-          style={{ height: '35px', width: '35px', borderRadius: '50%' }}
-        />
       </div>
-                <span>DashBoard</span>
-            </div>
 
-
-
-
-            <div className="Items">
+      {/*menu*/}
+      <div className="menu">
+        {menuItems.map((item, index) => (
+          <div
+            className={`Items ${selected === index ? 'active' : ''}`}
+            key={index}
+            onClick={() => handleItemClick(index)}
+          >
             <div>
-        
-        <img
-          src={menu}
-          alt="Your GIF"
-          style={{ height: '35px', width: '35px', borderRadius: '50%' }}
-        />
-      </div>
-                <span>Mess-Menu</span>
+              <img
+                src={item.image}
+                alt="Your GIF"
+                style={{ height: '34px', width: '34px', borderRadius: '50%' }}
+              />
             </div>
-
-            <div className="Items">
-            <div>
-        
-        <img
-          src={complain}
-          alt="Your GIF"
-          style={{ height: '35px', width: '35px', borderRadius: '50%' }}
-        />
+            <span>{item.title}</span>
+          </div>
+        ))}
       </div>
-                <span>Complain</span>
-            </div>
-
-
-
-
-
-            <div className="Items">
-            <div>
-        
-        <img
-          src={contact}
-          alt="Your GIF"
-          style={{ height: '35px', width: '35px', borderRadius: '50%' }}
-        />
-      </div>
-                <span>Contact</span>
-            </div>
-
-
-        
-            <div className="Items">
-            <div>
-        
-        <img
-          src={Information}
-          alt="Your GIF"
-          style={{ height: '35px', width: '35px', borderRadius: '50%' }}
-        />
-      </div>
-                <span>Information</span>
-            </div>
-            <div className="Items">
-            <div>
-        
-        <img
-          src={rule}
-          alt="Your GIF"
-          style={{ height: '35px', width: '35px', borderRadius: '50%' }}
-        />
-      </div>
-                <span>Rules and regulations</span>
-            </div>
-
-
-
-        </div>
-         
-
     </div>
-  )
+  );
 }
 
-export default Sidebar
+export default Sidebar;

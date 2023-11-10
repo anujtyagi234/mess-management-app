@@ -1,0 +1,19 @@
+.MainDash{
+    display: flex;
+   align-items: center;
+    justify-content:space-evenly;
+    flex-direction: column;
+   font-size: 2.5rem;
+font-family:Georgia, 'Times New Roman', Times, serif;
+font-weight: bold;
+margin-top: 60px;
+background-color: pink;
+border-radius: 20px;
+box-shadow: 10px 5px 5px rgb(235, 141, 170);
+
+}
+
+
+.DashboardText{
+    margin-top: 1rem;
+}
