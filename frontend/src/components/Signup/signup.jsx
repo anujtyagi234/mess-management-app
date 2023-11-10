@@ -18,18 +18,24 @@ function Signup() {
 		setData({ ...data, [input.name]: input.value });
 	};
 
-	const handleLogin = async (e) => {
+	const handleLogin = (e) => {
 		e.preventDefault();
-
-		try {
-			const url = "http://localhost:3000/Signup";
-			const { data: res } = await axios.post(url, data);
-			localStorage.setItem("token", res.data);
-			window.location = "/";
-		} catch (error) {
-			setError("hey prabhu");
+	  
+		const { college_gmail_id, registration_no,password, hostelname, user_name } = data;
+	  
+		if (college_gmail_id && registration_no && hostelname && password && user_name) {
+		  axios.post("http://localhost:3000/signup", data)
+			.then((res) => {
+			alert(res.data.message)
+			})
+			.catch((error) => {
+			  alert("please try again")
+			});
+		} else {
+		  alert("Please fill all fields");
 		}
-	};
+	  };
+	  
 
 	return (
 		<>
@@ -71,6 +77,7 @@ function Signup() {
 							margin: "20px auto 0 auto",
 						}}
 					>
+						 <form onSubmit={handleLogin}>
 						<div className="grid grid-rows-2 gap-4  justify-center items-center mt-12">
 						{error && <div className="error_msg">{error}</div>}
 							<div
@@ -237,8 +244,8 @@ function Signup() {
 
 							</div>
 						</div>
+						</form>
 					</div>
-				
 				</div>
 			</div>
 			

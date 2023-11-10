@@ -17,20 +17,24 @@ function Login() {
 		setData({ ...data, [input.name]: input.value });
 	};
 
-	const handleLogin = async (e) => {
+	const handleLogin = (e) => {
 		e.preventDefault();
-
-		try {
-			const url = "http://localhost:3001/api/auth";
-			const { data: res } = await axios.post(url, data);
-			// Navigate("/login")
-			console.log(res.message);
-		} catch (error) {
-			if (error.response.status >= 400 && error.response.status <= 500) {
-				setError(error.response.data.message);
-			}
+	  const {college_gmail_id,password}=data;
+		if (college_gmail_id && password) {
+		  axios.post("http://localhost:3000/login", data)
+			.then((res) => {
+			const { token } = res.data;
+			localStorage.setItem('your_token_key', token);
+			alert(res.data.message)
+			})
+			.catch((error) => {
+			  alert("please try again")
+			});
+		} else {
+		  alert("Please fill all fields");
 		}
-	};
+	  };
+
 	return (
 		<>
 			<div className="bg-white flex h-screen  rounded-3xl">
@@ -70,6 +74,7 @@ function Login() {
 							margin: "30px auto 0 auto",
 						}}
 					>
+						 <form onSubmit={handleLogin}>
 						<div className="grid grid-rows-2 gap-4  justify-center items-center mt-12">
 							<div
 								style={{
@@ -135,21 +140,22 @@ function Login() {
 							{error && <div className={style.error_msg}>{error}</div>}
 
 							<div className="mt-0  mb-60">
-								<a href="#_" class="relative inline-block text-lg group w-44">
-									<span class="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white">
-										<span class="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gray-50"></span>
-										<span class="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-gray-900 group-hover:-rotate-180 ease"></span>
-										<span class="relative" onSubmit={handleLogin}>
+								<button  className="relative inline-block text-lg group w-44">
+									<span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white">
+										<span className="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gray-50"></span>
+										<span className="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-gray-900 group-hover:-rotate-180 ease"></span>
+										<span className="relative" onSubmit={handleLogin}>
 											Login
 										</span>
 									</span>
 									<span
-										class="absolute bottom-0 right-0 w-full h-12 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 rounded-lg group-hover:mb-0 group-hover:mr-0"
+										className="absolute bottom-0 right-0 w-full h-12 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 rounded-lg group-hover:mb-0 group-hover:mr-0"
 										data-rounded="rounded-lg"
 									></span>
-								</a>
+								</button>
 							</div>
 						</div>
+					</form>
 					</div>
 				<a
 						href="/forgot-password"
@@ -169,10 +175,3 @@ function Login() {
 }
 
 export default Login;
-
-
-
-
-
-
-
