@@ -3,14 +3,16 @@ import './Sidebar.css';
 
 import home from '../../imgs/home.gif';
 import menu from '../../imgs/burger.gif';
+import mess from '../../imgs/mess.png';
 import complain from '../../imgs/Compln.gif';
 import contact from '../../imgs/phone-call.gif';
 import Information from '../../imgs/computer.gif';
 import rule from '../../imgs/books.gif';
+
 import team from '../../imgs/copywriting.gif';
 import collage from '../../imgs/lecture-room.gif';
 
-function Sidebar() {
+function Sidebar({onMenuItemClick}) {
   const menuItems = [
     { title: 'Dashboard', image: home },
     { title: 'Mess-Menu', image: menu },
@@ -27,7 +29,8 @@ function Sidebar() {
   const [selected, setSelected] = useState(initialSelectedIndex);
 
   const handleItemClick = (index) => {
-    setSelected(index);
+    const selectedItem = menuItems[index].title;
+    onMenuItemClick(selectedItem);
     
   };
 
@@ -35,7 +38,7 @@ function Sidebar() {
     <div className="Sidebar">
       {/*logo*/}
       <div className="logo">
-        <img src={menu} alt="" />
+        <img src={mess} alt="" />
         <span>
           Mess <span>relay</span> Web
         </span>

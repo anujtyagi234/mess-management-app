@@ -3,7 +3,7 @@ import './Rightside.css'
 
 import Updates from '../Updates/Updates'
 
-import CustomerReviews from '../Student_Reviews/StudentR'
+import StudentReviews from '../Student_Reviews/StudentR'
 function Rightside() {
   return (
     <div className='Rightside'>
@@ -12,7 +12,7 @@ function Rightside() {
      <Updates/>
       </div>
       <div className='Studentreview'>
-<CustomerReviews/>
+<StudentReviews/>
         </div>
     </div>
   )

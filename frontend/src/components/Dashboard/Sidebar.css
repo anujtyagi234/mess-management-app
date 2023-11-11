@@ -9,10 +9,8 @@
 
 .logo{
   display:flex;
-  height: 5rem;  
   font-weight: bold;
-  font-size: 22px;
-  gap:1rem;
+  font-size: 1.7rem;
   align-items: center;
   justify-content: center;
   height: 4%;
@@ -22,8 +20,8 @@
 
 
 .logo>img{
-    width: 3rem;
-    height: 3rem;
+    width: 5rem;
+    height: 5rem;
 }
 
 .logo>span>span{

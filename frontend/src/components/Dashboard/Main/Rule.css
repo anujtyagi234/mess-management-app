@@ -1,0 +1,66 @@
+.Main_Container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.mainheading{
+   
+    font-size: 1.6rem;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    font-weight: bold;
+    background-color: aqua;
+    border-radius: 12rem;
+    
+}
+
+
+.box{
+    
+    border-radius: 20px;
+    width: 97%;
+    box-shadow: 5px 7px  15px 12px rgb(188, 75, 97);
+    overflow:scroll;
+    background-color: rgb(238, 202, 144);
+} 
+
+
+
+
+
+  
+.Ruletext{
+    margin-top: .7rem;
+}
+
+.heading{
+    font-size: 1.09rem;
+    font-weight:600;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 0.7rem;
+    font-family:Cambria, Cochin, Georgia, Tim 
+}
+
+
+
+
+/* Rule.css */
+
+.ruleInfo {
+    display: flex;
+    margin-left: 2rem;
+  }
+  
+  .ruleHeading, .whyHeading {
+    font-weight: bold;
+    color: #ac5353;
+    margin-right: 2px; /* Adjust as needed */
+  }
+  
+  .ruleText, .whyText {
+    color: #171515;
+    font-size: 1rem;
+  }
+  
