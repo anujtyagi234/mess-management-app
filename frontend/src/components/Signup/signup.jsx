@@ -24,7 +24,7 @@ function Signup() {
 		const { college_gmail_id, registration_no,password, hostelname, user_name } = data;
 	  
 		if (college_gmail_id && registration_no && hostelname && password && user_name) {
-		  axios.post("http://localhost:3000/signup", data)
+		  axios.post("http://localhost:3000/api/auth/signup", data)
 			.then((res) => {
 			alert(res.data.message)
 			})
