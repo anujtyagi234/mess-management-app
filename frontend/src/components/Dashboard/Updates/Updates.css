@@ -1,4 +1,4 @@
-.img{
+.img_user_update{
     border-radius: 50%;
     width: 20%;
     margin-left: 20px;
@@ -6,7 +6,7 @@ border-color: black;
 
 }
 
-.img_name{
+.img_Update{
     /* flex-direction: column; */
     display: flex;
     align-items: center;

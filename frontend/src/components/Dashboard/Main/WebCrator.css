@@ -1,0 +1,120 @@
+.student-container {
+
+    margin-top: 2rem;
+height: 97%;
+width: 92%;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+    border-radius: 20px;
+     box-shadow: 5px 7px  15px 12px rgb(188, 75, 97);
+    overflow:scroll;
+    background-image: url('../../../imgs/Rule.png');
+    display: flex;
+padding-left: 1.5rem;
+
+}
+  
+.heading_team{
+  display: contents;
+margin-left: 20px;
+}
+.MainContainer{
+  
+display: flex;
+justify-content: center;
+align-items: center;
+}
+  .student-box {
+
+    width: 30%;
+    height: 60%;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 12px;
+    text-align: center;
+box-shadow:  5px 2px 5px 3.5px rgb(59, 58, 58) ;
+/* box-shadow:  5px 7px 15px 12px rgb(188, 75, 97)  */
+
+
+  }
+  
+  .student-box>img{
+    border-radius: 80%;
+    height: 55%;
+    width: 100%;
+    margin-bottom: 1.7rem;
+box-shadow:  5px 7px 15px 12px rgb(59, 58, 58) 
+
+  }
+  .green {
+    background-color: rgb(51, 235, 165);
+  }
+  
+  .yellow {
+    background-color: rgb(205, 205, 65);
+  }
+  
+  .red {
+    background-color:rgb(83, 176, 171);
+  }
+
+  .F_text{
+    font-size: 1.45rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    color: black;
+  }
+
+  .S_text{
+    font-size: 1.2rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    color: black;
+  }
+  
+  /* .SocialMedia_m{
+    margin-top: 1.5rem;  
+    display: flex;
+    flex-direction: row;
+    background-color: aliceblue;
+  height: 15%;
+  width: 100%;
+  border-radius: 100%;
+  justify-content: center;
+  align-items: center;
+box-shadow:  5px 2px 5px 7px rgb(59, 58, 58) 
+
+
+  } */
+  .SocialMedia_m {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    background-color: aliceblue;
+    height: 15%;
+    width: 100%;
+    /* border-radius: 100%; Remove this line */
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 5px 7px rgb(59, 58, 58);
+    gap: 2rem;
+    border-radius: 10%;
+    margin-top: 2;
+  }
+  
+
+  .img_Socialmedia {
+    width: 40px; /* Set a fixed width */
+    height: 40px; /* Set a fixed height */
+    box-shadow: 1px 2px 7px 4px rgb(59, 58, 58);
+    cursor: pointer;
+    border-radius: 100%;
+  }
+  
+
+
+
+
+
+

@@ -12,31 +12,15 @@ import "./App.css";
 import MainDash from "./components/Dashboard/Main/MainDash.jsx";
 import Complain from "./components/Dashboard/Main/Complain.jsx";
 import Rules from './components/Dashboard/Main/Rule.jsx'
+import Mnnit from './components/Dashboard/Main/Mnnit.jsx'
+import WebCrator from './components/Dashboard/Main/WebCrator.jsx';
 export default function App() {
   const [selectedMenuItem, setSelectedMenuItem] = useState("Dashboard");
-
   const handleMenuItemClick = (menuItem) => {
     setSelectedMenuItem(menuItem);
   };
 
   let content;
-
-
-
-
-  // title: 'Dashboard', image: home },
-  // { title: 'Mess-Menu', image: menu },
-  // { title: 'Complain', image: complain },
-  // { title: 'Contact', image: contact },
-  // { title: 'Information', image: Information },
-  // { title: 'Rules', image: rule },
-  // { title: 'Mnnit Alld', image: collage },
-  // { title: 'WebCrator', image: team 
-
-
-
-
-
 
   switch (selectedMenuItem) {
     case "Dashboard":
@@ -51,15 +35,15 @@ export default function App() {
       //   case "Information":
       //     content = <Information/>;
       //     break;
-      //     case "WebCrator":
-      //       content = <WebCrator/>;
-      //       break;
+          case "WebCrator":
+            content = <WebCrator/>;
+            break;
             case "Rules":
               content = <Rules/>;
               break;
-      //         case "Mnnit Alld":
-      //           content = <Mnnit Alld/>;
-      //           break;
+              case "Mnnit Alld":
+                content = <Mnnit/>;
+                break;
 
       //           case "Contact":
       //             content = <Contact/>;
@@ -86,6 +70,7 @@ export default function App() {
       <div className="App">
         <div className="Back">
           <Sidebar onMenuItemClick={handleMenuItemClick} />
+          
           {content}
           <Rightside />
           <div></div>

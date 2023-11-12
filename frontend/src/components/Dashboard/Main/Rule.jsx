@@ -6,7 +6,7 @@ import RuleItem from "./RuleComponent";
 function Rule() {
 	return (
 		<div className="Main_Container">
-			<div className="box">
+			<div className="box1">
 <span className="mainheading">Mess Rules</span>
 				<div className="Ruletext">
 					"In the heart of our hostel, the mess is where we come together. Let's
@@ -60,11 +60,13 @@ function Rule() {
 				<RuleItem
 					number={10}
 					rule="Enjoy Your Meal"
-					description="Savor your meals and enjoy the community dining experience."
+					description="Be Happy Savor your meals and enjoy the community dining experience."
 				/>
+        <div className='BottomText'>
 				"In our mess, let's not just share meals but also create moments of joy
 				and camaraderie. Your cooperation makes our dining experience
 				delightful!"
+        </div>
 			</div>
 		</div>
 	);

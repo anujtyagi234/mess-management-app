@@ -32,8 +32,8 @@ function Update() {
       <div className="sr"><h1>Updates</h1></div>
       {UpdatesData.map((update, index) => (
         <div className="update" key={index}>
-          <div className='img_name'>
-         <img src={update.img} alt=""  className='img' />
+          <div className='img_Update'>
+         <img src={update.img} alt=""  className='img_user_update' />
               <span>{update.name}</span>
          </div>
 

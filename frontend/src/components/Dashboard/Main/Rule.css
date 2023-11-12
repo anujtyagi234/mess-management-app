@@ -7,6 +7,7 @@
 
 .mainheading{
    
+    margin-top: 1.5rem;
     font-size: 1.6rem;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
     font-weight: bold;
@@ -16,23 +17,21 @@
 }
 
 
-.box{
-    
+.box1{
+    background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+overflow:scroll;
     border-radius: 20px;
-    width: 97%;
+    width: 95%;
+    height: 98%;
     box-shadow: 5px 7px  15px 12px rgb(188, 75, 97);
-    overflow:scroll;
-    background-color: rgb(238, 202, 144);
+    background-image: url('../../../imgs/Rule.png');
+
 } 
 
 
 
-
-
-  
-.Ruletext{
-    margin-top: .7rem;
-}
 
 .heading{
     font-size: 1.09rem;
@@ -42,15 +41,29 @@
     margin-left: 0.7rem;
     font-family:Cambria, Cochin, Georgia, Tim 
 }
+  
+.Ruletext{
+    margin-top: .7rem;
+    color:rgb(7, 81, 77);
+    font-weight: bold;
+   
+}
 
 
 
+
+.BottomText{
+    font-weight: bold;
+    color:rgb(7, 81, 77);
+
+
+}
 
 /* Rule.css */
 
 .ruleInfo {
     display: flex;
-    margin-left: 2rem;
+    margin-left: .8rem;
   }
   
   .ruleHeading, .whyHeading {

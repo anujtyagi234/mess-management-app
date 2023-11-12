@@ -3,9 +3,6 @@ import React, { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import {FaLock} from "react-icons/fa";
-// Import ExpandedCard
-// import ExpandedCard from './ExpandedCard';
 import Chart from 'react-apexcharts'
 import './Card.css'
 const Card = (props) => {

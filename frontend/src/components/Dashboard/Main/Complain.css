@@ -1,0 +1,14 @@
+.container{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+        border-radius: 20px;
+        width: 97%;
+        box-shadow: 5px 7px  15px 12px rgb(188, 75, 97);
+        overflow:scroll;
+        background-image: url('../../../imgs/Rule.png');  
+}
+
+.input_box{
+    
+}

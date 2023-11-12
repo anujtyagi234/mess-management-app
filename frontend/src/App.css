@@ -36,8 +36,15 @@
     background-color: var(--glass);
     overflow: hidden;
     grid-template-columns: 15rem auto 20rem;
+    flex-direction: column;
   }
   
+
+  .MiddlePart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   
   
   

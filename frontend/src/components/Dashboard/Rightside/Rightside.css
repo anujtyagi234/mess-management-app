@@ -7,7 +7,6 @@
 
 box-shadow: 10px 5px 5px rgb(235, 141, 170);
 
-   
 }
 
 .sr{
@@ -17,7 +16,6 @@ box-shadow: 10px 5px 5px rgb(235, 141, 170);
 }
 .update{
     font-family: cursive;
-    /* font-weight: bold; */
 }
 .Updates{
     display: flex;
