@@ -21,7 +21,7 @@ function Login() {
 		e.preventDefault();
 	  const {college_gmail_id,password}=data;
 		if (college_gmail_id && password) {
-		  axios.post("http://localhost:3000/login", data)
+		  axios.post("http://localhost:3000/api/auth/login", data)
 			.then((res) => {
 			const { token } = res.data;
 			localStorage.setItem('your_token_key', token);
