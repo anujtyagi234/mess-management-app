@@ -6,7 +6,7 @@ import RuleItem from "./RuleComponent";
 function Rule() {
 	return (
 		<div className="Main_Container">
-			<div className="box1">
+			<div className="box_rule">
 <span className="mainheading">Mess Rules</span>
 				<div className="Ruletext">
 					"In the heart of our hostel, the mess is where we come together. Let's

@@ -25,9 +25,9 @@ const MessComplaintForm = () => {
   };
 
   return (
-    <div className="container mx-auto mt-8 " style={{ width: '800px', height: '720px' }}>
+    <div className="container mx-auto mt-5" style={{ width: '97%', height: '99%',marginLeft:"1.5rem" }}>
       <div style={{ flexDirection: "row" }}>
-        <h2 className="text-3xl font-bold text-center mb-6 font-serif">Mess Complaint Form</h2>
+        <h2 className="Mess_heading text-3xl font-bold text-center mb-6 font-serif">Mess Complaint Form</h2>
         <form onSubmit={handleSubmit} className=" p-8 rounded w-full flex flex-col  shadow-lg" style={{ boxShadow: '10px 5px 2px rgb(235, 141, 170)' }}>
           <div className="mb-4 flex">
             <div className=" w-1/2 pr-2">

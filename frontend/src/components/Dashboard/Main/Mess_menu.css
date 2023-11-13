@@ -1,0 +1,149 @@
+.Mess_menu_parent_container{
+ 
+justify-content: center;
+align-items: center;
+display: flex;
+}
+
+
+.Mess_container{
+     flex-direction: column;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+       box-shadow: 5px 7px  15px 12px rgb(188, 75, 97);
+       overflow:scroll;
+       background-image: url('../../../imgs/Rule.png');
+    margin-left: 1rem;
+    margin-top: 1.7rem;
+ font-family:Georgia, 'Times New Roman', Times, serif;
+ border-radius: 10px;
+ height:100%;
+ width: 97%;
+}
+
+.MessMenu_header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.1rem;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+
+}
+
+.Mess_Menu_heading{
+ text-shadow: 2px 2px 2px rgb(206, 21, 107);
+
+}
+
+.boxer{
+    border-color: black;
+    border-width: 2px;
+    border-radius: 20%;
+}
+
+.select_menu{
+    margin-top: 2rem;
+    display: flex;
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+    margin-left: .5rem;
+    border-radius: 10px 100px / 120px;
+    border-color: black;
+    border-width: 2.5px;
+    background: linear-gradient(to right, #2eccc9, #feb47b); /* Add this line */
+    
+}
+
+.Dropdown{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Select_days_box{
+    margin-top: 1rem;
+    width: 55%;
+   background-color: rgb(146, 156, 156); 
+   font-size: 1.2rem;
+   border-radius: 10%;
+   box-shadow: 10px -12px rgb(215, 170, 19);
+
+}
+
+
+
+
+.Break_dinn_sup_laun{
+margin-left: 4rem;
+}
+.parent_of_4_container{
+margin-top: 3.5rem;
+display: grid;
+grid-template-columns: auto auto; /* Two columns */
+grid-template-rows: auto auto; /* Two rows */
+gap: 2rem;
+}
+
+
+.left2{
+    background-color: #b18e74;
+    height:25vh;
+    width: 80%;
+    border-radius: 10%;
+    box-shadow: 5px 7px  12px 7px rgb(60, 57, 57);
+    border-color: black;
+    border-width: 0.1rem;
+
+    
+}
+
+.right2{
+    background-color: aqua;
+    height:25vh;
+    width: 80%;
+    border-radius: 10%;
+    box-shadow: 5px 7px  12px 7px rgb(60, 57, 57);
+    border-color: black;
+    border-width: 0.1rem;
+
+
+}
+
+.Meal_Title{
+    margin-top: 1.5rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+
+
+
+
+
+
+
+.acd>h1>span{
+    background-color: rgb(231, 184, 14);
+    font-size: 1rem;
+
+    
+}
+
+.Sp>p>span{
+    color: rgb(255, 0, 111);
+    font-weight: dark;
+    font-weight: bold;
+
+}
+.Sp>p{
+    background-color: aliceblue;
+}

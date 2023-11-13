@@ -18,8 +18,8 @@ const StudentDetails = () => {
   const studentData = [
     {
       Name: "Anuj Tyagi",
-      Registration_no: 20223274,
-      LinkedIn: "sumit-chaurasiya-a0676026a",
+      Registration_no: 20224027,
+      LinkedIn: "anuj-tyagi-a33265266",
       GitHub: "anujtyagi234",
       Instagram: "anujtyagi234",
       color: 'green',
@@ -47,9 +47,8 @@ const StudentDetails = () => {
     },
     {
       Name: "Kushagra Verma",
-      Registration_no: 20223274,
-      LinkedIn: "sumit-chaurasiya-a0676026a",
-
+      Registration_no: 20224089,
+      LinkedIn: "kushagra-verma-a178b7253",
       GitHub: "kushagra572",
       Instagram: "mrperfect572",
       color: 'red',

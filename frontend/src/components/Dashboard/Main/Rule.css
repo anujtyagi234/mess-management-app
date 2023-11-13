@@ -7,23 +7,26 @@
 
 .mainheading{
    
-    margin-top: 1.5rem;
     font-size: 1.6rem;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
     font-weight: bold;
     background-color: aqua;
     border-radius: 12rem;
+ text-shadow: 2px 2px 2px rgb(206, 21, 107);
+
     
 }
 
 
-.box1{
+.box_rule{
     background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
 overflow:scroll;
-    border-radius: 20px;
-    width: 95%;
+margin-top: 1.2rem;
+    border-radius: 10px;
+    width: 97%;
+    margin-left: 1rem;
     height: 98%;
     box-shadow: 5px 7px  15px 12px rgb(188, 75, 97);
     background-image: url('../../../imgs/Rule.png');

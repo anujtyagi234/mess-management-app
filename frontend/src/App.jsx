@@ -14,6 +14,7 @@ import Complain from "./components/Dashboard/Main/Complain.jsx";
 import Rules from './components/Dashboard/Main/Rule.jsx'
 import Mnnit from './components/Dashboard/Main/Mnnit.jsx'
 import WebCrator from './components/Dashboard/Main/WebCrator.jsx';
+import Mess_Menu from './components/Dashboard/Main/Mess_menu.jsx'
 export default function App() {
   const [selectedMenuItem, setSelectedMenuItem] = useState("Dashboard");
   const handleMenuItemClick = (menuItem) => {
@@ -29,9 +30,9 @@ export default function App() {
     case "Complain":
       content = <Complain />;
       break;
-      // case "Mess-Menu":
-      //   content = <Mess-Menu/>;
-      //   break;
+      case "Mess-Menu":
+        content = <Mess_Menu/>;
+        break;
       //   case "Information":
       //     content = <Information/>;
       //     break;

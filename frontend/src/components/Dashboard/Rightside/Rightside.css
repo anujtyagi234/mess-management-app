@@ -1,11 +1,10 @@
 .Rightside{
     display: flex;
     flex-direction: column;
-    width:95% ;
+    width:99% ;
     justify-content: space-evenly;
     border-radius: 20px;
-
-box-shadow: 10px 5px 5px rgb(235, 141, 170);
+/* box-shadow: 10px 5px 5px rgb(235, 141, 170); */
 
 }
 
@@ -24,8 +23,8 @@ box-shadow: 10px 5px 5px rgb(235, 141, 170);
  
 }
 .Studentreview{
-    width: 94%;
+    width: 90%;
     height: 25%;
-    margin-left:.3rem ;
+    margin-left:1.11rem ;
 }
 

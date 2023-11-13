@@ -1,4 +1,4 @@
-.Sidebar{
+ .Sidebar{
     display: flex;
     flex-direction: column;
     position: relative;
@@ -30,7 +30,6 @@
 
 
 
-/* menu css */
 
 .menu{
     margin-top: 4rem;
@@ -40,13 +39,11 @@
 }
 
 .Items{
-    /* margin-left: 1rem; */
      display: flex;
      align-items: center;
      gap: 0.8rem;
      cursor: pointer;
 background-color: rgb(38, 232, 154);
-/* background: var(--activeItem); */
 border-radius: .8rem;
 transition: transform 0.3s, box-shadow 0.3s;
 
@@ -60,16 +57,17 @@ background-color: #076666;
 
 .Items:hover {
     background-color: #e6e6e6; 
-    transform: scale(1.1); /* Adjust the scale factor as per your preference */
+    transform: scale(1.05); 
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2)
   }
 
 .MoreItems{
-    /* margin-bottom: 2.5rem; */
     height: 0.5rem;
     width: auto;
     background-color: #00ffff;
     margin-left: .2rem;
     border-radius: 2cm;
     
-}
+} 
+
+

@@ -1,12 +1,12 @@
 .student-container {
-
-    margin-top: 2rem;
-height: 97%;
-width: 92%;
+    margin-top: 1.6rem;
+height: 99%;
+width: 97%;
+margin-left: 1rem;
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
-    border-radius: 20px;
+    border-radius: 10px;
      box-shadow: 5px 7px  15px 12px rgb(188, 75, 97);
     overflow:scroll;
     background-image: url('../../../imgs/Rule.png');
@@ -34,9 +34,6 @@ align-items: center;
     border-radius: 12px;
     text-align: center;
 box-shadow:  5px 2px 5px 3.5px rgb(59, 58, 58) ;
-/* box-shadow:  5px 7px 15px 12px rgb(188, 75, 97)  */
-
-
   }
   
   .student-box>img{
@@ -73,20 +70,7 @@ box-shadow:  5px 7px 15px 12px rgb(59, 58, 58)
     color: black;
   }
   
-  /* .SocialMedia_m{
-    margin-top: 1.5rem;  
-    display: flex;
-    flex-direction: row;
-    background-color: aliceblue;
-  height: 15%;
-  width: 100%;
-  border-radius: 100%;
-  justify-content: center;
-  align-items: center;
-box-shadow:  5px 2px 5px 7px rgb(59, 58, 58) 
-
-
-  } */
+ 
   .SocialMedia_m {
     margin-top: 1.5rem;
     display: flex;
