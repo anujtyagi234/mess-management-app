@@ -10,6 +10,14 @@ function Signup() {
 		password: "",
 		user_name: ""
 	});
+	const Hostels = [
+		"SwamiViveka Nand Boys Hostel(SVBH)",
+    "Bal Gangadhar Tilak Hostel(Tilak Hostel)",
+    "Sardar Ballabh Bhai Patel Hostel(Patel Hostel)",
+    "Ravindra Nath Taigore Hostel(Taigore Hostel)",
+    "Diamond Jublee Girls Hostel(DG)",
+
+	];
 
 	const [error, setError] = useState("");
 	const iconColor = "#FFFF00";
@@ -35,7 +43,15 @@ function Signup() {
 		  alert("Please fill all fields");
 		}
 	  };
+	
 	  
+	  
+	const [selectedHostel, setSelectedHostel] = useState("");
+
+
+	const handleChangeHostel = (e) => {
+		  setSelectedHostel(e.target.value);
+	  };
 
 	return (
 		<>
@@ -64,7 +80,7 @@ function Signup() {
 					<div className="text-white text-center">
 						<h1
 							className="text-5xl  "
-							style={{ fontFamily: "sans-serif ", fontWeight: "bold" }}
+							style={{ fontFamily:"serif", fontWeight: "bold" }}
 						>
 							!! Welcome !!
 						</h1>
@@ -208,14 +224,33 @@ function Signup() {
 
 
 								<div style={{ position: "relative", width: "max-content" }}>
-									<input
+									{/* <input
 										type="text"
 										name="hostelname"
 										placeholder="Hostel Name"
 										onChange={handleChange}
 										value={data.hostelname}
 										className="bg-stone-700 rounded-md w-80 p-3 font-bold text-lg text-white pl-8"
-									/>
+									/> */}
+									
+<select
+  name="hostelname"
+  onChange={handleChangeHostel}
+  value={selectedHostel}
+  className="bg-stone-700 rounded-md p-3 w-80 font-bold text-lg text-white pl-8"
+>
+  <option value="" disabled defaultValue>
+    Select a Hostel
+  </option>
+  {Hostels.map((hostel) => (
+    <option key={hostel} value={hostel}>
+      {hostel}
+    </option>
+  ))}
+</select>
+
+
+								
 									<FaHome
 										style={{
 											position: "absolute",

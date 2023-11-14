@@ -75,7 +75,7 @@ const MessComplaintForm = () => {
           
 
 
-          {/* <div className="mb-4">
+           {/* <div className="mb-4">
           <label htmlFor="Hostel_name" className="block text-gray-900 text-sm font-bold mb-2">Select Hostel:</label>
             <div className="hostel_select_name w-1 ">
             <select
@@ -102,7 +102,7 @@ const MessComplaintForm = () => {
 </select>
 
             </div>
-          </div> */}
+          </div>  */}
             <label htmlFor="complaintDetails" className="block text-gray-900 text-sm font-bold mb-2">Complaint Details:</label>
             <textarea
               id="complaintDetails"

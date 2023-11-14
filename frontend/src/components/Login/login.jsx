@@ -60,8 +60,8 @@ function Login() {
 				<div className="h-screen bg-neutral-800 w-1/2  flex-col  juendstify- rounded-r-lg flex justify-center items-center  ">
 					<div className="text-white text-center">
 						<h1
-							className="text-5xl  "
-							style={{ fontFamily: "sans-serif ", fontWeight: "bold" }}
+							className="text-3xl  "
+							style={{fontFamily: "sans-serif ", fontWeight: "bold" }}
 						>
 							!! Welcome !!
 						</h1>
