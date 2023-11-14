@@ -38,7 +38,7 @@ const StudentDetails = () => {
       GitHub: "Sumit524",
       Instagram: "sumitchaurasiya1241",
       color: 'yellow',
-      image: "https://cdn3.vectorstock.com/i/1000x1000/48/37/web-developer-design-vector-5884837.jpg",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT87ABN7JfWkigQ3MfAOWtshQyQacv81PSMWIkBug6F5VO-6bttXEbf2Oeg__y0LHmW8fY&usqp=CAU",
       customStyle: {
         borderRadius: '10px',
         marginTop: '9rem',
@@ -52,7 +52,7 @@ const StudentDetails = () => {
       GitHub: "kushagra572",
       Instagram: "mrperfect572",
       color: 'red',
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdagaKzfbtByw1-JGntxc_9-HoImf9M3h-59n4N7vFz8DwrMgIiESSLE-jyDTRsUkL2zA&usqp=CAU",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS3EQjUQ8xXLMIF13c4pq8fK1r3J4UOyJ5IQ&usqp=CAU",
       customStyle: {
         borderRadius: '10px',
         marginTop: '14rem',

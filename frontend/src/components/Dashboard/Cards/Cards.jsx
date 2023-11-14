@@ -100,6 +100,9 @@ function Cards() {
                color: {
                  background: 'yellow',
                  boxShadow: '10px 10px 20px 0px #cf7d87',
+                 border: '2px solid #000',  // Border added
+                 borderWidth: '0.2rem', 
+
                },
                barvalue: 80,
               value: 125,

@@ -6,9 +6,7 @@ import menu from '../../imgs/burger.gif';
 import mess from '../../imgs/mess.png';
 import complain from '../../imgs/Compln.gif';
 import contact from '../../imgs/phone-call.gif';
-import Information from '../../imgs/computer.gif';
 import rule from '../../imgs/books.gif';
-
 import team from '../../imgs/copywriting.gif';
 import collage from '../../imgs/lecture-room.gif';
 
@@ -18,7 +16,6 @@ function Sidebar({onMenuItemClick}) {
     { title: 'Mess-Menu', image: menu },
     { title: 'Complain', image: complain },
     { title: 'Contact', image: contact },
-    { title: 'Information', image: Information },
     { title: 'Rules', image: rule },
     { title: 'Mnnit Alld', image: collage },
     { title: 'WebCrator', image: team },

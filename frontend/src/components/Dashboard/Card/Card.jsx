@@ -136,7 +136,7 @@ xaxis:{
 };
 
 function ExpandedCard ({param,setExpanded}){
-    return(
+    return(   
         <div className="ExpandedCard"
         style={{backgroundColor:param.color. background,
             boxShadow:param.color.boxShadow,

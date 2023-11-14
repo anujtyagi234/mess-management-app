@@ -1,4 +1,3 @@
-// RuleItem.jsx
 
 import React from "react";
 import "./Rule.css";
@@ -17,5 +16,4 @@ const RuleItem = ({ number, rule, description }) => (
 		</div>
 	</div>
 );
-
 export default RuleItem;

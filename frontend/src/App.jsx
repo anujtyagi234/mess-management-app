@@ -15,6 +15,8 @@ import Rules from './components/Dashboard/Main/Rule.jsx'
 import Mnnit from './components/Dashboard/Main/Mnnit.jsx'
 import WebCrator from './components/Dashboard/Main/WebCrator.jsx';
 import Mess_Menu from './components/Dashboard/Main/Mess_menu.jsx'
+import Contact from './components/Dashboard/Main/Contact.jsx'
+
 export default function App() {
   const [selectedMenuItem, setSelectedMenuItem] = useState("Dashboard");
   const handleMenuItemClick = (menuItem) => {
@@ -45,13 +47,9 @@ export default function App() {
               case "Mnnit Alld":
                 content = <Mnnit/>;
                 break;
-
-      //           case "Contact":
-      //             content = <Contact/>;
-      //             break;
-
-    
-
+                case "Contact":
+                  content = <Contact/>;
+                  break;
     default:
       content = null; // Render nothing if no match
   }
