@@ -10,6 +10,7 @@ import WebCrator from "../Dashboard/Main/WebCrator";
 import Rules from "../Dashboard/Main/Rule";
 import Mnnit from "../Dashboard/Main/Mnnit";
 import Contact from "../Dashboard/Main/Contact";
+import Logout from "../Dashboard/Logout";
 function Dashboard_main() {
 	const [selectedMenuItem, setSelectedMenuItem] = useState("Dashboard");
 	const handleMenuItemClick = (menuItem) => {
@@ -49,9 +50,11 @@ function Dashboard_main() {
 			<div className="App">
 				<div className="Back">
 					<Sidebar onMenuItemClick={handleMenuItemClick} />
-
 					{content}
+					<div>
+				    <Logout/>
 					<Rightside />
+					</div>
 					<div></div>
 				</div>
 			</div>

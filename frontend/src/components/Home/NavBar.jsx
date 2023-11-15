@@ -17,25 +17,6 @@ function NavBar() {
 					Mess Management
 				</Link>
 				<ul className="flex space-x-4 mt-4 sm:mt-0">
-					
-        <li>
-            <button className="Dash_button" style={{
-        width: '100px',
-        height: '37px',
-        backgroundColor: 'cyan',
-        borderRadius: '6px',
-        color: 'black',
-        fontFamily: 'monospace',
-        fontSize: '1.1rem',
-        borderColor: 'black',
-        borderWidth: '0.1rem',
-        // Add any other styles you want
-      }}>
-						<Link to="/DashBoard" className="text-white">
-						Dashboard
-						</Link>
-            </button>
-					</li>
 					<li>
 						<Link to="/" className="text-white">
 							Home

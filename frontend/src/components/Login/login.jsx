@@ -3,6 +3,7 @@ import axios from "axios";
 import { FaUniversity, FaIdCard, FaLock } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 function Login() {
 	const [data, setData] = useState({
@@ -11,11 +12,13 @@ function Login() {
 	});
 
 	const [error, setError] = useState("");
-	// const navigate = useNavigate()
+	const navigate = useNavigate()
 	const iconColor = "#FFFF00";
 	const handleChange = ({ currentTarget: input }) => {
 		setData({ ...data, [input.name]: input.value });
 	};
+
+	const {dispatch} = useAuthContext()
 
 	const handleLogin = (e) => {
 		e.preventDefault();
@@ -24,14 +27,16 @@ function Login() {
 		  axios.post("http://localhost:3000/api/auth/login", data)
 			.then((res) => {
 			const { token } = res.data;
-			localStorage.setItem('your_token_key', token);
+			localStorage.setItem('token', token);
+			dispatch({type: 'LOGIN',payload:token})
+			navigate('/')
 			alert(res.data.message)
 			})
 			.catch((error) => {
-			  alert("please try again")
+			  setError(error.response.data.error)
 			});
 		} else {
-		  alert("Please fill all fields");
+		  setError("Please fill all fields");
 		}
 	  };
 
@@ -83,6 +88,7 @@ function Login() {
 									alignItems: "center",
 								}}
 							>
+								{error && <div className="m-4">{error}</div>}
 								<div
 									style={{
 										position: "relative",
@@ -137,7 +143,6 @@ function Login() {
 								</div>
 
 							</div>
-							{error && <div className={style.error_msg}>{error}</div>}
 
 							<div className="mt-0  mb-60">
 								<button  className="relative inline-block text-lg group w-44">

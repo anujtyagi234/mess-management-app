@@ -37,21 +37,13 @@ function Signup() {
 			alert(res.data.message)
 			})
 			.catch((error) => {
-			  alert("please try again")
+			setError(error.response.data.error)
 			});
 		} else {
-		  alert("Please fill all fields");
+			setError("Please fill all fields");
 		}
 	  };
-	
 	  
-	  
-	const [selectedHostel, setSelectedHostel] = useState("");
-
-
-	const handleChangeHostel = (e) => {
-		  setSelectedHostel(e.target.value);
-	  };
 
 	return (
 		<>
@@ -84,6 +76,7 @@ function Signup() {
 						>
 							!! Welcome !!
 						</h1>
+						
 					</div>
 					<div
 						className=" bg-stone-100   rounded-3xl   text-black"
@@ -95,14 +88,14 @@ function Signup() {
 					>
 						 <form onSubmit={handleLogin}>
 						<div className="grid grid-rows-2 gap-4  justify-center items-center mt-12">
-						{error && <div className="error_msg">{error}</div>}
 							<div
 								style={{
 									display: "flex",
 									flexDirection: "column",
 									alignItems: "center",
 								}}
-							>
+								>
+								{error && <div className="m-4">{error}</div>}
 								<div
 									style={{
 										position: "relative",
@@ -235,8 +228,8 @@ function Signup() {
 									
 <select
   name="hostelname"
-  onChange={handleChangeHostel}
-  value={selectedHostel}
+  onChange={handleChange}
+  value={data.hostelname}
   className="bg-stone-700 rounded-md p-3 w-80 font-bold text-lg text-white pl-8"
 >
   <option value="" disabled defaultValue>
@@ -262,7 +255,6 @@ function Signup() {
 									/>
 								</div>
 							</div>
-							{error && <div className={style.error_msg}>{error}</div>}
 
 							<div className="mt-0  mb-80">
 							<button type="submit" onClick = {handleLogin} className="relative inline-block text-lg group w-44">
@@ -274,7 +266,7 @@ function Signup() {
   <span
     className="absolute bottom-0 right-0 w-full h-12 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 rounded-lg group-hover:mb-0 group-hover:mr-0"
     data-rounded="rounded-lg"
-  ></span>
+	></span>
 </button>
 
 							</div>
