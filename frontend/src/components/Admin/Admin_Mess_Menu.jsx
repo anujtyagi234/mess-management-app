@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "./Mess_menu.css";
-import Menu from "../../../imgs/ramen.gif";
+import "./Admin_Mess_Menu.css";
+import Menu from "../../imgs/ramen.gif";
 
 function Mess_menu() {
 	const [selectedDay, setSelectedDay] = useState("Monday");

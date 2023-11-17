@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 import './Complain.css'
 const MessComplaintForm = () => {
   const [selectedFile, setSelectedFile] = useState(null);
-
-
   const handleUpload = () => {
     // Handle the file upload logic here (e.g., send it to the server)
     if (selectedFile) {
