@@ -1,6 +1,9 @@
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("../models/userModel");
+const Admin = require("../models/adminModel");
+const Warden = require("../models/chiefwardenModel");
+const Accountant = require("../models/accountantModel");
 require("dotenv").config();
 const saltRounds = parseInt(process.env.SALT);
 
@@ -33,11 +36,22 @@ const signup = async (req, res) => {
 };
 
 const login = async (req, res) => {
-  const { college_gmail_id, password } = req.body;
+  const { college_gmail_id, password,userrole} = req.body;
 
   try {
     // Check if a user with the same college_gmail_id already exists
-    const existingUser = await User.findOne({ college_gmail_id });
+    let existingUser
+    if(userrole==='student')
+    existingUser = await User.findOne({ college_gmail_id });
+    
+    if(userrole==='admin')
+    existingUser = await Admin.findOne({ college_gmail_id });
+
+    if(userrole==='chief warden')
+    existingUser = await Warden.findOne({ college_gmail_id });
+
+    if(userrole==='accountant')
+    existingUser = await Accountant.findOne({ college_gmail_id });
 
     if (!existingUser) {
       return res.status(401).json({ error: "please enter valid credentials" });
@@ -50,7 +64,7 @@ const login = async (req, res) => {
       // Generate a JWT token with user data
       const token = jwt.sign(
         {
-          _id: existingUser._id
+          _id: existingUser._id,
         },
         process.env.JWTPRIVATEKEY,
         { expiresIn: "7d" }

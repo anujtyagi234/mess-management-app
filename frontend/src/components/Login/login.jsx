@@ -9,7 +9,12 @@ function Login() {
 	const [data, setData] = useState({
 		college_gmail_id: "",
 		password: "",
+		userrole: ""
 	});
+
+	
+	const Userroles = ["admin","chief warden","accountant","student"
+	  ];
 
 	const [error, setError] = useState("");
 	const navigate = useNavigate()
@@ -22,13 +27,14 @@ function Login() {
 
 	const handleLogin = (e) => {
 		e.preventDefault();
-	  const {college_gmail_id,password}=data;
-		if (college_gmail_id && password) {
+	  const {college_gmail_id,password,userrole}=data;
+		if (college_gmail_id && password && userrole) {
 		  axios.post("http://localhost:3000/api/auth/login", data)
 			.then((res) => {
 			const { token } = res.data;
 			localStorage.setItem('token', token);
-			dispatch({type: 'LOGIN',payload:token})
+			localStorage.setItem('userrole',userrole);
+			dispatch({type: 'LOGIN',payload:token,userrole:userrole})
 			navigate('/')
 			alert(res.data.message)
 			})
@@ -89,6 +95,34 @@ function Login() {
 								}}
 							>
 								{error && <div className="m-4">{error}</div>}
+								<div className="m-5" style={{ position: "relative", width: "max-content" }}>
+
+                    <select
+                      name="userrole"
+                      onChange={handleChange}
+                      value={data.userrole}
+                      className="bg-stone-700 rounded-md p-3 w-80 font-bold text-lg text-white pl-8"
+                    >
+                      <option value="" disabled defaultValue>
+                        Select a position
+                      </option>
+                      {Userroles.map((roles) => (
+                        <option key={roles} value={roles}>
+                          {roles}
+                        </option>
+                      ))}
+                    </select>
+
+                    <FaHome
+                      style={{
+                        position: "absolute",
+                        top: "50%",
+                        left: "10px",
+                        transform: "translateY(-50%)",
+                        color: iconColor,
+                      }}
+                    />
+                  </div>
 								<div
 									style={{
 										position: "relative",

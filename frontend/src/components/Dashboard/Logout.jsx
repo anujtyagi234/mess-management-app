@@ -4,15 +4,15 @@ import { useNavigate } from "react-router-dom";
 
 
 export default function Logout() {
-
   const {dispatch} = useAuthContext()
   const navigate = useNavigate()
 
 	const handleLogout = (e) => {
 		e.preventDefault();
 			localStorage.removeItem('token');
-			dispatch({type: 'LOGOUT'})
+			localStorage.removeItem('userrole')
 			navigate('/')
+			dispatch({type: 'LOGOUT'})
 		}
 
   return (

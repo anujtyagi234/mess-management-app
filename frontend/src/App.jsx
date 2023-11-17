@@ -7,25 +7,29 @@ import Login from "./components/Login/login.jsx";
 import Signup from './components/Signup/signup.jsx'
 import Dashi from "./components/Dashi/Dashboard_main.jsx";
 import { useAuthContext } from "./hooks/useAuthContext.jsx";
+import AdminDashboard from "./components/Admin/AdminDashboard.jsx";
 
 export default function App() {
-  const { user } = useAuthContext();
+  const { userrole } = useAuthContext();
 
   return (
     <div className="wrapper">
       <Router>
-        {!user && <NavBar />}
+        {!userrole && <NavBar />}
         <Routes>
-        {!user && (
+        {!userrole && (
             <Route path="/" element={<Home />} />
           )}
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          {user && (
+          {userrole==="student" && (
             <Route path="/" element={<Dashi />} />
           ) }
+          {userrole==="admin" && (
+            <Route path="/" element={<AdminDashboard />} />
+          ) }
         </Routes>
-        {!user && <Footer />}
+        {!userrole && <Footer />}
       </Router>
     </div>
   );

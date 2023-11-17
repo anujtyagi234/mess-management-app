@@ -1,14 +1,10 @@
 const mongoose = require("mongoose");
 
-const userSchema = new mongoose.Schema({
+const accountantSchema = new mongoose.Schema({
   college_gmail_id: {
     type: String,
     required: true,
 	unique: true
-  },
-  registration_no: {
-    type: String,
-    required: true,
   },
   password: {
     type: String,
@@ -24,10 +20,10 @@ const userSchema = new mongoose.Schema({
   },
   userrole: {
     type: String,
-    default: 'student'
+    default: 'accountant'
   }
 });
 
-const User = mongoose.model("User", userSchema);
+const Accountant = mongoose.model("Accountant", accountantSchema);
 
-module.exports = User;
+module.exports = Accountant;

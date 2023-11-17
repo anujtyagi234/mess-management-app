@@ -1,20 +1,12 @@
 const mongoose = require("mongoose");
 
-const userSchema = new mongoose.Schema({
+const wardenSchema = new mongoose.Schema({
   college_gmail_id: {
     type: String,
     required: true,
 	unique: true
   },
-  registration_no: {
-    type: String,
-    required: true,
-  },
   password: {
-    type: String,
-    required: true,
-  },
-  hostelname: {
     type: String,
     required: true,
   },
@@ -24,10 +16,10 @@ const userSchema = new mongoose.Schema({
   },
   userrole: {
     type: String,
-    default: 'student'
+    default: 'chief warden'
   }
 });
 
-const User = mongoose.model("User", userSchema);
+const Warden = mongoose.model("Warden", wardenSchema);
 
-module.exports = User;
+module.exports = Warden;
