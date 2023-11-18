@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Admin_Mess_Menu.css";
+import "./Chief_Mess_Menu.css";
 import Menu from "../../imgs/ramen.gif";
 
 function Mess_menu() {

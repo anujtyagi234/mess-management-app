@@ -4,14 +4,12 @@ import Home from "./components/Home/Home.jsx"
 import NavBar from "./components/Home/NavBar.jsx";
 import Footer from "./components/Home/Footer.jsx";
 import Login from "./components/Login/login.jsx";
-import Menu from './components/Admin/Admin_Mess_Menu.jsx'
 import Signup from './components/Signup/signup.jsx'
 import Dashi from "./components/Dashi/Dashboard_main.jsx";
 import { useAuthContext } from "./hooks/useAuthContext.jsx";
 import AdminDashboard from "./components/Admin/AdminDashboard.jsx";
-
+import ChiefWarden from './components/ChiefWarden/ChiefWarden.jsx'
 import Admin_panel from './components/Admin/Adminpanel.jsx'
-// import Add_Chief from './components/Admin/Add_Chief_warden.jsx'
 export default function App() {
   const { userrole } = useAuthContext();
 
@@ -34,7 +32,8 @@ export default function App() {
             </Routes>
           {!userrole && <Footer />} */}
 
-      <Admin_panel/>
+      {/* <Admin_panel/> */}
+      <ChiefWarden/>
     </Router>
     </div>
   );
