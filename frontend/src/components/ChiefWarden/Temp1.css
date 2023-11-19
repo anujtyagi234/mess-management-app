@@ -1,0 +1,33 @@
+.custom-table {
+    border-collapse: separate;
+    border-spacing: 25px; /* Adjust the spacing as needed */
+  }
+  
+  .custom-table th,
+  .custom-table td {
+    padding: 7px; /* Adjust the padding as needed */
+    border: 1px solid #262424; /* Add border for better visibility */
+    border-radius: 5px;
+  }
+
+
+  .button-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .custom-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .custom-button:hover {
+    background-color: #45a049;
+  }
+  
+  

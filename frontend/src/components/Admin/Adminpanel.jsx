@@ -2,8 +2,9 @@
 // AdminPanel.js
 import React, { useState } from 'react';
 import './Admin_pannel.css';
+import { Link } from 'react-router-dom';
+
 import AddAccount from './Add_Accountant';
-import AddChief from './Add_Chief_warden'
 
 const AdminPanel = () => {
   const [showChefForm, setShowChefForm] = useState(false);
@@ -28,19 +29,36 @@ const AdminPanel = () => {
       <div className="main_container">
         <div className="Main_heading">Welcome <span> Admin </span></div>
         <div className="Wrp_Add">
-          <div className='Add_ChiefWarden'>
-            <button onClick={toggleChefForm}>Add Chief Warden</button>
-            {showChefForm && <AddChief/>}
+          <div className='Add'>
+            {/* <button onClick={toggleChefForm}>Add Chief Warden</button> */}
+
+            <Link to='/Chief_admin'>
+          <button className="custom-button">
+            Add Chief Warden
+          </button>
+        </Link>
+            {/* {showChefForm && <AddChief/>} */}
           </div>
-          <div className='Add_Accountant'>
-            <button onClick={toggleAccountant}>Add Accountant</button>
-            {showAccountant && <AddAccount />}
+          <div className='Add'>
+            {/* <button onClick={toggleAccountant}>Add Accountant</button>
+            {showAccountant && <AddAccount />} */}
+<Link to='/Accountant_Admin'>
+          <button className="custom-button">
+            Add Accountant
+          </button>
+        </Link>
+
           </div>
         </div>
-        <div className="Mess_MEnu_change">
+        <div className="Unresolved_complain">
           <div className='Update_menu'>
-            <button onClick={toggle_unresolved_problem}>Unresolved Complains</button>
-            {show_unresolved_problem && <AddAccount/>}
+            {/* <button onClick={toggle_unresolved_problem}>Unresolved Complains</button>
+            {show_unresolved_problem && <AddAccount/>} */}
+            <Link to='/Unresolved_complain' >
+          <button className="custom-button">
+            UnResolved-complains
+          </button>
+        </Link>
           </div>
         </div>
       </div>

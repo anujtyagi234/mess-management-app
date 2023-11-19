@@ -1,6 +1,8 @@
 
 import React, { useState } from 'react';
 import './ChiefWarden.css';
+import { Link } from 'react-router-dom';
+
 import Update_Menu from './Chief_Mess_Menu'
  import Show_unresolved_compalin from './Student_Complains'
 import Resolve_complain_pannel from './Lets_Resolve_complain'
@@ -26,19 +28,31 @@ const AdminPanel = () => {
       <div className="main_container">
         <div className="Main_heading">Welcome  <span>  Chief  Warden Sir </span></div>
         <div className="Wrp_Add">
-          <div className='Add_ChiefWarden'>
-            <button onClick={toggleChefForm}>Students Complain List </button>
-            {showUnresolved_problem && <Show_unresolved_compalin/>}
+          <div className='Add'>
+            
+              <Link to='/Student_complain_list'>
+          <button className="custom-button">
+           Student complaints List
+          </button>
+        </Link>
           </div>
-          <div className='Add_Accountant'>
-            <button onClick={toggleAccountant}>Complain Resolve pannel</button>
-            {show_Resolve_pannel && <Resolve_complain_pannel/>}
+          <div className='Add'>
+            
+          <Link to='/Complain_Resolve_pannel'>
+          <button className="custom-button">
+          Complain Resolve pannel
+          </button>
+        </Link>
+           
           </div>
         </div>
         <div className="Mess_MEnu_change">
           <div className='Update_menu'>
-            <button onClick={toggleMenuForm}>Update Mess Menu</button>
-            {showMenuForm && <Update_Menu/>}
+          <Link to='/Update_mess_menu'>
+          <button className="custom-button">
+          Update mess menu
+          </button>
+        </Link>
           </div>
         </div>
       </div>
