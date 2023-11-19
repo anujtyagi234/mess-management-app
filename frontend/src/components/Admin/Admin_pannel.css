@@ -41,7 +41,7 @@
   text-shadow: 2px 2px 2px rgb(21, 206, 169);
 }
 
-.Add_ChiefWarden{
+.Add{
   height:28vh;
   width: 20%;
   border-radius: 10%;
@@ -55,7 +55,7 @@
 
 
 }
-.Add_ChiefWarden>button{
+.Add>button{
   background-color: whitesmoke;
   border-radius: 7px;
   font-weight: bold;
@@ -66,7 +66,7 @@
 
 
 
-.Add_Accountant{
+.Add{
     height:28vh;
     border-radius: 10%;
     width: 20%;
@@ -81,16 +81,19 @@
 
 }
 
-.Add_Accountant>button{
+.Add>Link>button{
 background-color: whitesmoke;
 border-radius: 7px;
 font-weight: bold;
 border-color: black;
+color: black;
 border-width: 0.01rem;
 
 }
 
- 
+ .custom_button{
+ text-emphasis-color: black;
+ }
 
 .Update_menu{
     height:30vh;
@@ -115,7 +118,7 @@ border-width: 0.01rem;
   }
 
 
-.Mess_Menu_change{
+.Unresolved_complain{
   display: flex;
   justify-content: center;
   align-items: center;
