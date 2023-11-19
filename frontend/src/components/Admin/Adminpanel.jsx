@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import './Admin_pannel.css';
 import AddAccount from './Add_Accountant';
 import AddChief from './Add_Chief_warden'
+import Logout from "../Dashboard/Logout";
 
 const AdminPanel = () => {
   const [showChefForm, setShowChefForm] = useState(false);
@@ -26,7 +27,8 @@ const AdminPanel = () => {
   return (
     <div className='Admin_Pannel_control'>
       <div className="main_container">
-        <div className="Main_heading">Welcome <span> Admin </span></div>
+       
+        <div className="Main_heading ">Welcome <span> Admin </span></div><Logout/>
         <div className="Wrp_Add">
           <div className='Add_ChiefWarden'>
             <button onClick={toggleChefForm}>Add Chief Warden</button>
@@ -37,7 +39,7 @@ const AdminPanel = () => {
             {showAccountant && <AddAccount />}
           </div>
         </div>
-        <div className="Mess_MEnu_change">
+        <div className="Mess_Menu_change">
           <div className='Update_menu'>
             <button onClick={toggle_unresolved_problem}>Unresolved Complains</button>
             {show_unresolved_problem && <AddAccount/>}

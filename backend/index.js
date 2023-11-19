@@ -3,6 +3,7 @@ const cors = require("cors");
 const app = express();
 const { connectToDatabase } = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
+const adminRoutes = require("./routes/adminRoutes")
 
 require("dotenv").config();
 
@@ -15,6 +16,7 @@ connectToDatabase();
 
 // Use auth routes
 app.use("/api/auth", authRoutes);
+app.use("/admin",adminRoutes)
 
 const PORT = 3000;
 app.listen(PORT, () => {

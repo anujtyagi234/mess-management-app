@@ -33,8 +33,7 @@ function Login() {
 			.then((res) => {
 			const { token } = res.data;
 			localStorage.setItem('token', token);
-			localStorage.setItem('userrole',userrole);
-			dispatch({type: 'LOGIN',payload:token,userrole:userrole})
+			dispatch({type: 'LOGIN',payload:token})
 			navigate('/')
 			alert(res.data.message)
 			})

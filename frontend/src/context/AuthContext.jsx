@@ -6,13 +6,11 @@ export const authReducer = (state, action) => {
   switch (action.type) {
     case "LOGIN":
       return {
-        token: action.payload,
-        userrole: action.userrole
+        token: action.payload
       };
     case "LOGOUT":
       return {
-        token: null,
-        userrole: null
+        token: null
       };
     default:
       return state;
@@ -21,16 +19,14 @@ export const authReducer = (state, action) => {
 
 export const AuthContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(authReducer, {
-    token: null,
-    userrole: null
+    token: null
   });
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    const userrole = localStorage.getItem("userrole");
 
     if (token) {
-      dispatch({ type: "LOGIN", payload: token, userrole: userrole });
+      dispatch({ type: "LOGIN", payload: token});
     }
   }, []);
 

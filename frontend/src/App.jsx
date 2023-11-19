@@ -1,4 +1,5 @@
 import React from "react";
+import { jwtDecode } from "jwt-decode";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./components/Home/Home.jsx"
 import NavBar from "./components/Home/NavBar.jsx";
@@ -10,30 +11,40 @@ import { useAuthContext } from "./hooks/useAuthContext.jsx";
 import AdminDashboard from "./components/Admin/AdminDashboard.jsx";
 import ChiefWarden from './components/ChiefWarden/ChiefWarden.jsx'
 import Admin_panel from './components/Admin/Adminpanel.jsx'
+
+
+
+
+
 export default function App() {
   const { userrole } = useAuthContext();
+  const token = localStorage.getItem('token');
+  const decodedToken = token ? jwtDecode(token) : null;
 
   return (
     <div className="wrapper">
       <Router>
-        {/* {!userrole && <NavBar />}
+        {!decodedToken && <NavBar />}
         <Routes>
-        {!userrole && (
+        {!decodedToken && (
             <Route path="/" element={<Home />} />
           )}
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          {userrole==="student" && (
+          {decodedToken && decodedToken.userrole === 'student' && (
             <Route path="/" element={<Dashi />} />
           ) }
-          {userrole==="admin" && (
-            <Route path="/" element={<AdminDashboard />} />
+          {decodedToken && decodedToken.userrole === 'admin' && (
+            <Route path="/" element={<Admin_panel/>} />
+            ) }
+            {decodedToken && decodedToken.userrole === 'chief warden' && (
+            <Route path="/" element={<ChiefWarden/>} />
             ) }
             </Routes>
-          {!userrole && <Footer />} */}
+          {!decodedToken && <Footer />}
 
-      {/* <Admin_panel/> */}
-      <ChiefWarden/>
+      
+      {/* <ChiefWarden/> */}
     </Router>
     </div>
   );

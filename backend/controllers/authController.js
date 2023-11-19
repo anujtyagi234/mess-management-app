@@ -65,6 +65,7 @@ const login = async (req, res) => {
       const token = jwt.sign(
         {
           _id: existingUser._id,
+          userrole:userrole
         },
         process.env.JWTPRIVATEKEY,
         { expiresIn: "7d" }
@@ -72,7 +73,7 @@ const login = async (req, res) => {
 
       res.json({
         message: "Login successful",
-        token: token,
+        token: token
       });
     } else {
       res.status(401).json({ error: "please enter valid credentials" });
