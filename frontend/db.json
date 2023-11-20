@@ -1,12 +1,14 @@
 {
   "Breakfast": [
     {
+      "id": 1,
       "title": "Monday",
       "special": "",
       "m1": "Sprouts moong_dal,gram",
       "m2": "Idle-Sambhar",
       "m3": "Milk-Bournvita",
-      "m4": "Banana"
+      "m4": "Banana",
+      "isactive": true
     },
     {
       "title": "Tuesday",
@@ -14,7 +16,9 @@
       "m1": "Sprouts moong_dal,gram",
       "m2": "Aloo-Paratha,Sauce/Achar",
       "m3": "Chai",
-      "m4": "Banana"
+      "m4": "Banana",
+      "active": true,
+      "id": 2
     },
     {
       "title": "Wednesday",
@@ -22,7 +26,9 @@
       "m1": "Sprouts moong_dal,gram",
       "m2": "Sambhar-Bda/Bread-Butter",
       "m3": "Milk",
-      "m4": "Banana"
+      "m4": "Banana",
+      "active": true,
+      "id": 3
     },
     {
       "title": "Thursday",
@@ -30,7 +36,9 @@
       "m1": "Sprouts moong_dal,gram",
       "m2": "Paneer-Paratha,Sauce/Achar",
       "m3": "Coffe",
-      "m4": "Banana"
+      "m4": "Banana",
+      "active": true,
+      "id": 4
     },
     {
       "title": "Friday",
@@ -38,7 +46,9 @@
       "m1": "Sprouts moong_dal,gram",
       "m2": "Sambhar-vda/Khasta-pure,Sabje",
       "m3": "Milk,Coffe",
-      "m4": "Banana"
+      "m4": "Banana",
+      "active": true,
+      "id": 5
     },
     {
       "title": "Saturday",
@@ -46,7 +56,9 @@
       "m1": "Sprouts moong_dal,gram",
       "m2": "Chola-Samosha",
       "m3": "Chai/Cofee",
-      "m4": "Banana"
+      "m4": "Banana",
+      "active": true,
+      "id": 6
     },
     {
       "title": "Sunday",
@@ -54,7 +66,9 @@
       "m1": "Sprouts moong_dal,gram",
       "m2": "Poha-Jalebi",
       "m3": "Milk",
-      "m4": "Banana"
+      "m4": "Banana",
+      "active": true,
+      "id": 7
     }
   ],
   "Lunch": [
@@ -64,8 +78,9 @@
       "m1": "Matar-Paneer",
       "m2": "",
       "m3": "Roti-Rice",
-      "m4": "Rayta",
-      "m5": "Salad"
+      "m4": "Salad & Rayta",
+      "active": true,
+      "id": 1
     },
     {
       "title": "Tuesday",
@@ -73,8 +88,9 @@
       "m1": "Mixveg",
       "m2": "Chna-Dal",
       "m3": "Roti-Rice",
-      "m4": "Salad",
-      "m5": "Dahi"
+      "m4": "Dahi & Salad",
+      "active": true,
+      "id": 2
     },
     {
       "title": "Wednesday",
@@ -82,8 +98,9 @@
       "m1": "Bhindi-Pyaja",
       "m2": "Kali-Massor-Dal",
       "m3": "Roti-Rice",
-      "m4": "Salad",
-      "m5": "Boondi-Rayta"
+      "m4": " Boondi-Rayta & Salad",
+      "active": true,
+      "id": 3
     },
     {
       "title": "Thursday",
@@ -91,7 +108,9 @@
       "m1": "Kadhe",
       "m2": "Aloo-Matar",
       "m3": "Roti-Rice",
-      "m4": "Salad"
+      "m4": "Salad",
+      "active": true,
+      "id": 4
     },
     {
       "title": "Friday",
@@ -99,8 +118,9 @@
       "m1": "Mix-veg(Paneer)",
       "m2": "Kali-Masoor",
       "m3": "Roti-Rice",
-      "m4": "Salad",
-      "m5": "Dahi"
+      "m4": " Dahi & Salad",
+      "active": true,
+      "id": 5
     },
     {
       "title": "Saturday",
@@ -108,7 +128,9 @@
       "m1": "Kadhai-Paneer",
       "m2": "",
       "m3": "Roti-Rice",
-      "m4": "Salad"
+      "m4": "Salad",
+      "active": true,
+      "id": 6
     },
     {
       "title": "Sunday",
@@ -116,8 +138,9 @@
       "m1": "Chole-Bhature",
       "m2": "Mithi-Chatne",
       "m3": "",
-      "m4": "Salad",
-      "m5": "Pyaj-Rayta"
+      "m4": "Pyaj-Rayta & Salad",
+      "active": true,
+      "id": 7
     }
   ],
   "Dinner": [
@@ -128,7 +151,8 @@
       "m2": "Rajma",
       "m3": "Roti-Rice",
       "m4": "Salad",
-      "m5": ""
+      "active": true,
+      "id": 1
     },
     {
       "title": "Tuesday",
@@ -137,7 +161,8 @@
       "m2": "",
       "m3": "Roti-Rice",
       "m4": "Salad",
-      "m5": ""
+      "active": true,
+      "id": 2
     },
     {
       "title": "Wednesday",
@@ -146,7 +171,8 @@
       "m2": "Daal",
       "m3": "Roti-Rice",
       "m4": "Salad",
-      "m5": ""
+      "active": true,
+      "id": 3
     },
     {
       "title": "Thursday",
@@ -155,7 +181,8 @@
       "m2": "Arhar-Daal",
       "m3": "Roti-Rice",
       "m4": "Salad",
-      "m5": ""
+      "active": true,
+      "id": 4
     },
     {
       "title": "Friday",
@@ -164,7 +191,8 @@
       "m2": "Chana-Daal",
       "m3": "Roti-Rice",
       "m4": "Salad",
-      "m5": ""
+      "active": true,
+      "id": 5
     },
     {
       "title": "Saturday",
@@ -172,8 +200,9 @@
       "m1": "VegBiryani",
       "m2": "Green-Chatni",
       "m3": "Papad",
-      "m4": "Salad",
-      "m5": "Rayta"
+      "m4": "Rayta & Salad",
+      "active": true,
+      "id": 6
     },
     {
       "title": "Sunday",
@@ -182,7 +211,8 @@
       "m2": "Daal",
       "m3": "Chatni/Achar",
       "m4": "Salad",
-      "m5": ""
+      "active": true,
+      "id": 7
     }
   ],
   "Supper": [
@@ -190,43 +220,71 @@
       "title": "Monday",
       "special": "",
       "m1": "Samosha-chai,Chatni",
-      "m2": "Chai"
+      "m2": "Chai",
+      "m3": "",
+      "m4": "",
+      "active": true,
+      "id": 1
     },
     {
       "title": "Tuesday",
       "special": "",
       "m1": "Maggi/Chowmeen-sauce",
-      "m2": "Milk"
+      "m2": "Milk",
+      "m3": "",
+      "m4": "",
+      "active": true,
+      "id": 2
     },
     {
       "title": "Wednesday",
       "special": "",
       "m1": "Sandwich-Sauce/Cuttlet",
-      "m2": "Coffe"
+      "m2": "Coffe",
+      "m3": "",
+      "m4": "",
+      "active": true,
+      "id": 3
     },
     {
       "title": "Thursday",
       "special": "",
       "m1": "Fruit-Salad",
-      "m2": "Hot-Bournvita"
+      "m2": "Hot-Bournvita",
+      "m3": "",
+      "m4": "",
+      "active": true,
+      "id": 4
     },
     {
       "title": "Friday",
       "special": "",
       "m1": "Aloo-Pyaj-pakode",
-      "m2": "Chai"
+      "m2": "Chai",
+      "m3": "",
+      "m4": "",
+      "active": true,
+      "id": 5
     },
     {
       "title": "Saturday",
       "special": "",
       "m1": "Holiday...",
-      "m2": ""
+      "m2": "",
+      "m3": "",
+      "m4": "",
+      "active": true,
+      "id": 6
     },
     {
       "title": "Sunday",
       "special": "",
       "m1": "Mathari/Bread-Pakode-Sauce",
-      "m2": "Bournvita/Milk"
+      "m2": "Bournvita/Milk",
+      "m3": "",
+      "m4": "",
+      "active": true,
+      "id": 7
     }
   ]
 }
