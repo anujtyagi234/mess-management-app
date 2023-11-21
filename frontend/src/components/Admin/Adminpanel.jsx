@@ -5,6 +5,8 @@ import './Admin_pannel.css';
 import { Link } from 'react-router-dom';
 
 import AddAccount from './Add_Accountant';
+import AddChief from './Add_Chief_warden'
+import Logout from "../Dashboard/Logout";
 
 const AdminPanel = () => {
   const [showChefForm, setShowChefForm] = useState(false);
@@ -27,7 +29,8 @@ const AdminPanel = () => {
   return (
     <div className='Admin_Pannel_control'>
       <div className="main_container">
-        <div className="Main_heading">Welcome <span> Admin </span></div>
+       
+        <div className="Main_heading ">Welcome <span> Admin </span></div><Logout/>
         <div className="Wrp_Add">
           <div className='Add'>
             {/* <button onClick={toggleChefForm}>Add Chief Warden</button> */}

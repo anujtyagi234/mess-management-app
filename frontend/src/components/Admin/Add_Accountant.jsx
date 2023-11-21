@@ -8,10 +8,9 @@ import {
   FaHome,
 } from "react-icons/fa";
 
-function Signup() {
+function Add_Accountant() {
   const [data, setData] = useState({
     college_gmail_id: "",
-    registration_no: "",
     hostelname: "",
     password: "",
     user_name: "",
@@ -31,12 +30,11 @@ function Signup() {
     setData({ ...data, [input.name]: input.value });
   };
 
-  const handleLogin = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     const {
       college_gmail_id,
-      registration_no,
       password,
       hostelname,
       user_name,
@@ -44,13 +42,12 @@ function Signup() {
 
     if (
       college_gmail_id &&
-      registration_no &&
       hostelname &&
       password &&
       user_name
     ) {
       axios
-        .post("http://localhost:3000/api/auth/signup", data)
+        .post("http://localhost:3000/admin/addaccountant", data)
         .then((res) => {
           alert(res.data.message);
         })
@@ -102,7 +99,7 @@ function Signup() {
               margin: "20px auto 0 auto",
             }}
           >
-            <form onSubmit={handleLogin}>
+            <form onSubmit={handleSubmit}>
               <div className="grid grid-rows-2 gap-4  justify-center items-center mt-12">
                 <div
                   style={{
@@ -164,31 +161,7 @@ function Signup() {
                     />
                   </div>
 
-                  <div
-                    style={{
-                      position: "relative",
-                      width: "max-content",
-                      marginBottom: "20px",
-                    }}
-                  >
-                    <FaIdCard
-                      style={{
-                        position: "absolute",
-                        top: "50%",
-                        left: "10px",
-                        transform: "translateY(-50%)",
-                        color: iconColor,
-                      }}
-                    />
-                    <input
-                      type="text"
-                      name="registration_no"
-                      placeholder="Registration number"
-                      onChange={handleChange}
-                      value={data.registration_no}
-                      className="bg-stone-700 rounded-md p-3 w-80 font-bold text-lg text-white pl-8"
-                    />
-                  </div>
+                  
 
                   <div
                     style={{
@@ -216,19 +189,46 @@ function Signup() {
                     />
                   </div>
 
+                  <div style={{ position: "relative", width: "max-content" }}>
+
+                    <select
+                      name="hostelname"
+                      onChange={handleChange}
+                      value={data.hostelname}
+                      className="bg-stone-700 rounded-md p-3 w-80 font-bold text-lg text-white pl-8"
+                    >
+                      <option value="" disabled defaultValue>
+                        Select a Hostel
+                      </option>
+                      {Hostels.map((hostel) => (
+                        <option key={hostel} value={hostel}>
+                          {hostel}
+                        </option>
+                      ))}
+                    </select>
+
+                    <FaHome
+                      style={{
+                        position: "absolute",
+                        top: "50%",
+                        left: "10px",
+                        transform: "translateY(-50%)",
+                        color: iconColor,
+                      }}
+                    />
+                  </div>
                   
                 </div>
 
                 <div className="mt-0  mb-80">
                   <button
                     type="submit"
-                    onClick={handleLogin}
                     className="relative inline-block text-lg group w-44"
                   >
                     <span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white">
                       <span className="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gray-50"></span>
                       <span className="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-gray-900 group-hover:-rotate-180 ease"></span>
-                      <span className="relative">Sign-up</span>
+                      <span className="relative">ADD</span>
                     </span>
                     <span
                       className="absolute bottom-0 right-0 w-full h-12 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 rounded-lg group-hover:mb-0 group-hover:mr-0"
@@ -245,4 +245,4 @@ function Signup() {
   );
 }
 
-export default Signup;
+export default Add_Accountant;

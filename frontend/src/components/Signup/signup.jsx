@@ -217,14 +217,6 @@ function Signup() {
                   </div>
 
                   <div style={{ position: "relative", width: "max-content" }}>
-                    {/* <input
-										type="text"
-										name="hostelname"
-										placeholder="Hostel Name"
-										onChange={handleChange}
-										value={data.hostelname}
-										className="bg-stone-700 rounded-md w-80 p-3 font-bold text-lg text-white pl-8"
-									/> */}
 
                     <select
                       name="hostelname"
