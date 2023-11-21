@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import './Accountant.css';
 import { Link } from 'react-router-dom';
+import Logout from "../Dashboard/Logout";
 
 
  import Set_Expenses from './Set_Expenses'
@@ -25,7 +26,7 @@ const AdminPanel = () => {
   return (
     <div className='Admin_Pannel_control'>
       <div className="main_container">
-        <div className="Main_heading">Welcome  <span> Accountant </span></div>
+        <div className="Main_heading">Welcome  <span> Accountant </span><Logout/></div>
         <div className="Wrp_Add">
           <div className='Add'>
             
@@ -37,7 +38,7 @@ const AdminPanel = () => {
           </div>
           <div className='Add'>
             
-          <Link to='/Set_Expenses'>
+          <Link to='/Student_complain_list'>
           <button className="custom-button">
           Student complaints List
           </button>

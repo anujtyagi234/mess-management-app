@@ -26,6 +26,12 @@ function Dashboard_main() {
 		case "Complain":
 			content = <Complain />;
 			break;
+		case "Unresolved Complain":
+		content = <Complain />;
+		break;
+		case "Resolved Complain":
+		content = <Complain />;
+		break;
 		case "Mess-Menu":
 			content = <Mess_menu />;
 			break;
@@ -43,7 +49,7 @@ function Dashboard_main() {
 			content = <Contact />;
 			break;
 		default:
-			content = null; // Render nothing if no match
+			content = null; 
 	}
 	return (
 		<div>

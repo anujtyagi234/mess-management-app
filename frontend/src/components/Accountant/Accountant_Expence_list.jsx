@@ -1,10 +1,8 @@
-
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 const ExpenseListing = ({ selectedExpense, onExpenseTypeChange }) => {
-  const [expenseData, expencedatachange] = useState(null);
+  const [expenseData, setExpenseData] = useState(null);
   const navigate = useNavigate();
 
   const loadEdit = (id) => {
@@ -12,13 +10,10 @@ const ExpenseListing = ({ selectedExpense, onExpenseTypeChange }) => {
   };
 
   useEffect(() => {
-    console.log("SelectedExpenseType", selectedExpense);
     fetch(`http://localhost:8000/${selectedExpense}`)
       .then((res) => res.json())
       .then((resp) => {
-        console.log("resp", resp);
-        expencedatachange(resp);
-        console.log("expenseData", expenseData);
+        setExpenseData(resp);
       })
       .catch((err) => {
         console.log(err.message);
@@ -26,67 +21,45 @@ const ExpenseListing = ({ selectedExpense, onExpenseTypeChange }) => {
   }, [selectedExpense]);
 
   return (
-    <div className="container">
-      <div className="card">
-        <div className="card-title">
-          <h2>
-            <b>
-              <big> Expense Chart</big>
-            </b>
-          </h2>
-        </div>
-        <div className="dropdown mb-3">
-          <label htmlFor="expenseDropdown" className="form-label">
-            <span>
-              <b>-: Select Expense Type :-</b>
-            </span>
+    <div className="container mx-auto">
+      <div className="bg-white shadow-md rounded p-4 mb-4">
+        <h2 className="text-2xl font-bold mb-4">Expense Chart</h2>
+        <div className="mb-3">
+          <label htmlFor="expenseDropdown" className="block font-bold mb-2">
+            -: Select Expense Type :-
           </label>
           <select
             id="expenseDropdown"
-            className="form-select"
+            className="block w-full p-2 rounded bg-gray-600 text-white"
             value={selectedExpense}
             onChange={(e) => {
               onExpenseTypeChange(e.target.value);
             }}
-            style={{
-              backgroundColor: 'grey',
-              color: 'white',
-              borderRadius: '8px',
-              boxShadow: '2px 2px 2px red'
-            }}
           >
-            <option value="Vegetable_Expense">Vegetable Expense</option>
+            <option value="Vegitable_Expence">Vegetable Expense</option>
             <option value="Worker_Expense">Worker Expense</option>
           </select>
         </div>
-        <table className="table table-bordered table-hover">
-          <thead className="bg-dark text-white">
+        <table className="w-full table-auto">
+          <thead className="bg-gray-800 text-white">
             <tr>
-              <th scope="col" className="bg-danger">
-                <b>ID</b>
-              </th>
-              <th scope="col" className="bg-warning">
-                <b>Title</b>
-              </th>
-              <th scope="col" className="bg-info">
-                <b>Expense</b>
-              </th>
-              <th scope="col" className="bg-danger">
-                <b>Action</b>
-              </th>
+              <th className="p-2 bg-red-500"><b>ID</b></th>
+              <th className="p-2 bg-yellow-500"><b>Title</b></th>
+              <th className="p-2 bg-blue-500"><b>Expense</b></th>
+              <th className="p-2 bg-red-500"><b>Action</b></th>
             </tr>
           </thead>
           <tbody>
-            {expenseData &&
+            {Array.isArray(expenseData) &&
               expenseData.map((item) => (
-                <tr key={item.id} className="border-dark">
-                  <td>{item.id}</td>
-                  <td>{item.title}</td>
-                  <td>{item.Expence}</td>
-                  <td>
+                <tr key={item.id} className="border border-gray-300">
+                  <td className="p-2">{item.id}</td>
+                  <td className="p-2">{item.title}</td>
+                  <td className="p-2">{item.Expence}</td>
+                  <td className="p-2">
                     <Link
                       to={`/expense/edit/${selectedExpense}/${item.id}`}
-                      className="btn btn-success btn-sm"
+                      className="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-2 rounded"
                     >
                       Edit
                     </Link>
@@ -101,4 +74,3 @@ const ExpenseListing = ({ selectedExpense, onExpenseTypeChange }) => {
 };
 
 export default ExpenseListing;
-

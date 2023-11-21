@@ -1,5 +1,5 @@
 import React from "react";
-// import { jwtDecode } from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { useState } from "react";
 import Home from "./components/Home/Home.jsx"
@@ -20,7 +20,7 @@ import ChiefWarden_mess_menu_update from './components/ChiefWarden/MenuListing_B
  import Chief_Student_complaints from './components/ChiefWarden/Student_Complains.jsx'
 import ChiefWarden from './components/ChiefWarden/ChiefWarden.jsx'
 import Email from './components/Email.jsx'
-import Chief_Resolved_complains from './components/ChiefWarden/ResolvedComplain.jsx'
+import Chief_Complaints_resolve_pannel from './components/ChiefWarden/ResolvedComplain.jsx'
 import Temp from './components/ChiefWarden/Temp.jsx'
 
 import Mess_menu_Copy from './components/ChiefWarden/Chief_Mess_Menu.jsx'
@@ -33,6 +33,7 @@ import EmpEdit from './components/ChiefWarden/MenuEdit.jsx';
 import Menu2 from './components/Dashboard/Main/Mess_menu.jsx'
 import Accountant from './components/Accountant/Accountant.jsx'
  import Set_Expenses from './components/Accountant/Accountant_Expence_list.jsx'
+ import MessMenu from './components/Dashboard/Main/Mess_menu.jsx'
 export default function App() {
   const [selectedMenu, setSelectedMenu] = useState("Breakfast");
   const [selectedExpenseType, setSelectedExpanceType] = useState("Vegitable_Expence");
@@ -56,7 +57,7 @@ export default function App() {
       <Router>
          {!decodedToken && <NavBar />}
         <Routes>
-        {/* {!decodedToken && (
+        {!decodedToken && (
             <Route path="/" element={<Home />} />
           )}
           <Route path="/login" element={<Login />} />
@@ -79,22 +80,21 @@ export default function App() {
             <Route path="/Student_complain_list" element={<Chief_Student_complaints/>} />
             <Route path="/Update_mess_menu" element={<ChiefWarden_mess_menu_update/>} />
           </>
-            ) } */}
+            ) }
+            {decodedToken && decodedToken.userrole === 'accountant' && (
+            <>
+              <Route path="/" element={<Accountant />} />
+              <Route path="/Expancebook" element={<ExpenseListing selectedExpense={selectedExpenseType} onExpenseTypeChange={handleExpanceChange} />} />
+              <Route path="/expense/edit/:type/:empid" element={<Expence_edit />} />
+              <Route path="/Accountant_menu" element={<MessMenu/>} />
+              <Route path="/Student_complain_list" element={<Chief_Student_complaints/>} />
+            </>
+            ) }
             </Routes>
-          {/* {!decodedToken && <Footer />} */}
-
-      {/* <Admin_panel/> */}
-      {/* <ChiefWarden_mess_menu_update/> */}
+          {!decodedToken && <Footer />}
 
 
       <Routes>
-        {/* <Route path="/" element={<Temp1 />} />
-        <Route path="/create" element={<Add />} /> */}
-
-
-
-
-
 
 {/* <Route path="/" element={<Dashi/>}/> */}
 {/*  
@@ -133,7 +133,7 @@ export default function App() {
 
 
   
-  <Route
+  {/* <Route
           path="/Expancebook"
           element={<ExpenseListing selectedExpense={selectedExpenseType} onExpenseTypeChange={handleExpanceChange} />}
         />
@@ -142,7 +142,7 @@ export default function App() {
 
 
 
-<Route path='/' element={<Accountant/>}></Route>  
+<Route path='/' element={<Accountant/>}></Route>   */}
 
 
 
