@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import './ChiefWarden.css';
 import { Link } from 'react-router-dom';
+import Logout from "../Dashboard/Logout";
 
 import Update_Menu from './Chief_Mess_Menu'
  import Show_unresolved_compalin from './Student_Complains'
@@ -26,7 +27,7 @@ const AdminPanel = () => {
   return (
     <div className='Admin_Pannel_control'>
       <div className="main_container">
-        <div className="Main_heading">Welcome  <span>  Chief  Warden Sir </span></div>
+        <div className="Main_heading">Welcome  <span>  Chief  Warden Sir </span><Logout/></div>
         <div className="Wrp_Add">
           <div className='Add'>
             
