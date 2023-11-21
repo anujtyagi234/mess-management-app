@@ -1,6 +1,11 @@
 const express = require("express");
+const fileUpload = require("express-fileupload");
 const router = express.Router();
 const path = require("path");
+
+const filesPayloadExists = require('../middleware/filesPayloadExists');
+const fileExtLimiter = require('../middleware/fileExtLimiter');
+const fileSizeLimiter = require('../middleware/fileSizeLimiter');
 
 router.post('/upload',
     fileUpload({ createParentPath: true }),
