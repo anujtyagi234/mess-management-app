@@ -56,11 +56,12 @@ export default function App() {
       <Router>
          {!decodedToken && <NavBar />}
         <Routes>
-        {/* {!decodedToken && (
+         {!decodedToken && (
             <Route path="/" element={<Home />} />
           )}
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+{/*           
           {decodedToken && decodedToken.userrole === 'student' && (
             <Route path="/" element={<Dashi />} />
           ) }
@@ -133,7 +134,7 @@ export default function App() {
 
 
   
-  <Route
+  {/* <Route
           path="/Expancebook"
           element={<ExpenseListing selectedExpense={selectedExpenseType} onExpenseTypeChange={handleExpanceChange} />}
         />
@@ -142,11 +143,11 @@ export default function App() {
 
 
 
-<Route path='/' element={<Accountant/>}></Route>  
+<Route path='/' element={<Chief_Resolved_complains/>}></Route>   */}
 
 
 
-
+{/* <Route path='/' element={<Chief_Resolved_complains/>}></Route>  */}
 
 
        {/* testing  */}
