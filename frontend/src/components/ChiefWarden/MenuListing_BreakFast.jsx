@@ -12,7 +12,7 @@ const EmpListing = ({ selectedMenu, onMenuChange }) => {
   };
 
   useEffect(() => {
-    console.log("SeelctedMenu", selectedMenu)
+    console.log("SelectedMenu", selectedMenu)
     fetch(`http://localhost:8000/${selectedMenu}`)
       .then((res) => res.json())
       .then((resp) => {

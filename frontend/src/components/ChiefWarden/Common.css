@@ -1,0 +1,90 @@
+
+
+
+.comlainheading{
+    background-color: aqua;
+    height: 2rem;
+    margin-bottom: 2rem;
+    color: black;
+    text-align: center;
+ text-shadow: 2px 1px 2px rgb(206, 21, 107);
+
+}
+
+
+
+  
+  .deatailas_complain {
+    margin: 20px;
+  }
+  
+  .deatailas_complain ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .deatailas_complain li {
+    border: 2px solid #b30909;
+    padding: 10px;
+    box-shadow:  7px 7px 3px gray;
+    margin-bottom: 27px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #55c697, #fefe7b,rgb(201, 96, 119)); 
+    
+  }
+  
+  .deatailas_complain h3 {
+    color: #921230;
+  }
+  
+  .deatailas_complain p {
+    margin: 5px 0;
+  }
+  
+  .deatailas_complain img {
+    max-width: 100%;
+  }
+  
+  .deatailas_complain button {
+    background-color: #27ae60;
+    color: #fff;
+    border-radius: 10px;
+    padding: 8px;
+    border-width: 0.01rem;
+    border-color: black;
+    cursor: pointer;
+    box-shadow:  3px 3px 3px gray;
+  }
+  
+  .deatailas_complain button:hover {
+    background-color: #218c53;
+  }
+
+
+
+
+  /* Common.css */
+/* Add styles for the like/dislike buttons */
+.like-dislike-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .like-dislike-buttons button {
+    padding: 5px 10px;
+    font-size: 14px;
+    border-width: 0.001rem;
+    border-color: black;
+    cursor: pointer;
+    background-color: #df424f;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .like-dislike-buttons button:hover {
+    background-color: #b3003c;
+  }
+  
+  

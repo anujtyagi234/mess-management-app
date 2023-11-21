@@ -1,29 +1,30 @@
-// ExpenseEdit.js
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
 const ExpenseEdit = () => {
-  const { expenseType, expenseId } = useParams();
+ const { empid }= useParams();
   const [expenseData, setExpenseData] = useState({});
+  const [expenseType,setexpencetype] = useState("Vegitable_Expence")
   const [validation, setValidation] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:8000/${expenseType}/${expenseId}`)
+    fetch(`http://localhost:8000/${expenseType}/${empid}`)
       .then((res) => res.json())
       .then((resp) => {
-        setExpenseData(resp);
+        // Merge the fetched data with the initial state
+        setExpenseData(resp) ;
       })
       .catch((err) => {
         console.log(err.message);
       });
-  }, [expenseId, expenseType]);
+  }, [empid, expenseType]);
 
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const updatedData = { ...expenseData };
-    fetch(`http://localhost:8000/${expenseType}/${expenseId}`, {
+    fetch(`http://localhost:8000/${expenseType}/${empid}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(updatedData),
@@ -37,13 +38,17 @@ const ExpenseEdit = () => {
       });
   };
 
+  const handleExpenceTypeChange = (e)=>{
+    setexpencetype(e.target.value)
+  };
+
   return (
     <div>
       <div className="row">
         <div className="offset-lg-3 col-lg-6">
           <form className="container" onSubmit={handleSubmit}>
             <div className="card" style={{ textAlign: "left" }}>
-              <div className="card-title" style={{display:"flex",justifyContent:"center",alignItems:"center",fontSize:"1.35rem"}}>
+              <div className="card-title" style={{ display: "flex", justifyContent: "center", alignItems: "center", fontSize: "1.35rem" }}>
                 <h1><big>
                   <b>--Edit Expense Data--</b></big></h1>
               </div>
@@ -52,6 +57,23 @@ const ExpenseEdit = () => {
                   <div className="col-lg-12">
                     <div className="form-group">
                       <label><h2><b><big>Select Expense Type:</big></b></h2></label>
+                      <select
+                        value={expenseType}
+                       onChange={handleExpenceTypeChange}
+                        className="form-control"
+                       > 
+                       <option value="Vegitable_Expence">Vegitable Expence</option>
+                       <option value="Worker_Expense">Worker_expence</option>
+                       </select>
+                    </div>
+                  </div>
+
+
+
+
+                  <div className="col-lg-12">
+                    <div className="form-group">
+                      <label><b>ID</b></label>
                       <input
                         value={expenseData.id || ""}
                         disabled="disabled"
@@ -59,17 +81,14 @@ const ExpenseEdit = () => {
                       />
                     </div>
                   </div>
-
                   <div className="col-lg-12">
                     <div className="form-group">
                       <label><b>Title</b></label>
                       <input
                         required
-                        value={expenseData.title || ""}
+                        value={expenseData.title|| ""}
                         onMouseDown={() => setValidation(true)}
-                        onChange={(e) =>
-                          setExpenseData({ ...expenseData, title: e.target.value })
-                        }
+                        onChange={(e) => setExpenseData({ ...expenseData, title: e.target.value })}
                         className="form-control"
                       />
                     </div>
@@ -79,10 +98,8 @@ const ExpenseEdit = () => {
                     <div className="form-group">
                       <label><b>Expence</b></label>
                       <input
-                        value={expenseData.Expence || ""}
-                        onChange={(e) =>
-                          setExpenseData({ ...expenseData, Expence: e.target.value })
-                        }
+                        value={expenseData.Expence ||""}
+                        onChange={(e) => setExpenseData( { ...expenseData, Expence: e.target.value })}
                         className="form-control"
                       />
                     </div>
@@ -91,11 +108,11 @@ const ExpenseEdit = () => {
                   <div className="col-lg-12">
                     <div className="form-check">
                       <input
-                        checked={expenseData.active || false}
+                        checked={expenseData.isactive || false}
                         onChange={(e) =>
                           setExpenseData({
                             ...expenseData,
-                            active: e.target.checked,
+                            isactive: e.target.checked,
                           })
                         }
                         type="checkbox"
@@ -107,7 +124,7 @@ const ExpenseEdit = () => {
 
                   <div className="col-lg-12">
                     <div className="form-group">
-                      <button className="btn btn-success" type="submit" style={{backgroundColor:"green"}}>
+                      <button className="btn btn-success" type="submit" style={{ backgroundColor: "green" }}>
                         Save
                       </button>
                       <Link to="/" className="btn btn-danger">

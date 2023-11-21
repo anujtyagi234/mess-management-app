@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './Common.css'
 const dummyComplaints = [
   {
     _id: 1,
@@ -57,17 +57,22 @@ const Chief_Student_complaints = () => {
   };
 
   return (
-    <div>
-      <h2>Complaints</h2>
+       <div className='Maincontainer'>
+<div className="comlainheading">
+     <span><h2 style={{fontSize:"1.5rem",marginTop:"1.1rem",fontfamily:"serif",fontWeight:"bold"}}><b><span>Students Complaints </span> </b>
+ </h2></span> 
+ </div>
+ <div className="deatailas_complain">
       <ul>
         {complaints.map((complaint) => (
           <li key={complaint._id}>
           {!complaint.resolved && (<>
-            <h3>{complaint.title}</h3>
-            <p>{complaint.description}</p>
-            <p>Created at: {complaint.createdAt}</p>
-            <p>Likes: {complaint.likes}</p>
-            <p>Dislikes: {complaint.dislikes}</p>
+            <h3><b>Subject: </b>
+              {complaint.title}</h3>
+            <p> <b>Description: </b>  {complaint.description}</p>
+            <p> <b>Created at: </b>{complaint.createdAt}</p>
+            <p><b>Likes: </b>{complaint.likes}</p>
+            <p><b>Dislike: </b>{complaint.dislikes}</p>
             {complaint.image && <img src={complaint.image} alt="Complaint" style={{ maxWidth: '300px' }} />}
               <button onClick={() => resolveComplaint(complaint._id)}>
                 Resolve
@@ -77,6 +82,7 @@ const Chief_Student_complaints = () => {
                 </li>
         ))}
       </ul>
+      </div>
     </div>
   );
 };

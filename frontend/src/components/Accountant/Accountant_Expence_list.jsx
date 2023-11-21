@@ -1,30 +1,29 @@
-// ExpenseListing.js
+
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const ExpenseListing = ({ selectedExpenseType, onExpenseTypeChange }) => {
-  const [expenseData, setExpenseData] = useState(null);
+const ExpenseListing = ({ selectedExpense, onExpenseTypeChange }) => {
+  const [expenseData, expencedatachange] = useState(null);
   const navigate = useNavigate();
 
   const loadEdit = (id) => {
-    navigate(`/expense/edit/${selectedExpenseType}/${id}`);
+    navigate(`/expense/edit/${selectedExpense}/${id}`);
   };
-  
 
   useEffect(() => {
-    console.log("SelectedExpenseType", selectedExpenseType);
-    fetch(`http://localhost:8000/${selectedExpenseType}`)
+    console.log("SelectedExpenseType", selectedExpense);
+    fetch(`http://localhost:8000/${selectedExpense}`)
       .then((res) => res.json())
       .then((resp) => {
         console.log("resp", resp);
-        setExpenseData(resp);
+        expencedatachange(resp);
         console.log("expenseData", expenseData);
       })
       .catch((err) => {
         console.log(err.message);
       });
-  }, [selectedExpenseType]);
+  }, [selectedExpense]);
 
   return (
     <div className="container">
@@ -45,7 +44,7 @@ const ExpenseListing = ({ selectedExpenseType, onExpenseTypeChange }) => {
           <select
             id="expenseDropdown"
             className="form-select"
-            value={selectedExpenseType}
+            value={selectedExpense}
             onChange={(e) => {
               onExpenseTypeChange(e.target.value);
             }}
@@ -86,7 +85,7 @@ const ExpenseListing = ({ selectedExpenseType, onExpenseTypeChange }) => {
                   <td>{item.Expence}</td>
                   <td>
                     <Link
-                      to={`/expense/edit/${selectedExpenseType}/${item.id}`}
+                      to={`/expense/edit/${selectedExpense}/${item.id}`}
                       className="btn btn-success btn-sm"
                     >
                       Edit
@@ -102,3 +101,4 @@ const ExpenseListing = ({ selectedExpenseType, onExpenseTypeChange }) => {
 };
 
 export default ExpenseListing;
+

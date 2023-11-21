@@ -20,9 +20,8 @@ import ChiefWarden_mess_menu_update from './components/ChiefWarden/MenuListing_B
  import Chief_Student_complaints from './components/ChiefWarden/Student_Complains.jsx'
 import ChiefWarden from './components/ChiefWarden/ChiefWarden.jsx'
 import Email from './components/Email.jsx'
-import Chief_Complaints_resolve_pannel from './components/ChiefWarden/ResolvedComplain.jsx'
+import Chief_Resolved_complains from './components/ChiefWarden/ResolvedComplain.jsx'
 import Temp from './components/ChiefWarden/Temp.jsx'
-
 
 import Mess_menu_Copy from './components/ChiefWarden/Chief_Mess_Menu.jsx'
 import ExpenseListing from './components/Accountant/Accountant_Expence_list.jsx'
@@ -32,7 +31,6 @@ import EmpCreate from './components/ChiefWarden/MenuCreate.jsx';
 import EmpDetail from './components/ChiefWarden/MenuDetail.jsx';
 import EmpEdit from './components/ChiefWarden/MenuEdit.jsx';
 import Menu2 from './components/Dashboard/Main/Mess_menu.jsx'
-
 import Accountant from './components/Accountant/Accountant.jsx'
  import Set_Expenses from './components/Accountant/Accountant_Expence_list.jsx'
 export default function App() {
@@ -58,7 +56,7 @@ export default function App() {
       <Router>
          {!decodedToken && <NavBar />}
         <Routes>
-        {!decodedToken && (
+        {/* {!decodedToken && (
             <Route path="/" element={<Home />} />
           )}
           <Route path="/login" element={<Login />} />
@@ -81,15 +79,15 @@ export default function App() {
             <Route path="/Student_complain_list" element={<Chief_Student_complaints/>} />
             <Route path="/Update_mess_menu" element={<ChiefWarden_mess_menu_update/>} />
           </>
-            ) }
+            ) } */}
             </Routes>
-          {!decodedToken && <Footer />}
+          {/* {!decodedToken && <Footer />} */}
 
       {/* <Admin_panel/> */}
       {/* <ChiefWarden_mess_menu_update/> */}
 
 
-      {/* <Routes> */}
+      <Routes>
         {/* <Route path="/" element={<Temp1 />} />
         <Route path="/create" element={<Add />} /> */}
 
@@ -117,32 +115,43 @@ export default function App() {
 
 
   
-  {/* <Route
+   {/* <Route
           path="/"
           element={<EmpListing selectedMenu={selectedMenu} onMenuChange={handleMenuChange} />}
         />
-        <Route exact path="/employee/edit/:menu/:empid" element={<EmpEdit />} />
-           */}
+        <Route exact path="/employee/edit/:menu/:empid" element={<EmpEdit />} /> */}
+           
 
 
-
-           {/* <Route path='/employee/detail/Breakfast/:empid' element={<EmpDetail />}></Route>
+{/* 
+            <Route path='/employee/detail/Breakfast/:empid' element={<EmpDetail />}></Route>
           
-         <Route path='/employee/edit/Lunch/:empid' element={<EmpEdit />}></Route>     */}
+         <Route path='/employee/edit/Lunch/:empid' element={<EmpEdit />}></Route>  */}
 
-  {/* <Route
+
+
+
+
+  
+  <Route
           path="/Expancebook"
-          element={<ExpenseListing selectedExpenseType={selectedExpenseType} onExpenseTypeChange={handleExpanceChange} />}
+          element={<ExpenseListing selectedExpense={selectedExpenseType} onExpenseTypeChange={handleExpanceChange} />}
         />
 
 <Route path="/expense/edit/:type/:empid" element={<Expence_edit/>} />
 
 
 
-<Route path='/' element={<Accountant/>}></Route>
-{/* <Route path='/' element={<Menu2/>}></Route> */}
+<Route path='/' element={<Accountant/>}></Route>  
 
-       {/* </Routes> */}
+
+
+
+
+
+       {/* testing  */}
+       {/* <Chief_Resolved_complains/> */}
+       </Routes>
     </Router>
     </div>
   );
