@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const EmpListing = ({ selectedMenu, onMenuChange }) => {
   const [empdata, empdatachange] = useState(null);
   const navigate = useNavigate();
+
   const LoadEdit = (id) => {
     navigate(`/employee/edit/${selectedMenu}/${id}`);
   };
@@ -25,32 +26,20 @@ const EmpListing = ({ selectedMenu, onMenuChange }) => {
   }, [selectedMenu]);
 
   return (
-    <div className="container" >
-      <div className="card">
-        <div className="card-title">
-          <h2><b><big> Mess Menu Chart</big></b></h2>
-        </div>
-        <div className="dropdown mb-3">
-          <label htmlFor="menuDropdown" className="form-label">
-            <span><b>-: Select Menu Type :-</b></span>
+    <div className="container mx-auto">
+      <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <h2 className="text-2xl font-bold mb-4">Mess Menu Chart</h2>
+        <div className="mb-4">
+          <label htmlFor="menuDropdown" className="block text-gray-700 font-bold mb-2">
+            -: Select Menu Type :-
           </label>
           <select
-          
             id="menuDropdown"
             className="form-select"
             value={selectedMenu}
             onChange={(e) => {
               onMenuChange(e.target.value);
             }}
-
-
-            style={{
-                backgroundColor: 'grey',  // Set your background color
-                color: 'white',           // Set your text color
-                borderRadius: '8px',
-                boxShadow:"2px 2px 2px  red"        // Set your border radius
-                // Add more styles as needed
-              }}
           >
             <option value="Breakfast" >Breakfast</option>
             <option value="Lunch">Lunch</option>

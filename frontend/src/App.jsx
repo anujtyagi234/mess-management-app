@@ -12,15 +12,15 @@ import Dashi from "./components/Dashi/Dashboard_main.jsx";
 import { useAuthContext } from "./hooks/useAuthContext.jsx";
 import AdminDashboard from "./components/Admin/AdminDashboard.jsx";
 
-import Admin_panel from './components/Admin/Adminpanel.jsx'
-import Accountant_Admin from './components/Admin/Add_Accountant.jsx'
+import AdminPanel from './components/Admin/Adminpanel.jsx'
+import AddAccountant from './components/Admin/Add_Accountant.jsx'
 import Unresolved_complain_admin from './components/Admin/UnResolved_complain.jsx'
-import Chief_Admin from './components/Admin/Add_Chief_warden.jsx'
+import AddChiefWarden from './components/Admin/Add_Chief_warden.jsx'
 import ChiefWarden_mess_menu_update from './components/ChiefWarden/MenuListing_BreakFast.jsx'
  import Chief_Student_complaints from './components/ChiefWarden/Student_Complains.jsx'
 import ChiefWarden from './components/ChiefWarden/ChiefWarden.jsx'
 import Email from './components/Email.jsx'
-import Chief_Complaints_resolve_pannel from './components/ChiefWarden/Lets_Resolve_complain.jsx'
+import Chief_Complaints_resolve_pannel from './components/ChiefWarden/ResolvedComplain.jsx'
 import Temp from './components/ChiefWarden/Temp.jsx'
 
 
@@ -41,6 +41,8 @@ export default function App() {
 
 
   const { userrole } = useAuthContext();
+  const token = localStorage.getItem('token');
+  const decodedToken = token ? jwtDecode(token) : null;
 
   const handleMenuChange = (newMenu) => {
     setSelectedMenu(newMenu);
@@ -52,10 +54,9 @@ export default function App() {
 
  
   return (
-    
     <div className="wrapper">
       <Router>
-        {/* {!decodedToken && <NavBar />}
+         {!decodedToken && <NavBar />}
         <Routes>
         {!decodedToken && (
             <Route path="/" element={<Home />} />
@@ -66,20 +67,32 @@ export default function App() {
             <Route path="/" element={<Dashi />} />
           ) }
           {decodedToken && decodedToken.userrole === 'admin' && (
-            <Route path="/" element={<Admin_panel/>} />
+            <>
+            <Route path="/" element={<AdminPanel />} />
+            <Route path="/Accountant_Admin" element={<AddAccountant />} />
+            <Route path="/Unresolved_complain" element={<Unresolved_complain_admin />} />
+            <Route path="/Chief_admin" element={<AddChiefWarden />} />
+          </>
             ) }
             {decodedToken && decodedToken.userrole === 'chief warden' && (
-            <Route path="/" element={<ChiefWarden/>} />
+            <>
+            <Route path="/" element={<ChiefWarden />} />
+            <Route path="/Complain_Resolved_pannel" element={<Chief_Complaints_resolve_pannel/>} />
+            <Route path="/Student_complain_list" element={<Chief_Student_complaints/>} />
+            <Route path="/Update_mess_menu" element={<ChiefWarden_mess_menu_update/>} />
+          </>
             ) }
             </Routes>
-          {!userrole && <Footer />} */}
+          {!decodedToken && <Footer />}
 
       {/* <Admin_panel/> */}
       {/* <ChiefWarden_mess_menu_update/> */}
 
 
-      <Routes>
-     
+      {/* <Routes> */}
+        {/* <Route path="/" element={<Temp1 />} />
+        <Route path="/create" element={<Add />} /> */}
+
 
 
 
@@ -127,16 +140,9 @@ export default function App() {
 
 
 <Route path='/' element={<Accountant/>}></Route>
-<Route path="/Accountant_menu" element={<Menu2/>} />  */}
+{/* <Route path='/' element={<Menu2/>}></Route> */}
 
-
-
-
-
-
-
-
-       </Routes>
+       {/* </Routes> */}
     </Router>
     </div>
   );

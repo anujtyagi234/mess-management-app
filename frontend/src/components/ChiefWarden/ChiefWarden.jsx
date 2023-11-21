@@ -2,10 +2,11 @@
 import React, { useState } from 'react';
 import './ChiefWarden.css';
 import { Link } from 'react-router-dom';
+import Logout from "../Dashboard/Logout";
 
 import Update_Menu from './Chief_Mess_Menu'
  import Show_unresolved_compalin from './Student_Complains'
-import Resolve_complain_pannel from './Lets_Resolve_complain'
+import Resolved_complain_pannel from './ResolvedComplain'
 const AdminPanel = () => {
   const [showUnresolved_problem, setUnresolved_problem] = useState(false);
   const [showMenuForm, setShowMenuForm] = useState(false);
@@ -26,7 +27,7 @@ const AdminPanel = () => {
   return (
     <div className='Admin_Pannel_control'>
       <div className="main_container">
-        <div className="Main_heading">Welcome  <span>  Chief  Warden Sir </span></div>
+        <div className="Main_heading">Welcome  <span>  Chief  Warden Sir </span><Logout/></div>
         <div className="Wrp_Add">
           <div className='Add'>
             
@@ -38,9 +39,9 @@ const AdminPanel = () => {
           </div>
           <div className='Add'>
             
-          <Link to='/Complain_Resolve_pannel'>
+          <Link to='/Complain_Resolved_pannel'>
           <button className="custom-button">
-          Complain Resolve pannel
+          Resolved Complain
           </button>
         </Link>
            
