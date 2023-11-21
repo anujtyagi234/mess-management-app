@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 import Update_Menu from './Chief_Mess_Menu'
  import Show_unresolved_compalin from './Student_Complains'
-import Resolve_complain_pannel from './Lets_Resolve_complain'
+import Resolved_complain_pannel from './ResolvedComplain'
 const AdminPanel = () => {
   const [showUnresolved_problem, setUnresolved_problem] = useState(false);
   const [showMenuForm, setShowMenuForm] = useState(false);
@@ -38,9 +38,9 @@ const AdminPanel = () => {
           </div>
           <div className='Add'>
             
-          <Link to='/Complain_Resolve_pannel'>
+          <Link to='/Complain_Resolved_pannel'>
           <button className="custom-button">
-          Complain Resolve pannel
+          Resolved Complain
           </button>
         </Link>
            
