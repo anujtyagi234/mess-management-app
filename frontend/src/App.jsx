@@ -1,5 +1,5 @@
 import React from "react";
-import { jwtDecode } from "jwt-decode";
+// import { jwtDecode } from "jwt-decode";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { useState } from "react";
 import Home from "./components/Home/Home.jsx"
@@ -25,24 +25,37 @@ import Temp from './components/ChiefWarden/Temp.jsx'
 
 
 import Mess_menu_Copy from './components/ChiefWarden/Chief_Mess_Menu.jsx'
+import ExpenseListing from './components/Accountant/Accountant_Expence_list.jsx'
+import Expence_edit from './components/Accountant/Accountant_Edit_Expence.jsx'
 import EmpListing from './components/ChiefWarden/MenuListing_BreakFast.jsx';
 import EmpCreate from './components/ChiefWarden/MenuCreate.jsx';
 import EmpDetail from './components/ChiefWarden/MenuDetail.jsx';
 import EmpEdit from './components/ChiefWarden/MenuEdit.jsx';
-
 import Menu2 from './components/Dashboard/Main/Mess_menu.jsx'
- 
+
+import Accountant from './components/Accountant/Accountant.jsx'
+ import Set_Expenses from './components/Accountant/Accountant_Expence_list.jsx'
 export default function App() {
+  const [selectedMenu, setSelectedMenu] = useState("Breakfast");
+  const [selectedExpenseType, setSelectedExpanceType] = useState("Vegitable_Expence");
+
+
   const { userrole } = useAuthContext();
 
   const handleMenuChange = (newMenu) => {
     setSelectedMenu(newMenu);
   };
+
+  const handleExpanceChange =(newExpanceType)=>{
+    setSelectedExpanceType(newExpanceType);
+  }
+
+ 
   return (
     
     <div className="wrapper">
       <Router>
-        {!decodedToken && <NavBar />}
+        {/* {!decodedToken && <NavBar />}
         <Routes>
         {!decodedToken && (
             <Route path="/" element={<Home />} />
@@ -59,7 +72,7 @@ export default function App() {
             <Route path="/" element={<ChiefWarden/>} />
             ) }
             </Routes>
-          {!userrole && <Footer />}
+          {!userrole && <Footer />} */}
 
       {/* <Admin_panel/> */}
       {/* <ChiefWarden_mess_menu_update/> */}
@@ -72,7 +85,7 @@ export default function App() {
 
 
 
-<Route path="/" element={<Dashi/>}/>
+{/* <Route path="/" element={<Dashi/>}/> */}
 {/*  
 <Route path="/Accountant_Admin" element={<Accountant_Admin/>} />
 
@@ -90,20 +103,38 @@ export default function App() {
 <Route path="/Update_mess_menu" element={<ChiefWarden_mess_menu_update/>} />  */}
 
 
- 
-<Route
+  
+  {/* <Route
           path="/"
           element={<EmpListing selectedMenu={selectedMenu} onMenuChange={handleMenuChange} />}
         />
-        <Route path="/employee/edit/:menu/:empid" element={<EmpEdit />} />
-          <Route path='/employee/create' element={<EmpCreate />}></Route>
-          <Route path='/employee/detail/Breakfast/:empid' element={<EmpDetail />}></Route>
-          <Route path='/employee/edit/Lunch/:empid' element={<EmpEdit />}></Route>   
- 
+        <Route exact path="/employee/edit/:menu/:empid" element={<EmpEdit />} />
+           */}
 
 
 
-{/* <Route path='/' element={<Menu2/>}></Route> */}
+           {/* <Route path='/employee/detail/Breakfast/:empid' element={<EmpDetail />}></Route>
+          
+         <Route path='/employee/edit/Lunch/:empid' element={<EmpEdit />}></Route>     */}
+
+  {/* <Route
+          path="/Expancebook"
+          element={<ExpenseListing selectedExpenseType={selectedExpenseType} onExpenseTypeChange={handleExpanceChange} />}
+        />
+
+<Route path="/expense/edit/:type/:empid" element={<Expence_edit/>} />
+
+
+
+<Route path='/' element={<Accountant/>}></Route>
+<Route path="/Accountant_menu" element={<Menu2/>} />  */}
+
+
+
+
+
+
+
 
        </Routes>
     </Router>

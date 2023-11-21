@@ -6,7 +6,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const EmpListing = ({ selectedMenu, onMenuChange }) => {
   const [empdata, empdatachange] = useState(null);
   const navigate = useNavigate();
-
   const LoadEdit = (id) => {
     navigate(`/employee/edit/${selectedMenu}/${id}`);
   };
@@ -26,7 +25,7 @@ const EmpListing = ({ selectedMenu, onMenuChange }) => {
   }, [selectedMenu]);
 
   return (
-    <div className="container">
+    <div className="container" >
       <div className="card">
         <div className="card-title">
           <h2><b><big> Mess Menu Chart</big></b></h2>
@@ -36,7 +35,6 @@ const EmpListing = ({ selectedMenu, onMenuChange }) => {
             <span><b>-: Select Menu Type :-</b></span>
           </label>
           <select
-
           
             id="menuDropdown"
             className="form-select"
@@ -44,6 +42,8 @@ const EmpListing = ({ selectedMenu, onMenuChange }) => {
             onChange={(e) => {
               onMenuChange(e.target.value);
             }}
+
+
             style={{
                 backgroundColor: 'grey',  // Set your background color
                 color: 'white',           // Set your text color

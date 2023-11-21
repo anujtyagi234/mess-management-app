@@ -58,7 +58,8 @@
       "m3": "Chai/Cofee",
       "m4": "Banana",
       "active": true,
-      "id": 6
+      "id": 6,
+      "isactive": true
     },
     {
       "title": "Sunday",
@@ -285,6 +286,154 @@
       "m4": "",
       "active": true,
       "id": 7
+    }
+  ],
+  "Vegitable_Expence": [
+    {
+      "title": "January",
+      "Expence": 4587,
+      "active": true,
+      "id": 1
+    },
+    {
+      "title": "February",
+      "Expence": 4587,
+      "active": true,
+      "id": 2
+    },
+    {
+      "title": "March",
+      "Expence": 4587,
+      "active": true,
+      "id": 3
+    },
+    {
+      "title": "April",
+      "Expence": 4587,
+      "active": true,
+      "id": 4
+    },
+    {
+      "title": "May",
+      "Expence": 4587,
+      "active": true,
+      "id": 5
+    },
+    {
+      "title": "June",
+      "Expence": 4587,
+      "active": true,
+      "id": 6
+    },
+    {
+      "title": "July",
+      "Expence": 4587,
+      "active": true,
+      "id": 7
+    },
+    {
+      "title": "August",
+      "Expence": 4587,
+      "active": true,
+      "id": 8
+    },
+    {
+      "title": "September",
+      "Expence": 4587,
+      "active": true,
+      "id": 9
+    },
+    {
+      "title": "October",
+      "Expence": 4587,
+      "active": true,
+      "id": 10
+    },
+    {
+      "title": "November",
+      "Expence": 4587,
+      "active": true,
+      "id": 11
+    },
+    {
+      "title": "December",
+      "Expence": 4587,
+      "active": true,
+      "id": 12
+    }
+  ],
+  "Worker_Expence": [
+    {
+      "title": "January",
+      "Expence": 121000,
+      "active": true,
+      "id": 1
+    },
+    {
+      "title": "February",
+      "Expence": 121000,
+      "active": true,
+      "id": 2
+    },
+    {
+      "title": "March",
+      "Expence": 121000,
+      "active": true,
+      "id": 3
+    },
+    {
+      "title": "April",
+      "Expence": 121000,
+      "active": true,
+      "id": 4
+    },
+    {
+      "title": "May",
+      "Expence": 121000,
+      "active": true,
+      "id": 5
+    },
+    {
+      "title": "June",
+      "Expence": 121000,
+      "active": true,
+      "id": 6
+    },
+    {
+      "title": "July",
+      "Expence": 121000,
+      "active": true,
+      "id": 7
+    },
+    {
+      "title": "August",
+      "Expence": 121000,
+      "active": true,
+      "id": 8
+    },
+    {
+      "title": "September",
+      "Expence": 121000,
+      "active": true,
+      "id": 9
+    },
+    {
+      "title": "October",
+      "Expence": 121000,
+      "active": true,
+      "id": 10
+    },
+    {
+      "title": "November",
+      "Expence": 121000,
+      "active": true,
+      "id": 11
+    },
+    {
+      "title": "December",
+      "Expence": 121000,
+      "active": true,
+      "id": 12
     }
   ]
 }

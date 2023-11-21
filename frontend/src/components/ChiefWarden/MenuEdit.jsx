@@ -189,7 +189,7 @@ const EmpEdit = () => {
                       </Link>
                     </div>
 
-                    <p><span className="success"><b>Note: </b></span>change url: employee/edit/Lunch/x (x is id for monday-1,tuesday-2 and so on)</p>
+                    <p><span className="success"><b>Note: </b></span>change url: employee/edit/X/y (X is meal-type (breakfast,dinner,lunch or supper)y is id for monday-1,tuesday-2 and so on)</p>
                   </div>
                 </div>
               </div>
