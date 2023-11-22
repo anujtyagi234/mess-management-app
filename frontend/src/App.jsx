@@ -34,6 +34,7 @@ import Menu2 from './components/Dashboard/Main/Mess_menu.jsx'
 import Accountant from './components/Accountant/Accountant.jsx'
  import Set_Expenses from './components/Accountant/Accountant_Expence_list.jsx'
  import MessMenu from './components/Dashboard/Main/Mess_menu.jsx'
+ import ChieDashboard from './components/ChiefWarden/Chief_Dashboard.jsx'
 export default function App() {
   const [selectedMenu, setSelectedMenu] = useState("Breakfast");
   const [selectedExpenseType, setSelectedExpanceType] = useState("Vegitable_Expence");
@@ -55,13 +56,14 @@ export default function App() {
   return (
     <div className="wrapper">
       <Router>
-         {!decodedToken && <NavBar />}
+        {!decodedToken && <NavBar />} 
         <Routes>
-        {!decodedToken && (
+       {!decodedToken && (
             <Route path="/" element={<Home />} />
           )}
           <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+          <Route path="/signup" element={<Signup />} /> 
+        
           {decodedToken && decodedToken.userrole === 'student' && (
             <Route path="/" element={<Dashi />} />
           ) }
@@ -146,11 +148,16 @@ export default function App() {
 
 
 
-
+{/* <Route path='/' element={<Chief_Resolved_complains/>}></Route>  */}
 
 
        {/* testing  */}
        {/* <Chief_Resolved_complains/> */}
+
+
+
+
+       {/* <Route path="/" element={<ChieDashboard/>} /> */}
        </Routes>
     </Router>
     </div>
