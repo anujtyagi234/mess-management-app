@@ -117,6 +117,8 @@ const MessComplaintForm = () => {
 <h2>Upload File and image  related to your Issues Here..</h2>
         <input
         type="file"
+        accept='image/*'
+        multiple
         onChange={handleFileChange}
       />
       <button onClick={handleUpload} className='Upload_Button'>Upload</button>
