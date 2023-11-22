@@ -35,7 +35,8 @@
     margin-top: 4rem;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.4rem;
+    margin-bottom: 5rem;
 }
 
 .Items{
@@ -61,13 +62,5 @@ background-color: #076666;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2)
   }
 
-.MoreItems{
-    height: 0.5rem;
-    width: auto;
-    background-color: #00ffff;
-    margin-left: .2rem;
-    border-radius: 2cm;
-    
-} 
 
 

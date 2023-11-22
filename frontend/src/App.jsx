@@ -10,12 +10,12 @@ import Login from "./components/Login/login.jsx";
 import Signup from './components/Signup/signup.jsx'
 import Dashi from "./components/Dashi/Dashboard_main.jsx";
 import { useAuthContext } from "./hooks/useAuthContext.jsx";
-import AdminDashboard from "./components/Admin/AdminDashboard.jsx";
 
 import AdminPanel from './components/Admin/Adminpanel.jsx'
 import AddAccountant from './components/Admin/Add_Accountant.jsx'
 import Unresolved_complain_admin from './components/Admin/UnResolved_complain.jsx'
 import AddChiefWarden from './components/Admin/Add_Chief_warden.jsx'
+import Admin_Dashboard from './components/Admin/Admin_dashboard.jsx'
 import ChiefWarden_mess_menu_update from './components/ChiefWarden/MenuListing_BreakFast.jsx'
  import Chief_Student_complaints from './components/ChiefWarden/Student_Complains.jsx'
 import ChiefWarden from './components/ChiefWarden/ChiefWarden.jsx'
@@ -32,6 +32,7 @@ import EmpDetail from './components/ChiefWarden/MenuDetail.jsx';
 import EmpEdit from './components/ChiefWarden/MenuEdit.jsx';
 import Menu2 from './components/Dashboard/Main/Mess_menu.jsx'
 import Accountant from './components/Accountant/Accountant.jsx'
+import Accountant_Dashboard from './components/Accountant/Accountant_Dashboard.jsx'
  import Set_Expenses from './components/Accountant/Accountant_Expence_list.jsx'
  import MessMenu from './components/Dashboard/Main/Mess_menu.jsx'
  import ChiefDashboard from './components/ChiefWarden/Chief_Dashboard.jsx'
@@ -69,7 +70,7 @@ export default function App() {
           ) }
           {decodedToken && decodedToken.userrole === 'admin' && (
             <>
-            <Route path="/" element={<AdminPanel />} />
+            <Route path="/" element={<Admin_Dashboard />} />
             <Route path="/Accountant_Admin" element={<AddAccountant />} />
             <Route path="/Unresolved_complain" element={<Unresolved_complain_admin />} />
             <Route path="/Chief_admin" element={<AddChiefWarden />} />
@@ -86,7 +87,7 @@ export default function App() {
             ) }
             {decodedToken && decodedToken.userrole === 'accountant' && (
             <>
-              <Route path="/" element={<Accountant />} />
+              <Route path="/" element={<Accountant_Dashboard />} />
               <Route path="/Expancebook" element={<ExpenseListing selectedExpense={selectedExpenseType} onExpenseTypeChange={handleExpanceChange} />} />
               <Route path="/expense/edit/:type/:empid" element={<Expence_edit />} />
               <Route path="/Accountant_menu" element={<MessMenu/>} />
@@ -98,6 +99,10 @@ export default function App() {
 
 
       <Routes>
+
+{/* <Route path="/" element={<Dashi/>}/> */}
+
+
 
 {/* <Route path="/" element={<Dashi/>}/> */}
 {/*  

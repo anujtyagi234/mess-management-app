@@ -4,14 +4,15 @@ import '../Dashboard/Sidebar.css';
 import book from '../../imgs/books.gif';
 import menu from '../../imgs/burger.gif';
 import mess from '../../imgs/mess.png';
+import Calender from '../../imgs/calendar.gif'
 import complain from '../../imgs/Compln.gif';
 import Message from '../../imgs/new-message.gif'
 
 
 function Sidebar({onMenuItemClick}) {
   const menuItems = [
-    { title: 'Add-Expence', image: book },
-    { title: 'Mess-Menu', image: mess },
+    { title: 'Add-Expence', image: Calender },
+    { title: 'Mess-Menu', image: menu },
     { title: 'Unresolved-complains', image: complain },
     { title: 'resolved-complains', image: Message },
     
@@ -32,7 +33,7 @@ function Sidebar({onMenuItemClick}) {
       <div className="logo">
         <img src={mess} alt="" />
         <span>
-          Mess<span>Relay</span>Web
+         Accou<span>ntant</span>
         </span>
       </div>
 

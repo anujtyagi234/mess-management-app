@@ -4,7 +4,7 @@ import '../Dashboard/Sidebar.css';
 
 import home from '../../imgs/home.gif';
 import menu from '../../imgs/burger.gif';
-import Warden from '../../laptop.gif'
+import Warden from '../../imgs/laptop.gif'
 import mess from '../../imgs/mess.png';
 import complain from '../../imgs/Compln.gif';
 import cheifimage from '../../imgs/avatar.gif'

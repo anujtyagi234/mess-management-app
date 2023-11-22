@@ -45,7 +45,7 @@ const ExpenseEdit = () => {
   };
   
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto overflow-auto">
       <div className="bg-white shadow-md rounded p-8 mb-4">
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-4">Edit Expense Data</h1>
