@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './Common.css'
+import './Common.css';
+
 const dummyComplaints = [
   {
     _id: 1,
@@ -33,7 +34,7 @@ const dummyComplaints = [
     image: 'https://via.placeholder.com/150',
     resolved: false,
     createdAt: new Date().toISOString(),
-    resolvedAt: null,
+    resolvedAt: new Date().toISOString(),
     likes: 0,
     dislikes: 0,
   },
@@ -56,32 +57,33 @@ const Chief_Student_complaints = () => {
     setComplaints(updatedComplaints);
   };
 
+  const unresolvedComplaints = complaints.filter((complaint) => !complaint.resolved);
+
   return (
-       <div className='Maincontainer'>
-<div className="comlainheading">
-     <span><h2 style={{fontSize:"1.5rem",marginTop:"1.1rem",fontfamily:"serif",fontWeight:"bold"}}><b><span>Students Complaints </span> </b>
- </h2></span> 
- </div>
- <div className="deatailas_complain">
-      <ul>
-        {complaints.map((complaint) => (
-          <li key={complaint._id}>
-          {!complaint.resolved && (<>
-            <h3><b>Subject: </b>
-              {complaint.title}</h3>
-            <p> <b>Description: </b>  {complaint.description}</p>
-            <p> <b>Created at: </b>{complaint.createdAt}</p>
-            <p><b>Likes: </b>{complaint.likes}</p>
-            <p><b>Dislike: </b>{complaint.dislikes}</p>
-            {complaint.image && <img src={complaint.image} alt="Complaint" style={{ maxWidth: '300px' }} />}
+    <div className='Maincontainer'>
+      <div className="comlainheading">
+        <span>
+          <h2 style={{ fontSize: "1.5rem", marginTop: "1.1rem", fontFamily: "serif", fontWeight: "bold" }}>
+            <b><span>Students Complaints </span></b>
+          </h2>
+        </span>
+      </div>
+      <div className="deatailas_complain">
+        <ul>
+          {unresolvedComplaints.map((complaint) => (
+            <li key={complaint._id}>
+              <h3><b>Subject: </b>{complaint.title}</h3>
+              <p><b>Description: </b>{complaint.description}</p>
+              <p><b>Created at: </b>{complaint.createdAt}</p>
+              <p><b>Likes: </b>{complaint.likes}</p>
+              <p><b>Dislike: </b>{complaint.dislikes}</p>
+              {complaint.image && <img src={complaint.image} alt="Complaint" style={{ maxWidth: '300px' }} />}
               <button onClick={() => resolveComplaint(complaint._id)}>
                 Resolve
               </button>
-                </>
-                )}
-                </li>
-        ))}
-      </ul>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
