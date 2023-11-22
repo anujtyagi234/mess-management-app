@@ -59,7 +59,7 @@ const EmpListing = ({ selectedMenu, onMenuChange }) => {
             </tr>
           </thead>
           <tbody>
-            {empdata &&
+            {(Array.isArray(empdata) && empdata.length > 0) &&
               empdata.map((item) => (
                 <tr key={item.id} className="border border-black">
                   <td className="px-4 py-2">{item.id}</td>

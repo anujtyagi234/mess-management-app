@@ -80,7 +80,8 @@ export default function App() {
             <Route path="/" element={<ChiefWarden />} />
             <Route path="/Complain_Resolved_pannel" element={<Chief_Complaints_resolve_pannel/>} />
             <Route path="/Student_complain_list" element={<Chief_Student_complaints/>} />
-            <Route path="/Update_mess_menu" element={<ChiefWarden_mess_menu_update/>} />
+            <Route exact path="/employee/edit/:menu/:empid" element={<EmpEdit />} />
+            <Route path="/Update_mess_menu" element={<ChiefWarden_mess_menu_update selectedMenu={selectedMenu} onMenuChange={handleMenuChange}/>} />
           </>
             ) }
             {decodedToken && decodedToken.userrole === 'accountant' && (

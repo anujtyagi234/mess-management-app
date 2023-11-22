@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./MainDash.css";
-import Cards from "../Cards/Cards";
 
 function MainDash() {
   const [userData, setUserData] = useState(null);
@@ -50,7 +49,6 @@ function MainDash() {
         ) : (
           <p>Loading user data...</p>
         )}
-        <Cards />
       </div>
     </div>
   );
