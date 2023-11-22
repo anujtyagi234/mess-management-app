@@ -9,14 +9,16 @@ import contact from '../../imgs/phone-call.gif';
 import rule from '../../imgs/books.gif';
 import team from '../../imgs/copywriting.gif';
 import collage from '../../imgs/lecture-room.gif';
+import Massage from '../../imgs/new-message.gif';
+import openmassagepng from '../../imgs/mail-delivery.gif';
 
 function Sidebar({onMenuItemClick}) {
   const menuItems = [
     { title: 'Dashboard', image: home },
     { title: 'Mess-Menu', image: menu },
     { title: 'Complain', image: complain },
-    { title: 'Unresolved Complain', image: complain },
-    { title: 'Resolved Complain', image: complain },
+    { title: 'Unresolved-Complain', image: Massage  },
+    { title: 'Resolved-Complain', image: openmassagepng },
     { title: 'Contact', image: contact },
     { title: 'Rules', image: rule },
     { title: 'Mnnit Alld', image: collage },

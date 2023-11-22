@@ -11,6 +11,8 @@ import Rules from "../Dashboard/Main/Rule";
 import Mnnit from "../Dashboard/Main/Mnnit";
 import Contact from "../Dashboard/Main/Contact";
 import Logout from "../Dashboard/Logout";
+import UnResolved_complains from "../ChiefWarden/Student_Complains";
+import Resolved_complains from '../ChiefWarden/ResolvedComplain'
 function Dashboard_main() {
 	const [selectedMenuItem, setSelectedMenuItem] = useState("Dashboard");
 	const handleMenuItemClick = (menuItem) => {
@@ -26,11 +28,11 @@ function Dashboard_main() {
 		case "Complain":
 			content = <Complain />;
 			break;
-		case "Unresolved Complain":
-		content = <Complain />;
+		case "Unresolved-Complain":
+		content = <UnResolved_complains/>;
 		break;
-		case "Resolved Complain":
-		content = <Complain />;
+		case "Resolved-Complain":
+		content = <Resolved_complains/>;
 		break;
 		case "Mess-Menu":
 			content = <Mess_menu />;
@@ -56,15 +58,17 @@ function Dashboard_main() {
 			<div className="App">
 				<div className="Back">
 					<Sidebar onMenuItemClick={handleMenuItemClick} />
-					{content}
-					<div>
+			 {content}
+
+			<div>
 				    <Logout/>
 					<Rightside />
 					</div>
 					<div></div>
+					</div>
 				</div>
 			</div>
-		</div>
+
 	);
 }
 

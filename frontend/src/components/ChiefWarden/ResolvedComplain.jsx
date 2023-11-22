@@ -74,7 +74,7 @@ const Chief_Student_complaints = () => {
   return (
     <div className='Maincontainer'>
       <div className="comlainheading">
-        <h2 style={{ fontSize: "1.5rem", marginTop: "1.1rem", fontFamily: "serif", fontWeight: "bold" }}>
+        <h2  style={{fontSize:"1.5rem",marginTop:"1.1rem",fontfamily:"serif",fontWeight:"bold"}}>
           <b>Students Complaints</b>
         </h2>
       </div>

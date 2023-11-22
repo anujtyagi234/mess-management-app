@@ -1,23 +1,17 @@
 import React, { useState } from 'react';
-import './Sidebar_Chief.css';
 import '../Dashboard/Sidebar.css';
 
-
-import home from '../../imgs/home.gif';
 import menu from '../../imgs/burger.gif';
 import mess from '../../imgs/mess.png';
-import Massage from '../../imgs/new-message.gif'
+import complain from '../../imgs/Compln.gif';
+import Massage from '../../imgs/new-message.gif';
+import openmassagepng from '../../imgs/mail-delivery.gif';
 
-import openmassagepng from '../../imgs/mail-delivery.gif'
-
-
-
-function Sidebar({onMenuItemClick}) {
+function Sidebar({ onMenuItemClick }) {
   const menuItems = [
-    { title: 'Student-Complains', image: home },
+    { title: 'Student-Complains', image: complain },
     { title: 'Resolved-Complains', image: openmassagepng },
     { title: 'Edit-Mess-Menu', image: menu },
-    { title: 'Unresolved-complain', image: Massage },
     
   ];
 
@@ -28,7 +22,7 @@ function Sidebar({onMenuItemClick}) {
   const handleItemClick = (index) => {
     const selectedItem = menuItems[index].title;
     onMenuItemClick(selectedItem);
-    
+    setSelected(index);
   };
 
   return (
@@ -37,7 +31,7 @@ function Sidebar({onMenuItemClick}) {
       <div className="logo">
         <img src={mess} alt="" />
         <span>
-          Acc<span>oun</span>tant
+          Chief <span>Warden</span>
         </span>
       </div>
 
@@ -60,6 +54,8 @@ function Sidebar({onMenuItemClick}) {
           </div>
         ))}
       </div>
+
+      
     </div>
   );
 }

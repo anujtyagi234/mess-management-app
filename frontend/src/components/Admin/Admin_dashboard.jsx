@@ -1,7 +1,7 @@
 import React from "react";
 import "../../App.css";
 import "../../Acc_Adm_Chf_Dashboard.css";
-
+import Logout from "../Dashboard/Logout";
 import { useState } from "react";
 import Add_Accountant from './Add_Accountant'
 import Add_Chiefwarden from './Add_Chief_warden'
@@ -32,18 +32,21 @@ function Dashboard_main() {
 		
 	}
 	return (
-		<div>
-			<div className="App">
-				<div className="Back">
-					<Admin_Dashboard onMenuItemClick={handleMenuItemClick} />
-					{content}
-					<div>
-				    <Logout/>
-					</div>
-					<div></div>
-				</div>
+       
+		
+        <div>
+		<div className="App1">
+		  <div className="Back1">
+			<div>
+			  < Admin_Dashboard onMenuItemClick={handleMenuItemClick} />
+			  <Logout />
 			</div>
+			<div className="Middlepart1">
+			  <div className="custom-content1">{content}</div>
+			</div>
+		  </div>
 		</div>
+	  </div>
 	);
 }
 

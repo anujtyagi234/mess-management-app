@@ -46,6 +46,10 @@
     align-items: center;
   }
 
+
+  .Middle_Main{
+    overflow-y: auto;
+  }
  
   
   

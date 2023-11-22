@@ -6,16 +6,17 @@
 }
 
 .container{
-    margin-top: .8rem;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-   
+    /* overflow: auto; */
+    height: 101%;
         border-radius: 10px;
         box-shadow: 5px 7px  15px 12px rgb(188, 75, 97);
         overflow:scroll;
         background-image: url('../../../imgs/Rule.png'); 
         margin-left: 0.7rem;
+        margin-bottom: 1.5rem;
       
 }
 .Mess_heading{
