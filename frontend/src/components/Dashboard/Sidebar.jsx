@@ -15,6 +15,8 @@ function Sidebar({onMenuItemClick}) {
     { title: 'Dashboard', image: home },
     { title: 'Mess-Menu', image: menu },
     { title: 'Complain', image: complain },
+    { title: 'Unresolved Complain', image: complain },
+    { title: 'Resolved Complain', image: complain },
     { title: 'Contact', image: contact },
     { title: 'Rules', image: rule },
     { title: 'Mnnit Alld', image: collage },
