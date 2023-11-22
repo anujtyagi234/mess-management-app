@@ -34,7 +34,7 @@ import Menu2 from './components/Dashboard/Main/Mess_menu.jsx'
 import Accountant from './components/Accountant/Accountant.jsx'
  import Set_Expenses from './components/Accountant/Accountant_Expence_list.jsx'
  import MessMenu from './components/Dashboard/Main/Mess_menu.jsx'
- import ChieDashboard from './components/ChiefWarden/Chief_Dashboard.jsx'
+ import ChiefDashboard from './components/ChiefWarden/Chief_Dashboard.jsx'
 export default function App() {
   const [selectedMenu, setSelectedMenu] = useState("Breakfast");
   const [selectedExpenseType, setSelectedExpanceType] = useState("Vegitable_Expence");
@@ -77,7 +77,7 @@ export default function App() {
             ) }
             {decodedToken && decodedToken.userrole === 'chief warden' && (
             <>
-            <Route path="/" element={<ChiefWarden />} />
+            <Route path="/" element={<ChiefDashboard />} />
             <Route path="/Complain_Resolved_pannel" element={<Chief_Complaints_resolve_pannel/>} />
             <Route path="/Student_complain_list" element={<Chief_Student_complaints/>} />
             <Route exact path="/employee/edit/:menu/:empid" element={<EmpEdit />} />

@@ -48,9 +48,6 @@ function Dashboard_main() {
 		case "Contact":
 			content = <Contact />;
 			break;
-		case "Unresolved Complain":
-		content = <Contact />;
-		break;
 		default:
 			content = null; 
 	}

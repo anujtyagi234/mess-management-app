@@ -4,13 +4,19 @@ import "../../Acc_Adm_Chf_Dashboard.css";
 import { useState } from "react";
 import Student_Complains from './Student_Complains'
 import Resolved_Complains from './ResolvedComplain'
-import Edit_Mess_Menu from './MenuEdit'
+import Edit_Mess_Menu from './MenuListing_BreakFast'
 import Unresolved_complain from '../Admin/UnResolved_complain'
+import Sidebar_Chief from "./Sidebar_Chief"
+import Logout from "../Dashboard/Logout";
 function Dashboard_main() {
+	const [selectedMenu, setSelectedMenu] = useState("Breakfast");
 	const [selectedMenuItem, setSelectedMenuItem] = useState("Dashboard");
 	const handleMenuItemClick = (menuItem) => {
 		setSelectedMenuItem(menuItem);
 	};
+	const handleMenuChange = (newMenu) => {
+		setSelectedMenu(newMenu);
+	  };
 
 	let content;
 
@@ -22,7 +28,7 @@ function Dashboard_main() {
 			content = < Resolved_Complains/>;
 			break;
 		case "Edit-Mess-Menu":
-		content = <Edit_Mess_Menu/>;
+		content = <Edit_Mess_Menu selectedMenu={selectedMenu} onMenuChange={handleMenuChange}/>;
 		break;
         case "Unresolved-complain":
 		content = <Unresolved_complain/>;

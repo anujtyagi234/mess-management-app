@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Sidebar_Chief.css';
+import './Sidebar_Cheif.css';
 import '../Dashboard/Sidebar.css';
 
 
