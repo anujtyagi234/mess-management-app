@@ -1,4 +1,5 @@
 import React from "react";
+import './Acc_Adm_Chf_Dashboard.css'
 import { jwtDecode } from "jwt-decode";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { useState } from "react";
@@ -33,6 +34,7 @@ import EmpEdit from './components/ChiefWarden/MenuEdit.jsx';
 import Menu2 from './components/Dashboard/Main/Mess_menu.jsx'
 import Accountant from './components/Accountant/Accountant.jsx'
 import Accountant_Dashboard from './components/Accountant/Accountant_Dashboard.jsx'
+
  import Set_Expenses from './components/Accountant/Accountant_Expence_list.jsx'
  import MessMenu from './components/Dashboard/Main/Mess_menu.jsx'
  import ChiefDashboard from './components/ChiefWarden/Chief_Dashboard.jsx'
@@ -57,8 +59,10 @@ export default function App() {
   return (
     <div className="wrapper">
       <Router>
-        {!decodedToken && <NavBar />} 
-        <Routes>
+         {!decodedToken && <NavBar />} 
+
+         <Routes>
+{/*           
        {!decodedToken && (
             <Route path="/" element={<Home />} />
           )}
@@ -95,10 +99,11 @@ export default function App() {
             </>
             ) }
             </Routes>
-          {!decodedToken && <Footer />}
+          {!decodedToken && <Footer />}  
 
 
-      <Routes>
+      <Routes> 
+      */}
 
 {/* <Route path="/" element={<Dashi/>}/> */}
 
@@ -161,9 +166,13 @@ export default function App() {
        {/* <Chief_Resolved_complains/> */}
 
 
+       <Route path="/" element={<ChiefDashboard/>} />
 
+       {/* <Route path="/" element={<Admin_Dashboard/>} /> */}
+       {/* <Route path="/" element={<Accountant_Dashboard/>}/> */}
+       {/* <Route path="/" element={<Accountant_Dashboard/>}/>  */}
+       {/* <Route path="/" element={<Dashi/>}/>  */}
 
-       {/* <Route path="/" element={<ChieDashboard/>} /> */}
        </Routes>
     </Router>
     </div>

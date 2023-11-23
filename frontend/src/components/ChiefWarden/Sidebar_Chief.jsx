@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import '../Dashboard/Sidebar.css';
-
+import './Sidebar_Chief.css'
 import menu from '../../imgs/burger.gif';
 import mess from '../../imgs/mess.png';
 import complain from '../../imgs/Compln.gif';
@@ -39,6 +38,7 @@ function Sidebar({ onMenuItemClick }) {
       <div className="menu">
         {menuItems.map((item, index) => (
           <div
+          
             className={`Items ${selected === index ? 'active' : ''}`}
             key={index}
             onClick={() => handleItemClick(index)}

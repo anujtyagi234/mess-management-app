@@ -67,20 +67,22 @@ function MealPlanner() {
             <img src={Menu} alt="" style={{ borderRadius: "0" }} />
           </div>
         </div>
-        <div className="Dropdown">
-          <div className="select_menu">
-            <select
-              className="Select_days_box"
-              id="days"
-              onChange={(e) => setSelectedDay(e.target.value)}
-              value={selectedDay}
-            >
-              {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'].map((day) => (
-                <option key={day} value={day}>
-                  {day}
-                </option>
-              ))}
-            </select>
+        <div className="Dropdown" style={{fontFamily:"Agbalumo"}}>
+          <div className="select_menu" style={{fontFamily:"Agbalumo"}}>
+          <select
+  className="Select_days_box"
+  style={{ fontFamily: "Agbalumo" }}
+  id="days"
+  onChange={(e) => setSelectedDay(e.target.value)}
+  value={selectedDay}
+>
+  {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'].map((day) => (
+    <option key={day} value={day}>
+      {day}
+    </option>
+  ))}
+</select>
+
           </div>
         </div>
 

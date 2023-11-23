@@ -21,7 +21,7 @@ const ExpenseListing = ({ selectedExpense, onExpenseTypeChange }) => {
   }, [selectedExpense]);
 
   return (
-    <div className="container mx-auto">
+    <div className="container1 mx-auto" style={{fontFamily:"Agbalumo"}}>
       <div className="bg-white shadow-md rounded p-4 mb-4">
         <h2 className="text-2xl font-bold mb-4">Expense Chart</h2>
         <div className="mb-3">

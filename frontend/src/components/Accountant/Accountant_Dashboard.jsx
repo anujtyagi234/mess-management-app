@@ -1,5 +1,5 @@
 import React from "react";
-import "../../Acc_Adm_Chf_Dashboard.css";
+import '../../Acc_Adm_Chf_Dashboard.css'
 import { useState } from "react";
 import AddExpence from './Accountant_Expence_list'
 import MessMenu from '../Dashboard/Main/Mess_menu'
@@ -7,6 +7,7 @@ import Resolved_complains from '../ChiefWarden/Student_Complains'
 import Student_complains from '../ChiefWarden/ResolvedComplain'
 import Logout from "../Dashboard/Logout";
 import Accountant_sidebar from './Accountant_sidebar'
+import  DashmAccoundefault from './DashmAccoundefault'
 function Dashboard_main() {
 	const [selectedMenuItem, setSelectedMenuItem] = useState("Dashboard");
 	const [selectedExpenseType, setSelectedExpanceType] = useState("Vegitable_Expence");
@@ -30,21 +31,12 @@ function Dashboard_main() {
 		case "Unresolved-complains":
 		content = <Student_complains/>;
 		break;
-        case "resolved-complains":
+        case "Resolved-complains":
 		content = <Resolved_complains/>;
 		break;
         default:
-		// Default content when no menu item is selected
-		content = (
-			<div>
-
-		  <div className="default-content">
-			<p >!! Hello.. !!</p>
-		  </div>
-		  </div>
-		);
+		content = <DashmAccoundefault/>;
 		break;
-		
 	}
 	return (
         
@@ -56,7 +48,7 @@ function Dashboard_main() {
 			  <Accountant_sidebar onMenuItemClick={handleMenuItemClick} />
 			  <Logout />
 			</div>
-			<div className="Middlepart1">
+			<div className="MiddlePart1">
 			  <div className="custom-content1">{content}</div>
 			</div>
 		  </div>

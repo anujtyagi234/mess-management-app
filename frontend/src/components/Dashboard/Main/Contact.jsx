@@ -74,7 +74,7 @@ function Contact() {
   };
 
   return (
-    <div className="Contact_main_container">
+    <div className="Contact_main_container12"style={{fontFamily:"Agbalumo"}}>
       <div className="contact_heading">Contact us</div>
       <div className="ParentContainer_contact">
         <div className="ContactDetails_ParentContainer">

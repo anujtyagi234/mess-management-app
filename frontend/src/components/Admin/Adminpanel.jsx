@@ -45,6 +45,7 @@ const AdminPanel = () => {
           <div className='Add'>
             {/* <button onClick={toggleAccountant}>Add Accountant</button>
             {showAccountant && <AddAccount />} */}
+            
 <Link to='/Accountant_Admin'>
           <button className="custom-button">
             Add Accountant

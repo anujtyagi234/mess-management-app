@@ -43,10 +43,10 @@ const MessComplaintForm = () => {
   return (
 
     
-    <div className="Parent_container">
-    <div className="container  " style={{width:"97%",height:"93vh"}} >
+    <div className="Parent_container" style={{fontFamily:"Agbalumo"}}>
+    <div className="container123" style={{width:"97%",height:"93vh"}} >
       
-        <h2 className="Mess_heading text-3xl font-bold text-center mb-6 font-serif">Mess Complaint Form</h2>
+        <h2 className="Mess_heading text-3xl font-bold text-center mb-6 ">Mess Complaint Form</h2>
         <div className='Deatials_box gap-0'>
         <form onSubmit={handleSubmit} className=" p-8 rounded w-full flex flex-col">
           <div className="mb-4 flex">
