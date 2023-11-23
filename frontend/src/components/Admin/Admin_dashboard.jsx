@@ -6,7 +6,7 @@ import { useState } from "react";
 import Add_Accountant from './Add_Accountant'
 import Add_Chiefwarden from './Add_Chief_warden'
 import Resolved_complains from '../ChiefWarden/ResolvedComplain'
-import Student_complains from '../ChiefWarden/Student_Complains'
+import Student_complains from '../Dashboard/Main/Student_Complain'
 import Admin_Dashboard from './Side_bar_Admin';
 function Dashboard_main() {
 	const [selectedMenuItem, setSelectedMenuItem] = useState("Dashboard");

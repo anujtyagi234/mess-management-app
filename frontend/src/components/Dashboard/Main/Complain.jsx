@@ -1,44 +1,84 @@
 // MessComplaintForm.jsx
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
+import axios from 'axios';
 import './Complain.css'
 const MessComplaintForm = () => {
   const [selectedFile, setSelectedFile] = useState(null);
-  const handleUpload = () => {
-    // Handle the file upload logic here (e.g., send it to the server)
-    if (selectedFile) {
-      console.log('Uploading file:', selectedFile);
-      // Add your file upload logic here
-    } else {
-      console.log('No file selected');
-    }
+  const [userData, setUserData] = useState(null);
+  const [formData, setFormData] = useState({
+    complaintTitle: '',
+    complaintDetails: '',
+  });
+
+  useEffect(() => {
+    // Retrieve token from local storage
+    const token = localStorage.getItem('token');
+
+    // Fetch user data from the server
+    fetchUserData(token);
+  }, []); // Fetch data on component mount
+
+  const fetchUserData = (token) => {
+    fetch('http://localhost:3000/api/auth/user', {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(userData => {
+      // Set the received user data to state
+      setUserData(userData);
+    })
+    .catch(error => {
+      // Handle error
+      console.error('There was a problem with the request:', error);
+    });
   };
+
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     setSelectedFile(file);
   };
 
-  const [formData, setFormData] = useState({
-    fullName: '',
-    RegistrationNumber: '',
-    email: '',
-    phone: '',
-    roomNumber: '',
-    Hostelname: '',
-    category: '',
-    complaintDetails: '',
-    subject: '',
-  });
-
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
   };
+  
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Complaint Form submitted:', formData);
-    // Add logic to handle the form submission
+
+    const newFormData = new FormData();
+    newFormData.append('user', userData?.user_name || ''); // Ensure userData is available
+    newFormData.append('image', selectedFile || ''); // Ensure selectedFile is available
+    newFormData.append('title', formData.complaintTitle || '');
+    newFormData.append('description', formData.complaintDetails || '');
+
+    Array.from(newFormData.entries()).forEach(([key, value]) => {
+      console.log(key, value);
+    });
+
+    axios.post('http://localhost:3000/api/complain', newFormData)
+    .then((response) => {
+      console.log(response.data);
+    })
+    .catch((error) => {
+      console.error('Error submitting form:', error);
+    });
   };
+  
+  
 
   return (
 
@@ -48,7 +88,7 @@ const MessComplaintForm = () => {
       
         <h2 className="Mess_heading text-3xl font-bold text-center mb-6 font-serif">Mess Complaint Form</h2>
         <div className='Deatials_box gap-0'>
-        <form onSubmit={handleSubmit} className=" p-8 rounded w-full flex flex-col">
+        <form className=" p-8 rounded w-full flex flex-col">
           <div className="mb-4 flex">
           </div>
           <div className="mb-4">
@@ -88,16 +128,15 @@ const MessComplaintForm = () => {
         multiple
         onChange={handleFileChange}
       />
-      <button onClick={handleUpload} className='Upload_Button'>Upload</button>
 
       </div>
       </div>
-        <a href="#_" class="relative p-0.5 inline-flex mt-20 items-center justify-center font-bold overflow-hidden group rounded-md">
+        <button onClick={handleSubmit} class="relative p-0.5 inline-flex mt-20 items-center justify-center font-bold overflow-hidden group rounded-md">
 <span class="w-full h-full bg-gradient-to-br from-[#ff8a05] via-[#ff5478] to-[#ff00c6] group-hover:from-[#ff00c6] group-hover:via-[#ff5478] group-hover:to-[#ff8a05] absolute"></span>
 <span class="relative px-6 py-3 transition-all ease-out bg-gray-900 rounded-md group-hover:bg-opacity-0 duration-400">
 <span class="relative text-white">Submit-form</span>
 </span>
-</a>
+</button>
       
     </div>
     </div>

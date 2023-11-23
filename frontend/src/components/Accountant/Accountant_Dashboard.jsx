@@ -3,8 +3,8 @@ import "../../Acc_Adm_Chf_Dashboard.css";
 import { useState } from "react";
 import AddExpence from './Accountant_Expence_list'
 import MessMenu from '../Dashboard/Main/Mess_menu'
-import Resolved_complains from '../ChiefWarden/Student_Complains'
-import Student_complains from '../ChiefWarden/ResolvedComplain'
+import Resolved_complains from '../Dashboard/Main/ResolvedComplain'
+import Student_complains from '../Dashboard/Main/Student_Complain'
 import Logout from "../Dashboard/Logout";
 import Accountant_sidebar from './Accountant_sidebar'
 function Dashboard_main() {

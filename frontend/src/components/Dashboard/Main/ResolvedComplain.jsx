@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from 'react';
-import './Common.css';
+import '../../ChiefWarden/Common.css';
 import axios from 'axios';
 
 const Student_complaints = () => {
@@ -16,7 +16,8 @@ const Student_complaints = () => {
         .catch((error) => {
           console.error('Error fetching complaints:', error);
         });
-    }, []); 
+    }, []);
+
     
     // Check if complaints is an array before filtering
     const resolvedComplaints = Array.isArray(complaints)
@@ -42,7 +43,6 @@ const Student_complaints = () => {
               <p><b>Created at: </b>{new Date(complaint.createdAt).toLocaleString()}</p>
               <p><b>Likes: </b>{complaint.likes}</p>
               <p><b>Dislike: </b>{complaint.dislikes}</p>
-              <p><b>Dislike: </b>{complaint.images}</p>
               <p><b>ResolvedAt: </b>{new Date(complaint.resolvedAt).toLocaleString()}</p>
               {complaint.images && <img src={`http://localhost:3000/uploads/${complaint.images}`} alt="Complaint" style={{ maxWidth: '300px' }} />}
             </li>
