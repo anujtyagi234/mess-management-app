@@ -62,7 +62,7 @@ export default function App() {
          {!decodedToken && <NavBar />} 
 
          <Routes>
-{/*           
+          
        {!decodedToken && (
             <Route path="/" element={<Home />} />
           )}
@@ -102,8 +102,8 @@ export default function App() {
           {!decodedToken && <Footer />}  
 
 
-      <Routes> 
-      */}
+      {/* <Routes>  */}
+     
 
 {/* <Route path="/" element={<Dashi/>}/> */}
 
@@ -166,14 +166,14 @@ export default function App() {
        {/* <Chief_Resolved_complains/> */}
 
 
-       <Route path="/" element={<ChiefDashboard/>} />
+       {/* <Route path="/" element={<ChiefDashboard/>} /> */}
 
        {/* <Route path="/" element={<Admin_Dashboard/>} /> */}
        {/* <Route path="/" element={<Accountant_Dashboard/>}/> */}
        {/* <Route path="/" element={<Accountant_Dashboard/>}/>  */}
        {/* <Route path="/" element={<Dashi/>}/>  */}
 
-       </Routes>
+       {/* </Routes> */}
     </Router>
     </div>
   );
