@@ -1,6 +1,5 @@
 import React from "react";
-import "../../App.css";
-import "../../Acc_Adm_Chf_Dashboard.css";
+import '../../Acc_Adm_Chf_Dashboard.css'
 import Logout from "../Dashboard/Logout";
 import { useState } from "react";
 import Add_Accountant from './Add_Accountant'
@@ -8,6 +7,7 @@ import Add_Chiefwarden from './Add_Chief_warden'
 import Resolved_complains from '../ChiefWarden/ResolvedComplain'
 import Student_complains from '../Dashboard/Main/Student_Complain'
 import Admin_Dashboard from './Side_bar_Admin';
+ import DashmAccoundefault from '../Accountant/DashmAccoundefault' 
 function Dashboard_main() {
 	const [selectedMenuItem, setSelectedMenuItem] = useState("Dashboard");
 	const handleMenuItemClick = (menuItem) => {
@@ -26,9 +26,12 @@ function Dashboard_main() {
 		case "Unresolved-complains":
 		content = <Student_complains/>;
 		break;
-        case "resolved-complains":
+        case "Resolved-complains":
 		content = <Resolved_complains/>;
 		break;
+		default:
+			content = <DashmAccoundefault/>;
+			break;
 		
 	}
 	return (
@@ -41,8 +44,8 @@ function Dashboard_main() {
 			  < Admin_Dashboard onMenuItemClick={handleMenuItemClick} />
 			  <Logout />
 			</div>
-			<div className="Middlepart1">
-			  <div className="custom-content1">{content}</div>
+			<div className="MiddlePart1">
+			{content}
 			</div>
 		  </div>
 		</div>

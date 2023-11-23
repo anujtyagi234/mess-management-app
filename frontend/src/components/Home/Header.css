@@ -1,0 +1,92 @@
+/* YourComponent.css */
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+.animated-text {
+    margin-left: 1.7rem;
+    font-size: 2.7rem; /* Adjust font size as needed */
+    color: #dcd5d9; /* Adjust text color as needed */
+    animation: bounce 1s infinite alternate; 
+    color: #fff; /* Change text color on hover */
+    text-decoration: underline; /* Add underline on hover */
+    text-shadow: 2px 2px 4px rgba(52, 219, 191, 0.8); /* Add text shadow on hover */
+    /* font-family: 'Kaushan Script', cursive; */
+    /* font-family: 'Lobster', cursive; */
+  }
+  
+  @keyframes bounce {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-10px);
+    }
+  }
+
+
+
+
+  .main-heading {
+    font-size: 2.3rem;
+    /* font-weight:bolder; */
+    font-weight: 1700;
+
+    color: #181a18; /* Text color */
+    text-decoration: none;
+    display: inline-block;
+    text-shadow: 5px 2px 3px white; 
+    /* Add text shadow */
+    font-weight: 900; /* Adjust the numeric value based on your preference */
+letter-spacing: 1px;
+
+  font-family: 'Agbalumo';
+
+
+  }
+
+
+
+  .container {
+    display: flex;
+    align-items: center; /* Center items vertically */
+  }
+  
+  .left-image {
+    margin-right: 10px; /* Adjust the margin as needed */
+  }
+  
+  .main-heading {
+    text-decoration: none; /* Assuming Link is styled as a link, remove underline */
+  }
+
+  .container12 {
+    display: flex;
+    align-items: center; /* Center items vertically */
+  }
+  
+  .left-image {
+    margin-right: 10px; 
+    /* Adjust the margin as needed */
+    height: 50px;
+    border-radius: 40%;
+    box-shadow: 4px 4px  2px grey;
+    border-color: rgb(186, 87, 125);
+    border-width: 2.5px;
+    
+    /* box-shadow: 2px 2px 3px rgb(255, 0, 140); */
+    background-color: transparent;
+  }
+  
+  .main-heading {
+    text-decoration: none; /* Assuming Link is styled as a link, remove underline */
+  }
+  
+  
+ .header_style{
+  background-color: rgb(118, 115, 111);
+  border-radius: 10px;
+  box-shadow: 2px 2px 1px white;
+  
+  
+ }
+
+
+  

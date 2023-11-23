@@ -1,14 +1,38 @@
 
 
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
 
 .comlainheading{
     background-color: aqua;
-    height: 2rem;
+    height: 2.5rem;
     margin-bottom: 2rem;
     color: black;
+
     text-align: center;
  text-shadow: 2px 1px 2px rgb(206, 21, 107);
+font-family: 'Agbalumo';
 
+
+}
+
+.Maincontainer{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* overflow: auto; */
+      border-radius: 10px;
+      box-shadow: 5px 7px  15px 12px rgb(188, 75, 97);
+      overflow:scroll;
+      background-image: url('../../imgs/Rule.png'); 
+      margin-left: 0.7rem;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+      margin-left: 1rem;
+      height: 96%;
+   width: 97%;
+   overflow:scroll;
+  
+    
 }
 
 
@@ -29,7 +53,7 @@
     box-shadow:  7px 7px 3px gray;
     margin-bottom: 27px;
     border-radius: 10px;
-    background: linear-gradient(to right, #55c697, #fefe7b,rgb(201, 96, 119)); 
+    background: linear-gradient(to right, #2eccba,white, #fef57b,rgb(242, 229, 229),rgb(164, 54, 96));   
     
   }
   
@@ -86,5 +110,36 @@
   .like-dislike-buttons button:hover {
     background-color: #b3003c;
   }
+
+  .abc12{
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* overflow: auto; */
+    border-radius: 10px 100px / 120px;
+        margin-left: 2.3rem;
+     height: 89vh;
+     box-shadow:2px 5px 7px 3px aqua;
+    
+  }
+  .image_default_Dash{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  
+
+  /* .Middlepart1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } */
+
+
+
   
   
+
+ 

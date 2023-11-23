@@ -4,7 +4,10 @@ const app = express();
 const { connectToDatabase } = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
 const adminRoutes = require("./routes/adminRoutes")
-const uploadRoutes = require("./routes/uploadRoutes");
+const complain = require('./routes/complainRoutes')
+const fetchComplaintRoutes = require('./routes/fetchComplainRoutes');
+const resolveComplaintRoute = require('./routes/updateComplainRoutes');
+const path = require('path');
 
 require("dotenv").config();
 
@@ -18,7 +21,10 @@ connectToDatabase();
 // Use auth routes
 app.use("/api/auth", authRoutes);
 app.use("/admin",adminRoutes)
-app.use("/upload",uploadRoutes)
+app.use("/api",complain)
+app.use("/api", fetchComplaintRoutes);
+app.use('/api/complaints', resolveComplaintRoute);
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 const PORT = 3000;
 app.listen(PORT, () => {

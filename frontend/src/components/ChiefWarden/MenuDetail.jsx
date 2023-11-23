@@ -18,7 +18,7 @@ const EmpDetail = () => {
 
   return (
     <div>
-      <div className="container">
+      <div className="container" style={{fontFamily:"Agbalumo"}}>
         <div className="card row" style={{ textAlign: "left" }}>
           <div className="card-title">
             <h2>

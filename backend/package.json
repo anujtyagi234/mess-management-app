@@ -19,6 +19,7 @@
     "hbs": "^4.2.0",
     "joi-password-complexity": "^5.2.0",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.0.0"
+    "mongoose": "^8.0.0",
+    "uuid": "^9.0.1"
   }
 }

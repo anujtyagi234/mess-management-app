@@ -1,69 +1,69 @@
 #root {
-    max-width: 100vw;
-    margin: 0 auto;
-    /* padding: 2rem; */
-    text-align: center;
-    --yellow: linear-gradient(180deg, #F8D49A -146.42%, #FAD79D -46.42%);
-    --orange: #fca61f;
-    --black: #242d49;
-    --gray: #788097;
-    --purple: linear-gradient(180deg, #BB67FF 0%, #C484F3 100%);
-    --pink: #db5666;
-    --glass: rgba(255, 255, 255, 0.54);
-    --boxShadow: 0px 19px 60px rgb(0 0 0 / 8%);
-    --smboxShadow: -79px 51px 60px rgba(0, 0, 0, 0.08);
-    --activeItem: #f799a354;
-  }
-  
-
-  .App1{
-  
-    background: linear-gradient(#b694cd, #cf7d87, #d8af6d);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    font-family: 'Lobster', sans-serif;
-  
-  }
-  
-  .Back1{
-    display: grid;
-    height: 97%;
-    width:97%;
-    border-radius: 2rem;
-    background-color: var(--glass);
-    grid-template-columns: 15rem auto ;
-    flex-direction: column;
-   
-  }
-  
-
- .Middlepart1{
-    overflow: auto; /* Enable scrolling if content exceeds the height */
-    border: 1px solid #ccc;
-    margin-top: .8rem;
-    height: 96%;
-    width: 97%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-        border-radius: 10px;
-        box-shadow: 5px 7px  15px 12px rgb(188, 75, 97);
-        overflow:scroll;
-        background-image: url('../../frontend/src/imgs/Rule.png'); 
-        margin-left: 1.7rem;
- }
+  max-width: 100vw;
+  margin: 0 auto;
+  /* padding: 2rem; */
+  text-align: center;
+  --yellow: linear-gradient(180deg, #F8D49A -146.42%, #FAD79D -46.42%);
+  --orange: #fca61f;
+  --black: #242d49;
+  --gray: #788097;
+  --purple: linear-gradient(180deg, #BB67FF 0%, #C484F3 100%);
+  --pink: #db5666;
+  --glass: rgba(255, 255, 255, 0.54);
+  --boxShadow: 0px 19px 60px rgb(0 0 0 / 8%);
+  --smboxShadow: -79px 51px 60px rgba(0, 0, 0, 0.08);
+  --activeItem: #f799a354;
+}
 
 
- .default-content1{
-    font-size: 4rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family:cursive;
-    font-weight: bold;
-    color: #090a0a;
-    text-shadow:rgb(154, 46, 64) 1px  5px;
- }
+.App1{
+
+  background: linear-gradient(#b694cd, #cf7d87, #d8af6d);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  font-family: 'Lobster', sans-serif;
+
+}
+
+.Back1{
+  display: grid;
+  height: 97%;
+  width:97%;
+  border-radius: 2rem;
+  background-color: var(--glass);
+  overflow: hidden;
+  grid-template-columns: 15rem auto ;
+  flex-direction: column;
+}
+
+
+.MiddlePart1{
+
+  background-color: #a99c9c;
+  height: 96%;
+  background-image: url('https://i.pinimg.com/originals/93/c6/aa/93c6aaa4424c468db1c9f7904eb400d8.gif');
+  background-size: cover; /* Adjust based on your needs */
+  background-position: center; /* Adjust based on your needs */
+ 
+  width: 97%;
+  margin-top: 1rem;
+  margin-left: 1.5rem;
+  overflow: auto;
+  border-radius: 20px;
+
+}
+
+
+.Middle_Main{
+  overflow-y: auto;
+}
+
+
+
+
+
+
+

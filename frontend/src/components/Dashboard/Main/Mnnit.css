@@ -1,37 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+
 .Mnnit_div{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    
+}
+.abcd{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow:scroll;
+        border-radius: 10px;
+        margin-left: 1rem;
+       height: 98%;
+    width: 97%;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    overflow:scroll;
+        box-shadow: 5px 7px  15px 12px rgb(188, 75, 97);
+        background-image: url('../../../imgs/Rule.png');
+        overflow: auto; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
 }
 
 .box_mnnit{
     flex-direction: column;
     display: flex;
     gap: 1rem;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    /* font-family: Georgia, 'Times New Roman', Times, serif; */
     justify-content: center;
     align-items: center;
     text-align: center;
     /* background-color: aqua; */
-    height: 80%;
-    width: 85%;
+    
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
     border-radius: 10px 100px / 120px;
     background-image: url('../../../imgs/mnnit2.png');
-    box-shadow: 5px 7px  15px 12px rgb(188, 75, 97);
-    margin-top: .5rem;
+    box-shadow: 5px 7px  15px 12px rgb(51, 48, 48);
+    margin-top: 3rem;
+    margin-left: 1rem;
+   height: 54%;
+width: 60%;
+overflow:scroll;
+
     
 }
 
 .Mln_text{
     font-size: 2.2rem;
     text-shadow:  5px 1px rgb(216, 23, 129);
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    /* font-family: Georgia, 'Times New Roman', Times, serif; */
     font-weight: bold;
- /* text-shadow: 2px 2px 2px rgb(206, 21, 107); */
+    font-family: 'Agbalumo';
 
 }
 

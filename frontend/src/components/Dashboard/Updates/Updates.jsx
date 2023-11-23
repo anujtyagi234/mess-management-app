@@ -28,12 +28,12 @@ function Update() {
   return (
 
     
-    <div className='Update'>
-      <div className="sr"><h1>Updates</h1></div>
+    <div className='Update' >
+      <div className="sr"style={{fontFamily:"Agbalumo"}}><h1>Updates</h1></div>
       {UpdatesData.map((update, index) => (
-        <div className="update" key={index}>
-          <div className='img_Update'>
-         <img src={update.img} alt=""  className='img_user_update' />
+        <div className="update" style={{fontFamily:"Agbalumo"}}  key={index}>
+          <div className='img_Update' style={{fontFamily:"Agbalumo"}}>
+         <img src={update.img} alt=""  className='img_user_update'  style={{fontFamily:"Agbalumo"}}/>
               <span>{update.name}</span>
          </div>
 

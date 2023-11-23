@@ -26,14 +26,13 @@ const Student_complaints = () => {
     
   return (
     <div className='Maincontainer'>
-      <div className="comlainheading">
-        <span>
-          <h2 style={{ fontSize: "1.5rem", marginTop: "1.1rem", fontFamily: "serif", fontWeight: "bold" }}>
-            <b><span>Students Complaints </span></b>
-          </h2>
-        </span>
+      <div className="comlainheading"style={{fontFamily: 'Agbalumo'}} >
+        <h2  style={{fontSize:"1.7rem",marginTop:"1.1rem",fontWeight:"bold",fontFamily: 'Agbalumo'}}>
+          <b>Students Complaints</b>
+        </h2>
       </div>
-      <div className="deatailas_complain">
+      <div className='we123'>
+      <div className="deatailas_complain" style={{fontFamily: 'Agbalumo'}}>
         <ul>
           {resolvedComplaints.map((complaint) => (
             <li key={complaint._id}>
@@ -49,6 +48,8 @@ const Student_complaints = () => {
           ))}
         </ul>
       </div>
+      </div>
+
     </div>
   );
 };

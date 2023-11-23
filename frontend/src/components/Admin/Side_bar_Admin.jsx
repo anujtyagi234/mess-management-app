@@ -1,21 +1,17 @@
 import React, { useState } from 'react';
-import '../Dashboard/Sidebar.css';
 
-
-import home from '../../imgs/home.gif';
-import menu from '../../imgs/burger.gif';
-import Warden from '../../imgs/laptop.gif'
+import cheifimage from '../../imgs/avatar.gif';
+import Warden from '../../imgs/laptop.gif';
 import mess from '../../imgs/mess.png';
 import complain from '../../imgs/Compln.gif';
-import cheifimage from '../../imgs/avatar.gif'
-import Massage from '../../imgs/new-message.gif'
-function Sidebar({onMenuItemClick}) {
+import Massage from '../../imgs/new-message.gif';
+
+function Sidebar({ onMenuItemClick }) {
   const menuItems = [
     { title: 'Add-ChiefWarden', image: cheifimage },
     { title: 'Add-Accountant', image: Warden },
     { title: 'Unresolved-complains', image: complain },
-    { title: 'resolved-complains', image: Massage },
-    
+    { title: 'Resolved-complains', image: Massage },
   ];
 
   const initialSelectedIndex = menuItems.findIndex((item) => item.title === 'Add-ChiefWarden');
@@ -25,24 +21,30 @@ function Sidebar({onMenuItemClick}) {
   const handleItemClick = (index) => {
     const selectedItem = menuItems[index].title;
     onMenuItemClick(selectedItem);
-    
+    setSelected(index);
   };
 
   return (
-    <div className="Sidebar">
-      {/*logo*/}
+    <div className="Sidebar" style={{ display: 'flex', flexDirection: 'column' }}>
+      {/* logo */}
       <div className="logo">
         <img src={mess} alt="" />
         <span>
-          Mess<span>Relay</span>Web
+          Ad<span>min</span>
         </span>
       </div>
 
-      {/*menu*/}
+      {/* menu */}
       <div className="menu">
         {menuItems.map((item, index) => (
           <div
-            className={`Items ${selected === index ? 'active' : ''}`}
+            className="Items"
+            style={{
+              backgroundColor: selected === index ? '#dcdcdc' : 'rgb(38, 232, 154)',
+              color: selected === index ? 'black' : 'black',
+              borderRadius: '0.8rem',
+              transition: 'transform 0.3s, box-shadow 0.3s',
+            }}
             key={index}
             onClick={() => handleItemClick(index)}
           >
