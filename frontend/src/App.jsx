@@ -58,14 +58,17 @@ export default function App() {
   return (
     <div className="wrapper">
       <Router>
-        {!decodedToken && <NavBar />} 
-        <Routes>
+         {!decodedToken && <NavBar />} 
+
+         <Routes>
+          
        {!decodedToken && (
             <Route path="/" element={<Home />} />
           )}
           <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} /> 
-          <Route path="/forgot-password" element={<ForgotPassword />}></Route>
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/forgot-password" element={<ForgotPassword />}/>
+          {/* <Route path="/reset_password/:id/:token" element={<ResetPassword />}></Route> */} 
         
           {decodedToken && decodedToken.userrole === 'student' && (
             <Route path="/" element={<Dashi />} />
@@ -97,10 +100,11 @@ export default function App() {
             </>
             ) }
             </Routes>
-          {!decodedToken && <Footer />}
+          {!decodedToken && <Footer />}  
 
 
-      <Routes>
+      {/* <Routes>  */}
+     
 
 {/* <Route path="/" element={<Dashi/>}/> */}
 
@@ -163,15 +167,18 @@ export default function App() {
        {/* <Chief_Resolved_complains/> */}
 
 
+       {/* <Route path="/" element={<ChiefDashboard/>} /> */}
 
+       {/* <Route path="/" element={<Admin_Dashboard/>} /> */}
+       {/* <Route path="/" element={<Accountant_Dashboard/>}/> */}
+       {/* <Route path="/" element={<Accountant_Dashboard/>}/>  */}
+       {/* <Route path="/" element={<Dashi/>}/>  */}
 
-       {/* <Route path="/" element={<ChieDashboard/>} /> */}
-       </Routes>
+       {/* </Routes> */}
     </Router>
     </div>
   );
 }
-
 
 
 

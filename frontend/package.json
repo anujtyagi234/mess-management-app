@@ -16,6 +16,7 @@
     "axios": "^1.6.0",
     "bootstrap": "^5.3.2",
     "cors": "^2.8.5",
+    "emailjs-com": "^3.2.0",
     "framer-motion": "^10.16.4",
     "json-server": "^0.17.4",
     "jwt-decode": "^4.0.0",
