@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from 'react-router-dom';
 import axios from "axios";
 import { FaUniversity, FaIdCard, FaLock } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
@@ -212,7 +213,7 @@ function Login() {
 							fontWeight: "bold",
 						}}
 					>
-						Forgot Password?
+						<Link to="/forgot-password">Forgot Password?</Link>
 					</a>
 				</div>
 			</div>

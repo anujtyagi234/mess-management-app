@@ -3,7 +3,7 @@ import './Email.css'
 // Contact.js
 
 import React, { useRef } from "react";
-import emailjs from "@emailjs/browser";
+import emailjs from "emailjs-com";
 import styled from "styled-components";
 
 const Contact = () => {

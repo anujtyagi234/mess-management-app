@@ -9,6 +9,8 @@ import NavBar from "./components/Home/NavBar.jsx";
 import Footer from "./components/Home/Footer.jsx";
 import Login from "./components/Login/login.jsx";
 import Signup from './components/Signup/signup.jsx'
+import ForgotPassword from "./components/reset/forgotPassword.jsx";
+import ResetPassword from "./components/reset/resetPassword.jsx";
 import Dashi from "./components/Dashi/Dashboard_main.jsx";
 import { useAuthContext } from "./hooks/useAuthContext.jsx";
 
@@ -67,7 +69,9 @@ export default function App() {
             <Route path="/" element={<Home />} />
           )}
           <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} /> 
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/forgot-password" element={<ForgotPassword />}/>
+          <Route path="/reset_password/:id/:token" element={<ResetPassword />}></Route> 
         
           {decodedToken && decodedToken.userrole === 'student' && (
             <Route path="/" element={<Dashi />} />
@@ -182,7 +186,6 @@ export default function App() {
     </div>
   );
 }
-
 
 
 
