@@ -368,7 +368,7 @@ const EmpEdit = () => {
 </div>
 
 <div className="mb-4"
-style={{justifyContent:"center",alignItems:"center",alignItems:"center"}}>
+style={{justifyContent:"center",alignItems:"center"}}>
   <label className="block text-gray-700 text-sm font-bold mb-2">
     m4
   </label>

@@ -74,8 +74,10 @@ export default function App() {
           <Route path="/reset_password/:id/:token" element={<ResetPassword />}></Route> 
         
           {decodedToken && decodedToken.userrole === 'student' && (
+            <>
             <Route path="/" element={<Dashi />} />
-            ) }
+            <Route path="/Email" element={<Email/>}/>   
+            </>) }
           {decodedToken && decodedToken.userrole === 'admin' && (
             <>
             <Route path="/" element={<Admin_Dashboard />} />
@@ -179,7 +181,7 @@ export default function App() {
        {/* <Route path="/" element={<ChiefDashboard/>}/> */}
        {/* <Route path="/" element={<Accountant_Dashboard/>}/>  */}
        
-       {/* <Route path="/Email" element={<Email/>}/>   */}
+       {/* { <Route path="/Email" element={<Email/>}/>   } */}
        {/* <Route path="/" element={<Dashi/>}/>  */}
        {/* </Routes> */}
     </Router>
