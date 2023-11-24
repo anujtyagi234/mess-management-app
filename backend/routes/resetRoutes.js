@@ -7,11 +7,11 @@ const User = require('../models/userModel'); // Adjust the path based on your pr
 router.post("/forgot", async (req, res) => {
     console.log(req.body);
     try {
-        const { college_gmail_id } = req.body;
-        const user = await User.findOne({ college_gmail_id });
+        const { email } = req.body;
+        const user = await User.findOne({ college_gmail_id:email });
 
         if (!user) {
-            return res.status(404).json({ status: "User not found" });
+            return res.status(401).json({ status: "User not found" });
         }
 
         const token = jwt.sign({ id: user._id }, process.env.JWTPRIVATEKEY, { expiresIn: "15m" });
