@@ -1,32 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
 
-.student-container {
-  height: 94%;
-width: 97%;
-overflow:scroll;
-margin-left: 3.5rem;
-overflow:scroll;
-margin-left: 1rem;
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
-    border-radius: 10px;
-     box-shadow: 5px 7px  15px 12px rgb(188, 75, 97);
-    background-image: url('../../../imgs/Rule.png');
-    display: flex;
-padding-left: 1.5rem;
-margin-top: 1.4rem;
-margin-bottom: 2.1rem;
-
+.student-container124 {
+ display: flex;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow:scroll;
+      border-radius: 10px;
+      margin-left: 1rem;
+      margin-left: 1rem;
+      height:95%;
+      width: 97%;
+      overflow:scroll;
+      
+         margin-top: 1.4rem;
+         margin-bottom: 2rem;
+      overflow:scroll;
+  overflow:scroll;
+      box-shadow: 5px 7px  15px 12px rgb(188, 75, 97);
+      background-image: url('../../../imgs/Rule.png');
+      overflow: auto; 
 }
+
   
 .heading_team{
   display: contents;
 margin-left: 20px;
-/* font-family:Cambria, Cochin, Georgia, Tim  */
 
 }
-.MainContainer{
+.MainContainer78{
   
 display: flex;
 justify-content: center;
@@ -48,7 +50,7 @@ box-shadow:  5px 2px 5px 3.5px rgb(59, 58, 58) ;
     height: 55%;
     width: 100%;
     margin-bottom: 1.7rem;
-box-shadow:  5px 7px 15px 12px rgb(59, 58, 58) 
+box-shadow:  5px 7px 8px 5px rgb(99, 89, 89) 
 
   }
   .green {
@@ -56,25 +58,27 @@ box-shadow:  5px 7px 15px 12px rgb(59, 58, 58)
   }
   
   .yellow {
-    background-color: rgb(205, 205, 65);
+    background-color: rgb(233, 233, 23);
   }
   
   .red {
-    background-color:rgb(83, 176, 171);
+    background-color:rgb(24, 245, 234);
   }
 
   .F_text{
     font-size: 1.45rem;
-    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
     font-weight: bold;
     color: black;
+ text-shadow: 2px 1px 2px rgb(206, 21, 107);
+
   }
 
   .S_text{
     font-size: 1.2rem;
-    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
     font-weight: bold;
     color: black;
+ text-shadow: 0.5px 0.5px 2px rgb(93, 93, 189);
+
   }
   
  
@@ -85,7 +89,6 @@ box-shadow:  5px 7px 15px 12px rgb(59, 58, 58)
     background-color: aliceblue;
     height: 11%;
     width: 100%;
-    /* border-radius: 100%; Remove this line */
     justify-content: center;
     align-items: center;
     box-shadow: 5px 2px 5px 7px rgb(59, 58, 58);
@@ -96,8 +99,8 @@ box-shadow:  5px 7px 15px 12px rgb(59, 58, 58)
   
 
   .img_Socialmedia {
-    width: 30px; /* Set a fixed width */
-    height: 30px; /* Set a fixed height */
+    width: 30px; 
+    height: 30px; 
     box-shadow: 1px 2px 7px 4px rgb(59, 58, 58);
     cursor: pointer;
     border-radius: 100%;

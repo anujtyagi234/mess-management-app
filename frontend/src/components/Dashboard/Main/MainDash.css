@@ -26,15 +26,15 @@
   background-image: url('../../../imgs/Rule.png');
   background-color: aliceblue;
   margin-left: 1rem;
-  height: 95%;
+  height: 96%;
   width: 97%;
   overflow:scroll;
   
-     margin-top: .5rem;
+     margin-top: 1rem;
 font-family:Georgia, 'Times New Roman', Times, serif;
 font-weight: bold;
 border-radius: 10px;
-margin-bottom: 1.2rem;
+margin-bottom: 2rem;
 
 
 }

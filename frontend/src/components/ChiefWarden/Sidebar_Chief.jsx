@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Sidebar_Chief.css'
 import menu from '../../imgs/burger.gif';
 import mess from '../../imgs/mess.png';
+import Messmenu from '../../imgs/vegan-food.gif'
 import complain from '../../imgs/Compln.gif';
 import Massage from '../../imgs/new-message.gif';
 import openmassagepng from '../../imgs/mail-delivery.gif';
@@ -11,6 +12,8 @@ function Sidebar({ onMenuItemClick }) {
     { title: 'Student-Complains', image: complain },
     { title: 'Resolved-Complains', image: openmassagepng },
     { title: 'Edit-Mess-Menu', image: menu },
+    { title: 'Mess-Menu', image: Messmenu },
+
     
   ];
 

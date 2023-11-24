@@ -1,4 +1,18 @@
+.container99{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #143d3c;
+  height: 100vh;
+  box-shadow: 50px 50px black;
+  background-image: url("https://i.pinimg.com/originals/93/c6/aa/93c6aaa4424c468db1c9f7904eb400d8.gif");
+  ;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
 
+}
 
 
 .comlainheading{

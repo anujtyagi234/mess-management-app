@@ -62,8 +62,8 @@ const StudentDetails = () => {
   ];
 
   return (
-    <div className="MainContainer"style={{fontFamily:"Agbalumo"}}>
-      <div className='student-container'>
+    <div className="MainContainer78"style={{fontFamily:"Agbalumo"}}>
+      <div className='student-container124'>
         {studentData.map((student, index) => (
           <div key={index} className={`student-box ${student.color}`} style={student.customStyle}>
             <img src={student.image} alt={student.Name} />

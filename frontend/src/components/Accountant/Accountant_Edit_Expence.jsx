@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-
+import './Common2.css'
 const ExpenseEdit = () => {
   const { empid } = useParams();
   const [expenseData, setExpenseData] = useState({});
@@ -45,17 +45,21 @@ const ExpenseEdit = () => {
   };
   
   return (
-    <div className="container mx-auto overflow-auto" style={{fontFamily:"Agbalumo"}}>
-      <div className="bg-white shadow-md rounded p-8 mb-4">
+    <div className="container99 mx-auto overflow-auto" style={{fontFamily:"Agbalumo"}}>
+      <div className="bg-white shadow-md  p-8 mb-4" style={{background: 'linear-gradient(to right, pink, yellow, red)',borderRadius:"20px"}}>
         <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Edit Expense Data</h1>
+     
+          <h1 className="text-2xl font-bold mb-4" style={{textShadow: "2px 2px 2px rgb(206, 21, 107)"}}>Edit Expense Data</h1>
+        
         </div>
         <form onSubmit={handleSubmit}>
+         
           <div className="mb-4">
             <label htmlFor="expenseTypeDropdown" className="block font-bold mb-2">
               Select Expense Type:
             </label>
             <select
+             style={{boxShadow:"1px 2px 2px green"}}
               id="expenseTypeDropdown"
               value={expenseType}
               onChange={handleExpenseTypeChange}
@@ -69,6 +73,7 @@ const ExpenseEdit = () => {
             <div>
               <label className="block font-bold mb-2">ID</label>
               <input
+               style={{boxShadow:"1px 2px 2px aqua"}}
                 value={expenseData.id || ""}
                 disabled
                 className="block w-full bg-gray-200 border border-gray-200 text-gray-700 rounded py-2 px-4 mb-3"
@@ -77,6 +82,7 @@ const ExpenseEdit = () => {
             <div>
               <label className="block font-bold mb-2">Title</label>
               <input
+               style={{boxShadow:"1px 2px 2px aqua"}}
                 required
                 value={expenseData.title || ""}
                 onChange={(e) => setExpenseData({ ...expenseData, title: e.target.value })}
@@ -88,6 +94,7 @@ const ExpenseEdit = () => {
   <div>
     <label className="block font-bold mb-2">Expense</label>
     <input
+     style={{boxShadow:"1px 2px 2px aqua"}}
       value={expenseData.Expence || ""}
       onChange={handleExpenseChange}
       className="block w-full bg-gray-200 border border-gray-200 text-gray-700 rounded py-2 px-4 mb-3"
@@ -97,6 +104,7 @@ const ExpenseEdit = () => {
     <label className="block font-bold mb-2">Is Active</label>
     <div className="form-check">
       <input
+       style={{boxShadow:"1px 2px 2px aqua"}}
         checked={expenseData.isactive || false}
         onChange={handleExpenseChange}
         type="checkbox"

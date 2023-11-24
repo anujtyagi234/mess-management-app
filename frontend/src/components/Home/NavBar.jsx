@@ -69,7 +69,8 @@ function NavBar() {
     <nav className="p-4" style={{ 
       background: "linear-gradient(to right, #ffeb3b, #ff4081, #8bc34a, #f44336)",
       backgroundSize: "100% 150%",
-      animation: "waves 3s infinite linear"
+      animation: "waves 3s infinite linear",
+     fontFamily:"Agbalumo"
     }}>
     
       <div className="flex flex-col items-center justify-between sm:flex-row sm:items-center">
@@ -86,7 +87,7 @@ function NavBar() {
           </NavLink>
         </div>
         <div className="header_style" >
-          <ul className="flex space-x-4 mt-4 sm:mt-0" style={{ fontFamily: "sans-serif", fontWeight: "bold", fontSize: "1.2rem" }}>
+          <ul className="flex space-x-4 mt-4 sm:mt-0" style={{  fontWeight: "bold", fontSize: "1.2rem" }}>
             <li>
               <NavLink exact to="/" className="text-white" activeClassName="active-link">
                 Home

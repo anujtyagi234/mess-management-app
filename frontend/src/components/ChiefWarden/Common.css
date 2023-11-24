@@ -15,6 +15,11 @@ font-family: 'Agbalumo';
 
 }
 
+.text_centerEdit{
+ text-shadow: 2px 1px 2px rgb(206, 21, 107);
+font-size: 2rem;
+}
+
 .Maincontainer{
   background-position: center;
   background-repeat: no-repeat;
@@ -136,6 +141,30 @@ font-family: 'Agbalumo';
     justify-content: center;
     align-items: center;
   } */
+
+.container44{
+  background: linear-gradient(to right, pink, yellow, red);
+  border-radius: 4%;
+  overflow: auto;
+
+}
+
+
+.m245{
+  background-image: url("https://i.pinimg.com/originals/93/c6/aa/93c6aaa4424c468db1c9f7904eb400d8.gif");
+  ;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
 
 
 

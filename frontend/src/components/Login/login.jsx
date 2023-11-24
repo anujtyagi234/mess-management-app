@@ -27,31 +27,39 @@ function Login() {
 
 	const handleLogin = (e) => {
 		e.preventDefault();
-	  const {college_gmail_id,password,userrole}=data;
+		const { college_gmail_id, password, userrole } = data;
+	  
 		if (college_gmail_id && password && userrole) {
 		  axios.post("http://localhost:3000/api/auth/login", data)
 			.then((res) => {
-			const { token } = res.data;
-			localStorage.setItem('token', token);
-			dispatch({type: 'LOGIN',payload:token})
-			navigate('/')
-			alert(res.data.message)
+			  const { token } = res.data;
+			  localStorage.setItem('token', token);
+			  dispatch({ type: 'LOGIN', payload: token })
+			  navigate('/');
+			  alert(res.data.message);
 			})
 			.catch((error) => {
-			  setError(error.response.data.error)
+			  setError(error.response.data.error);
+			  setTimeout(() => {
+				setError(null);
+			  }, 3000);
 			});
 		} else {
-		  setError("Please fill all fields");
+		  setError("Please fill all fields...");
+		  setTimeout(() => {
+			setError(null);
+		  }, 3000);
 		}
 	  };
+	  
 
 	return (
 		<>
-			<div className="bg-white flex h-screen  rounded-3xl">
-				<div className="h-screen bg-red-300 w-1/2 flex justify-center items-center rounded-l-lg ">
+			<div className="bg-white flex h-screen  rounded-3xl" style={{fontFamily:"Agbalumo"}}>
+				<div className="h-screen bg-red-300 w-1/2 flex justify-center items-center rounded-l-lg " style={{fontFamily:"Agbalumo"}}>
 					{/* <img src={img} alt="Image" className="h-64 w- object-cover rounded-2xl" /> */}
 					<div className="flex-col ">
-						<h1 className="text-5xl font-bold sans-serif mt-0 text-rose-900	color: rgb(225 29 72) ">
+						<h1 className="text-3xl font-bold sans-serif mt-0 text-rose-900	color: rgb(225 29 72) ">
 						New Here...
 						</h1>
 
@@ -67,11 +75,11 @@ function Login() {
 						/>
 					</div>
 				</div>
-				<div className="h-screen bg-neutral-800 w-1/2  flex-col  juendstify- rounded-r-lg flex justify-center items-center  ">
-					<div className="text-white text-center">
+				<div className="h-screen bg-neutral-800 w-1/2  flex-col  juendstify- rounded-r-lg flex justify-center items-center  " style={{fontFamily:"Agbalumo"}}>
+					<div className="text-white text-center" style={{fontFamily:"Agbalumo"}}>
 						<h1
-							className="text-3xl  "
-							style={{fontFamily: "sans-serif ", fontWeight: "bold" }}
+							className="text-5xl  "
+							style={{fontWeight: "bold" }}
 						>
 							!! Welcome !!
 						</h1>
@@ -85,7 +93,7 @@ function Login() {
 						}}
 					>
 						 <form onSubmit={handleLogin}>
-						<div className="grid grid-rows-2 gap-4  justify-center items-center mt-12">
+						<div className="grid grid-rows-2 gap-4  justify-center items-center mt-12" style={{fontFamily:"Agbalumo"}}>
 							<div
 								style={{
 									display: "flex",
@@ -93,7 +101,7 @@ function Login() {
 									alignItems: "center",
 								}}
 							>
-								{error && <div className="m-4">{error}</div>}
+								{error && <div className="m-4" style={{color:"red"}}>{error}</div>}
 								<div className="m-5" style={{ position: "relative", width: "max-content" }}>
 
                     <select

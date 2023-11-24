@@ -3,6 +3,9 @@
     width: 20%;
     margin-left: 20px;
 border-color: black;
+border-width: .11rem;
+margin-right: .6rem;
+box-shadow: 4px 5px 2px grey;
 
 }
 

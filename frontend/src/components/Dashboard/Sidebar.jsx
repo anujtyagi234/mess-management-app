@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Sidebar.css';
-
+import { Link } from 'react-router-dom';
 import home from '../../imgs/home.gif';
 import menu from '../../imgs/burger.gif';
 import mess from '../../imgs/mess.png';
@@ -23,6 +23,7 @@ function Sidebar({ onMenuItemClick }) {
     { title: 'Rules', image: rule },
     { title: 'Mnnit Alld', image: collage },
     { title: 'WebCrator', image: team },
+    
   ];
 
   const initialSelectedIndex = menuItems.findIndex((item) => item.title === 'Dashboard');
@@ -63,6 +64,14 @@ function Sidebar({ onMenuItemClick }) {
             <span>{item.title}</span>
           </div>
         ))}
+      </div>
+      <div className='feedback_main'>
+        <Link to ='/Email' >
+        <button className="button-62" role="button" style={{fontFamily:"Agbalumo",color:"black"}}><b>Feedback</b></button>
+        </Link>
+
+
+        
       </div>
     </div>
   );

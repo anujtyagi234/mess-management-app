@@ -57,15 +57,18 @@ const Student_complaints = () => {
     console.log(unresolvedComplaints)
     
   return (
-    <div className='Maincontainer'>
-      <div className="comlainheading">
+    <div className='Maincontainer' style={{fontFamily:'Agbalumo'
+    }}>
+      <div className="comlainheading" style={{fontFamily:'Agbalumo'
+    }}>
         <span>
-          <h2 style={{ fontSize: "1.5rem", marginTop: "1.1rem", fontFamily: "serif", fontWeight: "bold" }}>
+          <h2 style={{ fontSize: "1.5rem", marginTop: "1.1rem", fontWeight: "bold" }}>
             <b><span>Students Complaints </span></b>
           </h2>
         </span>
       </div>
-      <div className="deatailas_complain">
+      <div className="deatailas_complain" style={{fontFamily:'Agbalumo'
+    }}>
         <ul>
           {unresolvedComplaints.map((complaint) => (
             <li key={complaint._id}>

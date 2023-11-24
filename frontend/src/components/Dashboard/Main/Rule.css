@@ -31,11 +31,11 @@ overflow:scroll;
     border-radius: 10px;
     margin-left: 1rem;
     margin-left: 1rem;
-    height: 96%;
+    height: 95%;
     width: 97%;
     overflow:scroll;
     
-       margin-top: 1.2rem;
+       margin-top: 1rem;
        margin-bottom: 1.5rem;
     overflow:scroll;
 overflow:scroll;
@@ -54,6 +54,10 @@ overflow:scroll;
     justify-content: flex-start;
     margin-left: 0.7rem;
   font-family: 'Agbalumo';
+  background-color: rgb(142, 214, 195);
+ text-shadow: 1px 1px 2px rgb(206, 21, 107);
+
+  
 
 }
   
@@ -76,7 +80,7 @@ overflow:scroll;
 
 /* Rule.css */
 
-.ruleInfo {
+.ruleInfo1 {
     display: flex;
     margin-left: .8rem;
   }
