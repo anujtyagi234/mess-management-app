@@ -36,16 +36,28 @@ function MainDash() {
   };
 
   return (
-    <div className="Container_Main">
-      <div className="MainDash">
+    <div className="Container_Main12">
+      <div className="MainDash1234">
         {userData ? (
-          <div className="text-left mx-20">
-            <h1 className="DashboardText text-center">{userData.userrole} Details</h1>
-            <p>Name: {userData.user_name}</p>
-            <p>Registration NO: {userData.registration_no}</p>
-			<p>Hostel Name: {userData.hostelname}</p>
-			<p>Email: {userData.college_gmail_id}</p>
+           <div  className="Student_img" style={{display:"flex",flexDirection:"column"}}>
+            
+            <img src="https://img.freepik.com/premium-vector/geek-boy-vector-illustration_949611-2889.jpg" alt="" />
+            
+          <div className="Details_Students mx-20" style={{ fontFamily: 'Arial, sans-serif', padding: '20px', borderRadius: '8px', boxShadow: '7px 5px 5px black', background: 'linear-gradient(to right, pink, yellow, red)', border: '2px solid #333',display:"flex",flexDirection:"column" }}>
+           
+          <h1 className="DashboardText127 text-center" style={{ color: 'black', fontSize: '32px', marginBottom: '20px' }}>Student Details</h1>
+          <div className="main-box" style={{ boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', padding: '15px', borderRadius: '8px', backgroundColor: '#fff', marginBottom: '15px', fontFamily:"Agbalumo" }}>
+  
+            <p style={{ fontSize: '18px', lineHeight: '1.6', marginBottom: '5px', }}><b>Name: </b><span style={{ color: '#FF5733' }}>{userData.user_name}</span></p>
+            <p style={{ fontSize: '18px', lineHeight: '1.6', marginBottom: '5px' }}><b>Registration no: </b> <span style={{ color: '#FF5733' }}>{userData.registration_no}</span></p>
           </div>
+          <div className="main-box" style={{ boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', padding: '15px', borderRadius: '8px', backgroundColor: '#fff', marginBottom: '15px',fontFamily:"Agbalumo" }}>
+            <p style={{ fontSize: '18px', lineHeight: '1.6', marginBottom: '5px' }}><b>Hostel Name: </b> <span style={{ color: '#FF5733' }}>{userData.hostelname}</span></p>
+            <p style={{ fontSize: '18px', lineHeight: '1.6', marginBottom: '5px' }}><b>Email: </b> <span style={{ color: '#FF5733' }}>{userData.college_gmail_id}</span></p>
+          </div>
+        </div>
+        
+        </div>
         ) : (
           <p>Loading user data...</p>
         )}

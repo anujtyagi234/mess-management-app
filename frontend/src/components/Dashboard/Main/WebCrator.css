@@ -1,23 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+
 .student-container {
-    margin-top: 1.6rem;
-height: 99%;
+  height: 94%;
 width: 97%;
+overflow:scroll;
+margin-left: 3.5rem;
+overflow:scroll;
 margin-left: 1rem;
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
     border-radius: 10px;
      box-shadow: 5px 7px  15px 12px rgb(188, 75, 97);
-    overflow:scroll;
     background-image: url('../../../imgs/Rule.png');
     display: flex;
 padding-left: 1.5rem;
+margin-top: 1.4rem;
+margin-bottom: 2.1rem;
 
 }
   
 .heading_team{
   display: contents;
 margin-left: 20px;
+/* font-family:Cambria, Cochin, Georgia, Tim  */
+
 }
 .MainContainer{
   
@@ -58,14 +65,14 @@ box-shadow:  5px 7px 15px 12px rgb(59, 58, 58)
 
   .F_text{
     font-size: 1.45rem;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
     font-weight: bold;
     color: black;
   }
 
   .S_text{
     font-size: 1.2rem;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
     font-weight: bold;
     color: black;
   }

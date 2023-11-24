@@ -1,20 +1,23 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
 
-.Container_Main{
+.Container_Main12{
     
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    
+  
     
 }
 
-.MainDash{
+.MainDash1234{
     display: flex;
     align-items: center;
     justify-content:space-evenly;
     flex-direction: column;
    font-size: 2.5rem;
-  height:100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -23,21 +26,50 @@
   background-image: url('../../../imgs/Rule.png');
   background-color: aliceblue;
   margin-left: 1rem;
-   width: 97%;
-   margin-top: 1.7rem;
-   
+  height: 95%;
+  width: 97%;
+  overflow:scroll;
+  
+     margin-top: .5rem;
 font-family:Georgia, 'Times New Roman', Times, serif;
 font-weight: bold;
 border-radius: 10px;
+margin-bottom: 1.2rem;
 
 
 }
 
 
-.DashboardText{
+.DashboardText127{
     margin-top: 1rem;
     text-shadow: 2px 2px 2px rgb(206, 21, 107);
+  font-family: 'Agbalumo';
+
 }
+
+
+
+.Details_Students>span{
+    background-color: brown;
+    color: brown;
+  /* font-family: 'Agbalumo'; */
+
+}
+
+.Student_img>img{
+    height: 40%;
+    width: 40%;
+ border-radius: 100%;
+ border-color: black;
+ border-width: 2px;
+ margin-left: 30%;
+ display: flex;
+ box-shadow: 5px 2px 7px  7px rgb(82, 79, 79);
+ margin-bottom: 1.2rem;
+
+
+}
+
 
 
 

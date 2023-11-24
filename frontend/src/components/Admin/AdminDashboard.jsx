@@ -12,6 +12,7 @@ import Rules from "../Dashboard/Main/Rule";
 import Mnnit from "../Dashboard/Main/Mnnit";
 import Contact from "../Dashboard/Main/Contact";
 import Logout from "../Dashboard/Logout";
+import Dashboard_Admin from '../ChiefWarden/abc'
 function AdminDashboard() {
 	const [selectedMenuItem, setSelectedMenuItem] = useState("Dashboard");
 	const handleMenuItemClick = (menuItem) => {
@@ -27,24 +28,7 @@ function AdminDashboard() {
 		case "Complain":
 			content = <Complain />;
 			break;
-		case "Mess-Menu":
-			content = <Mess_menu />;
-			break;
-
-		case "WebCrator":
-			content = <WebCrator />;
-			break;
-		case "Rules":
-			content = <Rules />;
-			break;
-		case "Mnnit Alld":
-			content = <Mnnit />;
-			break;
-		case "Contact":
-			content = <Contact />;
-			break;
-		default:
-			content = null; // Render nothing if no match
+		 // Render nothing if no match
 	}
 	return (
 		<div>

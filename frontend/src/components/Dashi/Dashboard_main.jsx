@@ -11,8 +11,8 @@ import Rules from "../Dashboard/Main/Rule";
 import Mnnit from "../Dashboard/Main/Mnnit";
 import Contact from "../Dashboard/Main/Contact";
 import Logout from "../Dashboard/Logout";
-import UnResolved_complains from "../ChiefWarden/Student_Complains";
-import Resolved_complains from '../ChiefWarden/ResolvedComplain'
+import UnResolved_complains from "../Dashboard/Main/Student_Complain";
+import Resolved_complains from '../Dashboard/Main/ResolvedComplain'
 function Dashboard_main() {
 	const [selectedMenuItem, setSelectedMenuItem] = useState("Dashboard");
 	const handleMenuItemClick = (menuItem) => {

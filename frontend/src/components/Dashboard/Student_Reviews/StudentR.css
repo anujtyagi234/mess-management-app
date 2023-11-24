@@ -1,13 +1,19 @@
 .sr{
     font-weight: bold;
     font-size:x-large;
-  font-family: cursive;
-  margin-bottom: .1;
+  /* font-family: cursive; */
+background-color: aquamarine;
+border-radius: 10px;  
+border-color: black;
+border-width: 0.001rem;
+
+box-shadow: 10px 5px 5px rgb(177, 166, 170);
 }
 
 .ChartR{
 border-radius: 20px;
 background-color: aquamarine;
-box-shadow: 10px 5px 5px rgb(177, 166, 170); 
+border-width: 0.001rem;
+border-color: black;
 
 }

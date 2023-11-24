@@ -41,7 +41,7 @@ const EmpEdit = () => {
   };
 
   return (
-    <div className="container mx-auto max-w-lg p-6">
+    <div className="container mx-auto max-w-lg p-6" style={{fontFamily:"Agbalumo"}}>
       <div className="text-center font-bold text-xl mb-6">
         <h1>--Edit Mess Menu--</h1>
       </div>

@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+/* font-family: 'Agbalumo'; */
+
 .Main_Container{
     display: flex;
     justify-content: center;
@@ -8,7 +11,9 @@
 .mainheading{
    
     font-size: 1.6rem;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+    text-shadow: 2px 2px 2px rgb(206, 21, 107);
+ font-family: 'Agbalumo';
+    
     font-weight: bold;
     background-color: aqua;
     border-radius: 12rem;
@@ -23,11 +28,17 @@
 background-repeat: no-repeat;
 background-size: cover;
 overflow:scroll;
-margin-top: 1.2rem;
     border-radius: 10px;
-    width: 97%;
     margin-left: 1rem;
-    height: 98%;
+    margin-left: 1rem;
+    height: 96%;
+    width: 97%;
+    overflow:scroll;
+    
+       margin-top: 1.2rem;
+       margin-bottom: 1.5rem;
+    overflow:scroll;
+overflow:scroll;
     box-shadow: 5px 7px  15px 12px rgb(188, 75, 97);
     background-image: url('../../../imgs/Rule.png');
     overflow: auto; 
@@ -42,7 +53,8 @@ margin-top: 1.2rem;
     display: flex;
     justify-content: flex-start;
     margin-left: 0.7rem;
-    font-family:Cambria, Cochin, Georgia, Tim 
+  font-family: 'Agbalumo';
+
 }
   
 .Ruletext{

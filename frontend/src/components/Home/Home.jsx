@@ -8,6 +8,8 @@ const Home = () => {
       <div
         className="flex flex-col items-center justify-center"
         style={{
+          fontSize:"3rem",
+          fontWeight:"bold",
           backgroundImage: `url(${homePng})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -15,7 +17,9 @@ const Home = () => {
           color: "white", // Text color
         }}
       >
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda repudiandae obcaecati deleniti?</p>
+        <p  className="animated-text " style={{marginLeft:"1.7rem"}}>Eat Healthy</p> 
+        
+        <p  className="animated-text"style={{marginLeft:"1.7rem"}}>Stay Healthy</p> 
       </div>
     </>
   );

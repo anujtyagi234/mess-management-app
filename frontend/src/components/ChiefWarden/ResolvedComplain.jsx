@@ -1,114 +1,57 @@
-
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import './Common.css';
+import axios from 'axios';
 
-const dummyComplaints = [
-  {
-    _id: 1,
-    user: 'abcd',
-    title: 'Slow Internet Speed',
-    description: 'Experiencing very slow internet speed during peak hours.',
-    image: 'https://via.placeholder.com/150',
-    resolved: false,
-    createdAt: new Date().toISOString(),
-    resolvedAt: null,
-    likes: 0,
-    dislikes: 0,
-  },
-  {
-    _id: 2,
-    user: 'xyz',
-    title: 'Noise Pollution',
-    description: 'Loud construction noises early in the morning disrupting sleep.',
-    image: 'https://via.placeholder.com/150',
-    resolved: false,
-    createdAt: new Date().toISOString(),
-    resolvedAt: null,
-    likes: 0,
-    dislikes: 0,
-  },
-  {
-    _id: 3,
-    user: 'sample',
-    title: 'Garbage Collection Issue',
-    description: 'Garbage not collected for over a week.',
-    image: 'https://via.placeholder.com/150',
-    resolved: false,
-    createdAt: new Date().toISOString(),
-    resolvedAt: null,
-    likes: 0,
-    dislikes: 0,
-  },
-];
+const Student_complaints = () => {
+    const [userActions, setUserActions] = useState({});
+    const [complaints, setComplaints] = useState([]);
 
-const Chief_Student_complaints = () => {
-  const [complaints, setComplaints] = useState(dummyComplaints);
-
-  const resolveComplaint = (complaintId) => {
-    const updatedComplaints = complaints.map((complaint) => {
-      if (complaint._id === complaintId) {
-        return {
-          ...complaint,
-          resolved: true,
-          resolvedAt: new Date().toISOString(),
-        };
-      }
-      return complaint;
-    });
-    setComplaints(updatedComplaints);
-  };
-
-  const handleLikeDislike = (complaintId, type) => {
-    const updatedComplaints = complaints.map((complaint) => {
-      if (complaint._id === complaintId) {
-        return {
-          ...complaint,
-          [type]: complaint[type] + 1,
-        };
-      }
-      return complaint;
-    });
-    setComplaints(updatedComplaints);
-  };
-
+    useEffect(() => {
+      // Fetch complaints data from the backend when the component mounts
+      axios.get('http://localhost:3000/api/fetchcomplaints')
+        .then((response) => {
+          const { complaints: fetchedComplaints } = response.data;
+          setComplaints(fetchedComplaints);
+        })
+        .catch((error) => {
+          console.error('Error fetching complaints:', error);
+        });
+    }, []); 
+    
+    // Check if complaints is an array before filtering
+    const resolvedComplaints = Array.isArray(complaints)
+    ? complaints.filter((complaint) => complaint.resolved)
+    : [];
+    console.log(resolvedComplaints)
+    
   return (
     <div className='Maincontainer'>
-      <div className="comlainheading">
-        <h2  style={{fontSize:"1.5rem",marginTop:"1.1rem",fontfamily:"serif",fontWeight:"bold"}}>
+      <div className="comlainheading"style={{fontFamily: 'Agbalumo'}} >
+        <h2  style={{fontSize:"1.7rem",marginTop:"1.1rem",fontWeight:"bold",fontFamily: 'Agbalumo'}}>
           <b>Students Complaints</b>
         </h2>
       </div>
-      <div className="deatailas_complain">
+      <div className='we123'>
+      <div className="deatailas_complain" style={{fontFamily: 'Agbalumo'}}>
         <ul>
-          {complaints.map((complaint) => (
+          {resolvedComplaints.map((complaint) => (
             <li key={complaint._id}>
-              {!complaint.resolved && (
-                <>
-                  <h3><b>Subject: </b>{complaint.title}</h3>
-                  <p><b>Description: </b>{complaint.description}</p>
-                  <p><b>Created at: </b>{complaint.createdAt}</p>
-                  <p><b>Likes: </b>{complaint.likes}</p>
-                  <p><b>Dislikes: </b>{complaint.dislikes}</p>
-                  {complaint.image && <img src={complaint.image} alt="Complaint" style={{ maxWidth: '300px' }} />}
-                  <div className="like-dislike-buttons">
-                    <button onClick={() => handleLikeDislike(complaint._id, 'likes')}>
-                      Like
-                    </button>
-                    <button onClick={() => handleLikeDislike(complaint._id, 'dislikes')}>
-                      Dislike
-                    </button>
-                  </div>
-                  <button onClick={() => resolveComplaint(complaint._id)}>
-                    Resolve
-                  </button>
-                </>
-              )}
+              <h3><b>Subject: </b>{complaint.title}</h3>
+              <p><b>Description: </b>{complaint.description}</p>
+              <p><b>Created at: </b>{new Date(complaint.createdAt).toLocaleString()}</p>
+              <p><b>Likes: </b>{complaint.likes}</p>
+              <p><b>Dislike: </b>{complaint.dislikes}</p>
+              <p><b>Dislike: </b>{complaint.images}</p>
+              <p><b>ResolvedAt: </b>{new Date(complaint.resolvedAt).toLocaleString()}</p>
+              {complaint.images && <img src={`http://localhost:3000/uploads/${complaint.images}`} alt="Complaint" style={{ maxWidth: '300px' }} />}
             </li>
           ))}
         </ul>
       </div>
+      </div>
+
     </div>
   );
 };
 
-export default Chief_Student_complaints;
+export default Student_complaints;

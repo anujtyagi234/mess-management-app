@@ -61,12 +61,13 @@ function Add_Accountant() {
 
   return (
     <>
+     <div className="AddAccountantContainer" style={{ height: "100vh", width: "100%",overflow: "hidden" }}>
       {console.log("User", data)}
-      <div className="bg-white flex h-screen  rounded-3xl">
-        <div className="h-screen bg-red-300 w-1/2 flex justify-center items-center rounded-l-lg ">
+      <div className="bg-white flex h-screen  rounded-3xl"style={{fontFamily:"Agbalumo"}}>
+        <div className="h-screen bg-red-300 w-1/2 flex justify-center items-center rounded-l-lg " style={{fontFamily:"Agbalumo"}}>
           {/* <img src={img} alt="Image" className="h-64 w- object-cover rounded-2xl" /> */}
           <div className="flex-col ">
-            <h1 className="text-5xl font-bold sans-serif mt-0 text-rose-900	color: rgb(225 29 72) ">
+            <h1 className="text-3xl font-bold sans-serif mt-0 text-rose-900	color: rgb(225 29 72) ">
              Add Accountant
             </h1>
 
@@ -78,15 +79,17 @@ function Add_Accountant() {
                 height: "450px",
                 width: "500px",
                 margin: "30px auto 0 auto",
+                boxShadow:"10px  2px 10px 5px  rgb(124, 38, 68) "
+
               }}
             />
           </div>
         </div>
-        <div className="h-screen bg-neutral-800 w-1/2  flex-col  juendstify- rounded-r-lg flex justify-center items-center  ">
+        <div className="h-screen bg-neutral-800 w-1/2  flex-col  juendstify- rounded-r-lg flex justify-center items-center  " style={{fontFamily:"Agbalumo"}}>
           <div className="text-white text-center">
             <h1
               className="text-5xl  "
-              style={{ fontFamily: "serif", fontWeight: "bold" }}
+              style={{  fontWeight: "bold" }}
             >
               !! Welcome !!
             </h1>
@@ -94,7 +97,7 @@ function Add_Accountant() {
           <div
             className=" bg-stone-100   rounded-3xl   text-black"
             style={{
-              height: "650px",
+              height: "540px",
               width: "480px",
               margin: "20px auto 0 auto",
             }}
@@ -106,6 +109,8 @@ function Add_Accountant() {
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
+                // boxShadow:"10px  2px 10px 5px red"
+
                   }}
                 >
                   {error && <div className="m-4">{error}</div>}
@@ -240,6 +245,7 @@ function Add_Accountant() {
             </form>
           </div>
         </div>
+      </div>
       </div>
     </>
   );

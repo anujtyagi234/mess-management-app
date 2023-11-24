@@ -7,6 +7,7 @@ import Student_Complains from './Student_Complains'
 import Resolved_Complains from './ResolvedComplain'
 import Edit_Mess_Menu from './MenuListing_BreakFast'
 import Unresolved_complain from '../ChiefWarden/Student_Complains'
+import Dashmdefault from '../Accountant/DashmAccoundefault'
 function Dashboard_main() {
 	const [selectedMenu, setSelectedMenu] = useState("Breakfast");
 	const [selectedMenuItem, setSelectedMenuItem] = useState("Dashboard");
@@ -31,15 +32,7 @@ function Dashboard_main() {
 		break;
 	 
 	  default:
-		// Default content when no menu item is selected
-		content = (
-			<div>
-
-		  <div className="default-content">
-			<p >!! Hello.. !!</p>
-		  </div>
-		  </div>
-		);
+		content = <Dashmdefault/>;
 		break;
 	}
   
@@ -51,7 +44,7 @@ function Dashboard_main() {
 			  <Sidebar_Chief onMenuItemClick={handleMenuItemClick} />
 			  <Logout />
 			</div>
-			<div className="Middlepart1">
+			<div className="MiddlePart1">
 			  <div className="custom-content1">{content}</div>
 			</div>
 		  </div>

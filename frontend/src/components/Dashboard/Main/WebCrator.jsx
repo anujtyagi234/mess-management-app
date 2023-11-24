@@ -62,7 +62,7 @@ const StudentDetails = () => {
   ];
 
   return (
-    <div className="MainContainer">
+    <div className="MainContainer"style={{fontFamily:"Agbalumo"}}>
       <div className='student-container'>
         {studentData.map((student, index) => (
           <div key={index} className={`student-box ${student.color}`} style={student.customStyle}>

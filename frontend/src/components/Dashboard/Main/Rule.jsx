@@ -5,7 +5,7 @@ import RuleItem from "./RuleComponent";
 
 function Rule() {
 	return (
-		<div className="Main_Container">
+		<div className="Main_Container"style={{fontFamily:"Agbalumo"}}>
 			<div className="box_rule">
 <span className="mainheading">Mess Rules</span>
 				<div className="Ruletext">

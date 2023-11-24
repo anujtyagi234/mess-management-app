@@ -12,12 +12,12 @@ import collage from '../../imgs/lecture-room.gif';
 import Massage from '../../imgs/new-message.gif';
 import openmassagepng from '../../imgs/mail-delivery.gif';
 
-function Sidebar({onMenuItemClick}) {
+function Sidebar({ onMenuItemClick }) {
   const menuItems = [
     { title: 'Dashboard', image: home },
     { title: 'Mess-Menu', image: menu },
     { title: 'Complain', image: complain },
-    { title: 'Unresolved-Complain', image: Massage  },
+    { title: 'Unresolved-Complain', image: Massage },
     { title: 'Resolved-Complain', image: openmassagepng },
     { title: 'Contact', image: contact },
     { title: 'Rules', image: rule },
@@ -32,12 +32,12 @@ function Sidebar({onMenuItemClick}) {
   const handleItemClick = (index) => {
     const selectedItem = menuItems[index].title;
     onMenuItemClick(selectedItem);
-    
+    setSelected(index); // Update the selected index
   };
 
   return (
     <div className="Sidebar">
-      {/*logo*/}
+      {/* logo */}
       <div className="logo">
         <img src={mess} alt="" />
         <span>
@@ -45,7 +45,7 @@ function Sidebar({onMenuItemClick}) {
         </span>
       </div>
 
-      {/*menu*/}
+      {/* menu */}
       <div className="menu">
         {menuItems.map((item, index) => (
           <div

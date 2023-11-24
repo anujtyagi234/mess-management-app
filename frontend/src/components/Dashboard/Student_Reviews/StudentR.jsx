@@ -56,8 +56,8 @@ function CustomerR() {
   };
   return (
     <div className='Reviews'>
-      <h2 className='sr'>Student Review</h2>
-      <Chart series={data.series} options={data.options} type='area' className='ChartR' />
+      <h2 className='sr'style={{fontFamily:"Agbalumo",}}>Student Review</h2>
+      <Chart  style={{fontFamily:"Agbalumo"}} series={data.series} options={data.options} type='area' className='ChartR'/>
     </div>
   );
 }

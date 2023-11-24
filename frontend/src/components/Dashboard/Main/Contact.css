@@ -1,4 +1,6 @@
-.Contact_main_container{
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+
+.Contact_main_container12{
     flex-direction: column;
     background-position: center;
     background-repeat: no-repeat;
@@ -9,14 +11,17 @@
   font-family:Georgia, 'Times New Roman', Times, serif;
   border-radius: 10px;
   margin-top: 0.9rem;
-  height:105%;
-  width: 97%;
+  margin-left: 1.2rem;
+   height: 95%;
+width: 97%;
+overflow:scroll;
   flex-direction: column;
 }
 
 
 .contact_heading{
-    font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Agbalumo';
+
     font-weight: bold;
     font-size: 2.5rem;
     margin-top: 1rem;
