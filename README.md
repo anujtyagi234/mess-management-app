@@ -40,7 +40,7 @@ Make sure you have the following software installed on your machine:
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/yourusername/mess-complaint-portal.gi
+   git clone https://github.com/anujtyagi234/mess-management-app.git
 
 2. **Navigate to the Project Directory**
 
@@ -56,16 +56,20 @@ Make sure you have the following software installed on your machine:
 4. **Install Client Dependencies**
 
    ```bash
-    cd ../client
+    cd ../frontend
     npm install
 
 5. **Set Up Environment Variables:**
    Create a .env file in the root of the backend directory and add the following variables:
 
   JWTPRIVATEKEY=your_private_key
+  
   SALT=10
+  
   MONGODB_URI=mongodb://127.0.0.1:27017/MESS-MANAGEMENT
+  
   GMAIL_USERNAME=messproject572@gmail.com
+  
   GMAIL_PASSWORD=rssdbugyekmjzjjb
 
 6.**Run the Application:**
