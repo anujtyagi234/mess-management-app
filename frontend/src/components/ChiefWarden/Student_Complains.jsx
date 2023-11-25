@@ -20,7 +20,7 @@ const Chief_Student_complaints = () => {
     }, []);
 
     const resolveComplaint = (complaintId) => {
-      axios.put(`http://localhost:3000/api/complaints/${complaintId}/update`)
+      axios.put(`http://localhost:3000/api/complaints/${complaintId}/resolved`)
         .then((response) => {
           const updatedComplaint = response.data;
           setComplaints((prevComplaints) =>

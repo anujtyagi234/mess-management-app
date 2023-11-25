@@ -54,30 +54,34 @@ const MessComplaintForm = () => {
       [name]: value
     }));
   };
-  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    if(selectedFile && formData.complaintDetails && formData.complaintDetails){
     const newFormData = new FormData();
-    newFormData.append('user', userData?.user_name || ''); // Ensure userData is available
-    newFormData.append('image', selectedFile || ''); // Ensure selectedFile is available
-    newFormData.append('title', formData.complaintTitle || '');
-    newFormData.append('description', formData.complaintDetails || '');
+    newFormData.append('user', userData.user_name);
+    newFormData.append('hostelName', userData.hostelname);
+    newFormData.append('image', selectedFile);
+    newFormData.append('title', formData.complaintTitle);
+    newFormData.append('description', formData.complaintDetails);
 
-    Array.from(newFormData.entries()).forEach(([key, value]) => {
-      console.log(key, value);
-    });
+    // Array.from(newFormData.entries()).forEach(([key, value]) => {
+    //   console.log(key, value);
+    // });
 
     axios.post('http://localhost:3000/api/complain', newFormData)
     .then((response) => {
-      console.log(response.data);
+      alert(response.data.message);
     })
     .catch((error) => {
+      alert("please try again later")
       console.error('Error submitting form:', error);
     });
+  }
+  else {
+    alert("Please fill all fields")
+  }
   };
-  
   
 
   return (

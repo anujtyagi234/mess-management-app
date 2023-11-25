@@ -6,7 +6,7 @@ const authRoutes = require("./routes/authRoutes");
 const adminRoutes = require("./routes/adminRoutes")
 const complain = require('./routes/complainRoutes')
 const fetchComplaintRoutes = require('./routes/fetchComplainRoutes');
-const resolveComplaintRoute = require('./routes/updateComplainRoutes');
+const updateComplaintRoute = require('./routes/updateComplainRoutes');
 const path = require('path');
 
 require("dotenv").config();
@@ -23,7 +23,7 @@ app.use("/api/auth", authRoutes);
 app.use("/admin",adminRoutes)
 app.use("/api",complain)
 app.use("/api", fetchComplaintRoutes);
-app.use('/api/complaints', resolveComplaintRoute);
+app.use('/api/complaints', updateComplaintRoute);
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 const PORT = 3000;

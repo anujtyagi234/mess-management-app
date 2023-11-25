@@ -3,7 +3,7 @@ const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 
 const submitComplaint = async (req, res) => {
-  const { user, title, description } = req.body;
+  const { user, title, description,hostelName } = req.body;
   const files = req.files;
   const uploadedImages = [];
   
@@ -30,6 +30,7 @@ const submitComplaint = async (req, res) => {
       user,
       title,
       description,
+      hostelName,
       images: uploadedImages,
     });
 
