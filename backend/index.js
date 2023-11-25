@@ -4,7 +4,7 @@ const app = express();
 const { connectToDatabase } = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
 const adminRoutes = require("./routes/adminRoutes")
-const uploadRoutes = require("./routes/uploadRoutes");
+// const uploadRoutes = require("./routes/uploadRoutes");
 const resetRoutes = require("./routes/resetRoutes");
 const newpwRoute = require("./routes/newpwRoute");
 const complain = require('./routes/complainRoutes')
@@ -29,7 +29,7 @@ connectToDatabase();
 // Use auth routes
 app.use("/api/auth", authRoutes);
 app.use("/admin",adminRoutes);
-app.use("/upload",uploadRoutes);
+// app.use("/upload",uploadRoutes);
 app.use("/api",resetRoutes);
 app.use("/api",newpwRoute);
 app.use("/admin",adminRoutes)

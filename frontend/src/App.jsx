@@ -180,7 +180,7 @@ export default function App() {
        {/* <Route path="/" element={<ChiefDashboard/>}/> */}
        {/* <Route path="/" element={<Accountant_Dashboard/>}/>  */}
        
-       {/* <Route path="/Email" element={<Email/>}/>   */}
+       {/* { <Route path="/Email" element={<Email/>}/>   } */}
        {/* <Route path="/" element={<Dashi/>}/>  */}
        {/* </Routes> */}
     </Router>
