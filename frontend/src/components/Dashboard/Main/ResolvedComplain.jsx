@@ -26,10 +26,12 @@ const Student_complaints = () => {
     console.log(resolvedComplaints)
     
   return (
-    <div className='Maincontainer'>
-      <div className="comlainheading">
+    <div className='Maincontainer' style={{fontFamily:'Agbalumo'
+  }}>
+      <div className="comlainheading"style={{fontFamily:'Agbalumo'
+    }}>
         <span>
-          <h2 style={{ fontSize: "1.5rem", marginTop: "1.1rem", fontFamily: "serif", fontWeight: "bold" }}>
+          <h2 style={{ fontSize: "1.5rem", marginTop: "1.1rem", fontWeight: "bold" }}>
             <b><span>Students Complaints </span></b>
           </h2>
         </span>

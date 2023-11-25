@@ -30,10 +30,10 @@ function Signup() {
   const handleChange = ({ currentTarget: input }) => {
     setData({ ...data, [input.name]: input.value });
   };
-
-  const handleLogin = (e) => {
+  
+  const handleSignUp = async (e) => {
     e.preventDefault();
-
+  
     const {
       college_gmail_id,
       registration_no,
@@ -41,35 +41,35 @@ function Signup() {
       hostelname,
       user_name,
     } = data;
-
-    if (
-      college_gmail_id &&
-      registration_no &&
-      hostelname &&
-      password &&
-      user_name
-    ) {
-      axios
-        .post("http://localhost:3000/api/auth/signup", data)
-        .then((res) => {
-          alert(res.data.message);
-        })
-        .catch((error) => {
-          setError(error.response.data.error);
-        });
+  
+    if (college_gmail_id && registration_no && hostelname && password && user_name) {
+      try {
+        const response = await axios.post("http://localhost:3000/api/auth/signup", data);
+        alert(response.data.message);
+      } catch (error) {
+        setError(error.response.data.error);
+        // Set a timeout to clear the error after 3 seconds
+        setTimeout(() => {
+          setError(null);
+        }, 2000);
+      }
     } else {
       setError("Please fill all fields");
+      // Set a timeout to clear the error after 3 seconds
+      setTimeout(() => {
+        setError(null);
+      }, 2000);
     }
   };
 
   return (
     <>
       {console.log("User", data)}
-      <div className="bg-white flex h-screen  rounded-3xl">
+      <div className="bg-white flex h-screen  rounded-3xl" style={{fontFamily:"Agbalumo"}}>
         <div className="h-screen bg-red-300 w-1/2 flex justify-center items-center rounded-l-lg ">
           {/* <img src={img} alt="Image" className="h-64 w- object-cover rounded-2xl" /> */}
           <div className="flex-col ">
-            <h1 className="text-5xl font-bold sans-serif mt-0 text-rose-900	color: rgb(225 29 72) ">
+            <h1 className="text-3xl font-bold sans-serif mt-0 text-rose-900	color: rgb(225 29 72) ">
               Create Account
             </h1>
 
@@ -89,7 +89,7 @@ function Signup() {
           <div className="text-white text-center">
             <h1
               className="text-5xl  "
-              style={{ fontFamily: "serif", fontWeight: "bold" }}
+              style={{  fontWeight: "bold" }}
             >
               !! Welcome !!
             </h1>
@@ -102,7 +102,7 @@ function Signup() {
               margin: "20px auto 0 auto",
             }}
           >
-            <form onSubmit={handleLogin}>
+            <form onSubmit={handleSignUp}>
               <div className="grid grid-rows-2 gap-4  justify-center items-center mt-12">
                 <div
                   style={{
@@ -111,7 +111,7 @@ function Signup() {
                     alignItems: "center",
                   }}
                 >
-                  {error && <div className="m-4">{error}</div>}
+                  {error && <div className="m-4" style={{color:"red"}}>{error}</div>}
                   <div
                     style={{
                       position: "relative",
@@ -249,7 +249,7 @@ function Signup() {
                 <div className="mt-0  mb-80">
                   <button
                     type="submit"
-                    onClick={handleLogin}
+                    onClick={handleSignUp}
                     className="relative inline-block text-lg group w-44"
                   >
                     <span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white">

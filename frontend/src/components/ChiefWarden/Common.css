@@ -15,6 +15,11 @@ font-family: 'Agbalumo';
 
 }
 
+.text_centerEdit{
+ text-shadow: 2px 1px 2px rgb(206, 21, 107);
+font-size: 2rem;
+}
+
 .Maincontainer{
   background-position: center;
   background-repeat: no-repeat;
@@ -53,7 +58,8 @@ font-family: 'Agbalumo';
     box-shadow:  7px 7px 3px gray;
     margin-bottom: 27px;
     border-radius: 10px;
-    background: linear-gradient(to right, #2eccba,white, #fef57b,rgb(242, 229, 229),rgb(164, 54, 96));   
+    background: linear-gradient(to right, #2eccba,white, #fef57b,rgb(242, 229, 229),rgb(164, 54, 96));
+    box-shadow:"2px 9px 10px white" ;   
     
   }
   
@@ -136,6 +142,30 @@ font-family: 'Agbalumo';
     justify-content: center;
     align-items: center;
   } */
+
+.container44{
+  background: linear-gradient(to right, pink, yellow, red);
+  border-radius: 4%;
+  overflow: auto;
+
+}
+
+
+.m245{
+  background-image: url("https://i.pinimg.com/originals/93/c6/aa/93c6aaa4424c468db1c9f7904eb400d8.gif");
+  ;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
 
 
 

@@ -20,12 +20,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 2.8rem;
+    margin-bottom: 1rem;
  
 }
 .Studentreview{
     width: 90%;
-    height: 25%;
     margin-left:1.11rem ;
+    margin-bottom: 2rem;
 }
 

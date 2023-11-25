@@ -50,7 +50,7 @@ const StudentDetails = () => {
       Registration_no: 20224089,
       LinkedIn: "kushagra-verma-a178b7253",
       GitHub: "kushagra572",
-      Instagram: "mrperfect572",
+      Instagram: "kushagraverma4321",
       color: 'red',
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS3EQjUQ8xXLMIF13c4pq8fK1r3J4UOyJ5IQ&usqp=CAU",
       customStyle: {
@@ -62,8 +62,8 @@ const StudentDetails = () => {
   ];
 
   return (
-    <div className="MainContainer"style={{fontFamily:"Agbalumo"}}>
-      <div className='student-container'>
+    <div className="MainContainer78"style={{fontFamily:"Agbalumo"}}>
+      <div className='student-container124'>
         {studentData.map((student, index) => (
           <div key={index} className={`student-box ${student.color}`} style={student.customStyle}>
             <img src={student.image} alt={student.Name} />

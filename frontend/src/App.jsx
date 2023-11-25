@@ -9,6 +9,8 @@ import NavBar from "./components/Home/NavBar.jsx";
 import Footer from "./components/Home/Footer.jsx";
 import Login from "./components/Login/login.jsx";
 import Signup from './components/Signup/signup.jsx'
+import ForgotPassword from "./components/reset/forgotPassword.jsx";
+import ResetPassword from "./components/reset/resetPassword.jsx";
 import Dashi from "./components/Dashi/Dashboard_main.jsx";
 import { useAuthContext } from "./hooks/useAuthContext.jsx";
 
@@ -22,7 +24,6 @@ import ChiefWarden_mess_menu_update from './components/ChiefWarden/MenuListing_B
 import ChiefWarden from './components/ChiefWarden/ChiefWarden.jsx'
 import Email from './components/Email.jsx'
 import Chief_Complaints_resolve_pannel from './components/ChiefWarden/ResolvedComplain.jsx'
-import Temp from './components/ChiefWarden/Temp.jsx'
 
 import Mess_menu_Copy from './components/ChiefWarden/Chief_Mess_Menu.jsx'
 import ExpenseListing from './components/Accountant/Accountant_Expence_list.jsx'
@@ -62,16 +63,20 @@ export default function App() {
          {!decodedToken && <NavBar />} 
 
          <Routes>
-          
-       {!decodedToken && (
+           
+        {!decodedToken && (
             <Route path="/" element={<Home />} />
           )}
           <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} /> 
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/forgot-password" element={<ForgotPassword />}/>
+          <Route path="/reset_password/:id/:token" element={<ResetPassword />}></Route> 
         
           {decodedToken && decodedToken.userrole === 'student' && (
+            <>
             <Route path="/" element={<Dashi />} />
-          ) }
+            <Route path="/Email" element={<Email/>}/> </>
+            ) }
           {decodedToken && decodedToken.userrole === 'admin' && (
             <>
             <Route path="/" element={<Admin_Dashboard />} />
@@ -96,13 +101,14 @@ export default function App() {
               <Route path="/expense/edit/:type/:empid" element={<Expence_edit />} />
               <Route path="/Accountant_menu" element={<MessMenu/>} />
               <Route path="/Student_complain_list" element={<Chief_Student_complaints/>} />
+
             </>
             ) }
             </Routes>
           {!decodedToken && <Footer />}  
 
 
-      {/* <Routes>  */}
+      
      
 
 {/* <Route path="/" element={<Dashi/>}/> */}
@@ -166,19 +172,21 @@ export default function App() {
        {/* <Chief_Resolved_complains/> */}
 
 
-       {/* <Route path="/" element={<ChiefDashboard/>} /> */}
+       {/* <Route path="/" element={<NavBar/>} /> */}
 
        {/* <Route path="/" element={<Admin_Dashboard/>} /> */}
-       {/* <Route path="/" element={<Accountant_Dashboard/>}/> */}
-       {/* <Route path="/" element={<Accountant_Dashboard/>}/>  */}
-       {/* <Route path="/" element={<Dashi/>}/>  */}
+       {/* <Route path="/" element={<Admin_Dashboard/>} /> */}
 
+       {/* <Route path="/" element={<ChiefDashboard/>}/> */}
+       {/* <Route path="/" element={<Accountant_Dashboard/>}/>  */}
+       
+       {/* { <Route path="/Email" element={<Email/>}/>   } */}
+       {/* <Route path="/" element={<Dashi/>}/>  */}
        {/* </Routes> */}
     </Router>
     </div>
   );
 }
-
 
 
 

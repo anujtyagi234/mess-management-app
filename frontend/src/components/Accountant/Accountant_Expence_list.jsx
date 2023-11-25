@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
+import './Common2.css'
 const ExpenseListing = ({ selectedExpense, onExpenseTypeChange }) => {
   const [expenseData, setExpenseData] = useState(null);
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ const ExpenseListing = ({ selectedExpense, onExpenseTypeChange }) => {
 
   return (
     <div className="container1 mx-auto" style={{fontFamily:"Agbalumo"}}>
-      <div className="bg-white shadow-md rounded p-4 mb-4">
+      <div className="bg-white shadow-md rounded p-4 mb-4" style={{ boxShadow:"50px 5px 20px black"}} >
         <h2 className="text-2xl font-bold mb-4">Expense Chart</h2>
         <div className="mb-3">
           <label htmlFor="expenseDropdown" className="block font-bold mb-2">

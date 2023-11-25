@@ -1,0 +1,126 @@
+.MainContainer{
+  display: flex;
+  flex-direction: column;
+/* background-color: blue; */
+justify-content: center;
+align-items: center;
+height: 80%;
+}
+
+.heading34{
+  font-size: 1.6rem;
+ box-shadow: 2px 2px 14px white;
+font-family: 'Agbalumo';
+  
+  font-weight: bold;
+  background-color: rgb(221, 237, 237);
+
+  border-radius: 12rem;
+text-shadow: 2px 2px 2px rgb(206, 21, 107);
+}
+
+.StyledContactForm {
+  width: 100vw;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+
+  /* background-color: blue; */
+  background-image: url("https://i.pinimg.com/originals/93/c6/aa/93c6aaa4424c468db1c9f7904eb400d8.gif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  form {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    font-size: 16px;
+    background: linear-gradient(to right, pink, yellow, red);
+    background-color:'linear-gradient(to right, pink, yellow, red)';
+    border-color: black;
+    border-width: .1rem;
+    margin-top:2rem;
+    box-shadow: 8px 12px  10px rgb(245, 241, 241);
+    border-radius: 5%;
+    input {
+      margin-left: 1rem;
+      margin-right: 1rem;
+      width: 40vw;
+      height: 35px;
+      padding: 7px;
+      outline: none;
+    box-shadow: 1px 1px 5px aqua;
+      border-radius: 5px;
+      border: 1px solid rgb(220, 220, 220);
+
+      &:focus {
+        border: 2px solid rgba(0, 206, 158, 1);
+      }
+    }
+
+    textarea {
+      max-width: 95%;
+      min-width: 95%;
+      width: 100%;
+      box-shadow: 1px 1px 5px aqua;
+      max-height: 100px;
+      min-height: 100px;
+      padding: 7px;
+      outline: none;
+      border-radius: 5px;
+      border: 1px solid rgb(220, 220, 220);
+
+      &:focus {
+        border: 2px solid rgba(0, 206, 158, 1);
+      }
+    }
+
+    label {
+      margin-top: 1rem;
+    }
+
+    input[type="submit"] {
+      margin-top: 2rem;
+      border-radius: 10px;
+      cursor: pointer;
+      background: rgb(249, 105, 14);
+      color: white;
+      width: 130px;
+border-color: black; 
+border-width: .002rem;
+}
+
+  }
+}
+
+
+
+
+
+
+
+/* styles.css */
+
+.submit-button {
+  font-weight: bold;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #db9834;
+  color: #fff;
+}
+
+.submit-button:hover {
+  background-color: #2980b9;
+}
+
+
+
+
+

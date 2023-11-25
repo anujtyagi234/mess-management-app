@@ -4,6 +4,9 @@ const app = express();
 const { connectToDatabase } = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
 const adminRoutes = require("./routes/adminRoutes")
+// const uploadRoutes = require("./routes/uploadRoutes");
+const resetRoutes = require("./routes/resetRoutes");
+const newpwRoute = require("./routes/newpwRoute");
 const complain = require('./routes/complainRoutes')
 const fetchComplaintRoutes = require('./routes/fetchComplainRoutes');
 const updateComplaintRoute = require('./routes/updateComplainRoutes');
@@ -13,13 +16,22 @@ require("dotenv").config();
 
 app.use(express.json({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+  })
+);
 
 // Connect to MongoDB
 connectToDatabase();
 
 // Use auth routes
 app.use("/api/auth", authRoutes);
+app.use("/admin",adminRoutes);
+// app.use("/upload",uploadRoutes);
+app.use("/api",resetRoutes);
+app.use("/api",newpwRoute);
 app.use("/admin",adminRoutes)
 app.use("/api",complain)
 app.use("/api", fetchComplaintRoutes);

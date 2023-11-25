@@ -34,17 +34,18 @@ function Update() {
         <div className="update" style={{fontFamily:"Agbalumo"}}  key={index}>
           <div className='img_Update' style={{fontFamily:"Agbalumo"}}>
          <img src={update.img} alt=""  className='img_user_update'  style={{fontFamily:"Agbalumo"}}/>
-              <span>{update.name}</span>
+
+              <span  style={{textShadow:"2px 2px 2px yellow"}}>{update.name}</span>
          </div>
 
-          <div className="noti">
+          <div style={{textShadow:"2px 2px 2px aqua"}} className="noti">
             <div>
-              <span>{update.noti}</span>
+             <p> <span >{update.noti}</span></p>
               
             </div>
           </div>
           <div>
-            <span>{update.time}</span>
+            <span  style={{textShadow:"2px 2px 2px pink"}}>{update.time}</span>
           </div>
         </div>
       ))}

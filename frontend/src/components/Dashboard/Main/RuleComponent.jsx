@@ -1,15 +1,17 @@
 
 import React from "react";
-import "./Rule.css";
+import './Rule.css'
 const RuleItem = ({ number, rule, description }) => (
 	<div>
-		<div className="heading">
+		<div className="heading" style={{fontFamily:'Agbalumo'
+    }} >
 		➡️ {rule}
 		</div>
-		<div className="ruleInfo">
-			<p className="ruleHeading">Rule:</p>
+		<div className="ruleInfo" style={{fontFamily:'Agbalumo'
+    }}>
+			<span className="ruleHeading">Rule:</span>
 			<p className="ruleText">{description}</p>
-			<p className="whyHeading">Why:</p>
+			<span className="whyHeading">Why:</span>
 			<p className="whyText">
 				Ensures an orderly and fair dining experience for all.
 			</p>

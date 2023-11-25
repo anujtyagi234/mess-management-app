@@ -124,11 +124,12 @@ const MessComplaintForm = () => {
               placeholder='Write here about issue'
             />
         </form>
-<div className="Upload_imgg_folder">
+<div className="Upload_imgg_folder" style={{fontFamily:"Agbalumo"}}>
 <h2>Upload File and image  related to your Issues Here..</h2>
         <input
         type="file"
         accept='image/*'
+        style={{fontFamily:"Agbalumo"}}
         multiple
         onChange={handleFileChange}
       />

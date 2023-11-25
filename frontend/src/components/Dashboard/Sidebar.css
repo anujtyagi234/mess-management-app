@@ -32,13 +32,15 @@ font-family: 'Agbalumo';
     color: var(--pink);
 }
 
+
 .menu {
     margin-top: 4rem;
     display: flex;
     flex-direction: column;
     gap: 0.7rem;
-    margin-bottom: 5rem;
+    /* margin-bottom: 5rem; */
 }
+
 
 .Items {
     display: flex;
@@ -75,4 +77,49 @@ font-family: 'Agbalumo';
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
     border-color: black;
     border-width: 0.02rem;
+}
+
+
+.feedback_main{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    /* margin-top: 3rem; */
+}
+
+
+
+/* <button class="button-62" role="button">Button 62</button> */
+
+.button-62 {
+  background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+  color: #FFFFFF;
+  border-color: black;
+  border-width: .01rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  display: inline-block;
+  box-shadow: 3px 3px 2px grey;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none
+  /* touch-action: manipulation; */
+  /* white-space: nowrap;/ */
+}
+
+.button-62:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.button-62:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(124, 8, 29, 0.5), .525rem .525rem .2rem rgba(87, 37, 6, 0.5);
 }

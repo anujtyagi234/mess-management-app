@@ -7,6 +7,7 @@ import Student_Complains from './Student_Complains'
 import Resolved_Complains from './ResolvedComplain'
 import Edit_Mess_Menu from './MenuListing_BreakFast'
 import Unresolved_complain from '../ChiefWarden/Student_Complains'
+import Mess_Menu from '../Dashboard/Main/Mess_menu'
 import Dashmdefault from '../Accountant/DashmAccoundefault'
 function Dashboard_main() {
 	const [selectedMenu, setSelectedMenu] = useState("Breakfast");
@@ -30,6 +31,9 @@ function Dashboard_main() {
 	  case "Edit-Mess-Menu":
 		content = <Edit_Mess_Menu selectedMenu={selectedMenu} onMenuChange={handleMenuChange}/>;
 		break;
+		case "Mess-Menu":
+			content = <Mess_Menu/>;
+			break;
 	 
 	  default:
 		content = <Dashmdefault/>;
