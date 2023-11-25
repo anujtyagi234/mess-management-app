@@ -45,7 +45,7 @@ Make sure you have the following software installed on your machine:
 2. **Navigate to the Project Directory**
 
    ```bash
-   cd mess-complaint-portal
+   cd MESS-MANAGEMENT-APP
 
 3. **Install Server Dependencies**
    
