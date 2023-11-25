@@ -58,7 +58,8 @@ font-size: 2rem;
     box-shadow:  7px 7px 3px gray;
     margin-bottom: 27px;
     border-radius: 10px;
-    background: linear-gradient(to right, #2eccba,white, #fef57b,rgb(242, 229, 229),rgb(164, 54, 96));   
+    background: linear-gradient(to right, #2eccba,white, #fef57b,rgb(242, 229, 229),rgb(164, 54, 96));
+    box-shadow:"2px 9px 10px white" ;   
     
   }
   

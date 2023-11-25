@@ -1,0 +1,18 @@
+.back555{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow:scroll;
+       font-family: "Agbalumo";
+        height: 100vh;
+        width: 100vw;
+        overflow:scroll;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow:scroll;
+    overflow:scroll;
+  background-image: url("https://i.pinimg.com/originals/93/c6/aa/93c6aaa4424c468db1c9f7904eb400d8.gif");
+
+        overflow: auto; 
+}

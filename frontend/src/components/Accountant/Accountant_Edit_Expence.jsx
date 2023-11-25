@@ -46,8 +46,10 @@ const ExpenseEdit = () => {
   
   return (
     <div className="container99 mx-auto overflow-auto" style={{fontFamily:"Agbalumo"}}>
-      <div className="bg-white shadow-md  p-8 mb-4" style={{background: 'linear-gradient(to right, pink, yellow, red)',borderRadius:"20px"}}>
+      <div className="bg-white shadow-md  p-8 mb-4" style={{background: 'linear-gradient(to right, pink, yellow, red)',borderRadius:"20px",boxShadow:"2px 9px 10px white"}}>
         <div className="text-center">
+    {/* box-shadow:"2px 9px 10px white" ;    */}
+
      
           <h1 className="text-2xl font-bold mb-4" style={{textShadow: "2px 2px 2px rgb(206, 21, 107)"}}>Edit Expense Data</h1>
         

@@ -24,7 +24,6 @@ import ChiefWarden_mess_menu_update from './components/ChiefWarden/MenuListing_B
 import ChiefWarden from './components/ChiefWarden/ChiefWarden.jsx'
 import Email from './components/Email.jsx'
 import Chief_Complaints_resolve_pannel from './components/ChiefWarden/ResolvedComplain.jsx'
-import Temp from './components/ChiefWarden/Temp.jsx'
 
 import Mess_menu_Copy from './components/ChiefWarden/Chief_Mess_Menu.jsx'
 import ExpenseListing from './components/Accountant/Accountant_Expence_list.jsx'
@@ -74,7 +73,9 @@ export default function App() {
           <Route path="/reset_password/:id/:token" element={<ResetPassword />}></Route> 
         
           {decodedToken && decodedToken.userrole === 'student' && (
+            <>
             <Route path="/" element={<Dashi />} />
+            <Route path="/Email" element={<Email/>}/> </>
             ) }
           {decodedToken && decodedToken.userrole === 'admin' && (
             <>
