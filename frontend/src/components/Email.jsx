@@ -3,12 +3,14 @@ import './Email.css'
 // Contact.js
 
 import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import emailjs from "emailjs-com";
 import styled from "styled-components";
 
 const Contact = () => {
  
   const form = useRef();
+  const navigate = useNavigate()
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -23,10 +25,12 @@ const Contact = () => {
       .then(
         (result) => {
           console.log(result.text);
-          console.log("message sent");
+          alert("feedback sent");
+          navigate('/');
         },
         (error) => {
           console.log(error.text);
+          alert("please try again later");
         }
       );
   };

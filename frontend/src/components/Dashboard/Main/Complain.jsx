@@ -72,6 +72,8 @@ const MessComplaintForm = () => {
     axios.post('http://localhost:3000/api/complain', newFormData)
     .then((response) => {
       alert(response.data.message);
+      setFormData({ complaintTitle: '', complaintDetails: '' });
+      setSelectedFile(null)
     })
     .catch((error) => {
       alert("please try again later")

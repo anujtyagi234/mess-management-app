@@ -4,7 +4,7 @@
       "id": 1,
       "title": "Monday",
       "special": "",
-      "m1": "Sprouts moong_dal,gram",
+      "m1": "Sprouts moong_dal,gram 12",
       "m2": "Idle-Sambhar",
       "m3": "Milk-Bournvita",
       "m4": "Banana",
@@ -292,7 +292,7 @@
   "Vegitable_Expence": [
     {
       "title": "January",
-      "Expence": "4900",
+      "Expence": "49001",
       "active": true,
       "id": 1
     },
