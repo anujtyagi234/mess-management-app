@@ -6,6 +6,7 @@ import MessMenu from '../Dashboard/Main/Mess_menu'
 import Resolved_complains from '../Dashboard/Main/ResolvedComplain'
 import Student_complains from '../Dashboard/Main/Student_Complain'
 import Logout from "../Dashboard/Logout";
+import Notices from '../Common_to_All/Notice_Board'
 import Accountant_sidebar from './Accountant_sidebar'
 import  DashmAccoundefault from './DashmAccoundefault'
 function Dashboard_main() {
@@ -33,6 +34,9 @@ function Dashboard_main() {
 		break;
         case "Resolved-complains":
 		content = <Resolved_complains/>;
+		break;
+		case "Notices":
+		content = <Notices/>;
 		break;
         default:
 		content = <DashmAccoundefault/>;

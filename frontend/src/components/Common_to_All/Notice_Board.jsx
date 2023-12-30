@@ -1,28 +1,6 @@
-
-import './Updates.css';
-import Student from './student.gif';
+import '../Dashboard/Updates/Updates.css'
 import React, { useEffect, useState } from 'react';
 
-const UpdatesData = [
-  {
-    img: Student,
-    name: 'Sumit0',
-    time: '27 second ago',
-    noti: 'Today breakfast is very tasty',
-  },
-  {
-    img: Student,
-    name: 'Sumit1',
-    time: '2 second ago',
-    noti: 'Today breakfast is very tasty',
-  },
-  {
-    img: Student,
-    name: 'Sumit2',
-    time: '25 second ago',
-    noti: 'Today breakfast is very tasty',
-  },
-];
 
 
 
@@ -43,11 +21,13 @@ function Update() {
   }
    
   return (
-
+    
     <>
-    <div style={{background: 'linear-gradient(to right, pink, yellow, red)' ,height:"400px",width:"90%",marginBottom:"10px",borderRadius:"20px",borderWidth:"0.05rem",borderColor:"black",marginTop:"1.5px"}}>
+    
+    <h3 style={{marginTop:"8px",marginBottom:"30px"}}><big><b><span style={{fontFamily:"Agbalumo",backgroundColor:"white",textShadow: "2px 1px 2px rgb(206, 21, 107)",fontSize:"1.7rem",borderRadius:"10px",}}>Notice</span></b></big></h3>
+    <div style={{display:"flex",justifyContent:"center",alignItems:"center",width:"100%",height:"70%"}}>
+    <div style={{background: 'linear-gradient(to right, pink, yellow, red)' ,height:"400px",width:"60%",marginBottom:"10px",borderRadius:"20px",borderWidth:"0.05rem",borderColor:"black",marginTop:"1.5px"}}>
   
-      <div className="sr" style={{fontFamily:"Agbalumo"}}><h1>Updates</h1></div>
       
    
 
@@ -72,6 +52,7 @@ function Update() {
           </div>
         </div>
      
+      </div>
       </div>
     </>
 

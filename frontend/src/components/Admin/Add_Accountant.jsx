@@ -67,7 +67,7 @@ function Add_Accountant() {
         <div className="h-screen bg-red-300 w-1/2 flex justify-center items-center rounded-l-lg " style={{fontFamily:"Agbalumo"}}>
           {/* <img src={img} alt="Image" className="h-64 w- object-cover rounded-2xl" /> */}
           <div className="flex-col ">
-            <h1 className="text-3xl font-bold sans-serif mt-0 text-rose-900	color: rgb(225 29 72) ">
+            <h1 className="text-3xl font-bold sans-serif mt-0 text-rose-900	color: rgb(225 29 72) " style={{backgroundColor:"transparent"}}>
              Add Accountant
             </h1>
 
@@ -89,7 +89,7 @@ function Add_Accountant() {
           <div className="text-white text-center">
             <h1
               className="text-5xl  "
-              style={{  fontWeight: "bold" }}
+              style={{  fontWeight: "bold", backgroundColor:"transparent" }}
             >
               !! Welcome !!
             </h1>

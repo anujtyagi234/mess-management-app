@@ -60,9 +60,9 @@ function Login() {
 				<div className="h-screen bg-red-300 w-1/2 flex justify-center items-center rounded-l-lg " style={{fontFamily:"Agbalumo"}}>
 					{/* <img src={img} alt="Image" className="h-64 w- object-cover rounded-2xl" /> */}
 					<div className="flex-col ">
-						<h1 className="text-3xl font-bold sans-serif mt-0 text-rose-900	color: rgb(225 29 72) ">
+						<h2 className="text-3xl font-bold  mt-0 text-rose-900	color: rgb(225 29 72) "style={{backgroundColor:"transparent"}} >
 						New Here...
-						</h1>
+						</h2>
 
 						<img
 							src="https://img.freepik.com/premium-photo/cooking-fair-logo-design-illustration-pop-white-background-illustration_921410-27744.jpg"

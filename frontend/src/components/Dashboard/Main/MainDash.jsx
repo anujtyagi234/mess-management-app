@@ -45,7 +45,7 @@ function MainDash() {
             
           <div className="Details_Students mx-20" style={{ fontFamily: 'Arial, sans-serif', padding: '20px', borderRadius: '8px', boxShadow: '7px 5px 5px black', background: 'linear-gradient(to right, pink, yellow, red)', border: '2px solid #333',display:"flex",flexDirection:"column" }}>
            
-          <h1 className="DashboardText127 text-center" style={{ color: 'black', fontSize: '32px', marginBottom: '20px' }}>Student Details</h1>
+          <h1 className="DashboardText127 text-center" style={{ color: 'black', fontSize: '32px', marginBottom: '20px',backgroundColor:"transparent" }}>Student Details</h1>
           <div className="main-box" style={{ boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', padding: '15px', borderRadius: '8px', backgroundColor: '#fff', marginBottom: '15px', fontFamily:"Agbalumo" }}>
   
             <p style={{ fontSize: '18px', lineHeight: '1.6', marginBottom: '5px', }}><b>Name: </b><span style={{ color: '#FF5733' }}>{userData.user_name}</span></p>

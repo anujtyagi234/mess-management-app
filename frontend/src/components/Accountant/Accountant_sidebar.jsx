@@ -2,9 +2,10 @@
 import React, { useState } from 'react';
 // import '../Dashboard/Sidebar.css';
 
-import book from '../../imgs/books.gif';
+// import book from '../../imgs/books.gif';
 import menu from '../../imgs/burger.gif';
 import mess from '../../imgs/mess.png';
+import Notices_image from '../../imgs/mail-delivery.gif'
 import Calender from '../../imgs/calendar.gif'
 import complain from '../../imgs/Compln.gif';
 import Message from '../../imgs/new-message.gif'
@@ -14,6 +15,10 @@ function Sidebar({ onMenuItemClick }) {
     { title: 'Mess-Menu', image: menu },
     { title: 'Unresolved-complains', image: complain },
     { title: 'Resolved-complains', image: Message },
+    { title: 'Notices', image: Notices_image},
+
+
+    
   ];
 
   const initialSelectedIndex = menuItems.findIndex((item) => item.title === 'Add-Expence');

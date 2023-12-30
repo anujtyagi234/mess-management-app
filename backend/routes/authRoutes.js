@@ -3,7 +3,7 @@ const router = express.Router();
 const authController = require("../controllers/authController");
 const { getUserDataFromToken } = require('../middleware/fetchuser');
 
-// Signup route
+// Signup route  
 router.post("/signup", authController.signup);
 
 // Login route

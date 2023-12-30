@@ -50,6 +50,8 @@ function Dashboard_main() {
 		case "Contact":
 			content = <Contact />;
 			break;
+
+			
 		default:
 			content = null; 
 	}
