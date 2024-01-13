@@ -60,7 +60,7 @@ function Dashboard_main() {
 			<div className="App">
 				<div className="Back">
 					<Sidebar onMenuItemClick={handleMenuItemClick} />
-			 {content}
+			        {content}
 
 			<div>
 				    <Logout/>

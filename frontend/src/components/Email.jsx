@@ -3,12 +3,14 @@ import { useState } from 'react';
 // Contact.js
 
 import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import emailjs from "emailjs-com";
 
 import HomeComponent from './Dashi/Dashboard_main'
 const Contact = () => {
   const [showHome, setShowHome] = useState(false);
   const form = useRef();
+  const navigate = useNavigate()
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -23,11 +25,17 @@ const Contact = () => {
       .then(
         (result) => {
           console.log(result.text);
+<<<<<<< HEAD
           alert("Feedback sent Successfully.");
           
+=======
+          alert("feedback sent");
+          navigate('/');
+>>>>>>> 1ca21d3c2f1e60cde22483aa0b9e6da39a854268
         },
         (error) => {
           console.log(error.text);
+          alert("please try again later");
         }
       );
       return (
