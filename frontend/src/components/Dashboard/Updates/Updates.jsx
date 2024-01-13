@@ -45,7 +45,8 @@ function Update() {
   return (
 
     <>
-    <div style={{background: 'linear-gradient(to right, pink, yellow, red)' ,height:"400px",width:"90%",marginBottom:"10px",borderRadius:"20px",borderWidth:"0.05rem",borderColor:"black",marginTop:"1.5px"}}>
+
+    <div style={{background: 'linear-gradient(to right, pink, yellow, red)' ,height:"370px",width:"90%",marginBottom:"5px",borderRadius:"20px",borderWidth:"0.05rem",borderColor:"black",marginTop:"1.5px" ,boxShadow: "10px 5px 5px rgb(177, 166, 170)"}}>
   
       <div className="sr" style={{fontFamily:"Agbalumo"}}><h1>Updates</h1></div>
       

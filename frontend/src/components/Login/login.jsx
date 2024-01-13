@@ -14,7 +14,7 @@ function Login() {
 	});
 
 	
-	const Userroles = ["admin","chief warden","accountant","student"
+	const Userroles = ["student","admin","chief warden","accountant"
 	  ];
 
 	const [error, setError] = useState("");

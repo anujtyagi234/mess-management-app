@@ -1,4 +1,3 @@
-// server.js
 
 import multer from 'multer';
 import path from 'path';
@@ -66,31 +65,12 @@ app.post('/upload', upload.array('files'), (req, res) => {
       fs.unlinkSync(filePath); // Delete the old file
     }
 
-
- 
   });
-
-
 
   console.log('Files processed successfully');
 
  
 });
-
-// app.get('/notices', (req, res) => {
-//   // Get the list of notices (you may want to read this from a database)
-//   const uploadDir = path.join(__dirname, 'uploads_Notice');
-//   console.log('Fetching notice list...');
-//   // Replace BASE_URL with the actual base URL of your server
-//   const notices = fs.readdirSync(uploadDir).map((file) => ({
-//     name: file,
-//     url: `http://localhost:9000/uploads_Notice/${file}`, // Use the complete path
-//     timestamp: stat.mtime,
-//   }));
-
-//   console.log('Notices fetched successfully:', notices);
-//   res.json(notices);
-// });
 
 
 app.get('/notices', (req, res) => {
@@ -112,8 +92,6 @@ app.get('/notices', (req, res) => {
     res.json(notices);
   });
   
-
-
 
 app.get('/downloads/:filename', (req, res) => {
   const filePath = path.join(__dirname, 'uploads_Notice', req.params.filename);

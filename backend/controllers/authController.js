@@ -6,10 +6,9 @@ const Warden = require("../models/chiefwardenModel");
 const Accountant = require("../models/accountantModel");
 require("dotenv").config();
 const saltRounds = parseInt(process.env.SALT);
-
 const signup = async (req, res) => {
   const { college_gmail_id, registration_no, hostelname, password, user_name } = req.body;
-
+  
   try {
     // Check if a user with the same college_gmail_id already exists
     const existingUser = await User.findOne({ college_gmail_id });
