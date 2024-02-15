@@ -28,10 +28,10 @@ function Dashboard_main() {
 		case "Complain":
 			content = <Complain />;
 			break;
-		case "Unresolved-Complain":
+		case "Unresolved-Complains":
 		content = <UnResolved_complains/>;
 		break;
-		case "Resolved-Complain":
+		case "Resolved-Complains":
 		content = <Resolved_complains/>;
 		break;
 		case "Mess-Menu":
@@ -50,6 +50,8 @@ function Dashboard_main() {
 		case "Contact":
 			content = <Contact />;
 			break;
+
+			
 		default:
 			content = null; 
 	}

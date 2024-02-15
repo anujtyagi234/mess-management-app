@@ -44,7 +44,7 @@ function MealPlanner() {
   // Fetch data on component mount and when selectedHostel changes
   useEffect(() => {
     fetchData(selectedHostel);
-  }, [selectedHostel]);
+  }, [selectedHostel,mealData]);
 
   // Function to fetch meal data
   const fetchData = async (hostel) => {
@@ -67,6 +67,8 @@ function MealPlanner() {
     // Optionally, you can pre-fill the edited values based on existing data
     const selectedMealData = mealData[0]?.[mealType]?.find((item) => item.day === day);
     setEditedValues({
+      day: day,
+      mealType: mealType,
       m1: selectedMealData?.m1 || "",
       m2: selectedMealData?.m2 || "",
       m3: selectedMealData?.m3 || "",
@@ -76,14 +78,23 @@ function MealPlanner() {
   };
 
   // Function to handle saving edited values
-  const handleSaveEdit = () => {
-    // Implement the logic to save the edited values (editedValues) to the backend
-    console.log("Saving edited values:", editedValues);
-    // Close the modal after saving
+  const handleSaveEdit = async() => {
+    try {
+      const {m1,m2,m3,m4,special,mealType,day}= editedValues;
+      const hostel = selectedHostel;
+      const response = await axios.put("http://localhost:3000/messMenu/update", {m1,m2,m3,m4,special,mealType,day,hostel});
+      const { updatedMenu } = response.data;
+      setMealData(updatedMenu);
+    } catch (error) {
+      setError(error);
+    } finally {
+      setLoading(false);
+    }
     setEditModalIsOpen(false);
-    // Optionally, you can fetch data again to update the UI
-    fetchData(selectedHostel);
   };
+  
+  
+  console.log(mealData)
 
   // Function to render the meal plan chart
   const renderMealPlanChart = () => {
@@ -115,9 +126,10 @@ function MealPlanner() {
 
   // Function to render the meal plan for a specific day and meal type
   const renderMealPlan = (day, mealType) => {
-    const selectedMealData = mealData[0]?.[mealType]?.find(
+    const selectedMealData = mealData && mealData.length > 0 ? mealData[0]?.[mealType]?.find(
       (item) => item.day === day
-    );
+    ) : null;
+       
 
     return (
       <div>

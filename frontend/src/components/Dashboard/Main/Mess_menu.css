@@ -5,7 +5,7 @@
 justify-content: center;
 align-items: center;
 display: flex;
-height: 95%;
+height: 97%;
 width: 100%;
 }
 
@@ -51,6 +51,8 @@ margin-top: 1rem;
 .Mess_Menu_heading{
  text-shadow: 2px 2px 2px rgb(206, 21, 107);
  font-family: 'Agbalumo';
+background-color:transparent;
+color: black;
 
 }
 

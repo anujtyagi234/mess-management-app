@@ -2,10 +2,10 @@
   "Breakfast": [
     {
       "id": 1,
-      "title": "Monday",
+      "title": "Monday1",
       "special": "",
-      "m1": "Sprouts moong_dal,gram 12",
-      "m2": "Idle-Sambhar",
+      "m1": "Sprouts moong_dal,gram",
+      "m2": "Idle-Sambhar ",
       "m3": "Milk-Bournvita",
       "m4": "Banana",
       "isactive": true
@@ -25,7 +25,7 @@
       "title": "Wednesday",
       "special": "",
       "m1": "Sprouts moong_dal,gram",
-      "m2": "Sambhar-Bda/Bread-Butter",
+      "m2": "Sambhar-Bda/Breads-Butter",
       "m3": "Milk",
       "m4": "Banana",
       "active": true,
@@ -292,19 +292,19 @@
   "Vegitable_Expence": [
     {
       "title": "January",
-      "Expence": "49001",
+      "Expence": "4900",
       "active": true,
       "id": 1
     },
     {
       "title": "February",
-      "Expence": 4500,
+      "Expence": "450011111",
       "active": true,
       "id": 2
     },
     {
       "title": "March",
-      "Expence": 48587,
+      "Expence": "485845454",
       "active": true,
       "id": 3
     },

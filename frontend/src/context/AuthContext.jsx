@@ -16,7 +16,6 @@ export const authReducer = (state, action) => {
       return state;
   }
 };
-
 export const AuthContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(authReducer, {
     token: null
@@ -24,14 +23,11 @@ export const AuthContextProvider = ({ children }) => {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-
     if (token) {
       dispatch({ type: "LOGIN", payload: token});
     }
   }, []);
-
   console.log("authentication state:", state);
-
   return (
     <AuthContext.Provider value={{ ...state, dispatch }}>
       {children}

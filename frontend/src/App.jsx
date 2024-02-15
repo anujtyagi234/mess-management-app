@@ -23,6 +23,7 @@ import ChiefWarden_mess_menu_update from './components/ChiefWarden/MenuListing_B
  import Chief_Student_complaints from './components/ChiefWarden/Student_Complains.jsx'
 import ChiefWarden from './components/ChiefWarden/ChiefWarden.jsx'
 import Email from './components/Email.jsx'
+import Rateus from "./components/Dashboard/Student_Reviews/DataUpdatePage.jsx"
 import Chief_Complaints_resolve_pannel from './components/ChiefWarden/ResolvedComplain.jsx'
 
 import Mess_menu_Copy from './components/ChiefWarden/Chief_Mess_Menu.jsx'
@@ -90,7 +91,12 @@ export default function App() {
           {decodedToken && decodedToken.userrole === 'student' && (
             <>
             <Route path="/" element={<Dashi />} />
-            <Route path="/Email" element={<Email/>}/> </>
+            <Route path="/Email" element={<Email/>}/>
+            <Route path="/rate-us" element={<Rateus/>}/>
+
+            
+             </>
+           
             ) }
           {decodedToken && decodedToken.userrole === 'admin' && (
             <>

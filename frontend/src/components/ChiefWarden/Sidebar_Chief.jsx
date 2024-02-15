@@ -4,15 +4,19 @@ import menu from '../../imgs/burger.gif';
 import mess from '../../imgs/mess.png';
 import Messmenu from '../../imgs/vegan-food.gif'
 import complain from '../../imgs/Compln.gif';
-import Massage from '../../imgs/new-message.gif';
+import Message from '../../imgs/new-message.gif';
 import openmassagepng from '../../imgs/mail-delivery.gif';
 
 function Sidebar({ onMenuItemClick }) {
   const menuItems = [
     { title: 'Student-Complains', image: complain },
     { title: 'Resolved-Complains', image: openmassagepng },
+   
     { title: 'Mess-Menu', image: Messmenu },
+    { title: 'AddNotice', image:  openmassagepng},
+    
 
+    
     
   ];
 

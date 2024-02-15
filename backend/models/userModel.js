@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
-
-const userSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({ 
   college_gmail_id: {
     type: String,
     required: true,

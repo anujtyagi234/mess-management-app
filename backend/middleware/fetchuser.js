@@ -1,8 +1,8 @@
 const jwt = require('jsonwebtoken');
 const User = require('../models/userModel');
 require("dotenv").config();
-
 // Middleware to fetch user data based on token
+
 function getUserDataFromToken(req, res, next) {
   const authtoken = req.headers.authorization;
 

@@ -1,14 +1,14 @@
 import './Email.css'
-
+import { useState } from 'react';
 // Contact.js
 
 import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import emailjs from "emailjs-com";
-import styled from "styled-components";
 
+import HomeComponent from './Dashi/Dashboard_main'
 const Contact = () => {
- 
+  const [showHome, setShowHome] = useState(false);
   const form = useRef();
   const navigate = useNavigate()
 
@@ -25,6 +25,8 @@ const Contact = () => {
       .then(
         (result) => {
           console.log(result.text);
+          alert("Feedback sent Successfully.");
+          
           alert("feedback sent");
           navigate('/');
         },
@@ -33,13 +35,19 @@ const Contact = () => {
           alert("please try again later");
         }
       );
+      return (
+        <div>
+         
+          {showHome && <HomeComponent />}
+        </div>
+      );
   };
 
   return (
     <div className="StyledContactForm" style={{fontFamily:"Agbalumo"}}>
       <div className="MainContainer" style={{overflow:"hidden"}} >
         <div className='heading34'>
-        <h1><b>Feedback-form</b></h1>
+        <h1 style={{backgroundColor:"white",borderRadius:"30px",color:"black"}}><b>Feedback-form</b></h1>
         </div>
         <form ref={form} onSubmit={sendEmail}>
           <label style={{marginLeft:"1rem",marginBottom:"0.07rem"}} > <b>  Name </b></label>

@@ -2,6 +2,10 @@ const Complaint = require('../models/complainModel');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 
+
+// uuidv4() is called to generate a unique identifier (UUID), and it's then used to create a unique filename for each uploaded file. This ensures that the filenames are unique and unlikely to clash with existing files. The resulting filename is a combination of the generated UUID and the original filename of the uploaded file.
+
+
 const submitComplaint = async (req, res) => {
   const { user, title, description,hostelName } = req.body;
   const files = req.files;

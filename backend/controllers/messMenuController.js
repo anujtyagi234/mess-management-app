@@ -14,15 +14,35 @@ const fetchMessMenu = async (req, res) => {
 
   const updateMessMenu = async (req, res) => {
     try {
-      const { hostel, newMenu } = req.body;
+      const { hostel, m1, m2, m3, m4, special, mealType, day } = req.body;
   
-      // Update the MessMenu based on the hostel value
+      // Construct the update object
+      const updateObj = {
+        $set: {
+          [`${mealType}.$[elem].m1`]: m1,
+          [`${mealType}.$[elem].m2`]: m2,
+          [`${mealType}.$[elem].m3`]: m3,
+          [`${mealType}.$[elem].m4`]: m4,
+          [`${mealType}.$[elem].special`]: special,
+        }
+      };
+  
+      // Define the arrayFilters for matching the correct element based on day
+      const arrayFilters = [
+        { "elem.day": day }
+      ];
+      console.log(updateObj)
+      console.log(arrayFilters)
+      // Update the MessMenu document
       const updatedMenu = await MessMenu.findOneAndUpdate(
         { hostel: hostel },
-        { $set: { /* Update fields here using newMenu data */ } },
-        { new: true } // To return the updated document
+        updateObj,
+        {
+          new: true,
+          arrayFilters: arrayFilters
+        }
       );
-  
+      console.log(updatedMenu);
       res.status(200).json({ updatedMenu });
     } catch (error) {
       console.error('Error updating messMenu:', error);
@@ -31,3 +51,4 @@ const fetchMessMenu = async (req, res) => {
   };
   
   module.exports = { fetchMessMenu, updateMessMenu };
+  

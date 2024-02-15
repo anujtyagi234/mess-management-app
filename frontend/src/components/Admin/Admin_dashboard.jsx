@@ -2,6 +2,7 @@ import React from "react";
 import '../../Acc_Adm_Chf_Dashboard.css'
 import Logout from "../Dashboard/Logout";
 import { useState } from "react";
+ import Notices  from '../Common_to_All/Notice_Board'
 import Add_Accountant from './Add_Accountant'
 import Add_Chiefwarden from './Add_Chief_warden'
 import Resolved_complains from '../ChiefWarden/ResolvedComplain'
@@ -29,6 +30,10 @@ function Dashboard_main() {
         case "Resolved-complains":
 		content = <Resolved_complains/>;
 		break;
+
+		case "Notices":
+			content= <Notices/>;
+			break;
 		default:
 			content = <DashmAccoundefault/>;
 			break;

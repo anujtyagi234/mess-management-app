@@ -6,6 +6,7 @@ import Sidebar_Chief from './Sidebar_Chief'
 import Student_Complains from './Student_Complains'
 import Resolved_Complains from './ResolvedComplain'
 import Edit_Mess_Menu from './MenuListing_BreakFast'
+import AddNotice from './NoticeBoard'
 import Unresolved_complain from '../ChiefWarden/Student_Complains'
 import Mess_Menu from './Chief_Mess_Menu'
 import Dashmdefault from '../Accountant/DashmAccoundefault'
@@ -27,6 +28,12 @@ function Dashboard_main() {
 		case "Mess-Menu":
 			content = <Mess_Menu/>;
 			break;
+
+			case "AddNotice":
+			content = <AddNotice/>;
+			break;
+			
+
 	 
 	  default:
 		content = <Dashmdefault/>;
