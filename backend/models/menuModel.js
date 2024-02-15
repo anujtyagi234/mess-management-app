@@ -8,25 +8,55 @@ const Hostels = [
   "Diamond Jublee Girls Hostel(DG)",
 ];
 
+const Days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
 const MessMenuSchema = new mongoose.Schema({
   hostel: {
     type: String,
     enum: Hostels,
     required: true
   },
-  day: {
-    type: String,
-    enum: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-    required: true
-  },
-  mealTime: {
-    type: String,
-    enum: ['Morning', 'Noon', 'Evening', 'Night'],
-    required: true
-  },
-  items: [{ type: String }],
+  breakfast: [
+    {
+      day: { type: String, enum: Days },
+      special: String,
+      m1: String,
+      m2: String,
+      m3: String,
+      m4: String,
+    }
+  ],
+  lunch: [
+    {
+      day: { type: String, enum: Days },
+      special: String,
+      m1: String,
+      m2: String,
+      m3: String,
+      m4: String,
+    }
+  ],
+  dinner: [
+    {
+      day: { type: String, enum: Days },
+      special: String,
+      m1: String,
+      m2: String,
+      m3: String,
+      m4: String,
+    }
+  ],
+  supper: [
+    {
+      day: { type: String, enum: Days },
+      special: String,
+      m1: String,
+      m2: String,
+      m3: String,
+      m4: String,
+    }
+  ]
 });
-
 
 const MessMenu = mongoose.model("MessMenu", MessMenuSchema);
 

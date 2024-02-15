@@ -10,6 +10,7 @@ const newpwRoute = require("./routes/newpwRoute");
 const complain = require('./routes/complainRoutes')
 const fetchComplaintRoutes = require('./routes/fetchComplainRoutes');
 const updateComplaintRoute = require('./routes/updateComplainRoutes');
+const messMenuRoutes = require('./routes/messMenuRoutes')
 const path = require('path');
 
 require("dotenv").config();
@@ -37,6 +38,7 @@ app.use("/api",complain)
 app.use("/api", fetchComplaintRoutes);
 app.use('/api/complaints', updateComplaintRoute);
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use('/messMenu',messMenuRoutes)
 
 const PORT = 3000;
 app.listen(PORT, () => {

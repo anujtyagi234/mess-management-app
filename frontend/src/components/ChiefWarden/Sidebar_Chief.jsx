@@ -11,15 +11,14 @@ function Sidebar({ onMenuItemClick }) {
   const menuItems = [
     { title: 'Student-Complains', image: complain },
     { title: 'Resolved-Complains', image: openmassagepng },
-    { title: 'Edit-Mess-Menu', image: menu },
     { title: 'Mess-Menu', image: Messmenu },
 
     
   ];
 
-  const initialSelectedIndex = menuItems.findIndex((item) => item.title === 'Student-Complains');
+  // const initialSelectedIndex = menuItems.findIndex((item) => item.title === 'Student-Complains');
 
-  const [selected, setSelected] = useState(initialSelectedIndex);
+  const [selected, setSelected] = useState();
 
   const handleItemClick = (index) => {
     const selectedItem = menuItems[index].title;

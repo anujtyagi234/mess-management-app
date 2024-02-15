@@ -73,7 +73,7 @@ const MessComplaintForm = () => {
     .then((response) => {
       alert(response.data.message);
       setFormData({ complaintTitle: '', complaintDetails: '' });
-      setSelectedFile(null)
+      document.getElementById('image').value = null;
     })
     .catch((error) => {
       alert("please try again later")
@@ -129,6 +129,7 @@ const MessComplaintForm = () => {
 <div className="Upload_imgg_folder" style={{fontFamily:"Agbalumo"}}>
 <h2>Upload File and image  related to your Issues Here..</h2>
         <input
+        id='image'
         type="file"
         accept='image/*'
         style={{fontFamily:"Agbalumo"}}

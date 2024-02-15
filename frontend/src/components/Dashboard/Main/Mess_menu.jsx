@@ -1,59 +1,89 @@
-
-import React, { useState, useEffect } from 'react';
-import './Mess_menu.css';  // Assuming this is the correct CSS file
+import React, { useState, useEffect } from "react";
+import "./Mess_menu.css";
 import Menu from "../../../imgs/ramen.gif";
+import axios from "axios";
+
+const DAYS_OF_WEEK = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday",
+];
 
 function MealPlanner() {
   const [selectedDay, setSelectedDay] = useState("Monday");
   const [mealData, setMealData] = useState([]);
-  const mealTypes = ['Breakfast', 'Lunch', 'Dinner', 'Supper'];
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [userData, setUserData] = useState(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const promises = mealTypes.map(async (type) => {
-          const response = await fetch(`http://localhost:8000/${type}`);
-          const data = await response.json();
+    const token = localStorage.getItem("token");
+    fetchUserData(token);
+  }, []);
 
-          // Find the meal data for the selected day
-          const selectedMeal = data.find((meal) => meal.title === selectedDay);
+  const fetchUserData = (token) => {
+    fetch("http://localhost:3000/api/auth/user", {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((response) => response.json())
+      .then((userData) => {
+        setUserData(userData);
+        fetchData(userData.hostelname);
+      })
+      .catch((error) => setError(error))
+      .finally(() => setLoading(false));
+  };
 
-          return { type, selectedMeal };
-        });
-
-        const mealDataMap = await Promise.all(promises);
-
-        // Update the state with the meal data
-        setMealData(mealDataMap);
-      } catch (error) {
-        console.error('Error:', error);
-      }
-    };
-
-    fetchData();
-  }, [selectedDay]);
+  const fetchData = async (hostelname) => {
+    try {
+      const response = await axios.get("http://localhost:3000/messMenu/fetch", {
+        params: { hostel: hostelname },
+      });
+      const { messMenu } = response.data;
+      setMealData(messMenu);
+    } catch (error) {
+      setError(error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const renderMealPlan = (mealType) => {
-	const selectedMealData = mealData.find((meal) => meal.type === mealType);
-  
-	return (
-	  <div>
-		<h3 className="Meal_Title">{`${mealType} Plan for ${selectedDay}`}</h3>
-		<div className="Sp">
-		  <p>
-			<span className="Special"> Special: </span>
-			{selectedMealData?.selectedMeal?.special}
-		  </p>
-		</div>
-		<p>{selectedMealData?.selectedMeal?.m1}</p>
-		<p>{selectedMealData?.selectedMeal?.m2}</p>
-		<p>{selectedMealData?.selectedMeal?.m3}</p>
-		<p>{selectedMealData?.selectedMeal?.m4}</p>
-		<p>{selectedMealData?.selectedMeal?.m5}</p>
-	  </div>
-	);
+    const selectedMealData = mealData[0]?.[mealType]?.find(
+      (item) => item.day === selectedDay
+    );
+
+    return (
+      <div>
+        <h3 className="Meal_Title">{`${mealType} Plan for ${selectedDay}`}</h3>
+        <div className="Sp">
+          <p>
+            <span className="Special"> Special: </span>
+            {selectedMealData?.special}
+          </p>
+        </div>
+        <p>{selectedMealData?.m1}</p>
+        <p>{selectedMealData?.m2}</p>
+        <p>{selectedMealData?.m3}</p>
+        <p>{selectedMealData?.m4}</p>
+      </div>
+    );
   };
-  
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
 
   return (
     <div className="Mess_menu_parent_container">
@@ -67,31 +97,30 @@ function MealPlanner() {
             <img src={Menu} alt="" style={{ borderRadius: "0" }} />
           </div>
         </div>
-        <div className="Dropdown" style={{fontFamily:"Agbalumo"}}>
-          <div className="select_menu" style={{fontFamily:"Agbalumo"}}>
-          <select
-  className="Select_days_box"
-  style={{ fontFamily: "Agbalumo" }}
-  id="days"
-  onChange={(e) => setSelectedDay(e.target.value)}
-  value={selectedDay}
->
-  {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'].map((day) => (
-    <option key={day} value={day}>
-      {day}
-    </option>
-  ))}
-</select>
-
+        <div className="Dropdown" style={{ fontFamily: "Agbalumo" }}>
+          <div className="select_menu" style={{ fontFamily: "Agbalumo" }}>
+            <select
+              className="Select_days_box"
+              style={{ fontFamily: "Agbalumo" }}
+              id="days"
+              onChange={(e) => setSelectedDay(e.target.value)}
+              value={selectedDay}
+            >
+              {DAYS_OF_WEEK.map((day) => (
+                <option key={day} value={day}>
+                  {day}
+                </option>
+              ))}
+            </select>
           </div>
         </div>
 
         <div className="Break_dinn_sup_laun">
           <div className="parent_of_4_container">
-            <div className="left2">{renderMealPlan("Breakfast")}</div>
-            <div className="right2">{renderMealPlan("Lunch")}</div>
-            <div className="left2">{renderMealPlan("Supper")}</div>
-            <div className="right2">{renderMealPlan("Dinner")}</div>
+            <div className="left2">{renderMealPlan("breakfast")}</div>
+            <div className="right2">{renderMealPlan("lunch")}</div>
+            <div className="left2">{renderMealPlan("supper")}</div>
+            <div className="right2">{renderMealPlan("dinner")}</div>
           </div>
         </div>
       </div>
@@ -100,4 +129,3 @@ function MealPlanner() {
 }
 
 export default MealPlanner;
-

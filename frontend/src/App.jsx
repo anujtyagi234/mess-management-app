@@ -2,7 +2,7 @@ import React from "react";
 import './Acc_Adm_Chf_Dashboard.css'
 import { jwtDecode } from "jwt-decode";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import Home from "./components/Home/Home.jsx"
 import NavBar from "./components/Home/NavBar.jsx";
 
@@ -46,8 +46,23 @@ export default function App() {
 
   const { userrole } = useAuthContext();
   const token = localStorage.getItem('token');
-  const decodedToken = token ? jwtDecode(token) : null;
+  const [decodedToken, setDecodedToken] = useState(null);
 
+  // Update the decodedToken state using setDecodedToken
+  useEffect(() => {
+    if (token) {
+      setDecodedToken(jwtDecode(token));
+    } else {
+      setDecodedToken(null);
+    }
+  }, [token]);
+
+  // Check if the token is expired
+  const isTokenExpired = decodedToken && decodedToken.exp * 1000 < Date.now();
+  if(isTokenExpired){
+    setDecodedToken(null);
+  }
+ 
   const handleMenuChange = (newMenu) => {
     setSelectedMenu(newMenu);
   };
