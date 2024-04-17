@@ -4,38 +4,34 @@ import React, { useEffect, useState } from 'react';
 const NoticeBoard = () => {
   const [notices, setNotices] = useState([]);
   const [message, setMessage] = useState('');
+  const [file,setFile] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:9000/notices')
+    fetch('http://localhost:3000/notices')
       .then(response => response.json())
       .then(notices => setNotices(notices));
   }, []);
 
   function downloadFile(filename) {
-    window.location.href = `http://localhost:9000/downloads/${filename}`;
+    window.location.href = `http://localhost:3000/downloads/${filename}`;
   }
-   
- 
+ const handleChange = (event)=>{
+  setFile(event.target.files[0])
+ }
   const handleFileUpload = async (event) => {
     event.preventDefault();
-    
-
     const formData = new FormData();
-    formData.append('files', event.target.files[0]);
+  formData.append('files', file);
 
     try {
-      const response = await fetch('http://localhost:9000/upload', {
+      const response = await fetch('http://localhost:3000/upload', {
         method: 'POST',
         body: formData,
       });
 
       if (response.ok) {
         setMessage('File uploaded successfully!');
-  
-        // Fetch updated notices after successful upload
-        fetch('http://localhost:9000/notices')
-          .then(response => response.json())
-          .then(notices => setNotices(notices));
+        window.location.reload();
       } else {
         setMessage('File upload failed. Please try again.');
       }
@@ -119,14 +115,14 @@ marginTop:"2px",
       <div style={{display:"flex",justifyContent:"center",alignItems:"center",}}>
         <div id="adminSection12"  style={{borderColor:"black",backgroundColor:"white",height:"60px",display:"flex",justifyContent:"center",alignItems:"center",marginTop:"20px",borderRadius:"20px",width:"600px",borderWidth:"2px", boxShadow: '5px 5px 6px rgba(255, 255, 255, 0.5)',background: 'linear-gradient(to right, pink, yellow, red)'}} >
         
-          <form encType="multipart/form-data">
+          <form encType="multipart/form-data" onSubmit={handleFileUpload}>
             <input
               type="file"
               name="files"
               accept=".txt, .pdf, .jpg, .jpeg, .png"
-              onChange={handleFileUpload}
+              onChange = {handleChange}
             />
-            <button type="submit"   onClick={()=>successmessage()} style={styles.buttonNotice}>Upload Notice</button>
+            <button type="submit"  style={styles.buttonNotice}>Upload Notice</button>
           </form>
           {message && <div style={styles.messageNotice}>{message}</div>}
         </div>

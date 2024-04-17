@@ -8,7 +8,6 @@ import Add_Chiefwarden from './Add_Chief_warden'
 import Resolved_complains from '../ChiefWarden/ResolvedComplain'
 import Student_complains from '../Dashboard/Main/Student_Complain'
 import Admin_Dashboard from './Side_bar_Admin';
- import DashmAccoundefault from '../Accountant/DashmAccoundefault' 
 function Dashboard_main() {
 	const [selectedMenuItem, setSelectedMenuItem] = useState("Dashboard");
 	const handleMenuItemClick = (menuItem) => {
@@ -33,9 +32,6 @@ function Dashboard_main() {
 
 		case "Notices":
 			content= <Notices/>;
-			break;
-		default:
-			content = <DashmAccoundefault/>;
 			break;
 		
 	}

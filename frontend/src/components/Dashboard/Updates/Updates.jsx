@@ -1,29 +1,6 @@
 
 import './Updates.css';
-import Student from './student.gif';
 import React, { useEffect, useState } from 'react';
-
-const UpdatesData = [
-  {
-    img: Student,
-    name: 'Sumit0',
-    time: '27 second ago',
-    noti: 'Today breakfast is very tasty',
-  },
-  {
-    img: Student,
-    name: 'Sumit1',
-    time: '2 second ago',
-    noti: 'Today breakfast is very tasty',
-  },
-  {
-    img: Student,
-    name: 'Sumit2',
-    time: '25 second ago',
-    noti: 'Today breakfast is very tasty',
-  },
-];
-
 
 
 function Update() {

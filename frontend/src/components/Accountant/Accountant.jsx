@@ -1,11 +1,8 @@
-
 import React, { useState } from 'react';
 import './Accountant.css';
 import { Link } from 'react-router-dom';
 import Logout from "../Dashboard/Logout";
 
-
- import Set_Expenses from './Set_Expenses'
 const AdminPanel = () => {
   const [showUnresolved_problem, setUnresolved_problem] = useState(false);
   const [showMenuForm, setShowMenuForm] = useState(false);
