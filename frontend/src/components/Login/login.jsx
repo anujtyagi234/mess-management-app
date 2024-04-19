@@ -5,6 +5,9 @@ import { FaUniversity, FaIdCard, FaLock } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
 import { useAuthContext } from "../../hooks/useAuthContext";
+import { toast } from 'react-toastify';
+// import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Login() {
 	const [data, setData] = useState({
@@ -37,16 +40,14 @@ function Login() {
 			  localStorage.setItem('token', token);
 			  dispatch({ type: 'LOGIN', payload: token })
 			  navigate('/');
-			  alert(res.data.message);
+			  toast(res.data.message);
 			})
 			.catch((error) => {
-			  setError(error.response.data.error);
-			  setTimeout(() => {
-				setError(null);
-			  }, 3000);
+			  toast.error(error.response.data.error);
+			 
 			});
 		} else {
-		  setError("Please fill all fields...");
+		  toast.error("Please fill all fields...");
 		  setTimeout(() => {
 			setError(null);
 		  }, 3000);
@@ -78,12 +79,12 @@ function Login() {
 				</div>
 				<div className="h-screen bg-neutral-800 w-1/2  flex-col  juendstify- rounded-r-lg flex justify-center items-center  " style={{fontFamily:"Agbalumo"}}>
 					<div className="text-white text-center" style={{fontFamily:"Agbalumo"}}>
-						<h1
+						<h2
 							className="text-5xl  "
 							style={{fontWeight: "bold" }}
 						>
 							!! Welcome !!
-						</h1>
+						</h2>
 					</div>
 					<div
 						className=" bg-stone-100   rounded-3xl   text-black"

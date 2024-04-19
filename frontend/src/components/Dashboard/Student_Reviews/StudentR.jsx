@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Line } from 'react-chartjs-2';
 import 'chart.js/auto';
-import './App.css'; // Import the CSS file for styling
+import './StudentR.css'; // Import the CSS file for styling
 
 const App = () => {
   const [ratings, setRatings] = useState([]);
@@ -10,37 +10,28 @@ const App = () => {
   const [currentRating, setCurrentRating] = useState(null);
   const [showThankYou, setShowThankYou] = useState(false);
   const onSubmitRating = () => {
-
-    if(currentRating==null){
-      alert("Please select atleast one stars ⭐");
-    }
-    if (currentRating !== null) {
+    if (currentRating == null) {
+      alert("Please select atleast one star ⭐");
+    } else {
       const currentDay = new Date().toLocaleDateString('en-US', { weekday: 'long' });
-
+  
       const existingRatingIndex = ratings.findIndex((rating) => rating.day === currentDay);
-
+  
       if (existingRatingIndex !== -1) {
-        setRatings((prevRatings) => {
-          const updatedRatings = [...prevRatings];
-          updatedRatings[existingRatingIndex].rating = currentRating;
-          return updatedRatings;
-        });
+        alert("You have already rated today");
       } else {
         setRatings((prevRatings) => [...prevRatings, { day: currentDay, rating: currentRating }]);
+        setRatingPage(false);
+        setShowThankYou(true);
+  
+        // Hide the "thank you" message after 4 seconds
+        setTimeout(() => {
+          setShowThankYou(false);
+        }, 3500);
       }
-
-      setRatingPage(false);
-      setShowThankYou(true);
-
-      // Hide the "thank you" message after 4 seconds
-      setTimeout(() => {
-        setShowThankYou(false);
-      }, 3500);
-      
-
     }
   };
-
+  
   const togglePage = () => {
     setRatingPage(!ratingPage);
   };

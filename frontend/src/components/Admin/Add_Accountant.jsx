@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import {  toast } from 'react-toastify';
 import {
   FaUserCircle,
   FaUniversity,
@@ -49,13 +50,20 @@ function Add_Accountant() {
       axios
         .post("http://localhost:3000/admin/addaccountant", data)
         .then((res) => {
-          alert(res.data.message);
+          toast(res.data.message);
+          setData({
+            college_gmail_id: "",
+            hostelname: "",
+            password: "",
+            user_name: "",
+          });
+          
         })
         .catch((error) => {
-          setError(error.response.data.error);
+          toast.error(error.response.data.error);
         });
     } else {
-      setError("Please fill all fields");
+      toast.error("Please fill all fields");
     }
   };
 

@@ -42,6 +42,7 @@ function Dashboard_main() {
 			  <Logout />
 			</div>
 			<div className="MiddlePart1">
+				
 			  <div className="custom-content1">{content}</div>
 			</div>
 		  </div>

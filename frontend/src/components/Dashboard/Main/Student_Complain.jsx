@@ -2,6 +2,7 @@ import React, { useState,useEffect } from 'react';
 import '../../ChiefWarden/Common.css';
 import axios from 'axios';
 import { jwtDecode } from "jwt-decode";
+import {  toast } from 'react-toastify';
 
 const Student_complaints = () => {
     const [userActions, setUserActions] = useState({});
@@ -19,6 +20,7 @@ const Student_complaints = () => {
         .catch((error) => {
           console.error('Error fetching complaints:', error);
         });
+       
     }, []);
 
     const handleLike = (complaintId) => {
@@ -33,10 +35,12 @@ const Student_complaints = () => {
               complaint._id === updatedComplaint._id ? updatedComplaint : complaint
             )
           );
+          toast("Thanks for vote!!")
         })
         .catch((error) => {
           console.error('Error resolving complaint:', error);
         });
+      
       }
     };
   
@@ -52,6 +56,7 @@ const Student_complaints = () => {
               complaint._id === updatedComplaint._id ? updatedComplaint : complaint
             )
           );
+          toast("Thanks for vote!!")
         })
         .catch((error) => {
           console.error('Error resolving complaint:', error);

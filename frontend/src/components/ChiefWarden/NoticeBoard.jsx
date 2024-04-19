@@ -1,7 +1,13 @@
 
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
 const NoticeBoard = () => {
+  const navigate = useNavigate();
+  const handleUploadNotice = () => {
+    // Redirect to the same page (current page)
+    navigate(".", { replace: true });
+  };
   const [notices, setNotices] = useState([]);
   const [message, setMessage] = useState('');
   const [file,setFile] = useState([]);
@@ -122,7 +128,7 @@ marginTop:"2px",
               accept=".txt, .pdf, .jpg, .jpeg, .png"
               onChange = {handleChange}
             />
-            <button type="submit"  style={styles.buttonNotice}>Upload Notice</button>
+            <button type="submit"  style={styles.buttonNotice} onClick={handleUploadNotice}>Upload Notice</button>
           </form>
           {message && <div style={styles.messageNotice}>{message}</div>}
         </div>

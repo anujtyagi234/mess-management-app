@@ -1,7 +1,7 @@
 import './Email.css'
 import { useState } from 'react';
 // Contact.js
-
+import { toast } from 'react-toastify';
 import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import emailjs from "emailjs-com";
@@ -25,14 +25,13 @@ const Contact = () => {
       .then(
         (result) => {
           console.log(result.text);
-          alert("Feedback sent Successfully.");
-          
-          alert("feedback sent");
+          toast("Feedback sent Successfully.");
+  
           navigate('/');
         },
         (error) => {
           console.log(error.text);
-          alert("please try again later");
+          toast.error("please try again later");
         }
       );
       return (

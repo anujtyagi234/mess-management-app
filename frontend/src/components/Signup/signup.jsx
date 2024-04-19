@@ -1,5 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
+import {  toast } from 'react-toastify';
+
 import {
   FaUserCircle,
   FaUniversity,
@@ -9,6 +11,10 @@ import {
 } from "react-icons/fa";
 
 function Signup() {
+ 
+   // Use useNavigate instead of useHistory
+
+ 
   const [data, setData] = useState({
     college_gmail_id: "",
     registration_no: "",
@@ -45,20 +51,27 @@ function Signup() {
     if (college_gmail_id && registration_no && hostelname && password && user_name) {
       try {
         const response = await axios.post("http://localhost:3000/api/auth/signup", data);
-        alert(response.data.message);
+        toast(response.data.message);
+        setData({
+          college_gmail_id: "",
+          registration_no: "",
+          hostelname: "",
+          password: "",
+          user_name: "",
+        });
       } catch (error) {
-        setError(error.response.data.error);
+        toast.error(error.response.data.error);
         // Set a timeout to clear the error after 3 seconds
-        setTimeout(() => {
-          setError(null);
-        }, 2000);
+        // setTimeout(() => {
+        //   setError(null);
+        // }, 2000);
       }
     } else {
-      setError("Please fill all fields");
+      toast.error("Please fill all fields");
       // Set a timeout to clear the error after 3 seconds
-      setTimeout(() => {
-        setError(null);
-      }, 2000);
+      // setTimeout(() => {
+      //   setError(null);
+      // }, 2000);
     }
   };
 
@@ -69,7 +82,7 @@ function Signup() {
         <div className="h-screen bg-red-300 w-1/2 flex justify-center items-center rounded-l-lg ">
           {/* <img src={img} alt="Image" className="h-64 w- object-cover rounded-2xl" /> */}
           <div className="flex-col ">
-            <h1 className="text-3xl font-bold sans-serif mt-0 text-rose-900	color: rgb(225 29 72) ">
+            <h1 className="text-3xl font-bold sans-serif mt-0 text-rose-900	color: rgb(225 29 72) "style={{backgroundColor:"transparent"}}>
               Create Account
             </h1>
 
@@ -87,12 +100,12 @@ function Signup() {
         </div>
         <div className="h-screen bg-neutral-800 w-1/2  flex-col  juendstify- rounded-r-lg flex justify-center items-center  ">
           <div className="text-white text-center">
-            <h1
+            <h2
               className="text-5xl  "
               style={{  fontWeight: "bold" }}
             >
               !! Welcome !!
-            </h1>
+            </h2>
           </div>
           <div
             className=" bg-stone-100   rounded-3xl   text-black"
@@ -255,7 +268,7 @@ function Signup() {
                     <span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white">
                       <span className="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gray-50"></span>
                       <span className="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-gray-900 group-hover:-rotate-180 ease"></span>
-                      <span className="relative">Sign-up</span>
+                      <span className="relative" >Sign-up</span>
                     </span>
                     <span
                       className="absolute bottom-0 right-0 w-full h-12 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 rounded-lg group-hover:mb-0 group-hover:mr-0"

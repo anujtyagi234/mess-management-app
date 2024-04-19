@@ -10,13 +10,13 @@ function Update() {
  
 
   useEffect(() => {
-    fetch('http://localhost:9000/notices')
+    fetch('http://localhost:3000/notices')
       .then(response => response.json())
       .then(notices => setNotices(notices));
   }, []);
 
   function downloadFile(filename) {
-    window.location.href = `http://localhost:9000/downloads/${filename}`;
+    window.location.href = `http://localhost:3000/downloads/${filename}`;
   }
    
   return (
@@ -37,9 +37,9 @@ function Update() {
 
         <div  style={{fontFamily:"Agbalumo",}} >
           <h2><big><b>--Notice--</b></big></h2>
-          <div style={{padding:"10px",}}  >
+          <div style={{padding:"5px",}}  >
             {notices.map(notice => (
-              <div  style={{marginBottom:"17px",backgroundColor:"white",borderRadius:"10px",borderWidth:"1.3px",borderColor:"black"}}  key={notice.name} >
+              <div  style={{marginBottom:"10px",backgroundColor:"white",borderRadius:"10px",borderWidth:"1.3px",borderColor:"black"}}  key={notice.name} >
                 <p>{notice.name}</p>
                 <p> <span style={{backgroundColor:"yellow",borderRadius:"50px"}}>Time:</span> {new Date(notice.timestamp).toLocaleString()}</p>
                 <button  style={{backgroundColor:"aqua",borderWidth:"1px", borderColor:"black" , marginTop:"1.5px",borderRadius:"10px"}} onClick={() => downloadFile(notice.name)}>Download</button>

@@ -1,6 +1,7 @@
 // MessComplaintForm.jsx
 import React, { useState,useEffect } from 'react';
 import axios from 'axios';
+import {  toast } from 'react-toastify';
 import './Complain.css'
 const MessComplaintForm = () => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -71,17 +72,17 @@ const MessComplaintForm = () => {
 
     axios.post('http://localhost:3000/api/complain', newFormData)
     .then((response) => {
-      alert(response.data.message);
+      toast(response.data.message);
       setFormData({ complaintTitle: '', complaintDetails: '' });
       document.getElementById('image').value = null;
     })
     .catch((error) => {
-      alert("please try again later")
+      toast.error("please try again later")
       console.error('Error submitting form:', error);
     });
   }
   else {
-    alert("Please fill all fields")
+    toast.error("Please fill all fields")
   }
   };
   

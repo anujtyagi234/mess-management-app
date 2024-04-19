@@ -13,7 +13,7 @@ import ForgotPassword from "./components/reset/forgotPassword.jsx";
 import ResetPassword from "./components/reset/resetPassword.jsx";
 import Dashi from "./components/Dashi/Dashboard_main.jsx";
 import { useAuthContext } from "./hooks/useAuthContext.jsx";
-
+// import NoticeBoard from "./components/ChiefWarden/NoticeBoard.jsx";
 import AdminPanel from './components/Admin/Adminpanel.jsx'
 import AddAccountant from './components/Admin/Add_Accountant.jsx'
 import AddChiefWarden from './components/Admin/Add_Chief_warden.jsx'
@@ -21,9 +21,7 @@ import Admin_Dashboard from './components/Admin/Admin_dashboard.jsx'
  import Chief_Student_complaints from './components/ChiefWarden/Student_Complains.jsx'
 import ChiefWarden from './components/ChiefWarden/ChiefWarden.jsx'
 import Email from './components/Email.jsx'
-import Rateus from "./components/Dashboard/Student_Reviews/DataUpdatePage.jsx"
 import Chief_Complaints_resolve_pannel from './components/ChiefWarden/ResolvedComplain.jsx'
-
 import Mess_menu_Copy from './components/ChiefWarden/Chief_Mess_Menu.jsx'
 import ExpenseListing from './components/Accountant/Accountant_Expence_list.jsx'
 import Expence_edit from './components/Accountant/Accountant_Edit_Expence.jsx'
@@ -34,6 +32,8 @@ import Accountant_Dashboard from './components/Accountant/Accountant_Dashboard.j
  import Set_Expenses from './components/Accountant/Accountant_Expence_list.jsx'
  import MessMenu from './components/Dashboard/Main/Mess_menu.jsx'
  import ChiefDashboard from './components/ChiefWarden/Chief_Dashboard.jsx'
+import NoticeBoard from "./components/ChiefWarden/NoticeBoard.jsx";
+
 export default function App() {
   const [selectedMenu, setSelectedMenu] = useState("Breakfast");
   const [selectedExpenseType, setSelectedExpanceType] = useState("Vegitable_Expence");
@@ -86,7 +86,7 @@ export default function App() {
             <>
             <Route path="/" element={<Dashi />} />
             <Route path="/Email" element={<Email/>}/>
-            <Route path="/rate-us" element={<Rateus/>}/>
+          
 
             
              </>
@@ -97,6 +97,7 @@ export default function App() {
             <Route path="/" element={<Admin_Dashboard />} />
             <Route path="/Accountant_Admin" element={<AddAccountant />} />
             <Route path="/Chief_admin" element={<AddChiefWarden />} />
+            
           </>
             ) }
             {decodedToken && decodedToken.userrole === 'chief warden' && (
