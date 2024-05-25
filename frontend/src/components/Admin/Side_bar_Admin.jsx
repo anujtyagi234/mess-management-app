@@ -8,6 +8,7 @@ import Massage from '../../imgs/new-message.gif';
 import Notice from '../../imgs/mail-delivery.gif'
 function Sidebar({ onMenuItemClick }) {
   const menuItems = [
+    { title: 'Add-Admin', image: cheifimage },
     { title: 'Add-ChiefWarden', image: cheifimage },
     { title: 'Add-Accountant', image: Warden },
     { title: 'Unresolved-complains', image: complain },
@@ -15,9 +16,9 @@ function Sidebar({ onMenuItemClick }) {
     { title: 'Notices', image: Notice },
   ];
 
-  // const initialSelectedIndex = menuItems.findIndex((item) => item.title === 'Add-ChiefWarden');
+  const initialSelectedIndex = menuItems.findIndex((item) => item.title === 'Add-Admin');
 
-  const [selected, setSelected] = useState();
+  const [selected, setSelected] = useState(initialSelectedIndex);
 
   const handleItemClick = (index) => {
     const selectedItem = menuItems[index].title;

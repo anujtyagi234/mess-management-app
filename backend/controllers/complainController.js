@@ -2,48 +2,152 @@ const Complaint = require('../models/complainModel');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 
+const complaintController = {
+  submitComplaint: async (req, res) => {
+    const userId = req.user._id;
+    const hostelName = req.user.hostelname;
 
-// uuidv4() is called to generate a unique identifier (UUID), and it's then used to create a unique filename for each uploaded file. This ensures that the filenames are unique and unlikely to clash with existing files. The resulting filename is a combination of the generated UUID and the original filename of the uploaded file.
+    const { title, description} = req.body;
+    const files = req.files;
+    const uploadedImages = [];
 
+    try {
+      if (!files || Object.keys(files).length === 0) {
+        return res.status(400).json({ error: 'No files uploaded' });
+      }
 
-const submitComplaint = async (req, res) => {
-  const { user, title, description,hostelName } = req.body;
-  const files = req.files;
-  const uploadedImages = [];
-  
-  try {
-    if (!files || Object.keys(files).length === 0) {
-      return res.status(400).json({ error: 'No files uploaded' });
-    }
+      Object.keys(files).forEach(key => {
+        const uniqueFileName = `${uuidv4()}-${files[key].name}`;
+        const filepath = path.join(__dirname, '..', 'uploads', uniqueFileName);
 
-    Object.keys(files).forEach(key => {
-      const uniqueFileName = `${uuidv4()}-${files[key].name}`;
-      const filepath = path.join(__dirname, '..', 'uploads', uniqueFileName);
+        files[key].mv(filepath, (err) => {
+          if (err) {
+            console.error('Error moving file:', err);
+            return res.status(500).json({ error: 'Internal Server Error' });
+          }
+        });
 
-      files[key].mv(filepath, (err) => {
-        if (err) {
-          console.error('Error moving file:', err);
-          return res.status(500).json({ error: 'Internal Server Error' });
-        }
+        uploadedImages.push(uniqueFileName);
       });
 
-      uploadedImages.push(uniqueFileName);
-    });
+      const complaint = new Complaint({
+        user: userId,
+        title,
+        description,
+        hostelName,
+        images: uploadedImages,
+      });
 
-    const complaint = new Complaint({
-      user,
-      title,
-      description,
-      hostelName,
-      images: uploadedImages,
-    });
+      await complaint.save();
+      return res.json({ message: 'Complaint submitted successfully' });
+    } catch (err) {
+      console.error('Error submitting complaint:', err);
+      return res.status(500).json({ error: 'Internal Server Error' });
+    }
+  },
 
-    await complaint.save();
-    return res.json({ message: 'Complaint submitted successfully' });
-  } catch (err) {
-    console.error('Error submitting complaint:', err);
-    return res.status(500).json({ error: 'Internal Server Error' });
+  fetchComplaints: async (req, res) => {
+    try {
+      // Fetch all complaints from the database
+      const complaints = await Complaint.find();
+
+      res.status(200).json({ complaints });
+    } catch (error) {
+      console.error('Error fetching complaints:', error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+  },
+
+  resolveComplaint: async (req, res) => {
+    try {
+      const { complaintId } = req.params;
+
+      const updatedComplaint = await Complaint.findByIdAndUpdate(
+        complaintId,
+        { resolved: true, resolvedAt: new Date() },
+        { new: true }
+      );
+
+      res.status(200).json(updatedComplaint);
+    } catch (error) {
+      console.error('Error resolving complaint:', error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+  },
+
+  likeComplaint : async (req, res) => {
+    try {
+      const { complaintId } = req.params;
+      const userId = req.user._id;
+  
+      // Find the complaint by ID
+      const complaint = await Complaint.findById(complaintId);
+  
+      // Check if the user exists in likedUsers array
+      const userLiked = complaint.likedUsers.find(entry => entry.user.toString() === userId.toString());
+      console.log(userLiked);
+  
+      if(!userLiked || !userLiked.like) complaint.likes  = complaint.likes+1;
+      if (!userLiked) {
+        complaint.likedUsers.push({ user: userId, like: true , dislike: false});
+      }    
+      else{
+        if(userLiked.dislike){
+          complaint.dislikes = complaint.dislikes-1;
+          userLiked.like = true;
+          userLiked.dislike = false;
+        }
+        }
+        const updatedComplaint = await Complaint.findByIdAndUpdate(complaintId, {
+        $set: {
+          likedUsers: complaint.likedUsers,
+          likes: complaint.likes,
+          dislikes: complaint.dislikes,
+        },
+      },{ new: true },);
+      res.status(200).json(updatedComplaint);
+    } catch (error) {
+      console.error('Error liking complaint:', error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+  },
+
+  dislikeComplaint : async (req, res) => {
+    try {
+      const { complaintId } = req.params;
+      const userId = req.user._id;
+  
+      // Find the complaint by ID
+      const complaint = await Complaint.findById(complaintId);
+      // Check if the user exists in likedUsers array
+      console.log(complaint.likedUsers)
+      const userLiked = complaint.likedUsers.find(entry => entry.user.toString() === userId.toString());
+  
+      if(!userLiked || !userLiked.dislike) complaint.dislikes  = complaint.dislikes+1;
+      if (!userLiked) {
+        complaint.likedUsers.push({ user: userId, like: false , dislike: true});
+      }
+      else{
+      if(userLiked.like){
+        complaint.likes = complaint.likes-1;
+        userLiked.like = false;
+        userLiked.dislike = true;
+      }
+      }
+      const updatedComplaint = await Complaint.findByIdAndUpdate(complaintId, {
+        $set: {
+          likedUsers: complaint.likedUsers,
+          likes: complaint.likes,
+          dislikes: complaint.dislikes,
+        },
+      },
+      { new: true },);
+      res.status(200).json(updatedComplaint);
+    } catch (error) {
+      console.error('Error disliking complaint:', error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
   }
 };
 
-module.exports = { submitComplaint };
+module.exports = complaintController;

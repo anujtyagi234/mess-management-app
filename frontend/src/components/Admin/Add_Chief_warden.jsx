@@ -32,18 +32,23 @@ function Add_Chief_warden() {
       user_name,
     } = data;
 
+    const token = localStorage.getItem('token');
+
     if (
       college_gmail_id &&
       password &&
       user_name
     ) {
       axios
-        .post("http://localhost:3000/admin/addchiefwarden", data)
+        .post("http://localhost:3000/admin/addchiefwarden", data,{
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
         .then((res) => {
          toast(res.data.message);
          setData({
           college_gmail_id: "",
-          hostelname: "",
           password: "",
           user_name: "",
         });

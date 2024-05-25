@@ -27,7 +27,7 @@ const Contact = () => {
           console.log(result.text);
           toast("Feedback sent Successfully.");
   
-          navigate('/');
+          navigate('/dashi');
         },
         (error) => {
           console.log(error.text);

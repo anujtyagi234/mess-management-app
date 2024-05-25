@@ -18,33 +18,18 @@ function MealPlanner() {
   const [mealData, setMealData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [userData, setUserData] = useState(null);
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    fetchUserData(token);
+    fetchData();
   }, []);
 
-  const fetchUserData = (token) => {
-    fetch("http://localhost:3000/api/auth/user", {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    })
-      .then((response) => response.json())
-      .then((userData) => {
-        setUserData(userData);
-        fetchData(userData.hostelname);
-      })
-      .catch((error) => setError(error))
-      .finally(() => setLoading(false));
-  };
-
-  const fetchData = async (hostelname) => {
+  const fetchData = async () => {
     try {
+      const token = localStorage.getItem("token");
       const response = await axios.get("http://localhost:3000/messMenu/fetch", {
-        params: { hostel: hostelname },
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       });
       const { messMenu } = response.data;
       setMealData(messMenu);

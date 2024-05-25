@@ -14,46 +14,57 @@ function Login() {
 		college_gmail_id: "",
 		password: "",
 		userrole: ""
-	});
-
+	  });
 	
-	const Userroles = ["student","admin","chief warden","accountant"
-	  ];
-
-	const [error, setError] = useState("");
-	const navigate = useNavigate()
-	const iconColor = "#FFFF00";
-	const handleChange = ({ currentTarget: input }) => {
+	  const Userroles = ["student", "admin", "chief warden", "accountant"];
+	
+	  const [error, setError] = useState("");
+	  const navigate = useNavigate();
+	  const iconColor = "#FFFF00";
+	  const { dispatch } = useAuthContext();
+	
+	  const handleChange = ({ currentTarget: input }) => {
 		setData({ ...data, [input.name]: input.value });
-	};
-
-	const {dispatch} = useAuthContext()
-
-	const handleLogin = (e) => {
+	  };
+	
+	  const handleLogin = (e) => {
 		e.preventDefault();
 		const { college_gmail_id, password, userrole } = data;
-	  
+	
 		if (college_gmail_id && password && userrole) {
 		  axios.post("http://localhost:3000/api/auth/login", data)
 			.then((res) => {
 			  const { token } = res.data;
 			  localStorage.setItem('token', token);
-			  dispatch({ type: 'LOGIN', payload: token })
-			  navigate('/');
-			  toast(res.data.message);
+			  localStorage.setItem('userId', res.data.userId); // Store userId
+			  localStorage.setItem('userRole', userrole); // Store userRole
+			  dispatch({ type: 'LOGIN', payload: token });
+			  toast.success(res.data.message);
+			  // Navigate based on user role
+			  switch (userrole) {
+				case 'student':
+				  navigate('/dashi');
+				  break;
+				case 'admin':
+				  navigate('/admin/dashboard');
+				  break;
+				case 'chief warden':
+				  navigate('/chief/dashboard');
+				  break;
+				case 'accountant':
+				  navigate('/accountant/dashboard');
+				  break;
+				default:
+				  navigate('/');
+			  }
 			})
 			.catch((error) => {
 			  toast.error(error.response.data.error);
-			 
 			});
 		} else {
 		  toast.error("Please fill all fields...");
-		  setTimeout(() => {
-			setError(null);
-		  }, 3000);
 		}
 	  };
-	  
 
 	return (
 		<>

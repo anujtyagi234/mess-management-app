@@ -5,11 +5,12 @@ import { useState } from "react";
  import Notices  from '../Common_to_All/Notice_Board'
 import Add_Accountant from './Add_Accountant'
 import Add_Chiefwarden from './Add_Chief_warden'
+import Add_Admin from './Add_Admin'
 import Resolved_complains from '../ChiefWarden/ResolvedComplain'
 import Student_complains from '../Dashboard/Main/Student_Complain'
 import Admin_Dashboard from './Side_bar_Admin';
 function Dashboard_main() {
-	const [selectedMenuItem, setSelectedMenuItem] = useState("Dashboard");
+	const [selectedMenuItem, setSelectedMenuItem] = useState("Add-Admin");
 	const handleMenuItemClick = (menuItem) => {
 		setSelectedMenuItem(menuItem);
 	};
@@ -17,6 +18,9 @@ function Dashboard_main() {
 	let content;
 
 	switch (selectedMenuItem) {
+		case "Add-Admin":
+			content = <Add_Admin/>;
+			break;
 		case "Add-ChiefWarden":
 			content = <Add_Chiefwarden/>;
 			break;

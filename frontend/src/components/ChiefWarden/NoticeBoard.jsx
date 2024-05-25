@@ -11,16 +11,37 @@ const NoticeBoard = () => {
   const [notices, setNotices] = useState([]);
   const [message, setMessage] = useState('');
   const [file,setFile] = useState([]);
+  const token = localStorage.getItem('token');
 
   useEffect(() => {
-    fetch('http://localhost:3000/notices')
+    fetch('http://localhost:3000/notices',{
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
       .then(response => response.json())
       .then(notices => setNotices(notices));
   }, []);
 
   function downloadFile(filename) {
-    window.location.href = `http://localhost:3000/downloads/${filename}`;
+    fetch(`http://localhost:3000/downloads/${filename}`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+    })
+      .then(response => response.blob())
+      .then(blob => {
+        const url = window.URL.createObjectURL(new Blob([blob]));
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', filename);
+        document.body.appendChild(link);
+        link.click();
+        link.parentNode.removeChild(link);
+      })
+      .catch(error => console.error('Error downloading file:', error));
   }
+
  const handleChange = (event)=>{
   setFile(event.target.files[0])
  }
@@ -32,6 +53,9 @@ const NoticeBoard = () => {
     try {
       const response = await fetch('http://localhost:3000/upload', {
         method: 'POST',
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
         body: formData,
       });
 

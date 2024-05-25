@@ -6,10 +6,15 @@ import './Common.css';
 const Chief_Student_complaints = () => {
   const [userActions, setUserActions] = useState({});
     const [complaints, setComplaints] = useState([]);
+    const token = localStorage.getItem('token');
 
     useEffect(() => {
       // Fetch complaints data from the backend when the component mounts
-      axios.get('http://localhost:3000/api/fetchcomplaints')
+      axios.get('http://localhost:3000/api/fetchcomplaints',{
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
         .then((response) => {
           const { complaints: fetchedComplaints } = response.data;
           setComplaints(fetchedComplaints);
@@ -19,8 +24,13 @@ const Chief_Student_complaints = () => {
         });
     }, []);
 
+
     const resolveComplaint = (complaintId) => {
-      axios.put(`http://localhost:3000/api/complaints/${complaintId}/resolved`)
+      axios.put(`http://localhost:3000/api/${complaintId}/resolved`,{
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
         .then((response) => {
           const updatedComplaint = response.data;
           setComplaints((prevComplaints) =>

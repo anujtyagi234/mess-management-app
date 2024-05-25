@@ -1,131 +1,61 @@
-import React from "react";
-import './Acc_Adm_Chf_Dashboard.css'
-import { jwtDecode } from "jwt-decode";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import { useState,useEffect } from "react";
-import Home from "./components/Home/Home.jsx"
-import NavBar from "./components/Home/NavBar.jsx";
-
-import Footer from "./components/Home/Footer.jsx";
-import Login from "./components/Login/login.jsx";
-import Signup from './components/Signup/signup.jsx'
-import ForgotPassword from "./components/reset/forgotPassword.jsx";
-import ResetPassword from "./components/reset/resetPassword.jsx";
-import Dashi from "./components/Dashi/Dashboard_main.jsx";
-import { useAuthContext } from "./hooks/useAuthContext.jsx";
-// import NoticeBoard from "./components/ChiefWarden/NoticeBoard.jsx";
-import AdminPanel from './components/Admin/Adminpanel.jsx'
-import AddAccountant from './components/Admin/Add_Accountant.jsx'
-import AddChiefWarden from './components/Admin/Add_Chief_warden.jsx'
-import Admin_Dashboard from './components/Admin/Admin_dashboard.jsx'
- import Chief_Student_complaints from './components/ChiefWarden/Student_Complains.jsx'
-import ChiefWarden from './components/ChiefWarden/ChiefWarden.jsx'
-import Email from './components/Email.jsx'
-import Chief_Complaints_resolve_pannel from './components/ChiefWarden/ResolvedComplain.jsx'
-import Mess_menu_Copy from './components/ChiefWarden/Chief_Mess_Menu.jsx'
-import ExpenseListing from './components/Accountant/Accountant_Expence_list.jsx'
-import Expence_edit from './components/Accountant/Accountant_Edit_Expence.jsx'
-import Menu2 from './components/Dashboard/Main/Mess_menu.jsx'
-import Accountant from './components/Accountant/Accountant.jsx'
-import Accountant_Dashboard from './components/Accountant/Accountant_Dashboard.jsx'
-
- import Set_Expenses from './components/Accountant/Accountant_Expence_list.jsx'
- import MessMenu from './components/Dashboard/Main/Mess_menu.jsx'
- import ChiefDashboard from './components/ChiefWarden/Chief_Dashboard.jsx'
-import NoticeBoard from "./components/ChiefWarden/NoticeBoard.jsx";
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './Acc_Adm_Chf_Dashboard.css';
+import Home from './components/Home/Home';
+import Footer from './components/Home/Footer';
+import Login from './components/Login/Login';
+import Signup from './components/Signup/Signup';
+import ForgotPassword from './components/reset/ForgotPassword';
+import ResetPassword from './components/reset/ResetPassword';
+import Dashi from './components/Dashi/Dashboard_main';
+import Admin_Dashboard from './components/Admin/Admin_dashboard';
+import AddAccountant from './components/Admin/Add_Accountant';
+import AddChiefWarden from './components/Admin/Add_Chief_warden';
+import Chief_Complaints_resolve_pannel from './components/ChiefWarden/ResolvedComplain';
+import Chief_Student_complaints from './components/ChiefWarden/Student_Complains';
+import ChiefDashboard from './components/ChiefWarden/Chief_Dashboard';
+import ExpenseListing from './components/Accountant/Accountant_Expence_list';
+import Expence_edit from './components/Accountant/Accountant_Edit_Expence';
+import MessMenu from './components/Dashboard/Main/Mess_menu';
+import Accountant_Dashboard from './components/Accountant/Accountant_Dashboard';
+import ProtectedRoute from './components/ProtectedRoute';
+import UnprotectedRoute from './components/UnprotectedRoute';
+import Feedback from './components/Email'
 
 export default function App() {
-  const [selectedMenu, setSelectedMenu] = useState("Breakfast");
-  const [selectedExpenseType, setSelectedExpanceType] = useState("Vegitable_Expence");
+  const [selectedExpenseType, setSelectedExpenseType] = useState('Vegetable_Expense');
 
-
-  const { userrole } = useAuthContext();
-  const token = localStorage.getItem('token');
-  const [decodedToken, setDecodedToken] = useState(null);
-
-  // Update the decodedToken state using setDecodedToken
-  useEffect(() => {
-    if (token) {
-      setDecodedToken(jwtDecode(token));
-    } else {
-      setDecodedToken(null);
-    }
-  }, [token]);
-
-  // Check if the token is expired
-  const isTokenExpired = decodedToken && decodedToken.exp * 1000 < Date.now();
-  if(isTokenExpired){
-    setDecodedToken(null);
-  }
- 
-  const handleMenuChange = (newMenu) => {
-    setSelectedMenu(newMenu);
+  const handleExpenseChange = (newExpenseType) => {
+    setSelectedExpenseType(newExpenseType);
   };
 
-  const handleExpanceChange =(newExpanceType)=>{
-    setSelectedExpanceType(newExpanceType);
-  }
-
- 
   return (
     <div className="wrapper">
       <Router>
-         {!decodedToken && <NavBar />} 
+        <Routes>
+          {/* Unprotected routes */}
+          <Route path="/" element={<UnprotectedRoute><Home /></UnprotectedRoute>} />
+          <Route path="/login" element={<UnprotectedRoute><Login /></UnprotectedRoute>} />
+          <Route path="/signup" element={<UnprotectedRoute><Signup /></UnprotectedRoute>} />
+          <Route path="/forgot-password" element={<UnprotectedRoute><ForgotPassword /></UnprotectedRoute>} />
+          <Route path="/reset_password/:id/:token" element={<UnprotectedRoute><ResetPassword /></UnprotectedRoute>} />
 
-         <Routes>
-           
-        {!decodedToken && (
-            <Route path="/" element={<Home />} />
-          )}
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/forgot-password" element={<ForgotPassword />}/>
-          <Route path="/reset_password/:id/:token" element={<ResetPassword />}></Route> 
-        
-          {decodedToken && decodedToken.userrole === 'student' && (
-            <>
-            <Route path="/" element={<Dashi />} />
-            <Route path="/Email" element={<Email/>}/>
-          
-
-            
-             </>
-           
-            ) }
-          {decodedToken && decodedToken.userrole === 'admin' && (
-            <>
-            <Route path="/" element={<Admin_Dashboard />} />
-            <Route path="/Accountant_Admin" element={<AddAccountant />} />
-            <Route path="/Chief_admin" element={<AddChiefWarden />} />
-            
-          </>
-            ) }
-            {decodedToken && decodedToken.userrole === 'chief warden' && (
-            <>
-            <Route path="/" element={<ChiefDashboard />} />
-            <Route path="/Complain_Resolved_pannel" element={<Chief_Complaints_resolve_pannel/>} />
-            <Route path="/Student_complain_list" element={<Chief_Student_complaints/>} />
-          </>
-            ) }
-            {decodedToken && decodedToken.userrole === 'accountant' && (
-            <>
-              <Route path="/" element={<Accountant_Dashboard />} />
-              <Route path="/Expancebook" element={<ExpenseListing selectedExpense={selectedExpenseType} onExpenseTypeChange={handleExpanceChange} />} />
-              <Route path="/expense/edit/:type/:empid" element={<Expence_edit />} />
-              <Route path="/Accountant_menu" element={<MessMenu/>} />
-              <Route path="/Student_complain_list" element={<Chief_Student_complaints/>} />
-
-            </>
-            ) }
-            </Routes>
-          {!decodedToken && <Footer />}  
-    </Router>
+          {/* Protected routes */}
+          <Route path="/dashi" element={<ProtectedRoute roles={['student']}><Dashi /></ProtectedRoute>} />
+          <Route path="/feedback" element={<ProtectedRoute roles={['student']}><Feedback /></ProtectedRoute>} />
+          <Route path="/admin/dashboard" element={<ProtectedRoute roles={['admin']}><Admin_Dashboard /></ProtectedRoute>} />
+          <Route path="/admin/accountant" element={<ProtectedRoute roles={['admin']}><AddAccountant /></ProtectedRoute>} />
+          <Route path="/admin/chief" element={<ProtectedRoute roles={['admin']}><AddChiefWarden /></ProtectedRoute>} />
+          <Route path="/chief/dashboard" element={<ProtectedRoute roles={['chief warden']}><ChiefDashboard /></ProtectedRoute>} />
+          <Route path="/chief/complain_resolved_panel" element={<ProtectedRoute roles={['chief warden']}><Chief_Complaints_resolve_pannel /></ProtectedRoute>} />
+          <Route path="/chief/student_complain_list" element={<ProtectedRoute roles={['chief warden']}><Chief_Student_complaints /></ProtectedRoute>} />
+          <Route path="/accountant/dashboard" element={<ProtectedRoute roles={['accountant']}><Accountant_Dashboard /></ProtectedRoute>} />
+          <Route path="/accountant/expansebook" element={<ProtectedRoute roles={['accountant']}><ExpenseListing selectedExpense={selectedExpenseType} onExpenseTypeChange={handleExpenseChange} /></ProtectedRoute>} />
+          <Route path="/accountant/expense/edit/:type/:empid" element={<ProtectedRoute roles={['accountant']}><Expence_edit /></ProtectedRoute>} />
+          <Route path="/accountant/menu" element={<ProtectedRoute roles={['accountant']}><MessMenu /></ProtectedRoute>} />
+        </Routes>
+        <Footer />
+      </Router>
     </div>
   );
 }
-
-
-
-
-
-

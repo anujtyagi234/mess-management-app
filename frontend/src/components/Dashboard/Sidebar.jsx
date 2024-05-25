@@ -67,7 +67,7 @@ function Sidebar({ onMenuItemClick }) {
         ))}
       </div>
       <div className='feedback_main'>
-        <Link to ='/Email' >
+        <Link to ='/feedback' >
         <button className="button-62" role="button" style={{fontFamily:"Agbalumo",color:"black"}}><b>Feedback</b></button>
         </Link>
 

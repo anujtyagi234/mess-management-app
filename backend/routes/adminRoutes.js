@@ -1,12 +1,12 @@
 const express = require("express");
 const router = express.Router();
 const adminController = require("../controllers/adminController");
+const { authMiddleware } = require("../middleware/authMiddleware");
 
-// Add Chief Warden route
-router.post("/addchiefwarden", adminController.addchiefwarden);
+router.post("/addchiefwarden", authMiddleware, adminController.addchiefwarden);
 
-// Add Accountant route
-router.post("/addaccountant", adminController.addaccountant);
+router.post("/addaccountant", authMiddleware, adminController.addaccountant);
 
+router.post("/addadmin", authMiddleware, adminController.addadmin);
 
 module.exports = router;

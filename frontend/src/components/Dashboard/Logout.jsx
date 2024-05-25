@@ -11,6 +11,7 @@ export default function Logout() {
     e.preventDefault();
     localStorage.removeItem("token");
     localStorage.removeItem("userrole");
+    localStorage.removeItem("userId");
     navigate("/");
     dispatch({ type: "LOGOUT" });
     toast.success("Successfully logged out");

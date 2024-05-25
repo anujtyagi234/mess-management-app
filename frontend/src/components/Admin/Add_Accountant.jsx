@@ -41,6 +41,8 @@ function Add_Accountant() {
       user_name,
     } = data;
 
+    const token = localStorage.getItem('token');
+
     if (
       college_gmail_id &&
       hostelname &&
@@ -48,7 +50,11 @@ function Add_Accountant() {
       user_name
     ) {
       axios
-        .post("http://localhost:3000/admin/addaccountant", data)
+        .post("http://localhost:3000/admin/addaccountant", data,{
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
         .then((res) => {
           toast(res.data.message);
           setData({

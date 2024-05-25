@@ -9,7 +9,7 @@ import Logout from "../Dashboard/Logout";
 import Notices from '../Common_to_All/Notice_Board'
 import Accountant_sidebar from './Accountant_sidebar'
 function Dashboard_main() {
-	const [selectedMenuItem, setSelectedMenuItem] = useState("Dashboard");
+	const [selectedMenuItem, setSelectedMenuItem] = useState("Add-Expence");
 	const [selectedExpenseType, setSelectedExpanceType] = useState("Vegitable_Expence");
 	const handleMenuItemClick = (menuItem) => {
 		setSelectedMenuItem(menuItem);

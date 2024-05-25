@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const nodemailer = require('nodemailer');
 const jwt = require('jsonwebtoken');
-const User = require('../models/userModel'); // Adjust the path based on your project structure
+const User = require('../models/userModel');
 
 router.post("/forgot", async (req, res) => {
     console.log(req.body);

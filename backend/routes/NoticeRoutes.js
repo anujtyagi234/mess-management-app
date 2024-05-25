@@ -1,8 +1,10 @@
 const express = require('express')
 const path = require('path')
 const {upload, uploadFiles, getNotices, downloadFile } = require('../controllers/NoticeController');
+const { authMiddleware } = require('../middleware/authMiddleware');
 
 const router = express.Router();
+router.use(authMiddleware)
 
 // Route handler for the root path
 router.get('/', (req, res) => {

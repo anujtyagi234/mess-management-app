@@ -20,9 +20,9 @@ function Sidebar({ onMenuItemClick }) {
     
   ];
 
-  // const initialSelectedIndex = menuItems.findIndex((item) => item.title === 'Student-Complains');
+  const initialSelectedIndex = menuItems.findIndex((item) => item.title === 'Student-Complains');
 
-  const [selected, setSelected] = useState();
+  const [selected, setSelected] = useState(initialSelectedIndex);
 
   const handleItemClick = (index) => {
     const selectedItem = menuItems[index].title;

@@ -28,7 +28,9 @@ const Hostels = [
 Modal.setAppElement("#root");
 
 function MealPlanner() {
-  const [selectedHostel, setSelectedHostel] = useState("SwamiViveka Nand Boys Hostel(SVBH)");
+  const [selectedHostel, setSelectedHostel] = useState(
+    "SwamiViveka Nand Boys Hostel(SVBH)"
+  );
   const [mealData, setMealData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -44,14 +46,21 @@ function MealPlanner() {
   // Fetch data on component mount and when selectedHostel changes
   useEffect(() => {
     fetchData(selectedHostel);
-  }, [selectedHostel,mealData]);
+  }, [selectedHostel, mealData]);
 
   // Function to fetch meal data
   const fetchData = async (hostel) => {
     try {
-      const response = await axios.get("http://localhost:3000/messMenu/fetch", {
-        params: { hostel: hostel },
-      });
+      const response = await axios.get(
+        "http://localhost:3000/messMenu/fetch1",
+        {
+          params: { hostel: hostel },
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
       const { messMenu } = response.data;
       setMealData(messMenu);
     } catch (error) {
@@ -65,7 +74,9 @@ function MealPlanner() {
   const handleEditMenu = (day, mealType) => {
     setEditModalIsOpen(true);
     // Optionally, you can pre-fill the edited values based on existing data
-    const selectedMealData = mealData[0]?.[mealType]?.find((item) => item.day === day);
+    const selectedMealData = mealData[0]?.[mealType]?.find(
+      (item) => item.day === day
+    );
     setEditedValues({
       day: day,
       mealType: mealType,
@@ -77,12 +88,22 @@ function MealPlanner() {
     });
   };
 
+  const token = localStorage.getItem("token");
+
   // Function to handle saving edited values
-  const handleSaveEdit = async() => {
+  const handleSaveEdit = async () => {
     try {
-      const {m1,m2,m3,m4,special,mealType,day}= editedValues;
+      const { m1, m2, m3, m4, special, mealType, day } = editedValues;
       const hostel = selectedHostel;
-      const response = await axios.put("http://localhost:3000/messMenu/update", {m1,m2,m3,m4,special,mealType,day,hostel});
+      const response = await axios.put(
+        "http://localhost:3000/messMenu/update",
+        { m1, m2, m3, m4, special, mealType, day, hostel },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       const { updatedMenu } = response.data;
       setMealData(updatedMenu);
     } catch (error) {
@@ -92,9 +113,8 @@ function MealPlanner() {
     }
     setEditModalIsOpen(false);
   };
-  
-  
-  console.log(mealData)
+
+  console.log(mealData);
 
   // Function to render the meal plan chart
   const renderMealPlanChart = () => {
@@ -113,10 +133,18 @@ function MealPlanner() {
           {DAYS_OF_WEEK.map((day) => (
             <tr key={day}>
               <td className="border border-black p-2">{day}</td>
-              <td className="border border-black p-2">{renderMealPlan(day, "breakfast")}</td>
-              <td className="border border-black p-2">{renderMealPlan(day, "lunch")}</td>
-              <td className="border border-black p-2">{renderMealPlan(day, "supper")}</td>
-              <td className="border border-black p-2">{renderMealPlan(day, "dinner")}</td>
+              <td className="border border-black p-2">
+                {renderMealPlan(day, "breakfast")}
+              </td>
+              <td className="border border-black p-2">
+                {renderMealPlan(day, "lunch")}
+              </td>
+              <td className="border border-black p-2">
+                {renderMealPlan(day, "supper")}
+              </td>
+              <td className="border border-black p-2">
+                {renderMealPlan(day, "dinner")}
+              </td>
             </tr>
           ))}
         </tbody>
@@ -126,10 +154,10 @@ function MealPlanner() {
 
   // Function to render the meal plan for a specific day and meal type
   const renderMealPlan = (day, mealType) => {
-    const selectedMealData = mealData && mealData.length > 0 ? mealData[0]?.[mealType]?.find(
-      (item) => item.day === day
-    ) : null;
-       
+    const selectedMealData =
+      mealData && mealData.length > 0
+        ? mealData[0]?.[mealType]?.find((item) => item.day === day)
+        : null;
 
     return (
       <div>
@@ -159,7 +187,7 @@ function MealPlanner() {
   }
 
   return (
-    <div className="Mess_menu_parent_container" style={{ background: 'white' }}>
+    <div className="Mess_menu_parent_container" style={{ background: "white" }}>
       <div className="Mess_container">
         <div className="MessMenu_header">
           <div className="boxer" style={{ height: "5%", width: "5%" }}>
@@ -204,7 +232,9 @@ function MealPlanner() {
           <input
             type="text"
             value={editedValues.m1}
-            onChange={(e) => setEditedValues({ ...editedValues, m1: e.target.value })}
+            onChange={(e) =>
+              setEditedValues({ ...editedValues, m1: e.target.value })
+            }
             className="border border-gray-300 rounded-md p-1 w-full"
           />
         </label>
@@ -213,7 +243,9 @@ function MealPlanner() {
           <input
             type="text"
             value={editedValues.m2}
-            onChange={(e) => setEditedValues({ ...editedValues, m2: e.target.value })}
+            onChange={(e) =>
+              setEditedValues({ ...editedValues, m2: e.target.value })
+            }
             className="border border-gray-300 rounded-md p-1 w-full"
           />
         </label>
@@ -222,7 +254,9 @@ function MealPlanner() {
           <input
             type="text"
             value={editedValues.m3}
-            onChange={(e) => setEditedValues({ ...editedValues, m3: e.target.value })}
+            onChange={(e) =>
+              setEditedValues({ ...editedValues, m3: e.target.value })
+            }
             className="border border-gray-300 rounded-md p-1 w-full"
           />
         </label>
@@ -231,7 +265,9 @@ function MealPlanner() {
           <input
             type="text"
             value={editedValues.m4}
-            onChange={(e) => setEditedValues({ ...editedValues, m4: e.target.value })}
+            onChange={(e) =>
+              setEditedValues({ ...editedValues, m4: e.target.value })
+            }
             className="border border-gray-300 rounded-md p-1 w-full"
           />
         </label>
@@ -240,7 +276,9 @@ function MealPlanner() {
           <input
             type="text"
             value={editedValues.special}
-            onChange={(e) => setEditedValues({ ...editedValues, special: e.target.value })}
+            onChange={(e) =>
+              setEditedValues({ ...editedValues, special: e.target.value })
+            }
             className="border border-gray-300 rounded-md p-1 w-full"
           />
         </label>

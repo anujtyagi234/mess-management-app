@@ -3,12 +3,15 @@ import './Common.css';
 import axios from 'axios';
 
 const Student_complaints = () => {
-    const [userActions, setUserActions] = useState({});
     const [complaints, setComplaints] = useState([]);
-
+    const token = localStorage.getItem('token');
     useEffect(() => {
       // Fetch complaints data from the backend when the component mounts
-      axios.get('http://localhost:3000/api/fetchcomplaints')
+      axios.get('http://localhost:3000/api/fetchcomplaints',{
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
         .then((response) => {
           const { complaints: fetchedComplaints } = response.data;
           setComplaints(fetchedComplaints);

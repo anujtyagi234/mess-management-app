@@ -1,8 +1,18 @@
 const MessMenu= require('../models/menuModel')
 
 const fetchMessMenu = async (req, res) => {
-    console.log(req.query)
-    const {hostel} = req.query
+    const hostel = req.user.hostelname;
+    try {
+      const messMenu = await MessMenu.find({ hostel: hostel });
+      res.status(200).json({ messMenu });
+    } catch (error) {
+      console.error('Error fetching messMenu:', error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+  };
+
+  const chiefFetchMessMenu = async (req, res) => {
+    const hostel = req.query.hostel;
     try {
       const messMenu = await MessMenu.find({ hostel: hostel });
       res.status(200).json({ messMenu });
@@ -14,7 +24,7 @@ const fetchMessMenu = async (req, res) => {
 
   const updateMessMenu = async (req, res) => {
     try {
-      const { hostel, m1, m2, m3, m4, special, mealType, day } = req.body;
+      const {m1, m2, m3, m4, special, mealType, day,hostel } = req.body;
   
       // Construct the update object
       const updateObj = {
@@ -50,5 +60,5 @@ const fetchMessMenu = async (req, res) => {
     }
   };
   
-  module.exports = { fetchMessMenu, updateMessMenu };
+  module.exports = { fetchMessMenu, updateMessMenu, chiefFetchMessMenu };
   

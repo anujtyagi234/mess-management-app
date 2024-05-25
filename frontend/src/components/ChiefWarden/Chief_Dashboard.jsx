@@ -6,10 +6,9 @@ import Sidebar_Chief from './Sidebar_Chief'
 import Student_Complains from './Student_Complains'
 import Resolved_Complains from './ResolvedComplain'
 import AddNotice from './NoticeBoard'
-import Unresolved_complain from '../ChiefWarden/Student_Complains'
 import Mess_Menu from './Chief_Mess_Menu'
 function Dashboard_main() {
-	const [selectedMenuItem, setSelectedMenuItem] = useState("Dashboard");
+	const [selectedMenuItem, setSelectedMenuItem] = useState("Student-Complains");
 	const handleMenuItemClick = (menuItem) => {
 		setSelectedMenuItem(menuItem);
 	};

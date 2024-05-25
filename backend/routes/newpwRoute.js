@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const nodemailer = require('nodemailer');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs')
 const User = require('../models/userModel');

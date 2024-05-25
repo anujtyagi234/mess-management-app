@@ -1,20 +1,19 @@
-import React from 'react'
-import './Rightside.css'
+import React from "react";
+import "./Rightside.css";
 
-import Updates from '../Updates/Updates'
+import Updates from "../Updates/Updates";
 
-import StudentReviews from '../Student_Reviews/StudentR'
+import StudentReviews from "../Student_Reviews/StudentR";
 function Rightside() {
   return (
-    <div className='Rightside'>
-     <div className='Updates'>
-      
-     <Updates/>
+    <div className="Rightside">
+      <div className="Updates">
+        <Updates />
       </div>
-      <div className='Studentreview'>
-<StudentReviews/>
-        </div>
+      <div className="Studentreview">
+        <StudentReviews />
+      </div>
     </div>
-  )
+  );
 }
-export default Rightside
+export default Rightside;
