@@ -14,8 +14,8 @@ import AddChiefWarden from './components/Admin/Add_Chief_warden';
 import Chief_Complaints_resolve_pannel from './components/ChiefWarden/ResolvedComplain';
 import Chief_Student_complaints from './components/ChiefWarden/Student_Complains';
 import ChiefDashboard from './components/ChiefWarden/Chief_Dashboard';
-import ExpenseListing from './components/Accountant/Accountant_Expence_list';
-import Expence_edit from './components/Accountant/Accountant_Edit_Expence';
+import ExpenseListing from './components/Accountant/Accountant_Expense_list';
+
 import MessMenu from './components/Dashboard/Main/Mess_menu';
 import Accountant_Dashboard from './components/Accountant/Accountant_Dashboard';
 import ProtectedRoute from './components/ProtectedRoute';
@@ -51,7 +51,7 @@ export default function App() {
           <Route path="/chief/student_complain_list" element={<ProtectedRoute roles={['chief warden']}><Chief_Student_complaints /></ProtectedRoute>} />
           <Route path="/accountant/dashboard" element={<ProtectedRoute roles={['accountant']}><Accountant_Dashboard /></ProtectedRoute>} />
           <Route path="/accountant/expansebook" element={<ProtectedRoute roles={['accountant']}><ExpenseListing selectedExpense={selectedExpenseType} onExpenseTypeChange={handleExpenseChange} /></ProtectedRoute>} />
-          <Route path="/accountant/expense/edit/:type/:empid" element={<ProtectedRoute roles={['accountant']}><Expence_edit /></ProtectedRoute>} />
+          
           <Route path="/accountant/menu" element={<ProtectedRoute roles={['accountant']}><MessMenu /></ProtectedRoute>} />
         </Routes>
         <Footer />

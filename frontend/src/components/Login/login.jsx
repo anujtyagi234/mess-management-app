@@ -82,7 +82,7 @@ function Login() {
 							className="rounded-full"
 							style={{
 								height: "450px",
-								width: "500px",
+								width: "490px",
 								margin: "30px auto 0 auto",
 							}}
 						/>
@@ -91,7 +91,7 @@ function Login() {
 				<div className="h-screen bg-neutral-800 w-1/2  flex-col  juendstify- rounded-r-lg flex justify-center items-center  " style={{fontFamily:"Agbalumo"}}>
 					<div className="text-white text-center" style={{fontFamily:"Agbalumo"}}>
 						<h2
-							className="text-5xl  "
+							className="text-4xl  "
 							style={{fontWeight: "bold" }}
 						>
 							!! Welcome !!
@@ -100,13 +100,13 @@ function Login() {
 					<div
 						className=" bg-stone-100   rounded-3xl   text-black"
 						style={{
-							height: "500px",
+							height: "420px",
 							width: "480px",
-							margin: "30px auto 0 auto",
+							margin: "20px auto 0 auto",
 						}}
 					>
 						 <form onSubmit={handleLogin}>
-						<div className="grid grid-rows-2 gap-4  justify-center items-center mt-12" style={{fontFamily:"Agbalumo"}}>
+						<div className="grid grid-rows-2 gap-1  justify-center items-center mt-5" style={{fontFamily:"Agbalumo"}}>
 							<div
 								style={{
 									display: "flex",

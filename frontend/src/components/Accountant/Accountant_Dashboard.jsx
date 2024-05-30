@@ -1,7 +1,7 @@
 import React from "react";
 import '../../Acc_Adm_Chf_Dashboard.css'
 import { useState } from "react";
-import AddExpence from './Accountant_Expence_list'
+import AddExpence from './Accountant_Expense_list'
 import MessMenu from '../Dashboard/Main/Mess_menu'
 import Resolved_complains from '../Dashboard/Main/ResolvedComplain'
 import Student_complains from '../Dashboard/Main/Student_Complain'
@@ -23,7 +23,7 @@ function Dashboard_main() {
 
 	switch (selectedMenuItem) {
 		case "Add-Expence":
-			content = <AddExpence selectedExpense={selectedExpenseType} onExpenseTypeChange={handleExpanceChange}/>;
+			content = <AddExpence/>;
 			break;
 		case "Mess-Menu":
 			content = <MessMenu/>;

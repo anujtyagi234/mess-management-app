@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { Line } from 'react-chartjs-2';
 import 'chart.js/auto';
 import './StudentR.css'; // Import the CSS file for styling
+import { toast } from 'react-toastify';
+
 
 const App = () => {
   const [ratings, setRatings] = useState([]);
@@ -11,14 +13,14 @@ const App = () => {
   const [showThankYou, setShowThankYou] = useState(false);
   const onSubmitRating = () => {
     if (currentRating == null) {
-      alert("Please select atleast one star ⭐");
+      toast.error("Please select atleast one star ⭐");
     } else {
       const currentDay = new Date().toLocaleDateString('en-US', { weekday: 'long' });
   
       const existingRatingIndex = ratings.findIndex((rating) => rating.day === currentDay);
   
       if (existingRatingIndex !== -1) {
-        alert("You have already rated today");
+       toast.error("You have already rated today");
       } else {
         setRatings((prevRatings) => [...prevRatings, { day: currentDay, rating: currentRating }]);
         setRatingPage(false);

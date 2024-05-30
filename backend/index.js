@@ -9,6 +9,7 @@ const newpwRoute = require("./routes/newpwRoute");
 const complainRoutes = require('./routes/complainRoutes')
 const messMenuRoutes = require('./routes/messMenuRoutes')
 const noticeRoutes = require('./routes/NoticeRoutes')
+const expenseRoutes = require('./routes/expenseRoutes');
 
 require("dotenv").config();
 
@@ -35,6 +36,7 @@ app.use("/api", complainRoutes);
 app.use("/messMenu", messMenuRoutes);
 app.use("/admin", adminRoutes);
 app.use("/", noticeRoutes);
+app.use('/messExpense', expenseRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server started at port ${PORT}`);

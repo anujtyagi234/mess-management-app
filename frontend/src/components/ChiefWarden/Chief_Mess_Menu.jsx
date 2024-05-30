@@ -114,7 +114,7 @@ function MealPlanner() {
     setEditModalIsOpen(false);
   };
 
-  console.log(mealData);
+  // console.log(mealData);
 
   // Function to render the meal plan chart
   const renderMealPlanChart = () => {
@@ -158,7 +158,7 @@ function MealPlanner() {
       mealData && mealData.length > 0
         ? mealData[0]?.[mealType]?.find((item) => item.day === day)
         : null;
-
+       
     return (
       <div>
         <p>{selectedMealData?.special}</p>
@@ -226,6 +226,8 @@ function MealPlanner() {
         className="Modal bg-white rounded-md p-6 max-w-sm mx-auto"
         overlayClassName="Overlay fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center"
       >
+
+        
         <h2 className="text-xl font-bold mb-4">Edit Menu</h2>
         <label className="block mb-2">
           M1:
