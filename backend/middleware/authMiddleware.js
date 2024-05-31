@@ -7,7 +7,6 @@ require("dotenv").config();
 
 const authMiddleware = async (req, res, next) => {
   const authtoken = req.headers.authorization;
-
   if (!authtoken || !authtoken.startsWith('Bearer ')) {
     return res.status(401).json({ error: 'Unauthorized: No token provided' });
   }
@@ -38,4 +37,15 @@ const authMiddleware = async (req, res, next) => {
   }
 };
 
-module.exports = { authMiddleware };
+const authorize = (...roles) => {
+  return (req, res, next) => {
+    if (!roles.includes(req.user.userrole)) {
+      console.log(req.user.userrole)
+      console.log(roles)
+      return res.status(403).json({ message: 'Not authorized' });
+    }
+    next();
+  };
+};
+
+module.exports = { authMiddleware,authorize };

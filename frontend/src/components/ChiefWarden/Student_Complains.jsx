@@ -26,7 +26,7 @@ const Chief_Student_complaints = () => {
 
 
     const resolveComplaint = (complaintId) => {
-      axios.put(`http://localhost:3000/api/${complaintId}/resolved`,{
+      axios.put(`http://localhost:3000/api/${complaintId}/resolved`,null,{
         headers: {
           Authorization: `Bearer ${token}`,
         },

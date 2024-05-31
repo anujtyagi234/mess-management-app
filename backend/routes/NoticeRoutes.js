@@ -1,7 +1,7 @@
 const express = require('express')
 const path = require('path')
 const {upload, uploadFiles, getNotices, downloadFile } = require('../controllers/NoticeController');
-const { authMiddleware } = require('../middleware/authMiddleware');
+const { authMiddleware,authorize } = require('../middleware/authMiddleware');
 
 const router = express.Router();
 router.use(authMiddleware)
@@ -17,7 +17,7 @@ router.get('/AddNotice', (req, res) => {
 });
 
 // Route handler for uploading files
-router.post('/upload', upload.array('files'), uploadFiles);
+router.post('/upload', authorize('chief warden'),upload.array('files'), uploadFiles);
 
 // Route handler for fetching notices
 router.get('/notices', getNotices);

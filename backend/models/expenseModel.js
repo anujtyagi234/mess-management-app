@@ -1,7 +1,3 @@
-
-
-
-
 const mongoose = require('mongoose');
 
 const Hostels = [
@@ -11,6 +7,7 @@ const Hostels = [
   "Ravindra Nath Taigore Hostel(Taigore Hostel)",
   "Diamond Jublee Girls Hostel(DG)",
 ];
+
 const Months = [
   "January",
   "February",
@@ -26,62 +23,22 @@ const Months = [
   "December",
 ];
 
-
-const expenseItemSchema = new mongoose.Schema({
+const expenseSchema = new mongoose.Schema({
+  year: Number,
+  month: {
+    type: String,
+    enum: Months,
+  },
   hostel: {
     type: String,
     enum: Hostels,
-    required: true
   },
-  week1: [
-    {
-      month: { type: String, enum: Months},
-      vegetables: String,
-      fruits: String,
-      provisions: String,
-      others: String,
-      
-    }
-  ],
-  week2: [
-    {
-      month: { type: String, enum: Months},
-      vegetables: String,
-      fruits: String,
-      provisions: String,
-      others: String,
-    }
-  ],
-  week3: [
-    {
-      month: { type: String, enum: Months},
-      vegetables: String,
-      fruits: String,
-      provisions: String,
-      others: String,
-    }
-  ],
-  week4: [
-    {
-      month: { type: String, enum: Months},
-      vegetables: String,
-      fruits: String,
-      provisions: String,
-      others: String,
-    }
-  ],
-  others: [
-    {
-      month: { type: String, enum: Months},
-      vegetables: String,
-      fruits: String,
-      provisions: String,
-      others: String,
-    }
-  ]
+  expenses: {
+    vegetables: Number,
+    fruits: Number,
+    provisions: Number,
+    others: Number,
+  },
 });
 
-const Expense = mongoose.model("Expense", expenseItemSchema );
-
-module.exports = Expense;
-
+module.exports = mongoose.model('Expense', expenseSchema);

@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const fileUpload = require('express-fileupload');
 const complainController = require('../controllers/complainController');
-const { authMiddleware } = require('../middleware/authMiddleware');
+const { authMiddleware,authorize } = require('../middleware/authMiddleware');
 const filesPayloadExists = require('../middleware/filesPayloadExists');
 const fileExtLimiter = require('../middleware/fileExtLimiter');
 const fileSizeLimiter = require('../middleware/fileSizeLimiter');
@@ -22,7 +22,7 @@ router.post(
 router.get('/fetchcomplaints',authMiddleware, complainController.fetchComplaints);
 
 // PUT request to mark a complaint as resolved
-router.put('/:complaintId/resolved',authMiddleware, complainController.resolveComplaint);
+router.put('/:complaintId/resolved',authMiddleware,authorize('chief warden'), complainController.resolveComplaint);
 
 // PUT request to like a complaint
 router.put('/:complaintId/liked', authMiddleware, complainController.likeComplaint);
