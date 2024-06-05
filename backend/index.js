@@ -10,6 +10,7 @@ const complainRoutes = require('./routes/complainRoutes')
 const messMenuRoutes = require('./routes/messMenuRoutes')
 const noticeRoutes = require('./routes/NoticeRoutes')
 const expenseRoutes = require('./routes/expenseRoutes');
+const RatingRoutes = require('./routes/RatingRoutes');
 
 require("dotenv").config();
 
@@ -33,6 +34,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api", resetRoutes);
 app.use("/api", newpwRoute);
 app.use("/api", complainRoutes);
+app.use("/api/ratings", RatingRoutes);
 app.use("/messMenu", messMenuRoutes);
 app.use("/admin", adminRoutes);
 app.use("/", noticeRoutes);

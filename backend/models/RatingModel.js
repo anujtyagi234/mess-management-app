@@ -1,41 +1,15 @@
 const mongoose = require('mongoose');
 
-const RatingSchema = new mongoose.Schema({
-    user: {
-        type: String,
-        required: true
-    },
-    
-    totalRating:{
-        type:int,
-        defualt:0
-    },
-    Rated: {
-        type:Boolean,
-        default: false,
-      },
-      day: {
-        type: String,
-        required: true
-    },
-
-      RatedUser: [{
-        user: {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: 'User',
-        },
-        Rated: {
-          type: Boolean,
-          default: false,
-        },
-       
-        day: {
-            type: String,
-            required: true
-        },
-      }],
+const userRatingSchema = new mongoose.Schema({
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+  rating: { type: Number, required: true },
 });
 
-const RateUs = mongoose.model("Rateus", RatingSchema);
+const ratingSchema = new mongoose.Schema({
+  hostel: { type: String, required: true },
+  date: { type: Date, required: true },
+  averageRating: { type: Number, required: true, default: 0 },
+  userRatings: [userRatingSchema],
+}, { timestamps: true });
 
-module.exports = RateUs;
+module.exports = mongoose.model('Rating', ratingSchema);
