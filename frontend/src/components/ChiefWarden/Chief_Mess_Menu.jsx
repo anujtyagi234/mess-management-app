@@ -4,6 +4,8 @@ import Modal from "react-modal";
 import "./Chief_Mess_menu.css";
 import Menu from "../../imgs/ramen.gif";
 import axios from "axios";
+import { toast } from 'react-toastify';
+
 
 // Define constants
 const DAYS_OF_WEEK = [
@@ -112,6 +114,7 @@ function MealPlanner() {
       setLoading(false);
     }
     setEditModalIsOpen(false);
+    toast.success("Mess menu change successfully")
   };
 
   // console.log(mealData);

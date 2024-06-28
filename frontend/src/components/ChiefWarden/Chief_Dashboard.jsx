@@ -7,6 +7,7 @@ import Student_Complains from './Student_Complains'
 import Resolved_Complains from './ResolvedComplain'
 import AddNotice from './NoticeBoard'
 import Mess_Menu from './Chief_Mess_Menu'
+
 function Dashboard_main() {
 	const [selectedMenuItem, setSelectedMenuItem] = useState("Student-Complains");
 	const handleMenuItemClick = (menuItem) => {
@@ -29,6 +30,7 @@ function Dashboard_main() {
 			case "AddNotice":
 			content = <AddNotice/>;
 			break;
+			
 			
 	}
   

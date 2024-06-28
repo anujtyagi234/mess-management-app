@@ -5,6 +5,7 @@ import './StudentR.css'; // Import the CSS file for styling
 import { toast } from 'react-toastify';
 import axios from 'axios';
 
+
 const App = () => {
   const [ratings, setRatings] = useState([]);
   const [ratingPage, setRatingPage] = useState(true);
@@ -70,6 +71,7 @@ const App = () => {
           }
         });
     }
+
   };
 
   const togglePage = () => {
@@ -172,7 +174,7 @@ const App = () => {
         ) : (
           <>
             <Line data={chartData} options={chartOptions} />
-            {showThankYou && <div className="thank-you-message">🎉🌟 Thank you! 🌟🎉</div>}
+            {showThankYou && <div className="thank-you-message">🎉🌟 Thank you ! 🌟🎉</div>}
             <button onClick={togglePage}>Rate Us</button>
           </>
         )}

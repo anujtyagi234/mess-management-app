@@ -3,6 +3,7 @@ import Modal from "react-modal";
 import "../ChiefWarden/Chief_Mess_menu.css";
 import Menu from "../../imgs/ramen.gif";
 import axios from "axios";
+import { toast } from 'react-toastify';
 
 
 const Years = [
@@ -66,6 +67,8 @@ function ExpensePlanner() {
       provisions: selectedExpenseData.provisions,
       others: selectedExpenseData.others,
     });
+
+
   };
 
   const handleSaveEdit = async () => {
@@ -84,7 +87,7 @@ function ExpensePlanner() {
         },
         { headers: { Authorization: `Bearer ${token}` } }
       );
-      console.log("Update response:", response.data);
+      
       const { updatedExpense } = response.data;
       // Find the index of the edited month in the expenseData array
     const editedMonthIndex = expenseData.findIndex(item => item.month === month);
@@ -99,6 +102,7 @@ function ExpensePlanner() {
       setLoading(false);
       setEditModalIsOpen(false);
     }
+    toast.success("Expense updated successfully")
   };
 
   const calculateTotal = (expense) => {
@@ -131,7 +135,7 @@ function ExpensePlanner() {
                 {calculateTotal(expense.expenses)}
                 <button
                   onClick={() => handleEditExpense(expense.month)}
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded"
+                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded ml-4"
                 >
                   Edit
                 </button>

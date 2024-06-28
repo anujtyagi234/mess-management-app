@@ -23,7 +23,7 @@ const StudentDetails = () => {
       GitHub: "anujtyagi234",
       Instagram: "anujtyagi234",
       color: 'green',
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMY1JiB3C0uUKXfN24TIeSXojKD8Mu0uMCQQ&usqp=CAU",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmv007LWIhwfQztKw6AALPl5zNrtIIvolBqach9_iYtw3DgPlPwGKCwKJ5GhwXGhVP6rk&usqp=CAU",
       customStyle: {
         borderRadius: '10px',
         marginTop: '4rem',
@@ -38,7 +38,7 @@ const StudentDetails = () => {
       GitHub: "Sumit524",
       Instagram: "sumitchaurasiya1241",
       color: 'yellow',
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT87ABN7JfWkigQ3MfAOWtshQyQacv81PSMWIkBug6F5VO-6bttXEbf2Oeg__y0LHmW8fY&usqp=CAU",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5aJZEZmb7jLq3lwFvZITon73dd73gkvlo0v0SieeWhZdZY9_7VSkntK1n3J3IvshxLbU&usqp=CAU",
       customStyle: {
         borderRadius: '10px',
         marginTop: '9rem',
@@ -52,7 +52,7 @@ const StudentDetails = () => {
       GitHub: "kushagra572",
       Instagram: "kushagraverma4321",
       color: 'red',
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS3EQjUQ8xXLMIF13c4pq8fK1r3J4UOyJ5IQ&usqp=CAU",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCarTW0rnj7kIJAlj96k__8IDu604AwpJeOgrhuMDF5iATjzPJMezVN5bLOGphIoqzuCI&usqp=CAU",
       customStyle: {
         borderRadius: '10px',
         marginTop: '14rem',

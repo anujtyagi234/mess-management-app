@@ -6,6 +6,7 @@ import Messmenu from '../../imgs/vegan-food.gif'
 import complain from '../../imgs/Compln.gif';
 import Message from '../../imgs/new-message.gif';
 import openmassagepng from '../../imgs/mail-delivery.gif';
+import Expenses from '../../imgs/calendar.gif'
 
 function Sidebar({ onMenuItemClick }) {
   const menuItems = [
@@ -14,6 +15,9 @@ function Sidebar({ onMenuItemClick }) {
    
     { title: 'Mess-Menu', image: Messmenu },
     { title: 'AddNotice', image:  openmassagepng},
+    
+
+    
     
 
     

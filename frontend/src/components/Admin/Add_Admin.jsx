@@ -74,7 +74,7 @@ function Add_Chief_warden() {
             </h1>
 
             <img
-              src="https://img.freepik.com/premium-photo/3d-cartoon-business-leader-middleaged-man-with-sharp-features-modern-office-generative-ai_985482-348.jpg"
+              src="https://png.pngtree.com/png-vector/20240125/ourlarge/pngtree-working-employee-3d-character-illustration-png-image_11549019.png"
               alt="Image"
               className="rounded-full"
               style={{

@@ -89,7 +89,7 @@ function Signup() {
               style={{
                 height: "450px",
                 width: "500px",
-                margin: "30px auto 0 auto",
+                margin: "10px auto 0 auto",
               }}
             />
           </div>
@@ -98,7 +98,7 @@ function Signup() {
           <div className="text-white text-center">
             <h2
               className="text-5xl  "
-              style={{  fontWeight: "bold" }}
+              style={{  fontWeight: "bold",marginTop:"0rem" }}
             >
               !! Welcome !!
             </h2>
@@ -106,9 +106,9 @@ function Signup() {
           <div
             className=" bg-stone-100   rounded-3xl   text-black"
             style={{
-              height: "650px",
+              height: "520px",
               width: "480px",
-              margin: "20px auto 0 auto",
+              margin: "12px auto 0 auto",
             }}
           >
             <form onSubmit={handleSignUp}>

@@ -7,6 +7,6 @@ const { authMiddleware,authorize } = require("../middleware/authMiddleware");
 router.get("/fetch", authMiddleware,ExpenseController.fetchExpense);
 
 // Route to update expenses
-router.put("/update", authMiddleware,authorize('accountant'),ExpenseController.updateExpense);
+router.put("/update", authMiddleware,authorize('accountant','chief warden'),ExpenseController.updateExpense);
 
 module.exports = router;

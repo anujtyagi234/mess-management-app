@@ -1,12 +1,14 @@
 
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
+
 
 const NoticeBoard = () => {
   const navigate = useNavigate();
   const handleUploadNotice = () => {
     // Redirect to the same page (current page)
-    navigate(".", { replace: true });
+    navigate(window.location.pathname, { replace: true });
   };
   const [notices, setNotices] = useState([]);
   const [message, setMessage] = useState('');
@@ -69,6 +71,7 @@ const NoticeBoard = () => {
       setMessage('An error occurred during file upload.');
       console.error('File upload error:', error);
     }
+    toast.success("File uploaded successfully.")
   };
 
  

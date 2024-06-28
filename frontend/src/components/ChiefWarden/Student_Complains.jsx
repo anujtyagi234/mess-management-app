@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from 'react';
 import axios from 'axios';
 import './Common.css';
+import { toast } from 'react-toastify';
 
 
 const Chief_Student_complaints = () => {
@@ -42,6 +43,7 @@ const Chief_Student_complaints = () => {
         .catch((error) => {
           console.error('Error resolving complaint:', error);
         });
+        toast.success("Complain resolve successfully")
     };
     
     // Check if complaints is an array before filtering
