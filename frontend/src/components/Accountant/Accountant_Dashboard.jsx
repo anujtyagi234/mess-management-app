@@ -8,8 +8,9 @@ import Student_complains from '../Dashboard/Main/Student_Complain'
 import Logout from "../Dashboard/Logout";
 import Notices from '../Common_to_All/Notice_Board'
 import Accountant_sidebar from './Accountant_sidebar'
+import Profile from "./Profile_Acc"
 function Dashboard_main() {
-	const [selectedMenuItem, setSelectedMenuItem] = useState("Add-Expence");
+	const [selectedMenuItem, setSelectedMenuItem] = useState("Profile");
 	const [selectedExpenseType, setSelectedExpanceType] = useState("Vegitable_Expence");
 	const handleMenuItemClick = (menuItem) => {
 		setSelectedMenuItem(menuItem);
@@ -22,6 +23,9 @@ function Dashboard_main() {
 	let content;
 
 	switch (selectedMenuItem) {
+		case "Profile":
+			content = <Profile/>;
+			break;
 		case "Add-Expence":
 			content = <AddExpence/>;
 			break;

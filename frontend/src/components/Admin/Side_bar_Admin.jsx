@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
 import cheifimage from '../../imgs/avatar.gif';
+import AddGuest from '../../imgs/user.gif';
+
 import Warden from '../../imgs/laptop.gif';
 import mess from '../../imgs/mess.png';
 import complain from '../../imgs/Compln.gif';
@@ -8,15 +10,16 @@ import Massage from '../../imgs/new-message.gif';
 import Notice from '../../imgs/mail-delivery.gif'
 function Sidebar({ onMenuItemClick }) {
   const menuItems = [
-    { title: 'Add-Admin', image: cheifimage },
-    { title: 'Add-ChiefWarden', image: cheifimage },
+    { title: 'Profile', image: cheifimage },
+    { title: 'Add-Admin', image: AddGuest  },
+    { title: 'Add-ChiefWarden', image: AddGuest },
     { title: 'Add-Accountant', image: Warden },
     { title: 'Unresolved-complains', image: complain },
     { title: 'Resolved-complains', image: Massage },
     { title: 'Notices', image: Notice },
   ];
 
-  const initialSelectedIndex = menuItems.findIndex((item) => item.title === 'Add-Admin');
+  const initialSelectedIndex = menuItems.findIndex((item) => item.title === 'Profile');
 
   const [selected, setSelected] = useState(initialSelectedIndex);
 

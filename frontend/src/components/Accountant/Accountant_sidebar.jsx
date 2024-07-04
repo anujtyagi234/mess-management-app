@@ -9,8 +9,10 @@ import Notices_image from '../../imgs/mail-delivery.gif'
 import Calender from '../../imgs/calendar.gif'
 import complain from '../../imgs/Compln.gif';
 import Message from '../../imgs/new-message.gif'
+import cheifimage from '../../imgs/avatar.gif'
 function Sidebar({ onMenuItemClick }) {
   const menuItems = [
+    { title: 'Profile', image: cheifimage},
     { title: 'Add-Expence', image: Calender },
     { title: 'Mess-Menu', image: menu },
     { title: 'Unresolved-complains', image: complain },
@@ -21,7 +23,7 @@ function Sidebar({ onMenuItemClick }) {
     
   ];
 
-  const initialSelectedIndex = menuItems.findIndex((item) => item.title === 'Add-Expence');
+  const initialSelectedIndex = menuItems.findIndex((item) => item.title === 'Pofile');
 
   const [selected, setSelected] = useState(initialSelectedIndex);
 

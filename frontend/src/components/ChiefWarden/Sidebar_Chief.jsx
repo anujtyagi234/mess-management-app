@@ -6,15 +6,21 @@ import Messmenu from '../../imgs/vegan-food.gif'
 import complain from '../../imgs/Compln.gif';
 import Message from '../../imgs/new-message.gif';
 import openmassagepng from '../../imgs/mail-delivery.gif';
+import avatar from "../../imgs/avatar.gif"
 import Expenses from '../../imgs/calendar.gif'
 
 function Sidebar({ onMenuItemClick }) {
   const menuItems = [
+    { title: 'ch_Profile', image:  avatar},
     { title: 'Student-Complains', image: complain },
     { title: 'Resolved-Complains', image: openmassagepng },
    
     { title: 'Mess-Menu', image: Messmenu },
     { title: 'AddNotice', image:  openmassagepng},
+
+
+
+   
     
 
     
@@ -24,7 +30,7 @@ function Sidebar({ onMenuItemClick }) {
     
   ];
 
-  const initialSelectedIndex = menuItems.findIndex((item) => item.title === 'Student-Complains');
+  const initialSelectedIndex = menuItems.findIndex((item) => item.title === 'ch_Profile');
 
   const [selected, setSelected] = useState(initialSelectedIndex);
 

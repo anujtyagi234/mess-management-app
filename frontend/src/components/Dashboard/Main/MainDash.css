@@ -34,7 +34,7 @@
 font-family:Georgia, 'Times New Roman', Times, serif;
 font-weight: bold;
 border-radius: 10px;
-margin-bottom: 2rem;
+margin-bottom: 1rem;
 
 
 }
@@ -65,8 +65,8 @@ margin-bottom: 2rem;
  margin-left: 30%;
  display: flex;
  box-shadow: 5px 2px 7px  7px rgb(82, 79, 79);
- margin-bottom: 1.2rem;
-
+ margin-top: 1rem;
+ margin-bottom: 1rem;
 
 }
 

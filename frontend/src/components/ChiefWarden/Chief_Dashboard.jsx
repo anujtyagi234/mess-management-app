@@ -7,9 +7,10 @@ import Student_Complains from './Student_Complains'
 import Resolved_Complains from './ResolvedComplain'
 import AddNotice from './NoticeBoard'
 import Mess_Menu from './Chief_Mess_Menu'
+import Profile from './Profile_Chief'
 
 function Dashboard_main() {
-	const [selectedMenuItem, setSelectedMenuItem] = useState("Student-Complains");
+	const [selectedMenuItem, setSelectedMenuItem] = useState("ch_Profile");
 	const handleMenuItemClick = (menuItem) => {
 		setSelectedMenuItem(menuItem);
 	};
@@ -17,6 +18,9 @@ function Dashboard_main() {
 	let content;
   
 	switch (selectedMenuItem) {
+		case "ch_Profile":
+			content = <Profile/>;
+			break;
 	  case "Student-Complains":
 		content = <Student_Complains />;
 		break;
@@ -30,6 +34,7 @@ function Dashboard_main() {
 			case "AddNotice":
 			content = <AddNotice/>;
 			break;
+			
 			
 			
 	}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Profiler } from "react";
 import '../../Acc_Adm_Chf_Dashboard.css'
 import Logout from "../Dashboard/Logout";
 import { useState } from "react";
@@ -9,8 +9,9 @@ import Add_Admin from './Add_Admin'
 import Resolved_complains from '../ChiefWarden/ResolvedComplain'
 import Student_complains from '../Dashboard/Main/Student_Complain'
 import Admin_Dashboard from './Side_bar_Admin';
+import Profile from "./Profile_Admin"
 function Dashboard_main() {
-	const [selectedMenuItem, setSelectedMenuItem] = useState("Add-Admin");
+	const [selectedMenuItem, setSelectedMenuItem] = useState("Profile");
 	const handleMenuItemClick = (menuItem) => {
 		setSelectedMenuItem(menuItem);
 	};
@@ -18,6 +19,10 @@ function Dashboard_main() {
 	let content;
 
 	switch (selectedMenuItem) {
+		case "Profile":
+			content = <Profile/>;
+			break;
+
 		case "Add-Admin":
 			content = <Add_Admin/>;
 			break;

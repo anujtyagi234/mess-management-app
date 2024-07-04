@@ -35,6 +35,7 @@ function MainDash() {
     });
   };
 
+  console.log(userData);
   return (
     <div className="Container_Main12">
       <div className="MainDash1234">
