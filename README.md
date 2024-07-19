@@ -59,18 +59,6 @@ Make sure you have the following software installed on your machine:
     cd ../frontend
     npm install
 
-5. **Set Up Environment Variables:**
-   Create a .env file in the root of the backend directory and add the following variables:
-
-  JWTPRIVATEKEY=your_private_key
-  
-  SALT=10
-  
-  MONGODB_URI=mongodb://127.0.0.1:27017/MESS-MANAGEMENT
-  
-  GMAIL_USERNAME=messproject572@gmail.com
-  
-  GMAIL_PASSWORD=rssdbugyekmjzjjb
 
 6.**Run the Application:**
   
@@ -83,9 +71,7 @@ Make sure you have the following software installed on your machine:
   a. First terminal :
   
         npm run dev
-  b. Second terminal :
-  
-        json-server --watch db.json --port 8000
+
 
 7.**Access the Application:**
 
