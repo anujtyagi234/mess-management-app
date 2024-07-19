@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Add_Chief from "../../imgs/Add_Chief.avif"
 import axios from "axios";
 import {  toast } from 'react-toastify';
 import {
@@ -74,7 +75,7 @@ function Add_Chief_warden() {
             </h1>
 
             <img
-              src="https://img.freepik.com/premium-photo/3d-cartoon-business-leader-middleaged-man-with-sharp-features-modern-office-generative-ai_985482-348.jpg"
+              src={Add_Chief}
               alt="Image"
               className="rounded-full"
               style={{

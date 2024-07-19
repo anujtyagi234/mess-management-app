@@ -46,7 +46,7 @@ function MealPlanner() {
     );
 
     return (
-      <div>
+      <div style={{marginBottom:"3rem"}}>
         <h3 className="Meal_Title">{`${mealType} Plan for ${selectedDay}`}</h3>
         <div className="Sp">
           <p>

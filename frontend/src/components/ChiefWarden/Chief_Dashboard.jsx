@@ -18,7 +18,7 @@ function Dashboard_main() {
 	let content;
   
 	switch (selectedMenuItem) {
-		case "ch_Profile":
+		case "Profile":
 			content = <Profile/>;
 			break;
 	  case "Student-Complains":

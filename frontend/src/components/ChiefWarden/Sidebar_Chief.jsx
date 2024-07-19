@@ -11,7 +11,7 @@ import Expenses from '../../imgs/calendar.gif'
 
 function Sidebar({ onMenuItemClick }) {
   const menuItems = [
-    { title: 'ch_Profile', image:  avatar},
+    { title: 'Profile', image:  avatar},
     { title: 'Student-Complains', image: complain },
     { title: 'Resolved-Complains', image: openmassagepng },
    

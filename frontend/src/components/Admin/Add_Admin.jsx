@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import Add_Admin from "../../imgs/Add_Admin.png"
 import {  toast } from 'react-toastify';
 import {
   FaUserCircle,
@@ -74,7 +75,7 @@ function Add_Chief_warden() {
             </h1>
 
             <img
-              src="https://png.pngtree.com/png-vector/20240125/ourlarge/pngtree-working-employee-3d-character-illustration-png-image_11549019.png"
+              src={Add_Admin}
               alt="Image"
               className="rounded-full"
               style={{

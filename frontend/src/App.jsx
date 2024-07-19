@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './Acc_Adm_Chf_Dashboard.css';
 import Home from './components/Home/Home';
 import Footer from './components/Home/Footer';
-import Login from './components/Login/Login';
+import Login from './components/Login/login';
 import Signup from './components/Signup/Signup';
 import ForgotPassword from './components/reset/ForgotPassword';
 import ResetPassword from './components/reset/ResetPassword';

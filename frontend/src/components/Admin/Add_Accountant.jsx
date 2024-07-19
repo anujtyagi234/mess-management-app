@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+ import Add_Accountant_img from "../../imgs/Add_Accountant.avif"
 import {  toast } from 'react-toastify';
 import {
   FaUserCircle,
@@ -86,7 +87,7 @@ function Add_Accountant() {
             </h1>
 
             <img
-              src="https://img.freepik.com/premium-photo/cartoon-accountant-character-with-happy-successful-smile-face-beside-calculator-generative-ai_870512-1291.jpg?size=626&ext=jpg&ga=GA1.1.1826414947.1699401600&semt=ais"
+            src={Add_Accountant_img}
               alt="Image"
               className="rounded-full"
               style={{

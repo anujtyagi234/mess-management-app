@@ -54,6 +54,8 @@ function MainDash() {
           </div>
           <div className="main-box" style={{ boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', padding: '15px', borderRadius: '8px', backgroundColor: '#fff', marginBottom: '15px',fontFamily:"Agbalumo" }}>
             <p style={{ fontSize: '18px', lineHeight: '1.6', marginBottom: '5px' }}><b>User-name: </b> <span style={{ color: '#FF5733' }}>{userData.user_name}</span></p>
+          <p style={{ fontSize: '18px', lineHeight: '1.6', marginBottom: '5px' }}><b>Hostel: </b> <span style={{ color: '#FF5733' }}>{userData.hostelname}</span></p>
+
             <p style={{ fontSize: '18px', lineHeight: '1.6', marginBottom: '5px' }}><b>Email: </b> <span style={{ color: '#FF5733' }}>{userData.college_gmail_id}</span></p>
           </div>
         </div>

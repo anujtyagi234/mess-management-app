@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./MainDash.css";
+import student_img from "../../../imgs/Student_pro.avif"
 
 function MainDash() {
   const [userData, setUserData] = useState(null);
@@ -42,7 +43,7 @@ function MainDash() {
         {userData ? (
            <div  className="Student_img" style={{display:"flex",flexDirection:"column"}}>
             
-            <img src="https://img.freepik.com/premium-vector/geek-boy-vector-illustration_949611-2889.jpg" alt="" />
+            <img src={student_img} alt="" />
             
           <div className="Details_Students mx-20" style={{ fontFamily: 'Arial, sans-serif', padding: '20px', borderRadius: '8px', boxShadow: '7px 5px 5px black', background: 'linear-gradient(to right, pink, yellow, red)', border: '2px solid #333',display:"flex",flexDirection:"column" }}>
            

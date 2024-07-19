@@ -17,7 +17,9 @@ const wardenSchema = new mongoose.Schema({
   userrole: {
     type: String,
     default: 'chief warden'
-  }
+  },
+ 
+  
 });
 
 const Warden = mongoose.model("Warden", wardenSchema);
