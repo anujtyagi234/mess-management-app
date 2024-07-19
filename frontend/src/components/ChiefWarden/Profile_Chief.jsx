@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 // import './Common.css'
-import Chief_Pro from "../../imgs/Chief_Pro.avif"
+import Chief_Pro from "../../imgs/chief_Pro.avif"
 
 function MainDash() {
   const [userData, setUserData] = useState(null);

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Modal from "react-modal";
-import "../ChiefWarden/Chief_Mess_menu.css";
+import "../ChiefWarden/Chief_Mess_Menu.css";
 import Menu from "../../imgs/ramen.gif";
 import axios from "axios";
 import { toast } from 'react-toastify';
