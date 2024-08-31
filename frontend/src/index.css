@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
 
 .toastBody {
     font-family: 'Agbalumo';
@@ -5,7 +6,6 @@
     color: #10171D; /* #10171D */
     font-size: 1.1rem !important;
   }
-@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
 
 
 @tailwind base;

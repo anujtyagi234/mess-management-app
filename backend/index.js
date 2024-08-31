@@ -21,7 +21,7 @@ const PORT =  process.env.PORT||3000;
 app.use(express.json({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: process.env.CORS_ORIGIN,
   credentials: true,
 }));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));

@@ -5,7 +5,6 @@ import './StudentR.css'; // Import the CSS file for styling
 import { toast } from 'react-toastify';
 import axios from 'axios';
 
-
 const App = () => {
   const [ratings, setRatings] = useState([]);
   const [ratingPage, setRatingPage] = useState(true);
@@ -33,7 +32,7 @@ const App = () => {
       .catch((error) => {
         console.error('There was an error fetching the user rating!', error);
       });
-  }, []);
+  }, [token]);
 
   const today = new Date();
   const currentDay = today.toLocaleDateString('en-US', { weekday: 'long' });
@@ -71,7 +70,6 @@ const App = () => {
           }
         });
     }
-
   };
 
   const togglePage = () => {
@@ -79,7 +77,7 @@ const App = () => {
   };
 
   const handleStarClick = (star) => {
-    if(!userRating) setCurrentRating(star);
+    if (!userRating) setCurrentRating(star);
   };
 
   // Prepare chart data
@@ -119,17 +117,15 @@ const App = () => {
         max: 6,
         ticks: {
           stepSize: 1,
-        },
-        grid: {
-          color: 'rgba(0, 0, 0, 0.2)',
-          borderColor: 'rgba(0, 0, 0, 0.2)',
-        },
-        ticks: {
           color: 'black',
           font: {
             weight: 'bold',
             family: 'cursive',
           },
+        },
+        grid: {
+          color: 'rgba(0, 0, 0, 0.2)',
+          borderColor: 'rgba(0, 0, 0, 0.2)',
         },
       },
     },
@@ -151,38 +147,37 @@ const App = () => {
     <div className="app-container" style={{ fontFamily: "Agbalumo", borderWidth: "0.07rem", borderColor: "black" }}>
       {ratingPage ? (
         <div className="rate-us-container" style={{ background: 'linear-gradient(to right, pink, yellow, red)', borderWidth: "0.02rem", borderColor: "black" }}>
-        <h1 style={{ color: "white", borderRadius: "50px", borderWidth: "1.5px", borderColor: "black", height: "30px", display: "flex", justifyContent: "center", alignItems: "center", fontWeight: "bold", marginBottom: "30px", fontSize: "1.3rem" }}>Rate Us</h1>
-        <div className="stars-container">
-          {[1, 2, 3, 4, 5].map((star) => (
-            <span
-              key={star}
-              onClick={() => handleStarClick(star)}
-              className={`star ${star <= currentRating ? 'active' : ''}`}
-            >
-              ⭐
-            </span>
-          ))}
+          <h1 style={{ color: "white", borderRadius: "50px", borderWidth: "1.5px", borderColor: "black", height: "30px", display: "flex", justifyContent: "center", alignItems: "center", fontWeight: "bold", marginBottom: "30px", fontSize: "1.3rem" }}>Rate Us</h1>
+          <div className="stars-container">
+            {[1, 2, 3, 4, 5].map((star) => (
+              <span
+                key={star}
+                onClick={() => handleStarClick(star)}
+                className={`star ${star <= currentRating ? 'active' : ''}`}
+              >
+                ⭐
+              </span>
+            ))}
+          </div>
+          <div className="response-box">{currentRating || 0}</div>
+          <button onClick={onSubmitRating}>Submit</button>
+          <button className='mx-[6px]' onClick={togglePage}>Graph</button>
         </div>
-        <div className="response-box">{currentRating || 0}</div>
-        <button onClick={onSubmitRating}>Submit</button>
-        <button className='mx-[6px]' onClick={togglePage}>Graph</button>
-      </div>
-    ) : (
-      <div className="graph-container">
-        {ratings.length === 0 ? (
-          <div>No Ratings Yet</div>
-        ) : (
-          <>
-            <Line data={chartData} options={chartOptions} />
-            {showThankYou && <div className="thank-you-message">🎉🌟 Thank you ! 🌟🎉</div>}
-            <button onClick={togglePage}>Rate Us</button>
-          </>
-        )}
-      </div>
-    )}
-  </div>
-);
+      ) : (
+        <div className="graph-container">
+          {ratings.length === 0 ? (
+            <div>No Ratings Yet</div>
+          ) : (
+            <>
+              <Line data={chartData} options={chartOptions} />
+              {showThankYou && <div className="thank-you-message">🎉🌟 Thank you ! 🌟🎉</div>}
+              <button onClick={togglePage}>Rate Us</button>
+            </>
+          )}
+        </div>
+      )}
+    </div>
+  );
 };
 
 export default App;
-
