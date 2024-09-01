@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './Acc_Adm_Chf_Dashboard.css';
+import './components/Common_to_All/Acc_Adm_Chf_Dashboard.css';
 import Home from './components/Home/Home';
 import Footer from './components/Home/Footer';
-import Login from './components/Login/login';
-import Signup from './components/Signup/signup';
-import ForgotPassword from './components/reset/forgotPassword';
-import ResetPassword from './components/reset/resetPassword';
-import Dashi from './components/Dashi/Dashboard_main';
+import Login from './components/Auth/Login/login';
+import Signup from './components/Auth/Signup/signup';
+import ForgotPassword from './components/Auth/reset/forgotPassword';
+import ResetPassword from './components/Auth/reset/resetPassword';
+import Dashi from './components/Student/Student_dashBoard';
 import Admin_Dashboard from './components/Admin/Admin_dashboard';
 import AddAccountant from './components/Admin/Add_Accountant';
 import AddChiefWarden from './components/Admin/Add_Chief_warden';
@@ -16,11 +16,11 @@ import Chief_Student_complaints from './components/ChiefWarden/Student_Complains
 import ChiefDashboard from './components/ChiefWarden/Chief_Dashboard';
 import ExpenseListing from './components/Accountant/Accountant_Expense_list';
 
-import MessMenu from './components/Dashboard/Main/Mess_menu';
+import MessMenu from './components/Student/Main/Mess_menu';
 import Accountant_Dashboard from './components/Accountant/Accountant_Dashboard';
 import ProtectedRoute from './components/ProtectedRoute';
 import UnprotectedRoute from './components/UnprotectedRoute';
-import Feedback from './components/Email'
+import Feedback from './components/Student/Feedback';
 
 export default function App() {
   const [selectedExpenseType, setSelectedExpenseType] = useState('Vegetable_Expense');
@@ -41,8 +41,8 @@ export default function App() {
           <Route path="/reset_password/:id/:token" element={<UnprotectedRoute><ResetPassword /></UnprotectedRoute>} />
 
           {/* Protected routes */}
-          <Route path="/dashi" element={<ProtectedRoute roles={['student']}><Dashi /></ProtectedRoute>} />
-          <Route path="/feedback" element={<ProtectedRoute roles={['student']}><Feedback /></ProtectedRoute>} />
+          <Route path="/student/dashboard" element={<ProtectedRoute roles={['student']}><Dashi /></ProtectedRoute>} />
+          <Route path="/student/feedback" element={<ProtectedRoute roles={['student']}><Feedback /></ProtectedRoute>} />
           <Route path="/admin/dashboard" element={<ProtectedRoute roles={['admin']}><Admin_Dashboard /></ProtectedRoute>} />
           <Route path="/admin/accountant" element={<ProtectedRoute roles={['admin']}><AddAccountant /></ProtectedRoute>} />
           <Route path="/admin/chief" element={<ProtectedRoute roles={['admin']}><AddChiefWarden /></ProtectedRoute>} />

@@ -1,11 +1,11 @@
 import React from "react";
-import '../../Acc_Adm_Chf_Dashboard.css'
+import '../Common_to_All/Acc_Adm_Chf_Dashboard.css';
 import { useState } from "react";
 import AddExpence from './Accountant_Expense_list'
-import MessMenu from '../Dashboard/Main/Mess_menu'
-import Resolved_complains from '../Dashboard/Main/ResolvedComplain'
-import Student_complains from '../Dashboard/Main/Student_Complain'
-import Logout from "../Dashboard/Logout";
+import MessMenu from '../Student/Main/Mess_menu'
+import Resolved_complains from '../Student/Main/ResolvedComplain'
+import Student_complains from '../Student/Main/Student_Complain'
+import Logout from "../Auth/Logout";
 import Notices from '../Common_to_All/Notice_Board'
 import Accountant_sidebar from './Accountant_sidebar'
 import Profile from "./Profile_Acc"

@@ -1,4 +1,4 @@
-import "../Dashboard/Updates/Updates.css";
+import "../Student/Updates/Updates.css";
 import React, { useEffect, useState } from "react";
 
 function Update() {

@@ -1,0 +1,125 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+
+.Sidebar {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-top: 4rem;
+    transition: all 300ms ease;
+}
+
+.logo {
+    display: flex;
+    font-weight: bold;
+    font-size: 1.7rem;
+    align-items: center;
+    justify-content: center;
+    height: 4%;
+    margin-left: 1rem;
+}
+
+.logo>img {
+    width: 5rem;
+    height: 5rem;
+}
+
+.logo>span{
+  
+font-family: 'Agbalumo';
+}
+.logo>span>span {
+    color: var(--pink);
+}
+
+
+.menu {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    /* margin-bottom: 5rem; */
+}
+
+
+.Items {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    cursor: pointer;
+  font-family: 'Agbalumo';
+
+    border-color: black;
+    border-width: 0.001rem;
+    background-color: rgb(38, 232, 154);
+    border-radius: 0.8rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.Items:before {
+    content: "";
+    width: 8px;
+    height: 100%;
+    background-color: #076666;
+    
+}
+
+.Items:hover {
+    background-color: #e6e6e6;
+    transform: scale(1.05);
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.Items.active {
+    /* Change this to the desired background color for the selected item */
+    background-color: #e6e6e6;
+    transform: scale(1.05);
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    border-color: black;
+    border-width: 0.02rem;
+}
+
+
+.feedback_main{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    /* margin-top: 3rem; */
+}
+
+
+
+/* <button class="button-62" role="button">Button 62</button> */
+
+.button-62 {
+  background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+  color: #FFFFFF;
+  border-color: black;
+  border-width: .01rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  display: inline-block;
+  box-shadow: 3px 3px 2px grey;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none
+  /* touch-action: manipulation; */
+  /* white-space: nowrap;/ */
+}
+
+.button-62:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.button-62:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(124, 8, 29, 0.5), .525rem .525rem .2rem rgba(87, 37, 6, 0.5);
+}

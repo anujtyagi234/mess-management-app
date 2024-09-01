@@ -1,6 +1,6 @@
 import React from "react";
-import "../../Acc_Adm_Chf_Dashboard.css";
-import Logout from '../Dashboard/Logout';
+import "../Common_to_All/Acc_Adm_Chf_Dashboard.css";
+import Logout from '../Auth/Logout';
 import { useState } from "react";
 import Sidebar_Chief from './Sidebar_Chief'
 import Student_Complains from './Student_Complains'

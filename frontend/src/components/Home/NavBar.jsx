@@ -1,7 +1,5 @@
-
 import React from "react";
-import { NavLink } from "react-router-dom";
-import './Header.css'
+import './Header.css';
 
 function NavBar() {
   return (
@@ -9,9 +7,8 @@ function NavBar() {
       background: "linear-gradient(to right, #ffeb3b, #ff4081, #8bc34a, #f44336)",
       backgroundSize: "100% 150%",
       animation: "waves 3s infinite linear",
-     fontFamily:"Agbalumo"
+      fontFamily: "Agbalumo"
     }}>
-    
       <div className="flex flex-col items-center justify-between sm:flex-row sm:items-center">
         <div className="container12">
           <img
@@ -19,28 +16,28 @@ function NavBar() {
             alt=""
             className="left-image"
           />
-          <NavLink to="#" className="main-heading">
+          <a href="#" className="main-heading">
             <b>
               <big>Mess Management</big>
             </b>
-          </NavLink>
+          </a>
         </div>
-        <div className="header_style" >
-          <ul className="flex space-x-4 mt-4 sm:mt-0" style={{  fontWeight: "bold", fontSize: "1.2rem" }}>
+        <div className="header_style">
+          <ul className="flex space-x-4 mt-4 sm:mt-0" style={{ fontWeight: "bold", fontSize: "1.2rem" }}>
             <li>
-              <NavLink exact to="/" className="text-white" activeClassName="active-link">
+              <a href="/" className="text-white">
                 Home
-              </NavLink>
+              </a>
             </li>
             <li>
-              <NavLink to="/signup" className="text-white" activeClassName="active-link">
+              <a href="/signup" className="text-white">
                 Sign up
-              </NavLink>
+              </a>
             </li>
             <li>
-              <NavLink to="/login" className="text-white" activeClassName="active-link">
+              <a href="/login" className="text-white">
                 Login
-              </NavLink>
+              </a>
             </li>
           </ul>
         </div>
@@ -50,4 +47,3 @@ function NavBar() {
 }
 
 export default NavBar;
-

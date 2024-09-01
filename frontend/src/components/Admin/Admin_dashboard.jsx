@@ -1,13 +1,13 @@
 import React, { Profiler } from "react";
-import '../../Acc_Adm_Chf_Dashboard.css'
-import Logout from "../Dashboard/Logout";
+import '../Common_to_All/Acc_Adm_Chf_Dashboard.css'
+import Logout from "../Auth/Logout";
 import { useState } from "react";
  import Notices  from '../Common_to_All/Notice_Board'
 import Add_Accountant from './Add_Accountant'
 import Add_Chiefwarden from './Add_Chief_warden'
 import Add_Admin from './Add_Admin'
 import Resolved_complains from '../ChiefWarden/ResolvedComplain'
-import Student_complains from '../Dashboard/Main/Student_Complain'
+import Student_complains from '../Student/Main/Student_Complain'
 import Admin_Dashboard from './Side_bar_Admin';
 import Profile from "./Profile_Admin"
 function Dashboard_main() {
