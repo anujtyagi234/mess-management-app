@@ -1,15 +1,18 @@
 const express = require('express')
 const path = require('path')
-const {upload, uploadFiles, getNotices, downloadFile } = require('../controllers/NoticeController');
+const {uploadFiles, getNotices, downloadFile } = require('../controllers/NoticeController');
 const { authMiddleware,authorize } = require('../middleware/authMiddleware');
+const createMulterConfig = require('../middleware/multer')
+
+const allowedExtensions = [".pdf"];
+const maxFileSize = 10 * 1024 * 1024;
+
+// Create the multer middleware with disk storage
+const upload = createMulterConfig(allowedExtensions, maxFileSize,'uploads_Notice');
 
 const router = express.Router();
 router.use(authMiddleware)
 
-// Route handler for the root path
-router.get('/', (req, res) => {
-  res.send('Hello, this is your Express server!');
-});
 
 // Route handler for serving the add notice page
 router.get('/AddNotice', (req, res) => {

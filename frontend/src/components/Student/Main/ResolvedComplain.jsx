@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "../../ChiefWarden/Common.css";
 import axios from "axios";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 const Student_complaints = () => {
   const [complaints, setComplaints] = useState([]);
@@ -26,6 +29,24 @@ const Student_complaints = () => {
     ? complaints.filter((complaint) => complaint.resolved)
     : [];
   console.log(resolvedComplaints);
+
+  const sliderSettings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: { slidesToShow: 1, slidesToScroll: 1 },
+      },
+      {
+        breakpoint: 768,
+        settings: { slidesToShow: 1, slidesToScroll: 1 },
+      },
+    ],
+  };
 
   return (
     <div className="Maincontainer" style={{ fontFamily: "Agbalumo" }}>
@@ -72,13 +93,25 @@ const Student_complaints = () => {
                 <b>ResolvedAt: </b>
                 {new Date(complaint.resolvedAt).toLocaleString()}
               </p>
-              {complaint.images && (
-                <img
-                  src={`http://localhost:3000/uploads/${complaint.images}`}
-                  alt="Complaint"
-                  style={{ maxWidth: "300px" }}
-                />
-              )}
+              {complaint.images &&
+                Array.isArray(complaint.images) &&
+                complaint.images.length > 0 && (
+                  <div style={{ marginBottom: "2rem", position: "relative" }}>
+                  <Slider {...sliderSettings}>
+                    {complaint.images.map((image, index) => (
+                      <div key={index}>
+                        <img
+                          src={ image.startsWith("http")
+                            ? image
+                            : `http://localhost:3000/uploads/${image}` }
+                            alt={`Complaint ${index}`}
+                            style={{ width: "100%", height: "auto" }}
+                        />
+                      </div>
+                    ))}
+                  </Slider>
+                  </div>
+                )}
             </li>
           ))}
         </ul>

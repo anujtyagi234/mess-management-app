@@ -5,15 +5,15 @@ import { toast } from 'react-toastify';
 import './Complain.css';
 
 const MessComplaintForm = () => {
-  const [selectedFile, setSelectedFile] = useState(null);
+  const [selectedFiles, setSelectedFiles] = useState([]);
   const [formData, setFormData] = useState({
     complaintTitle: '',
     complaintDetails: '',
   });
 
   const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    setSelectedFile(file);
+    const filesArray = Array.from(event.target.files);
+    setSelectedFiles(filesArray);
   };
 
   const handleChange = (e) => {
@@ -27,9 +27,11 @@ const MessComplaintForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const token = localStorage.getItem('token');
-    if (selectedFile && formData.complaintTitle && formData.complaintDetails) {
+    if (selectedFiles.length && formData.complaintTitle && formData.complaintDetails) {
       const newFormData = new FormData();
-      newFormData.append('image', selectedFile);
+      selectedFiles.forEach(file => {
+        newFormData.append('images', file);
+      });
       newFormData.append('title', formData.complaintTitle);
       newFormData.append('description', formData.complaintDetails);
 
@@ -96,7 +98,7 @@ const MessComplaintForm = () => {
             />
           </form>
           <div className="Upload_imgg_folder" style={{ fontFamily: 'Agbalumo' }}>
-            <h2>Upload File and image related to your Issues Here..</h2>
+            <h2>Upload images related to your Issues Here..</h2>
             <input
               id="image"
               type="file"

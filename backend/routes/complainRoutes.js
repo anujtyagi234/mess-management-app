@@ -3,18 +3,19 @@ const router = express.Router();
 const fileUpload = require('express-fileupload');
 const complainController = require('../controllers/complainController');
 const { authMiddleware,authorize } = require('../middleware/authMiddleware');
-const filesPayloadExists = require('../middleware/filesPayloadExists');
-const fileExtLimiter = require('../middleware/fileExtLimiter');
-const fileSizeLimiter = require('../middleware/fileSizeLimiter');
+const createMulterConfig = require('../middleware/multer')
+
+const allowedExtensions = [".png", ".jpg", ".jpeg"];
+const maxFileSize = 5 * 1024 * 1024;
+
+// Create the multer middleware with disk storage
+const upload = createMulterConfig(allowedExtensions, maxFileSize,'temp');
 
 // Complaint submission route with file upload middleware and error handling middleware
 router.post(
   '/complain',
   authMiddleware,
-  fileUpload({ createParentPath: true }),
-  filesPayloadExists,
-  fileExtLimiter(['.png', '.jpg', '.jpeg']),
-  fileSizeLimiter,
+  upload.array("images"),
   complainController.submitComplaint
 );
 

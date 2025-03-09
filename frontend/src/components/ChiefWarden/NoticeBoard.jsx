@@ -140,7 +140,7 @@ const NoticeBoard = () => {
               <input
                 type="file"
                 name="files"
-                accept=".txt, .pdf, .jpg, .jpeg, .png"
+                accept=".pdf"
                 onChange={handleChange}
               />
               <button type="submit" style={styles.buttonNotice} onClick={handleUploadNotice}>Upload Notice</button>

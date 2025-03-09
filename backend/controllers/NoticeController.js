@@ -1,26 +1,14 @@
 const path = require('path');
 const fs = require('fs');
-const multer = require('multer');
 
 const filename = __filename;
 const __dirname1 = path.dirname(filename);
-
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, 'uploads_Notice/');
-  },
-  filename: function (req, file, cb) {
-    cb(null, file.originalname); // Use the original filename
-  },
-});
-
-const upload = multer({ storage: storage });
 
 // Handle file upload and cleanup old files
 const uploadFiles = (req, res) => {
   console.log('Received files:', req.files);
 
-  const uploadDir = path.join(__dirname1, '../uploads_Notice');
+  const uploadDir = path.join(__dirname1, '../public/uploads_Notice');
   const notices = fs.readdirSync(uploadDir);
 
   // Sort files by modification time (newest first)
@@ -46,7 +34,7 @@ const uploadFiles = (req, res) => {
 
 // Fetch list of notices
 const getNotices = (req, res) => {
-  const uploadDir = path.join(__dirname1, '../uploads_Notice');
+  const uploadDir = path.join(__dirname1, '../public/uploads_Notice');
   console.log('Fetching notice list...');
 
   const notices = fs.readdirSync(uploadDir).map((file) => {
@@ -55,7 +43,7 @@ const getNotices = (req, res) => {
 
     return {
       name: file,
-      url: `http://localhost:3000/uploads_Notice/${file}`,
+      url: `http://localhost:3000/public/uploads_Notice/${file}`,
       timestamp: stat.mtime, // Include the timestamp
     };
   });
@@ -66,7 +54,7 @@ const getNotices = (req, res) => {
 
 // Download a notice file
 const downloadFile = (req, res) => {
-  const filePath = path.join(__dirname1, '../uploads_Notice', req.params.filename);
+  const filePath = path.join(__dirname1, '../public/uploads_Notice', req.params.filename);
 
   // Check if the file exists
   if (!fs.existsSync(filePath)) {
@@ -84,7 +72,6 @@ const downloadFile = (req, res) => {
 };
 
 module.exports = {
-    upload,
     uploadFiles,
     getNotices,
     downloadFile

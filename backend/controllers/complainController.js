@@ -1,6 +1,7 @@
 const Complaint = require('../models/complainModel');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
+const { uploadOnCloudinary } = require('../utils/cloudinary');
 
 const complaintController = {
   submitComplaint: async (req, res) => {
@@ -16,19 +17,12 @@ const complaintController = {
         return res.status(400).json({ error: 'No files uploaded' });
       }
 
-      Object.keys(files).forEach(key => {
-        const uniqueFileName = `${uuidv4()}-${files[key].name}`;
-        const filepath = path.join(__dirname, '..', 'uploads', uniqueFileName);
-
-        files[key].mv(filepath, (err) => {
-          if (err) {
-            console.error('Error moving file:', err);
-            return res.status(500).json({ error: 'Internal Server Error' });
-          }
-        });
-
-        uploadedImages.push(uniqueFileName);
-      });
+      for (const file of files) {
+        const cloudinaryResponse = await uploadOnCloudinary(file.path);
+        if (cloudinaryResponse) {
+          uploadedImages.push(cloudinaryResponse.secure_url);
+        }
+      }
 
       const complaint = new Complaint({
         user: userId,

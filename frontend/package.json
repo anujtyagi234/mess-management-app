@@ -33,8 +33,10 @@
     "react-modal": "^3.16.1",
     "react-router-dom": "^6.18.0",
     "react-select": "^5.8.0",
+    "react-slick": "^0.30.3",
     "react-spring": "^9.7.3",
     "react-toastify": "^10.0.5",
+    "slick-carousel": "^1.8.1",
     "socket.io": "^4.7.2",
     "styled-components": "^6.1.1",
     "vite-plugin-rewrite-all": "^1.0.2"
